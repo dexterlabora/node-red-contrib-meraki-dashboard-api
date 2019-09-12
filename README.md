@@ -82,9 +82,12 @@ Verbs in the API follow the usual REST conventions:
 `DELETE` removes a resource.
 
 
+Install
+-------
 
+Run the following command in your Node-RED user directory - typically `~/.node-red`
 
-
+        npm install node-red-contrib-meraki-dashboard-api
 
 
 ## Methods

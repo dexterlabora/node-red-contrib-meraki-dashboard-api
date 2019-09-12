@@ -13,15 +13,16 @@
   },
   "keywords": [
     "node-red-nodegen", 
-    "node-red cisco", 
-    " meraki", 
-    " cloud", 
-    " networking", 
-    " IoT", 
-    " wireless", 
-    " WiFi", 
-    " BLE", 
-    " Bluetooth"
+    "node-red", 
+    "cisco", 
+    "meraki", 
+    "cloud", 
+    "networking", 
+    "IoT", 
+    "wireless", 
+    "WiFi", 
+    "BLE", 
+    "Bluetooth"
   ],
   "dependencies": {
     "q": "1.5.1",
