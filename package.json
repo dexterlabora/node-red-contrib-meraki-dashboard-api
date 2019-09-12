@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-meraki-dashboard-api",
-  "version": "0.0.0",
+  "version": "0.3.0",
   "description": "Node-RED node for meraki-dashboard-api",
   "main": "node.js",
   "scripts": {
@@ -12,18 +12,26 @@
     }
   },
   "keywords": [
-    "node-red-nodegen"
+    "node-red-nodegen", 
+    "node-red cisco", 
+    " meraki", 
+    " cloud", 
+    " networking", 
+    " IoT", 
+    " wireless", 
+    " WiFi", 
+    " BLE", 
+    " Bluetooth"
   ],
   "dependencies": {
-    "file-type": "^10.7.1",
-    "json-bigint": "^0.3.0",
     "q": "1.5.1",
-    "request": "2.83.0"
+    "request": "2.83.0",
+    "file-type": "^10.7.1"
   },
   "devDependencies": {
     "node-red": "0.18.7",
     "node-red-node-test-helper": "0.1.8"
   },
-  "author": "",
+  "author": "Cory Guynn",
   "license": "Apache-2.0"
 }
