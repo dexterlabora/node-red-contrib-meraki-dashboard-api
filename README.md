@@ -3,6 +3,18 @@ node-red-contrib-meraki-dashboard-api
 
 Node-RED node for meraki-dashboard-api
 
+[Official Meraki API Docs](https://create.meraki.io/api)
+
+Install
+-------
+
+Run the following command in your Node-RED user directory - typically `~/.node-red`
+        
+        npm install git+https://github.com/dexterlabora/node-red-contrib-meraki-dashboard-api
+
+# About
+-------     
+
 The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
 
 ## What can the API be used for?
@@ -70,17 +82,8 @@ Verbs in the API follow the usual REST conventions:
 `DELETE` removes a resource.
 
 
-Install
--------
 
-Run the following command in your Node-RED user directory - typically `~/.node-red`
 
-        npm install node-red-contrib-meraki-dashboard-api
-
-Usage
------
-
--- NEW
 
 
 
