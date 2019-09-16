@@ -1,0 +1,615 @@
+[
+    {
+        "id": "91f6b042.4bbcb",
+        "type": "debug",
+        "z": "f4572282.d383",
+        "name": "Provision client",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "x": 980,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "fba4e20.9e54e2",
+        "type": "meraki-dashboard-api",
+        "z": "f4572282.d383",
+        "service": "",
+        "name": "provisionNetworkClients",
+        "selectedGroup": "Clients",
+        "selectedMethod": "provisionNetworkClients",
+        "filteredMethods": [
+            {
+                "methodGroup": "Clients",
+                "methodName": "getDeviceClients",
+                "parameters": [
+                    {
+                        "camelCaseName": "serial"
+                    },
+                    {
+                        "camelCaseName": "t0"
+                    },
+                    {
+                        "camelCaseName": "timespan"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getDeviceClients_serial\"><label for=\"node-input-getDeviceClients_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getDeviceClients_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getDeviceClients_serialType\" value=\"string\" ></div><div class=\"form-row\" id=\"getDeviceClients_t0\"><label for=\"node-input-getDeviceClients_t0\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t0</b> <i>&nbspstring</i></span></label><p>The beginning of the timespan for the data. The maximum lookback period is 31 days from today.</p><input type=\"text\" id=\"node-input-getDeviceClients_t0\" placeholder=\"msg.t0\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getDeviceClients_t0Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getDeviceClients_timespan\"><label for=\"node-input-getDeviceClients_timespan\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label><p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.</p><input type=\"text\" id=\"node-input-getDeviceClients_timespan\" placeholder=\"msg.timespan\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getDeviceClients_timespanType\" value=\"integer\" ></div>",
+                "example": "[\n  {\n    \"usage\": {\n      \"sent\": 138,\n      \"recv\": 61\n    },\n    \"id\": \"k74272e\",\n    \"description\": \"Miles's phone\",\n    \"mac\": \"00:11:22:33:44:55\",\n    \"ip\": \"1.2.3.4\",\n    \"user\": \"milesmeraki\",\n    \"vlan\": 255,\n    \"switchport\": null,\n    \"mdnsName\": \"Miles's phone\",\n    \"dhcpHostname\": \"MilesPhone\"\n  }\n]",
+                "summary": "List the clients of a device up to a maximum of a month ago. The usage of each client is returned in kilobytes. If the device is a switch the switchport is returned; otherwise the switchport field is null."
+            },
+            {
+                "methodGroup": "Clients",
+                "methodName": "getNetworkClients",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "t0"
+                    },
+                    {
+                        "camelCaseName": "timespan"
+                    },
+                    {
+                        "camelCaseName": "perPage"
+                    },
+                    {
+                        "camelCaseName": "startingAfter"
+                    },
+                    {
+                        "camelCaseName": "endingBefore"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkClients_networkId\"><label for=\"node-input-getNetworkClients_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClients_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClients_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClients_t0\"><label for=\"node-input-getNetworkClients_t0\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t0</b> <i>&nbspstring</i></span></label><p>The beginning of the timespan for the data. The maximum lookback period is 31 days from today.</p><input type=\"text\" id=\"node-input-getNetworkClients_t0\" placeholder=\"msg.t0\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClients_t0Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClients_timespan\"><label for=\"node-input-getNetworkClients_timespan\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label><p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.</p><input type=\"text\" id=\"node-input-getNetworkClients_timespan\" placeholder=\"msg.timespan\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClients_timespanType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getNetworkClients_perPage\"><label for=\"node-input-getNetworkClients_perPage\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>perPage</b> <i>&nbspinteger</i></span></label><p>The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.</p><input type=\"text\" id=\"node-input-getNetworkClients_perPage\" placeholder=\"msg.perPage\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClients_perPageType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getNetworkClients_startingAfter\"><label for=\"node-input-getNetworkClients_startingAfter\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>startingAfter</b> <i>&nbspstring</i></span></label><p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p><input type=\"text\" id=\"node-input-getNetworkClients_startingAfter\" placeholder=\"msg.startingAfter\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClients_startingAfterType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClients_endingBefore\"><label for=\"node-input-getNetworkClients_endingBefore\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>endingBefore</b> <i>&nbspstring</i></span></label><p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p><input type=\"text\" id=\"node-input-getNetworkClients_endingBefore\" placeholder=\"msg.endingBefore\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClients_endingBeforeType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"usage\": {\n      \"sent\": 138,\n      \"recv\": 61\n    },\n    \"id\": \"k74272e\",\n    \"description\": \"Miles's phone\",\n    \"mac\": \"00:11:22:33:44:55\",\n    \"ip\": \"1.2.3.4\",\n    \"user\": \"milesmeraki\",\n    \"vlan\": 255,\n    \"switchport\": null,\n    \"ip6\": \"\",\n    \"firstSeen\": 1518365681,\n    \"lastSeen\": 1526087474,\n    \"manufacturer\": \"Apple\",\n    \"os\": \"iOS\"\n  }\n]",
+                "summary": "List the clients that have used this network in the timespan"
+            },
+            {
+                "methodGroup": "Clients",
+                "methodName": "provisionNetworkClients",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "provisionNetworkClients"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"provisionNetworkClients_networkId\"><label for=\"node-input-provisionNetworkClients_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-provisionNetworkClients_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-provisionNetworkClients_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"provisionNetworkClients_provisionNetworkClients\"><label for=\"node-input-provisionNetworkClients_provisionNetworkClients\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>provisionNetworkClients</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-provisionNetworkClients_provisionNetworkClients\" placeholder=\"msg.provisionNetworkClients\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-provisionNetworkClients_provisionNetworkClientsType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"mac\": \"00:11:22:33:44:55\",\n    \"clientId\": \"k74272e\",\n    \"name\": \"Miles's phone\",\n    \"devicePolicy\": \"Group policy\",\n    \"groupPolicyId\": \"101\"\n  }\n]",
+                "summary": "Provisions a client with a name and policy. Clients can be provisioned before they associate to the network."
+            },
+            {
+                "methodGroup": "Clients",
+                "methodName": "getNetworkClient",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "clientId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkClient_networkId\"><label for=\"node-input-getNetworkClient_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClient_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClient_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClient_clientId\"><label for=\"node-input-getNetworkClient_clientId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>clientId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClient_clientId\" placeholder=\"msg.clientId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClient_clientIdType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"id\": \"k74272e\",\n    \"description\": \"Miles's phone\",\n    \"mac\": \"00:11:22:33:44:55\",\n    \"ip\": \"1.2.3.4\",\n    \"user\": \"null\",\n    \"vlan\": \"255\",\n    \"switchport\": null,\n    \"ip6\": \"\",\n    \"firstSeen\": 1518365681,\n    \"lastSeen\": 1526087474,\n    \"manufacturer\": \"Apple\",\n    \"os\": \"iOS\",\n    \"ssid\": \"My SSID\",\n    \"wirelessCapabilities\": \"802.11ac - 2.4 and 5 GHz\",\n    \"smInstalled\": true,\n    \"recentDeviceMac\": \"00:11:22:33:44:55\",\n    \"clientVpnConnections\": [\n      {\n        \"remoteIp\": \"1.2.3.4\",\n        \"connectedAt\": 1522613355,\n        \"disconnectedAt\": 1522613360\n      }\n    ],\n    \"lldp\": [\n      [\n        \"System name\",\n        \"Some system name\"\n      ],\n      [\n        \"System description\",\n        \"Some system description\"\n      ],\n      [\n        \"Port ID\",\n        \"1\"\n      ],\n      [\n        \"Chassis ID\",\n        \"00:18:0a:00:00:00\"\n      ],\n      [\n        \"Port description\",\n        \"eth0\"\n      ],\n      [\n        \"System capabilities\",\n        \"Two-port MAC Relay\"\n      ]\n    ],\n    \"cdp\": null\n  }\n]",
+                "summary": "Return the client associated with the given identifier. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+            },
+            {
+                "methodGroup": "Clients",
+                "methodName": "getNetworkClientEvents",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "clientId"
+                    },
+                    {
+                        "camelCaseName": "perPage"
+                    },
+                    {
+                        "camelCaseName": "startingAfter"
+                    },
+                    {
+                        "camelCaseName": "endingBefore"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkClientEvents_networkId\"><label for=\"node-input-getNetworkClientEvents_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClientEvents_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientEvents_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClientEvents_clientId\"><label for=\"node-input-getNetworkClientEvents_clientId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>clientId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClientEvents_clientId\" placeholder=\"msg.clientId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientEvents_clientIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClientEvents_perPage\"><label for=\"node-input-getNetworkClientEvents_perPage\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>perPage</b> <i>&nbspinteger</i></span></label><p>The number of entries per page returned. Acceptable range is 3 - 100. Default is 100.</p><input type=\"text\" id=\"node-input-getNetworkClientEvents_perPage\" placeholder=\"msg.perPage\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientEvents_perPageType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getNetworkClientEvents_startingAfter\"><label for=\"node-input-getNetworkClientEvents_startingAfter\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>startingAfter</b> <i>&nbspstring</i></span></label><p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p><input type=\"text\" id=\"node-input-getNetworkClientEvents_startingAfter\" placeholder=\"msg.startingAfter\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientEvents_startingAfterType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClientEvents_endingBefore\"><label for=\"node-input-getNetworkClientEvents_endingBefore\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>endingBefore</b> <i>&nbspstring</i></span></label><p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p><input type=\"text\" id=\"node-input-getNetworkClientEvents_endingBefore\" placeholder=\"msg.endingBefore\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientEvents_endingBeforeType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"deviceSerial\": \"Q234-ABCD-5678\",\n      \"occurredAt\": 1518365681,\n      \"type\": \"l3roaming_assoc_start\",\n      \"details\": {\n        \"vap\": \"1\",\n        \"on_packet\": \"true\"\n      }\n    }\n  ]\n]",
+                "summary": "Return the events associated with this client. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+            },
+            {
+                "methodGroup": "Clients",
+                "methodName": "getNetworkClientLatencyHistory",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "clientId"
+                    },
+                    {
+                        "camelCaseName": "t0"
+                    },
+                    {
+                        "camelCaseName": "t1"
+                    },
+                    {
+                        "camelCaseName": "timespan"
+                    },
+                    {
+                        "camelCaseName": "resolution"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkClientLatencyHistory_networkId\"><label for=\"node-input-getNetworkClientLatencyHistory_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClientLatencyHistory_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientLatencyHistory_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClientLatencyHistory_clientId\"><label for=\"node-input-getNetworkClientLatencyHistory_clientId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>clientId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClientLatencyHistory_clientId\" placeholder=\"msg.clientId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientLatencyHistory_clientIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClientLatencyHistory_t0\"><label for=\"node-input-getNetworkClientLatencyHistory_t0\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t0</b> <i>&nbspstring</i></span></label><p>The beginning of the timespan for the data. The maximum lookback period is 791 days from today.</p><input type=\"text\" id=\"node-input-getNetworkClientLatencyHistory_t0\" placeholder=\"msg.t0\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientLatencyHistory_t0Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClientLatencyHistory_t1\"><label for=\"node-input-getNetworkClientLatencyHistory_t1\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t1</b> <i>&nbspstring</i></span></label><p>The end of the timespan for the data. t1 can be a maximum of 791 days after t0.</p><input type=\"text\" id=\"node-input-getNetworkClientLatencyHistory_t1\" placeholder=\"msg.t1\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientLatencyHistory_t1Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClientLatencyHistory_timespan\"><label for=\"node-input-getNetworkClientLatencyHistory_timespan\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label><p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 1 day.</p><input type=\"text\" id=\"node-input-getNetworkClientLatencyHistory_timespan\" placeholder=\"msg.timespan\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientLatencyHistory_timespanType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getNetworkClientLatencyHistory_resolution\"><label for=\"node-input-getNetworkClientLatencyHistory_resolution\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>resolution</b> <i>&nbspinteger</i></span></label><p>The time resolution in seconds for returned data. The valid resolutions are: 86400. The default is 86400.</p><input type=\"text\" id=\"node-input-getNetworkClientLatencyHistory_resolution\" placeholder=\"msg.resolution\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientLatencyHistory_resolutionType\" value=\"integer\" ></div>",
+                "example": "[\n  [\n    {\n      \"t0\": 1550534400,\n      \"t1\": 1550620800,\n      \"latencyBinsByCategory\": {\n        \"backgroundTraffic\": {\n          \"0.5\": 41750,\n          \"1.0\": 21552,\n          \"2.0\": 59940,\n          \"4.0\": 146622,\n          \"8.0\": 57354,\n          \"16.0\": 0,\n          \"32.0\": 9954,\n          \"64.0\": 0,\n          \"128.0\": 0,\n          \"256.0\": 1896,\n          \"512.0\": 0,\n          \"1024.0\": 0,\n          \"2048.0\": 0\n        },\n        \"bestEffortTraffic\": {\n          \"0.5\": 1840899,\n          \"1.0\": 1644506,\n          \"2.0\": 629958,\n          \"4.0\": 449564,\n          \"8.0\": 2009658,\n          \"16.0\": 1329568,\n          \"32.0\": 282168,\n          \"64.0\": 97573,\n          \"128.0\": 191977,\n          \"256.0\": 30560,\n          \"512.0\": 26032,\n          \"1024.0\": 4943,\n          \"2048.0\": 12072\n        },\n        \"videoTraffic\": {\n          \"0.5\": 0,\n          \"1.0\": 0,\n          \"2.0\": 0,\n          \"4.0\": 0,\n          \"8.0\": 0,\n          \"16.0\": 0,\n          \"32.0\": 0,\n          \"64.0\": 0,\n          \"128.0\": 0,\n          \"256.0\": 0,\n          \"512.0\": 0,\n          \"1024.0\": 0,\n          \"2048.0\": 0\n        },\n        \"voiceTraffic\": {\n          \"0.5\": 716,\n          \"1.0\": 948,\n          \"2.0\": 474,\n          \"4.0\": 78,\n          \"8.0\": 0,\n          \"16.0\": 0,\n          \"32.0\": 0,\n          \"64.0\": 0,\n          \"128.0\": 0,\n          \"256.0\": 0,\n          \"512.0\": 0,\n          \"1024.0\": 0,\n          \"2048.0\": 0\n        }\n      }\n    }\n  ]\n]",
+                "summary": "Return the latency history for a client. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP. The latency data is from a sample of 2% of packets and is grouped into 4 traffic categories: background best effort video voice. Within these categories the sampled packet counters are bucketed by latency in milliseconds."
+            },
+            {
+                "methodGroup": "Clients",
+                "methodName": "getNetworkClientPolicy",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "clientId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkClientPolicy_networkId\"><label for=\"node-input-getNetworkClientPolicy_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClientPolicy_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientPolicy_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClientPolicy_clientId\"><label for=\"node-input-getNetworkClientPolicy_clientId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>clientId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClientPolicy_clientId\" placeholder=\"msg.clientId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientPolicy_clientIdType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"mac\": \"00:11:22:33:44:55\",\n    \"type\": \"Group policy\",\n    \"groupPolicyId\": \"101\"\n  }\n]",
+                "summary": "Return the policy assigned to a client on the network. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+            },
+            {
+                "methodGroup": "Clients",
+                "methodName": "updateNetworkClientPolicy",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "clientId"
+                    },
+                    {
+                        "camelCaseName": "updateNetworkClientPolicy"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateNetworkClientPolicy_networkId\"><label for=\"node-input-updateNetworkClientPolicy_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkClientPolicy_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkClientPolicy_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetworkClientPolicy_clientId\"><label for=\"node-input-updateNetworkClientPolicy_clientId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>clientId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkClientPolicy_clientId\" placeholder=\"msg.clientId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkClientPolicy_clientIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetworkClientPolicy_updateNetworkClientPolicy\"><label for=\"node-input-updateNetworkClientPolicy_updateNetworkClientPolicy\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateNetworkClientPolicy</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkClientPolicy_updateNetworkClientPolicy\" placeholder=\"msg.updateNetworkClientPolicy\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkClientPolicy_updateNetworkClientPolicyType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"mac\": \"00:11:22:33:44:55\",\n    \"type\": \"Group policy\",\n    \"groupPolicyId\": \"101\"\n  }\n]",
+                "summary": "Update the policy assigned to a client on the network. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+            },
+            {
+                "methodGroup": "Clients",
+                "methodName": "getNetworkClientSplashAuthorizationStatus",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "clientId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkClientSplashAuthorizationStatus_networkId\"><label for=\"node-input-getNetworkClientSplashAuthorizationStatus_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClientSplashAuthorizationStatus_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientSplashAuthorizationStatus_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClientSplashAuthorizationStatus_clientId\"><label for=\"node-input-getNetworkClientSplashAuthorizationStatus_clientId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>clientId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClientSplashAuthorizationStatus_clientId\" placeholder=\"msg.clientId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientSplashAuthorizationStatus_clientIdType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"ssids\": {\n      \"0\": {\n        \"isAuthorized\": true,\n        \"authorizedAt\": \"2017-07-19 16:24:13 UTC\",\n        \"expiresAt\": \"2017-07-20 16:24:13 UTC\"\n      },\n      \"2\": {\n        \"isAuthorized\": false\n      }\n    }\n  }\n]",
+                "summary": "Return the splash authorization for a client for each SSID theyve associated with through splash. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+            },
+            {
+                "methodGroup": "Clients",
+                "methodName": "updateNetworkClientSplashAuthorizationStatus",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "clientId"
+                    },
+                    {
+                        "camelCaseName": "updateNetworkClientSplashAuthorizationStatus"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateNetworkClientSplashAuthorizationStatus_networkId\"><label for=\"node-input-updateNetworkClientSplashAuthorizationStatus_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkClientSplashAuthorizationStatus_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkClientSplashAuthorizationStatus_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetworkClientSplashAuthorizationStatus_clientId\"><label for=\"node-input-updateNetworkClientSplashAuthorizationStatus_clientId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>clientId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkClientSplashAuthorizationStatus_clientId\" placeholder=\"msg.clientId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkClientSplashAuthorizationStatus_clientIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetworkClientSplashAuthorizationStatus_updateNetworkClientSplashAuthorizationStatus\"><label for=\"node-input-updateNetworkClientSplashAuthorizationStatus_updateNetworkClientSplashAuthorizationStatus\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateNetworkClientSplashAuthorizationStatus</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkClientSplashAuthorizationStatus_updateNetworkClientSplashAuthorizationStatus\" placeholder=\"msg.updateNetworkClientSplashAuthorizationStatus\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkClientSplashAuthorizationStatus_updateNetworkClientSplashAuthorizationStatusType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"ssids\": {\n      \"0\": {\n        \"isAuthorized\": true,\n        \"authorizedAt\": \"2017-07-19 16:24:13 UTC\",\n        \"expiresAt\": \"2017-07-20 16:24:13 UTC\"\n      },\n      \"2\": {\n        \"isAuthorized\": false\n      }\n    }\n  }\n]",
+                "summary": "Update a clients splash authorization. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+            },
+            {
+                "methodGroup": "Clients",
+                "methodName": "getNetworkClientTrafficHistory",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "clientId"
+                    },
+                    {
+                        "camelCaseName": "perPage"
+                    },
+                    {
+                        "camelCaseName": "startingAfter"
+                    },
+                    {
+                        "camelCaseName": "endingBefore"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkClientTrafficHistory_networkId\"><label for=\"node-input-getNetworkClientTrafficHistory_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClientTrafficHistory_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientTrafficHistory_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClientTrafficHistory_clientId\"><label for=\"node-input-getNetworkClientTrafficHistory_clientId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>clientId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClientTrafficHistory_clientId\" placeholder=\"msg.clientId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientTrafficHistory_clientIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClientTrafficHistory_perPage\"><label for=\"node-input-getNetworkClientTrafficHistory_perPage\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>perPage</b> <i>&nbspinteger</i></span></label><p>The number of entries per page returned. Acceptable range is 3 - 1000.</p><input type=\"text\" id=\"node-input-getNetworkClientTrafficHistory_perPage\" placeholder=\"msg.perPage\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientTrafficHistory_perPageType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getNetworkClientTrafficHistory_startingAfter\"><label for=\"node-input-getNetworkClientTrafficHistory_startingAfter\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>startingAfter</b> <i>&nbspstring</i></span></label><p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p><input type=\"text\" id=\"node-input-getNetworkClientTrafficHistory_startingAfter\" placeholder=\"msg.startingAfter\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientTrafficHistory_startingAfterType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClientTrafficHistory_endingBefore\"><label for=\"node-input-getNetworkClientTrafficHistory_endingBefore\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>endingBefore</b> <i>&nbspstring</i></span></label><p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p><input type=\"text\" id=\"node-input-getNetworkClientTrafficHistory_endingBefore\" placeholder=\"msg.endingBefore\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientTrafficHistory_endingBeforeType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"ts\": 1518365681,\n      \"application\": \"Google\",\n      \"destination\": \"www.google.com\",\n      \"protocol\": \"UDP\",\n      \"port\": 443,\n      \"recv\": 383,\n      \"sent\": 56,\n      \"numFlows\": 5,\n      \"activeSeconds\": 240\n    }\n  ]\n]",
+                "summary": "Return the clients network traffic data over time. Usage data is in kilobytes. This endpoint requires detailed traffic analysis to be enabled on the Network-wide > General page. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+            },
+            {
+                "methodGroup": "Clients",
+                "methodName": "getNetworkClientUsageHistory",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "clientId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkClientUsageHistory_networkId\"><label for=\"node-input-getNetworkClientUsageHistory_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClientUsageHistory_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientUsageHistory_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkClientUsageHistory_clientId\"><label for=\"node-input-getNetworkClientUsageHistory_clientId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>clientId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkClientUsageHistory_clientId\" placeholder=\"msg.clientId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkClientUsageHistory_clientIdType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"sent\": 500,\n      \"received\": 680,\n      \"ts\": 1518365681\n    }\n  ]\n]",
+                "summary": "Return the clients daily usage history. Usage data is in kilobytes. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+            }
+        ],
+        "storedParams": [],
+        "formHtml": "",
+        "method": "provisionNetworkClients",
+        "x": 830,
+        "y": 1720,
+        "wires": [
+            [
+                "91f6b042.4bbcb",
+                "175eaa4c.2c9ce6"
+            ]
+        ]
+    },
+    {
+        "id": "1ace41d5.a9fdfe",
+        "type": "function",
+        "z": "f4572282.d383",
+        "name": "Settings JSON",
+        "func": "\n// Clear request to avoid conflict with Meraki API call\ndelete msg.req;\n\n// Adjust form data to match API call\nvar formData  = {\n    \"mac\": msg.payload.mac,\n    \"name\": msg.payload.name,\n    \"devicePolicy\": \"Group policy\",\n    \"groupPolicyId\": msg.payload.policy\n}\n\n// Assign form to payload\nmsg.payload = formData;\n//msg.provisionNetworkClients = formData;\n\nreturn msg;\n\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 400,
+        "y": 1720,
+        "wires": [
+            [
+                "49efa2ca.22ccfc"
+            ]
+        ]
+    },
+    {
+        "id": "8e4aa6bd.dfe998",
+        "type": "http in",
+        "z": "f4572282.d383",
+        "name": "",
+        "url": "/provisionClient",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 1580,
+        "wires": [
+            [
+                "dd0916e3.d746d8",
+                "5128179d.d35258"
+            ]
+        ]
+    },
+    {
+        "id": "2299c1c6.7ced5e",
+        "type": "http in",
+        "z": "f4572282.d383",
+        "name": "",
+        "url": "/provisionClient",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 1720,
+        "wires": [
+            [
+                "eff65820.ddeb98",
+                "1ace41d5.a9fdfe"
+            ]
+        ]
+    },
+    {
+        "id": "dd0916e3.d746d8",
+        "type": "function",
+        "z": "f4572282.d383",
+        "name": "msg.url = msg.req.url",
+        "func": "msg.url = msg.req.url;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 400,
+        "y": 1580,
+        "wires": [
+            [
+                "f02e14ff.0115d8"
+            ]
+        ]
+    },
+    {
+        "id": "eff65820.ddeb98",
+        "type": "debug",
+        "z": "f4572282.d383",
+        "name": "post /provisionClient",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 260,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "175eaa4c.2c9ce6",
+        "type": "http response",
+        "z": "f4572282.d383",
+        "name": "",
+        "x": 1010,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "980858c1.a9a598",
+        "type": "template",
+        "z": "f4572282.d383",
+        "name": "CSS",
+        "field": "payload.style",
+        "fieldType": "msg",
+        "format": "css",
+        "syntax": "mustache",
+        "template": "input[type=text], select {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    display: inline-block;\n    border: 1px solid #ccc;\n    border-radius: 4px;\n    box-sizing: border-box;\n}\n\ninput[type=submit] {\n    width: 100%;\n    background-color: #4CAF50;\n    color: white;\n    padding: 14px 20px;\n    margin: 8px 0;\n    border: none;\n    border-radius: 4px;\n    cursor: pointer;\n}\n\ninput[type=submit]:hover {\n    background-color: #45a049;\n}\n\ndiv {\n    border-radius: 5px;\n    \n    padding: 20px;\n}\n\nhtml, body, .container-table {\n    height: 100%;\n}\n.container-table {\n    display: table;\n}\n.vertical-center-row {\n    display: table-cell;\n    vertical-align: middle;\n}",
+        "x": 750,
+        "y": 1580,
+        "wires": [
+            [
+                "4ba26a0b.d57e64"
+            ]
+        ]
+    },
+    {
+        "id": "f02e14ff.0115d8",
+        "type": "template",
+        "z": "f4572282.d383",
+        "name": "JavaScript",
+        "field": "payload.script",
+        "fieldType": "msg",
+        "format": "javascript",
+        "syntax": "plain",
+        "template": "$(document).ready(function(e) {\n    \n    $(\"form[ajax=true]\").submit(function(e) {\n        \n        e.preventDefault();\n        \n        var form_data = $(this).serialize();\n        var form_url = $(this).attr(\"action\");\n        var form_method = $(this).attr(\"method\").toUpperCase();\n        \n        $(\"#loadingimg\").show();\n        \n        $.ajax({\n            url: form_url, \n            type: form_method,      \n            data: form_data,     \n            cache: false,\n            success: function(returnhtml){                          \n                $(\"#loadingimg\").hide();\n                console.log(\"result \", returnhtml);\n                $(\"#result\").html(JSON.stringify(returnhtml, null, 2)); \n            },\n            error: function(e){\n                $(\"#loadingimg\").hide();\n                console.log(\"error \", e);\n                $(\"#result\").html(JSON.stringify(e, null, 2)); \n            }\n            \n        });    \n        \n    });\n    \n});",
+        "x": 590,
+        "y": 1580,
+        "wires": [
+            [
+                "980858c1.a9a598"
+            ]
+        ]
+    },
+    {
+        "id": "be1cc9ac.b746a8",
+        "type": "http response",
+        "z": "f4572282.d383",
+        "name": "",
+        "x": 1010,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "4ba26a0b.d57e64",
+        "type": "template",
+        "z": "f4572282.d383",
+        "name": "HTML",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<html>\n  <head>\n    <title>Provision Client</title>\n    <meta name=\"viewport\" content=\"initial-scale=1.0, user-scalable=no\">\n    <meta charset=\"utf-8\">\n    <script src=\"http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js\"></script>\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n    <style>{{{payload.style}}}</style>\n  </head>\n<body>\n<div class=\"container container-table\">\n    <div class=\"row vertical-center-row\">\n        <div class=\"col-md-4 col-md-offset-2\" style=\"background:#898b8e47\">\n            <h2>Provision Network Client</h2>\n            <h4><a href=\"https://create.meraki.io\">Meraki.io</a></h4>\n        \n            <div class=\"col-md-12\">\n              <form class=\"form-group\" method=\"post\" action=\"{{url}}\" ajax=\"true\">\n                <label for=\"name\">Name</label>\n                <input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Bill's Smart Device\"class=\"form-control\" width=\"80%\">\n            \n                <label for=\"mac\">Client MAC address</label>\n                <input type=\"text\" id=\"mac\" name=\"mac\" placeholder=\"aa:bb:cc:11:22:33\" class=\"form-control\" width=\"80%\">\n            \n                <label for=\"policy\">Group Policy</label>\n                    <select id=\"policy\" name=\"policy\" class=\"form-control\">\n                      <option value=\"100\">IoT</option>\n                      <option value=\"101\">Guest</option>\n                    </select>\n           \n                <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary\">\n              </form>\n            </div>\n            \n        </div>\n        <div class=\"col-md-4 \" style=\"background:#ffffff\">\n            <h4>Results</h4>\n            <pre><code>\n <div id=\"result\">\n     <!-- Dynamic Content -->\n </div>\n            </code></pre>\n               \n        </div>\n    </div>\n</div>\n    \n</body>\n</html>\n<script>{{{payload.script}}}</script>",
+        "x": 890,
+        "y": 1580,
+        "wires": [
+            [
+                "be1cc9ac.b746a8"
+            ]
+        ]
+    },
+    {
+        "id": "53bfef4c.aeac5",
+        "type": "comment",
+        "z": "f4572282.d383",
+        "name": "Login Form",
+        "info": "",
+        "x": 710,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "a2e7ae6d.e535c",
+        "type": "comment",
+        "z": "f4572282.d383",
+        "name": "Inject msg object properties",
+        "info": "This sets up the URL path for the form to post its data to.\n\n(within HTML template)\n<form class=\"form-group\" method=\"post\" action=\"/{{url}}\" ajax=\"true\">",
+        "x": 380,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "2610cceb.4ad734",
+        "type": "comment",
+        "z": "f4572282.d383",
+        "name": "Form Submission",
+        "info": "",
+        "x": 140,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "95f45a84.c190e8",
+        "type": "comment",
+        "z": "f4572282.d383",
+        "name": "Provision Client Web Form - README",
+        "info": "This Flow demonstrates how to create\na simple frontend webpage with Node-RED.\n\nThis example creates a form to provision a\nMeraki network client.\n\n\n\nThe public facing page consists of the \nclient side JavaScript, CSS and HTML. \n\nThe important technique is how the mustache \ntemplates are used. Each template will set the\n\"property\" relative to the content. \n\nThe CSS node sets the \"msg.payload.style\" property.\nThe JavaScript node sets the \"msg.payload.script\" property.\nThe HTML node then includes these properties \n<script>{{{payload.script}}}</script>\n<style>{{{payload.style}}}</style>\n\n\nThis example was created by http://www.InternetofLEGO.com\n\n",
+        "x": 170,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "b3579c01.b34fd",
+        "type": "comment",
+        "z": "f4572282.d383",
+        "name": "Landing Page",
+        "info": "",
+        "x": 130,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "5128179d.d35258",
+        "type": "debug",
+        "z": "f4572282.d383",
+        "name": "get /provisionClient",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 250,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "afccd9f5.63aa78",
+        "type": "debug",
+        "z": "f4572282.d383",
+        "name": "settings /provisionClient",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 630,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "94905559.a89d08",
+        "type": "inject",
+        "z": "f4572282.d383",
+        "name": "Set Flow Environment",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 1480,
+        "wires": [
+            [
+                "16390fa6.f8f86"
+            ]
+        ]
+    },
+    {
+        "id": "16390fa6.f8f86",
+        "type": "change",
+        "z": "f4572282.d383",
+        "name": "Flow Environment Variables - UPDATE ME",
+        "rules": [
+            {
+                "t": "set",
+                "p": "pc.networkId",
+                "pt": "flow",
+                "to": "L_643451796760561416",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 1480,
+        "wires": [
+            [
+                "6087de38.67dfe"
+            ]
+        ]
+    },
+    {
+        "id": "6087de38.67dfe",
+        "type": "debug",
+        "z": "f4572282.d383",
+        "name": "Flow Env Vars - Provision Client",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 930,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "49efa2ca.22ccfc",
+        "type": "change",
+        "z": "f4572282.d383",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "networkId",
+                "pt": "msg",
+                "to": "pc.networkId",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 1720,
+        "wires": [
+            [
+                "fba4e20.9e54e2",
+                "afccd9f5.63aa78"
+            ]
+        ]
+    },
+    {
+        "id": "1e5a19da.9450d6",
+        "type": "comment",
+        "z": "f4572282.d383",
+        "name": "http://localhost:1880/provisionClient",
+        "info": "",
+        "x": 480,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "27e94ee9.89bf32",
+        "type": "comment",
+        "z": "f4572282.d383",
+        "name": "UPDATE: add your API settings",
+        "info": "",
+        "x": 830,
+        "y": 1680,
+        "wires": []
+    }
+]

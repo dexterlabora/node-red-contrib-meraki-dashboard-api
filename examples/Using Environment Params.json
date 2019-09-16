@@ -1,0 +1,1310 @@
+[
+    {
+        "id": "f798c736.e1e2f8",
+        "type": "inject",
+        "z": "f4572282.d383",
+        "name": "Organization",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "14a6290f.9bf837"
+            ]
+        ]
+    },
+    {
+        "id": "9a2676f1.c7d9b8",
+        "type": "debug",
+        "z": "f4572282.d383",
+        "name": "Organization",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 990,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "9914b12d.99c51",
+        "type": "inject",
+        "z": "f4572282.d383",
+        "name": "SSIDs",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 600,
+        "wires": [
+            [
+                "7a5a9b10.314d44"
+            ]
+        ]
+    },
+    {
+        "id": "1251571e.9b27c9",
+        "type": "debug",
+        "z": "f4572282.d383",
+        "name": "SSIDs",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1010,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "36a07ba4.36b4e4",
+        "type": "inject",
+        "z": "f4572282.d383",
+        "name": "VLANs",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 640,
+        "wires": [
+            [
+                "82c31444.cc69e8"
+            ]
+        ]
+    },
+    {
+        "id": "b26c56a7.87fa68",
+        "type": "debug",
+        "z": "f4572282.d383",
+        "name": "VLANs",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1010,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "cb485153.62343",
+        "type": "inject",
+        "z": "f4572282.d383",
+        "name": "Devices",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 560,
+        "wires": [
+            [
+                "9b509e0a.15865"
+            ]
+        ]
+    },
+    {
+        "id": "20c497c5.051368",
+        "type": "debug",
+        "z": "f4572282.d383",
+        "name": "Devices",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1000,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "d8c76a4c.8d49a8",
+        "type": "meraki-dashboard-api",
+        "z": "f4572282.d383",
+        "service": "d7e7692b.e5f0c8",
+        "name": "getOrganization",
+        "selectedGroup": "Organizations",
+        "selectedMethod": "getOrganization",
+        "filteredMethods": [
+            {
+                "methodGroup": "Organizations",
+                "methodName": "getOrganizations",
+                "parameters": [],
+                "formHtml": "<h4>Parameters</h4>",
+                "example": "[\n  [\n    {\n      \"id\": \"2930418\",\n      \"name\": \"My organization\"\n    }\n  ]\n]",
+                "summary": "List the organizations that the user has privileges on"
+            },
+            {
+                "methodGroup": "Organizations",
+                "methodName": "createOrganization",
+                "parameters": [
+                    {
+                        "camelCaseName": "createOrganization"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"createOrganization_createOrganization\"><label for=\"node-input-createOrganization_createOrganization\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>createOrganization<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-createOrganization_createOrganization\" placeholder=\"msg.createOrganization\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-createOrganization_createOrganizationType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"id\": \"2930418\",\n    \"name\": \"My organization\"\n  }\n]",
+                "summary": "Create a new organization"
+            },
+            {
+                "methodGroup": "Organizations",
+                "methodName": "getOrganization",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganization_organizationId\"><label for=\"node-input-getOrganization_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganization_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganization_organizationIdType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"id\": \"2930418\",\n    \"name\": \"My organization\"\n  }\n]",
+                "summary": "Return an organization"
+            },
+            {
+                "methodGroup": "Organizations",
+                "methodName": "updateOrganization",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    },
+                    {
+                        "camelCaseName": "updateOrganization"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateOrganization_organizationId\"><label for=\"node-input-updateOrganization_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganization_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganization_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateOrganization_updateOrganization\"><label for=\"node-input-updateOrganization_updateOrganization\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateOrganization</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganization_updateOrganization\" placeholder=\"msg.updateOrganization\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganization_updateOrganizationType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"id\": \"2930418\",\n    \"name\": \"My organization\"\n  }\n]",
+                "summary": "Update an organization"
+            },
+            {
+                "methodGroup": "Organizations",
+                "methodName": "deleteOrganization",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"deleteOrganization_organizationId\"><label for=\"node-input-deleteOrganization_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-deleteOrganization_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-deleteOrganization_organizationIdType\" value=\"string\" ></div>",
+                "example": "[]",
+                "summary": "Delete an organization"
+            },
+            {
+                "methodGroup": "Organizations",
+                "methodName": "claimOrganization",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    },
+                    {
+                        "camelCaseName": "claimOrganization"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"claimOrganization_organizationId\"><label for=\"node-input-claimOrganization_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-claimOrganization_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-claimOrganization_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"claimOrganization_claimOrganization\"><label for=\"node-input-claimOrganization_claimOrganization\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>claimOrganization</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-claimOrganization_claimOrganization\" placeholder=\"msg.claimOrganization\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-claimOrganization_claimOrganizationType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"orders\": [\n      \"4CXXXXXXX\"\n    ],\n    \"serials\": [\n      \"Q234-ABCD-5678\"\n    ],\n    \"licenses\": [\n      {\n        \"key\": \"Z2XXXXXXXXXX\",\n        \"mode\": \"addDevices\"\n      }\n    ]\n  }\n]",
+                "summary": "Claim a list of devices licenses and/or orders into an organization. When claiming by order all devices and licenses in the order will be claimed; licenses will be added to the organization and devices will be placed in the organizations inventory."
+            },
+            {
+                "methodGroup": "Organizations",
+                "methodName": "cloneOrganization",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    },
+                    {
+                        "camelCaseName": "cloneOrganization"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"cloneOrganization_organizationId\"><label for=\"node-input-cloneOrganization_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-cloneOrganization_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-cloneOrganization_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"cloneOrganization_cloneOrganization\"><label for=\"node-input-cloneOrganization_cloneOrganization\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>cloneOrganization<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-cloneOrganization_cloneOrganization\" placeholder=\"msg.cloneOrganization\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-cloneOrganization_cloneOrganizationType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"id\": \"2930418\",\n    \"name\": \"My organization\"\n  }\n]",
+                "summary": "Create a new organization by cloning the addressed organization"
+            },
+            {
+                "methodGroup": "Organizations",
+                "methodName": "getOrganizationDeviceStatuses",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationDeviceStatuses_organizationId\"><label for=\"node-input-getOrganizationDeviceStatuses_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationDeviceStatuses_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationDeviceStatuses_organizationIdType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"name\": \"My AP\",\n      \"serial\": \"Q234-ABCD-5678\",\n      \"mac\": \"00:11:22:33:44:55\",\n      \"status\": \"online\",\n      \"lanIp\": \"1.2.3.4\",\n      \"publicIp\": \"123.123.123.1\",\n      \"networkId\": \"N_24329156\"\n    }\n  ]\n]",
+                "summary": "List the status of every Meraki device in the organization"
+            },
+            {
+                "methodGroup": "Organizations",
+                "methodName": "getOrganizationInventory",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationInventory_organizationId\"><label for=\"node-input-getOrganizationInventory_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationInventory_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationInventory_organizationIdType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"mac\": \"00:11:22:33:44:55\",\n      \"serial\": \"Q234-ABCD-5678\",\n      \"networkId\": \"N_24329156\",\n      \"model\": \"MR34\",\n      \"claimedAt\": 1518365681,\n      \"publicIp\": \"123.123.123.1\",\n      \"name\": \"My AP\"\n    }\n  ]\n]",
+                "summary": "Return the inventory for an organization"
+            },
+            {
+                "methodGroup": "Organizations",
+                "methodName": "getOrganizationLicenseState",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationLicenseState_organizationId\"><label for=\"node-input-getOrganizationLicenseState_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationLicenseState_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationLicenseState_organizationIdType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"status\": \"OK\",\n    \"expirationDate\": \"Feb 8, 2020 UTC\",\n    \"licensedDeviceCounts\": {\n      \"MS\": 100\n    }\n  }\n]",
+                "summary": "Return the license state for an organization"
+            },
+            {
+                "methodGroup": "Organizations",
+                "methodName": "getOrganizationThirdPartyVPNPeers",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationThirdPartyVPNPeers_organizationId\"><label for=\"node-input-getOrganizationThirdPartyVPNPeers_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationThirdPartyVPNPeers_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationThirdPartyVPNPeers_organizationIdType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"name\": \"My peer 1\",\n      \"publicIp\": \"123.123.123.1\",\n      \"privateSubnets\": [\n        \"192.168.1.0/24\",\n        \"192.168.128.0/24\"\n      ],\n      \"secret\": \"asdf1234\",\n      \"ipsecPolicies\": {\n        \"ikeCipherAlgo\": [\n          \"tripledes\"\n        ],\n        \"ikeAuthAlgo\": [\n          \"sha1\"\n        ],\n        \"ikeDiffieHellmanGroup\": [\n          \"group2\"\n        ],\n        \"ikeLifetime\": 28800,\n        \"childCipherAlgo\": [\n          \"aes128\"\n        ],\n        \"childAuthAlgo\": [\n          \"sha1\"\n        ],\n        \"childPfsGroup\": [\n          \"disabled\"\n        ],\n        \"childLifetime\": 28800\n      }\n    },\n    {\n      \"name\": \"My peer 2\",\n      \"publicIp\": \"123.123.123.2\",\n      \"privateSubnets\": [\n        \"192.168.2.0/24\",\n        \"192.168.129.0/24\"\n      ],\n      \"secret\": \"asdf56785678567856785678\",\n      \"ipsecPoliciesPreset\": \"default\"\n    }\n  ]\n]",
+                "summary": "Return the third party VPN peers for an organization"
+            },
+            {
+                "methodGroup": "Organizations",
+                "methodName": "updateOrganizationThirdPartyVPNPeers",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    },
+                    {
+                        "camelCaseName": "updateOrganizationThirdPartyVpnPeers"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateOrganizationThirdPartyVPNPeers_organizationId\"><label for=\"node-input-updateOrganizationThirdPartyVPNPeers_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganizationThirdPartyVPNPeers_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganizationThirdPartyVPNPeers_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateOrganizationThirdPartyVPNPeers_updateOrganizationThirdPartyVpnPeers\"><label for=\"node-input-updateOrganizationThirdPartyVPNPeers_updateOrganizationThirdPartyVpnPeers\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateOrganizationThirdPartyVpnPeers<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganizationThirdPartyVPNPeers_updateOrganizationThirdPartyVpnPeers\" placeholder=\"msg.updateOrganizationThirdPartyVpnPeers\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganizationThirdPartyVPNPeers_updateOrganizationThirdPartyVpnPeersType\" value=\"\" ></div>",
+                "example": "[\n  [\n    {\n      \"name\": \"My peer 1\",\n      \"publicIp\": \"123.123.123.1\",\n      \"privateSubnets\": [\n        \"192.168.1.0/24\",\n        \"192.168.128.0/24\"\n      ],\n      \"secret\": \"asdf1234\",\n      \"ipsecPolicies\": {\n        \"ikeCipherAlgo\": [\n          \"tripledes\"\n        ],\n        \"ikeAuthAlgo\": [\n          \"sha1\"\n        ],\n        \"ikeDiffieHellmanGroup\": [\n          \"group2\"\n        ],\n        \"ikeLifetime\": 28800,\n        \"childCipherAlgo\": [\n          \"aes128\"\n        ],\n        \"childAuthAlgo\": [\n          \"sha1\"\n        ],\n        \"childPfsGroup\": [\n          \"disabled\"\n        ],\n        \"childLifetime\": 28800\n      }\n    },\n    {\n      \"name\": \"My peer 2\",\n      \"publicIp\": \"123.123.123.2\",\n      \"privateSubnets\": [\n        \"192.168.2.0/24\",\n        \"192.168.129.0/24\"\n      ],\n      \"secret\": \"asdf56785678567856785678\",\n      \"ipsecPoliciesPreset\": \"default\"\n    }\n  ]\n]",
+                "summary": "Update the third party VPN peers for an organization"
+            },
+            {
+                "methodGroup": "Organizations",
+                "methodName": "getOrganizationUplinksLossAndLatency",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    },
+                    {
+                        "camelCaseName": "t0"
+                    },
+                    {
+                        "camelCaseName": "t1"
+                    },
+                    {
+                        "camelCaseName": "timespan"
+                    },
+                    {
+                        "camelCaseName": "uplink"
+                    },
+                    {
+                        "camelCaseName": "ip"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationUplinksLossAndLatency_organizationId\"><label for=\"node-input-getOrganizationUplinksLossAndLatency_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationUplinksLossAndLatency_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationUplinksLossAndLatency_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationUplinksLossAndLatency_t0\"><label for=\"node-input-getOrganizationUplinksLossAndLatency_t0\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t0</b> <i>&nbspstring</i></span></label><p>The beginning of the timespan for the data. The maximum lookback period is 365 days from today.</p><input type=\"text\" id=\"node-input-getOrganizationUplinksLossAndLatency_t0\" placeholder=\"msg.t0\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationUplinksLossAndLatency_t0Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationUplinksLossAndLatency_t1\"><label for=\"node-input-getOrganizationUplinksLossAndLatency_t1\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t1</b> <i>&nbspstring</i></span></label><p>The end of the timespan for the data. t1 can be a maximum of 5 minutes after t0. The latest possible time that t1 can be is 2 minutes into the past.</p><input type=\"text\" id=\"node-input-getOrganizationUplinksLossAndLatency_t1\" placeholder=\"msg.t1\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationUplinksLossAndLatency_t1Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationUplinksLossAndLatency_timespan\"><label for=\"node-input-getOrganizationUplinksLossAndLatency_timespan\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label><p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.</p><input type=\"text\" id=\"node-input-getOrganizationUplinksLossAndLatency_timespan\" placeholder=\"msg.timespan\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationUplinksLossAndLatency_timespanType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getOrganizationUplinksLossAndLatency_uplink\"><label for=\"node-input-getOrganizationUplinksLossAndLatency_uplink\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>uplink</b> <i>&nbspstring</i></span></label><p>Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, cellular. Default will return all uplinks.</p><input type=\"text\" id=\"node-input-getOrganizationUplinksLossAndLatency_uplink\" placeholder=\"msg.uplink\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationUplinksLossAndLatency_uplinkType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationUplinksLossAndLatency_ip\"><label for=\"node-input-getOrganizationUplinksLossAndLatency_ip\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>ip</b> <i>&nbspstring</i></span></label><p>Optional filter for a specific destination IP. Default will return all destination IPs.</p><input type=\"text\" id=\"node-input-getOrganizationUplinksLossAndLatency_ip\" placeholder=\"msg.ip\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationUplinksLossAndLatency_ipType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"networkId\": \"N_12345\",\n      \"serial\": \"Q2AB-CDEF-GHIJ\",\n      \"uplink\": \"wan1\",\n      \"ip\": \"8.8.8.8\",\n      \"timeSeries\": [\n        {\n          \"ts\": \"2019-01-31T18:46:13Z\",\n          \"lossPercent\": 5.3,\n          \"latencyMs\": 194.9\n        }\n      ]\n    }\n  ]\n]",
+                "summary": "Return the uplink loss and latency for every MX in the organization from at latest 2 minutes ago"
+            }
+        ],
+        "storedParams": [],
+        "formHtml": "",
+        "method": "getOrganization",
+        "x": 660,
+        "y": 480,
+        "wires": [
+            [
+                "9a2676f1.c7d9b8"
+            ]
+        ]
+    },
+    {
+        "id": "218ac509.7de93a",
+        "type": "meraki-dashboard-api",
+        "z": "f4572282.d383",
+        "service": "d7e7692b.e5f0c8",
+        "name": "getNetworkDevices",
+        "selectedGroup": "Devices",
+        "selectedMethod": "getNetworkDevices",
+        "filteredMethods": [
+            {
+                "methodGroup": "Devices",
+                "methodName": "getNetworkDevices",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkDevices_networkId\"><label for=\"node-input-getNetworkDevices_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkDevices_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDevices_networkIdType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"name\": \"My AP\",\n      \"lat\": 37.4180951010362,\n      \"lng\": -122.098531723022,\n      \"serial\": \"Q234-ABCD-5678\",\n      \"mac\": \"00:11:22:33:44:55\",\n      \"model\": \"MR34\",\n      \"address\": \"1600 Pennsylvania Ave\",\n      \"notes\": \"My AP's note\",\n      \"lanIp\": \"1.2.3.4\",\n      \"tags\": \" recently-added \",\n      \"networkId\": \"N_24329156\",\n      \"beaconIdParams\": {\n        \"uuid\": \"00000000-0000-0000-0000-000000000000\",\n        \"major\": 5,\n        \"minor\": 3\n      },\n      \"firmware\": \"wireless-25-14\"\n    }\n  ]\n]",
+                "summary": "List the devices in a network"
+            },
+            {
+                "methodGroup": "Devices",
+                "methodName": "claimNetworkDevices",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "claimNetworkDevices"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"claimNetworkDevices_networkId\"><label for=\"node-input-claimNetworkDevices_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-claimNetworkDevices_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-claimNetworkDevices_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"claimNetworkDevices_claimNetworkDevices\"><label for=\"node-input-claimNetworkDevices_claimNetworkDevices\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>claimNetworkDevices<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-claimNetworkDevices_claimNetworkDevices\" placeholder=\"msg.claimNetworkDevices\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-claimNetworkDevices_claimNetworkDevicesType\" value=\"\" ></div>",
+                "example": "[]",
+                "summary": "Claim a device into a network"
+            },
+            {
+                "methodGroup": "Devices",
+                "methodName": "getNetworkDevice",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "serial"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkDevice_networkId\"><label for=\"node-input-getNetworkDevice_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkDevice_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDevice_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkDevice_serial\"><label for=\"node-input-getNetworkDevice_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkDevice_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDevice_serialType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"name\": \"My AP\",\n    \"lat\": 37.4180951010362,\n    \"lng\": -122.098531723022,\n    \"serial\": \"Q234-ABCD-5678\",\n    \"mac\": \"00:11:22:33:44:55\",\n    \"model\": \"MR34\",\n    \"address\": \"1600 Pennsylvania Ave\",\n    \"notes\": \"My AP's note\",\n    \"lanIp\": \"1.2.3.4\",\n    \"tags\": \" recently-added \",\n    \"networkId\": \"N_24329156\",\n    \"beaconIdParams\": {\n      \"uuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"major\": 5,\n      \"minor\": 3\n    },\n    \"firmware\": \"wireless-25-14\"\n  }\n]",
+                "summary": "Return a single device"
+            },
+            {
+                "methodGroup": "Devices",
+                "methodName": "updateNetworkDevice",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "serial"
+                    },
+                    {
+                        "camelCaseName": "updateNetworkDevice"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateNetworkDevice_networkId\"><label for=\"node-input-updateNetworkDevice_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkDevice_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkDevice_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetworkDevice_serial\"><label for=\"node-input-updateNetworkDevice_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkDevice_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkDevice_serialType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetworkDevice_updateNetworkDevice\"><label for=\"node-input-updateNetworkDevice_updateNetworkDevice\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateNetworkDevice</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkDevice_updateNetworkDevice\" placeholder=\"msg.updateNetworkDevice\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkDevice_updateNetworkDeviceType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"name\": \"My AP\",\n    \"lat\": 37.4180951010362,\n    \"lng\": -122.098531723022,\n    \"serial\": \"Q234-ABCD-5678\",\n    \"mac\": \"00:11:22:33:44:55\",\n    \"model\": \"MR34\",\n    \"address\": \"1600 Pennsylvania Ave\",\n    \"notes\": \"My AP's note\",\n    \"lanIp\": \"1.2.3.4\",\n    \"tags\": \" recently-added \",\n    \"networkId\": \"N_24329156\",\n    \"beaconIdParams\": {\n      \"uuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"major\": 5,\n      \"minor\": 3\n    },\n    \"firmware\": \"wireless-25-14\"\n  }\n]",
+                "summary": "Update the attributes of a device"
+            },
+            {
+                "methodGroup": "Devices",
+                "methodName": "blinkNetworkDeviceLeds",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "serial"
+                    },
+                    {
+                        "camelCaseName": "blinkNetworkDeviceLeds"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"blinkNetworkDeviceLeds_networkId\"><label for=\"node-input-blinkNetworkDeviceLeds_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-blinkNetworkDeviceLeds_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-blinkNetworkDeviceLeds_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"blinkNetworkDeviceLeds_serial\"><label for=\"node-input-blinkNetworkDeviceLeds_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-blinkNetworkDeviceLeds_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-blinkNetworkDeviceLeds_serialType\" value=\"string\" ></div><div class=\"form-row\" id=\"blinkNetworkDeviceLeds_blinkNetworkDeviceLeds\"><label for=\"node-input-blinkNetworkDeviceLeds_blinkNetworkDeviceLeds\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>blinkNetworkDeviceLeds</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-blinkNetworkDeviceLeds_blinkNetworkDeviceLeds\" placeholder=\"msg.blinkNetworkDeviceLeds\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-blinkNetworkDeviceLeds_blinkNetworkDeviceLedsType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"sentToDevice\": true\n  }\n]",
+                "summary": "Blink the LEDs on a device"
+            },
+            {
+                "methodGroup": "Devices",
+                "methodName": "getNetworkDeviceLldp_cdp",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "serial"
+                    },
+                    {
+                        "camelCaseName": "timespan"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkDeviceLldp_cdp_networkId\"><label for=\"node-input-getNetworkDeviceLldp_cdp_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkDeviceLldp_cdp_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceLldp_cdp_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkDeviceLldp_cdp_serial\"><label for=\"node-input-getNetworkDeviceLldp_cdp_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkDeviceLldp_cdp_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceLldp_cdp_serialType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkDeviceLldp_cdp_timespan\"><label for=\"node-input-getNetworkDeviceLldp_cdp_timespan\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label><p>The timespan for which LLDP and CDP information will be fetched. Must be in seconds and less than or equal to a month (2592000 seconds). LLDP and CDP information is sent to the Meraki dashboard every 10 minutes. In instances where this LLDP and CDP information matches an existing entry in the Meraki dashboard, the data is updated once every two hours. Meraki recommends querying LLDP and CDP information at an interval slightly greater than two hours, to ensure that unchanged CDP / LLDP information can be queried consistently.</p><input type=\"text\" id=\"node-input-getNetworkDeviceLldp_cdp_timespan\" placeholder=\"msg.timespan\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceLldp_cdp_timespanType\" value=\"integer\" ></div>",
+                "example": "[\n  {\n    \"sourceMac\": \"00:11:22:33:44:55\",\n    \"ports\": {\n      \"8\": {\n        \"cdp\": {\n          \"deviceId\": \"e0553d8cdf53\",\n          \"portId\": \"Port 10\",\n          \"address\": \"00:11:22:33:44:55\",\n          \"sourcePort\": \"8\"\n        }\n      },\n      \"12\": {\n        \"cdp\": {\n          \"deviceId\": \"e0553d8cdf53\",\n          \"portId\": \"Port 11\",\n          \"address\": \"00:11:22:33:44:55\",\n          \"sourcePort\": \"12\"\n        },\n        \"lldp\": {\n          \"systemName\": \"Meraki MS350-24X - Phineas\",\n          \"portId\": \"11\",\n          \"managementAddress\": \"00:11:22:33:44:55\",\n          \"sourcePort\": \"12\"\n        }\n      }\n    }\n  }\n]",
+                "summary": "List LLDP and CDP information for a device"
+            },
+            {
+                "methodGroup": "Devices",
+                "methodName": "getNetworkDeviceLossAndLatencyHistory",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "serial"
+                    },
+                    {
+                        "camelCaseName": "t0"
+                    },
+                    {
+                        "camelCaseName": "t1"
+                    },
+                    {
+                        "camelCaseName": "timespan"
+                    },
+                    {
+                        "camelCaseName": "resolution"
+                    },
+                    {
+                        "camelCaseName": "uplink"
+                    },
+                    {
+                        "camelCaseName": "ip"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkDeviceLossAndLatencyHistory_networkId\"><label for=\"node-input-getNetworkDeviceLossAndLatencyHistory_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkDeviceLossAndLatencyHistory_serial\"><label for=\"node-input-getNetworkDeviceLossAndLatencyHistory_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_serialType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkDeviceLossAndLatencyHistory_t0\"><label for=\"node-input-getNetworkDeviceLossAndLatencyHistory_t0\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t0</b> <i>&nbspstring</i></span></label><p>The beginning of the timespan for the data. The maximum lookback period is 365 days from today.</p><input type=\"text\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_t0\" placeholder=\"msg.t0\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_t0Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkDeviceLossAndLatencyHistory_t1\"><label for=\"node-input-getNetworkDeviceLossAndLatencyHistory_t1\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t1</b> <i>&nbspstring</i></span></label><p>The end of the timespan for the data. t1 can be a maximum of 31 days after t0.</p><input type=\"text\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_t1\" placeholder=\"msg.t1\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_t1Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkDeviceLossAndLatencyHistory_timespan\"><label for=\"node-input-getNetworkDeviceLossAndLatencyHistory_timespan\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label><p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.</p><input type=\"text\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_timespan\" placeholder=\"msg.timespan\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_timespanType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getNetworkDeviceLossAndLatencyHistory_resolution\"><label for=\"node-input-getNetworkDeviceLossAndLatencyHistory_resolution\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>resolution</b> <i>&nbspinteger</i></span></label><p>The time resolution in seconds for returned data. The valid resolutions are: 60, 600, 3600, 86400. The default is 60.</p><input type=\"text\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_resolution\" placeholder=\"msg.resolution\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_resolutionType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getNetworkDeviceLossAndLatencyHistory_uplink\"><label for=\"node-input-getNetworkDeviceLossAndLatencyHistory_uplink\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>uplink</b> <i>&nbspstring</i></span></label><p>The WAN uplink used to obtain the requested stats. Valid uplinks are wan1, wan2, cellular. The default is wan1.</p><input type=\"text\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_uplink\" placeholder=\"msg.uplink\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_uplinkType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkDeviceLossAndLatencyHistory_ip\"><label for=\"node-input-getNetworkDeviceLossAndLatencyHistory_ip\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>ip<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p>The destination IP used to obtain the requested stats. This is required.</p><input type=\"text\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_ip\" placeholder=\"msg.ip\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceLossAndLatencyHistory_ipType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"startTime\": \"2018-10-09T22:18:27Z\",\n      \"endTime\": \"2018-10-09T22:19:27Z\",\n      \"lossPercent\": 5,\n      \"latencyMs\": 324\n    },\n    {\n      \"startTime\": \"2018-10-09T22:19:27Z\",\n      \"endTime\": \"2018-10-09T22:20:27Z\",\n      \"lossPercent\": 1,\n      \"latencyMs\": 43\n    },\n    {\n      \"startTime\": \"2018-10-09T22:20:27Z\",\n      \"endTime\": \"2018-10-09T22:21:27Z\",\n      \"lossPercent\": 0,\n      \"latencyMs\": 44\n    }\n  ]\n]",
+                "summary": "Get the uplink loss percentage and latency in milliseconds for a wired network device."
+            },
+            {
+                "methodGroup": "Devices",
+                "methodName": "getNetworkDevicePerformance",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "serial"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkDevicePerformance_networkId\"><label for=\"node-input-getNetworkDevicePerformance_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkDevicePerformance_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDevicePerformance_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkDevicePerformance_serial\"><label for=\"node-input-getNetworkDevicePerformance_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkDevicePerformance_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDevicePerformance_serialType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"perfScore\": 10\n  }\n]",
+                "summary": "Return the performance score for a single device. Only primary MX devices supported. If no data is available a 204 error code is returned."
+            },
+            {
+                "methodGroup": "Devices",
+                "methodName": "rebootNetworkDevice",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "serial"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"rebootNetworkDevice_networkId\"><label for=\"node-input-rebootNetworkDevice_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-rebootNetworkDevice_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-rebootNetworkDevice_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"rebootNetworkDevice_serial\"><label for=\"node-input-rebootNetworkDevice_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-rebootNetworkDevice_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-rebootNetworkDevice_serialType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"success\": true\n  }\n]",
+                "summary": "Reboot a device"
+            },
+            {
+                "methodGroup": "Devices",
+                "methodName": "removeNetworkDevice",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "serial"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"removeNetworkDevice_networkId\"><label for=\"node-input-removeNetworkDevice_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-removeNetworkDevice_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-removeNetworkDevice_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"removeNetworkDevice_serial\"><label for=\"node-input-removeNetworkDevice_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-removeNetworkDevice_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-removeNetworkDevice_serialType\" value=\"string\" ></div>",
+                "example": "[]",
+                "summary": "Remove a single device"
+            },
+            {
+                "methodGroup": "Devices",
+                "methodName": "getNetworkDeviceUplink",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "serial"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkDeviceUplink_networkId\"><label for=\"node-input-getNetworkDeviceUplink_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkDeviceUplink_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceUplink_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkDeviceUplink_serial\"><label for=\"node-input-getNetworkDeviceUplink_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkDeviceUplink_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceUplink_serialType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"interface\": \"WAN 1\",\n      \"status\": \"Active\",\n      \"ip\": \"1.2.3.4\",\n      \"gateway\": \"1.2.3.5\",\n      \"publicIp\": \"123.123.123.1\",\n      \"dns\": \"8.8.8.8, 8.8.4.4\",\n      \"usingStaticIp\": false\n    }\n  ]\n]",
+                "summary": "Return the uplink information for a device."
+            },
+            {
+                "methodGroup": "Devices",
+                "methodName": "getOrganizationDevices",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    },
+                    {
+                        "camelCaseName": "perPage"
+                    },
+                    {
+                        "camelCaseName": "startingAfter"
+                    },
+                    {
+                        "camelCaseName": "endingBefore"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationDevices_organizationId\"><label for=\"node-input-getOrganizationDevices_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationDevices_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationDevices_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationDevices_perPage\"><label for=\"node-input-getOrganizationDevices_perPage\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>perPage</b> <i>&nbspinteger</i></span></label><p>The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.</p><input type=\"text\" id=\"node-input-getOrganizationDevices_perPage\" placeholder=\"msg.perPage\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationDevices_perPageType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getOrganizationDevices_startingAfter\"><label for=\"node-input-getOrganizationDevices_startingAfter\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>startingAfter</b> <i>&nbspstring</i></span></label><p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p><input type=\"text\" id=\"node-input-getOrganizationDevices_startingAfter\" placeholder=\"msg.startingAfter\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationDevices_startingAfterType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationDevices_endingBefore\"><label for=\"node-input-getOrganizationDevices_endingBefore\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>endingBefore</b> <i>&nbspstring</i></span></label><p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p><input type=\"text\" id=\"node-input-getOrganizationDevices_endingBefore\" placeholder=\"msg.endingBefore\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationDevices_endingBeforeType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"name\": \"My AP\",\n    \"lat\": 37.4180951010362,\n    \"lng\": -122.098531723022,\n    \"address\": \"1600 Pennsylvania Ave\",\n    \"notes\": \"My AP's note\",\n    \"tags\": \" recently-added \",\n    \"networkId\": \"N_24329156\",\n    \"serial\": \"Q234-ABCD-5678\",\n    \"model\": \"MR34\",\n    \"mac\": \"00:11:22:33:44:55\",\n    \"lanIp\": \"1.2.3.4\"\n  }\n]",
+                "summary": "List the devices in an organization"
+            }
+        ],
+        "currentParams": [
+            {
+                "methodName": "getNetworkDevices",
+                "camelCaseName": "networkId",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "storedParams": [
+            {
+                "methodName": "getNetworkDevices",
+                "camelCaseName": "networkId",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "formHtml": "",
+        "method": "getNetworkDevices",
+        "x": 670,
+        "y": 560,
+        "wires": [
+            [
+                "20c497c5.051368"
+            ]
+        ]
+    },
+    {
+        "id": "3a2174ed.8c0edc",
+        "type": "meraki-dashboard-api",
+        "z": "f4572282.d383",
+        "service": "d7e7692b.e5f0c8",
+        "name": "getNetworkSsids",
+        "selectedGroup": "SSIDs",
+        "selectedMethod": "getNetworkSsids",
+        "filteredMethods": [
+            {
+                "methodGroup": "SSIDs",
+                "methodName": "getNetworkDeviceWirelessStatus",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "serial"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkDeviceWirelessStatus_networkId\"><label for=\"node-input-getNetworkDeviceWirelessStatus_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkDeviceWirelessStatus_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceWirelessStatus_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkDeviceWirelessStatus_serial\"><label for=\"node-input-getNetworkDeviceWirelessStatus_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkDeviceWirelessStatus_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkDeviceWirelessStatus_serialType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"basicServiceSets\": [\n      {\n        \"ssidName\": \"My SSID\",\n        \"ssidNumber\": 0,\n        \"enabled\": true,\n        \"band\": \"2.4 GHz\",\n        \"bssid\": \"8A:15:04:00:00:00\",\n        \"channel\": 11,\n        \"channelWidth\": \"20 MHz\",\n        \"power\": \"18 dBm\",\n        \"visible\": true,\n        \"broadcasting\": true\n      },\n      {\n        \"ssidName\": \"My SSID\",\n        \"ssidNumber\": 0,\n        \"enabled\": true,\n        \"band\": \"5 GHz\",\n        \"bssid\": \"8A:15:14:00:00:00\",\n        \"channel\": 149,\n        \"channelWidth\": \"80 MHz\",\n        \"power\": \"18 dBm\",\n        \"visible\": true,\n        \"broadcasting\": true\n      }\n    ]\n  }\n]",
+                "summary": "Return the SSID statuses of an access point"
+            },
+            {
+                "methodGroup": "SSIDs",
+                "methodName": "getNetworkSsids",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkSsids_networkId\"><label for=\"node-input-getNetworkSsids_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkSsids_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkSsids_networkIdType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"number\": 0,\n      \"name\": \"My SSID\",\n      \"enabled\": true,\n      \"splashPage\": \"Click-through splash page\",\n      \"ssidAdminAccessible\": false,\n      \"authMode\": \"8021x-radius\",\n      \"encryptionMode\": \"wpa-eap\",\n      \"wpaEncryptionMode\": \"WPA2 only\",\n      \"radiusServers\": [\n        {\n          \"host\": \"0.0.0.0\",\n          \"port\": 3000\n        }\n      ],\n      \"radiusAccountingEnabled\": false,\n      \"radiusEnabled\": true,\n      \"radiusAttributeForGroupPolicies\": \"Filter-Id\",\n      \"radiusFailoverPolicy\": \"null\",\n      \"radiusLoadBalancingPolicy\": \"null\",\n      \"ipAssignmentMode\": \"NAT mode\",\n      \"adminSplashUrl\": \"http://example.com\",\n      \"splashTimeout\": \"30 minutes\",\n      \"walledGardenEnabled\": true,\n      \"walledGardenRanges\": \"example.com\",\n      \"minBitrate\": 11,\n      \"bandSelection\": \"5 GHz band only\",\n      \"perClientBandwidthLimitUp\": 0,\n      \"perClientBandwidthLimitDown\": 0\n    }\n  ]\n]",
+                "summary": "List the SSIDs in a network. Supports networks with access points or wireless-enabled security appliances and teleworker gateways."
+            },
+            {
+                "methodGroup": "SSIDs",
+                "methodName": "getNetworkSsid",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "number"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkSsid_networkId\"><label for=\"node-input-getNetworkSsid_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkSsid_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkSsid_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkSsid_number\"><label for=\"node-input-getNetworkSsid_number\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>number<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkSsid_number\" placeholder=\"msg.number\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkSsid_numberType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"number\": 0,\n    \"name\": \"My SSID\",\n    \"enabled\": true,\n    \"splashPage\": \"Click-through splash page\",\n    \"ssidAdminAccessible\": false,\n    \"authMode\": \"8021x-radius\",\n    \"encryptionMode\": \"wpa-eap\",\n    \"wpaEncryptionMode\": \"WPA2 only\",\n    \"radiusServers\": [\n      {\n        \"host\": \"0.0.0.0\",\n        \"port\": 3000\n      }\n    ],\n    \"radiusAccountingEnabled\": false,\n    \"radiusEnabled\": true,\n    \"radiusAttributeForGroupPolicies\": \"Filter-Id\",\n    \"radiusFailoverPolicy\": \"null\",\n    \"radiusLoadBalancingPolicy\": \"null\",\n    \"ipAssignmentMode\": \"NAT mode\",\n    \"adminSplashUrl\": \"http://example.com\",\n    \"splashTimeout\": \"30 minutes\",\n    \"walledGardenEnabled\": true,\n    \"walledGardenRanges\": \"example.com\",\n    \"minBitrate\": 11,\n    \"bandSelection\": \"5 GHz band only\",\n    \"perClientBandwidthLimitUp\": 0,\n    \"perClientBandwidthLimitDown\": 0\n  }\n]",
+                "summary": "Return a single SSID"
+            },
+            {
+                "methodGroup": "SSIDs",
+                "methodName": "updateNetworkSsid",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "number"
+                    },
+                    {
+                        "camelCaseName": "updateNetworkSsid"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateNetworkSsid_networkId\"><label for=\"node-input-updateNetworkSsid_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkSsid_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkSsid_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetworkSsid_number\"><label for=\"node-input-updateNetworkSsid_number\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>number<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkSsid_number\" placeholder=\"msg.number\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkSsid_numberType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetworkSsid_updateNetworkSsid\"><label for=\"node-input-updateNetworkSsid_updateNetworkSsid\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateNetworkSsid</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkSsid_updateNetworkSsid\" placeholder=\"msg.updateNetworkSsid\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkSsid_updateNetworkSsidType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"number\": 0,\n    \"name\": \"My SSID\",\n    \"enabled\": true,\n    \"splashPage\": \"Click-through splash page\",\n    \"ssidAdminAccessible\": false,\n    \"authMode\": \"8021x-radius\",\n    \"encryptionMode\": \"wpa-eap\",\n    \"wpaEncryptionMode\": \"WPA2 only\",\n    \"radiusServers\": [\n      {\n        \"host\": \"0.0.0.0\",\n        \"port\": 3000\n      }\n    ],\n    \"radiusAccountingEnabled\": false,\n    \"radiusEnabled\": true,\n    \"radiusAttributeForGroupPolicies\": \"Filter-Id\",\n    \"radiusFailoverPolicy\": \"null\",\n    \"radiusLoadBalancingPolicy\": \"null\",\n    \"ipAssignmentMode\": \"NAT mode\",\n    \"adminSplashUrl\": \"http://example.com\",\n    \"splashTimeout\": \"30 minutes\",\n    \"walledGardenEnabled\": true,\n    \"walledGardenRanges\": \"example.com\",\n    \"minBitrate\": 11,\n    \"bandSelection\": \"5 GHz band only\",\n    \"perClientBandwidthLimitUp\": 0,\n    \"perClientBandwidthLimitDown\": 0\n  }\n]",
+                "summary": "Update the attributes of an SSID"
+            }
+        ],
+        "storedParams": [],
+        "formHtml": "",
+        "method": "getNetworkSsids",
+        "x": 670,
+        "y": 600,
+        "wires": [
+            [
+                "1251571e.9b27c9"
+            ]
+        ]
+    },
+    {
+        "id": "23b36216.75f42e",
+        "type": "meraki-dashboard-api",
+        "z": "f4572282.d383",
+        "service": "d7e7692b.e5f0c8",
+        "name": "getNetworkVlans",
+        "selectedGroup": "VLANs",
+        "selectedMethod": "getNetworkVlans",
+        "filteredMethods": [
+            {
+                "methodGroup": "VLANs",
+                "methodName": "getNetworkVlans",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkVlans_networkId\"><label for=\"node-input-getNetworkVlans_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkVlans_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkVlans_networkIdType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"id\": \"1234\",\n      \"networkId\": \"N_24329156\",\n      \"name\": \"My VLAN\",\n      \"applianceIp\": \"1.2.3.4\",\n      \"subnet\": \"192.168.1.0/24\",\n      \"fixedIpAssignments\": {\n        \"22:33:44:55:66:77\": {\n          \"ip\": \"1.2.3.4\",\n          \"name\": \"Some client name\"\n        }\n      },\n      \"reservedIpRanges\": [\n        {\n          \"start\": \"192.168.1.0\",\n          \"end\": \"192.168.1.1\",\n          \"comment\": \"A reserved IP range\"\n        }\n      ],\n      \"dnsNameservers\": \"google_dns\",\n      \"dhcpHandling\": \"Run a DHCP server\",\n      \"dhcpLeaseTime\": \"1 day\",\n      \"dhcpBootOptionsEnabled\": false,\n      \"dhcpBootNextServer\": null,\n      \"dhcpBootFilename\": null,\n      \"dhcpOptions\": [\n        {\n          \"code\": 5,\n          \"type\": \"text\",\n          \"value\": \"five\"\n        }\n      ]\n    }\n  ]\n]",
+                "summary": "List the VLANs for an MX network"
+            },
+            {
+                "methodGroup": "VLANs",
+                "methodName": "createNetworkVlan",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "createNetworkVlan"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"createNetworkVlan_networkId\"><label for=\"node-input-createNetworkVlan_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-createNetworkVlan_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-createNetworkVlan_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"createNetworkVlan_createNetworkVlan\"><label for=\"node-input-createNetworkVlan_createNetworkVlan\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>createNetworkVlan<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-createNetworkVlan_createNetworkVlan\" placeholder=\"msg.createNetworkVlan\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-createNetworkVlan_createNetworkVlanType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"id\": \"1234\",\n    \"networkId\": \"N_24329156\",\n    \"name\": \"My VLAN\",\n    \"applianceIp\": \"1.2.3.4\",\n    \"subnet\": \"192.168.1.0/24\",\n    \"fixedIpAssignments\": {},\n    \"reservedIpRanges\": [],\n    \"dnsNameservers\": \"google_dns\",\n    \"dhcpHandling\": \"Run a DHCP server\",\n    \"dhcpLeaseTime\": \"1 day\",\n    \"dhcpBootOptionsEnabled\": false,\n    \"dhcpBootNextServer\": null,\n    \"dhcpBootFilename\": null,\n    \"dhcpOptions\": []\n  }\n]",
+                "summary": "Add a VLAN"
+            },
+            {
+                "methodGroup": "VLANs",
+                "methodName": "getNetworkVlan",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "vlanId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkVlan_networkId\"><label for=\"node-input-getNetworkVlan_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkVlan_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkVlan_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkVlan_vlanId\"><label for=\"node-input-getNetworkVlan_vlanId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>vlanId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkVlan_vlanId\" placeholder=\"msg.vlanId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkVlan_vlanIdType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"id\": \"1234\",\n    \"networkId\": \"N_24329156\",\n    \"name\": \"My VLAN\",\n    \"applianceIp\": \"1.2.3.4\",\n    \"subnet\": \"192.168.1.0/24\",\n    \"fixedIpAssignments\": {\n      \"22:33:44:55:66:77\": {\n        \"ip\": \"1.2.3.4\",\n        \"name\": \"Some client name\"\n      }\n    },\n    \"reservedIpRanges\": [\n      {\n        \"start\": \"192.168.1.0\",\n        \"end\": \"192.168.1.1\",\n        \"comment\": \"A reserved IP range\"\n      }\n    ],\n    \"dnsNameservers\": \"google_dns\",\n    \"dhcpHandling\": \"Run a DHCP server\",\n    \"dhcpLeaseTime\": \"1 day\",\n    \"dhcpBootOptionsEnabled\": false,\n    \"dhcpBootNextServer\": null,\n    \"dhcpBootFilename\": null,\n    \"dhcpOptions\": [\n      {\n        \"code\": 5,\n        \"type\": \"text\",\n        \"value\": \"five\"\n      }\n    ]\n  }\n]",
+                "summary": "Return a VLAN"
+            },
+            {
+                "methodGroup": "VLANs",
+                "methodName": "updateNetworkVlan",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "vlanId"
+                    },
+                    {
+                        "camelCaseName": "updateNetworkVlan"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateNetworkVlan_networkId\"><label for=\"node-input-updateNetworkVlan_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkVlan_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkVlan_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetworkVlan_vlanId\"><label for=\"node-input-updateNetworkVlan_vlanId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>vlanId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkVlan_vlanId\" placeholder=\"msg.vlanId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkVlan_vlanIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetworkVlan_updateNetworkVlan\"><label for=\"node-input-updateNetworkVlan_updateNetworkVlan\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateNetworkVlan</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkVlan_updateNetworkVlan\" placeholder=\"msg.updateNetworkVlan\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkVlan_updateNetworkVlanType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"id\": \"1234\",\n    \"networkId\": \"N_24329156\",\n    \"name\": \"My VLAN\",\n    \"applianceIp\": \"1.2.3.4\",\n    \"subnet\": \"192.168.1.0/24\",\n    \"fixedIpAssignments\": {\n      \"22:33:44:55:66:77\": {\n        \"ip\": \"1.2.3.4\",\n        \"name\": \"Some client name\"\n      }\n    },\n    \"reservedIpRanges\": [\n      {\n        \"start\": \"192.168.1.0\",\n        \"end\": \"192.168.1.1\",\n        \"comment\": \"A reserved IP range\"\n      }\n    ],\n    \"dnsNameservers\": \"google_dns\",\n    \"dhcpHandling\": \"Run a DHCP server\",\n    \"dhcpLeaseTime\": \"1 day\",\n    \"dhcpBootOptionsEnabled\": false,\n    \"dhcpBootNextServer\": null,\n    \"dhcpBootFilename\": null,\n    \"dhcpOptions\": [\n      {\n        \"code\": 5,\n        \"type\": \"text\",\n        \"value\": \"five\"\n      }\n    ]\n  }\n]",
+                "summary": "Update a VLAN"
+            },
+            {
+                "methodGroup": "VLANs",
+                "methodName": "deleteNetworkVlan",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "vlanId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"deleteNetworkVlan_networkId\"><label for=\"node-input-deleteNetworkVlan_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-deleteNetworkVlan_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-deleteNetworkVlan_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"deleteNetworkVlan_vlanId\"><label for=\"node-input-deleteNetworkVlan_vlanId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>vlanId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-deleteNetworkVlan_vlanId\" placeholder=\"msg.vlanId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-deleteNetworkVlan_vlanIdType\" value=\"string\" ></div>",
+                "example": "[]",
+                "summary": "Delete a VLAN from a network"
+            },
+            {
+                "methodGroup": "VLANs",
+                "methodName": "getNetworkVlansEnabledState",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkVlansEnabledState_networkId\"><label for=\"node-input-getNetworkVlansEnabledState_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkVlansEnabledState_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkVlansEnabledState_networkIdType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"enabled\": true,\n    \"networkId\": \"N_24329156\"\n  }\n]",
+                "summary": "Returns the enabled status of VLANs for the network"
+            },
+            {
+                "methodGroup": "VLANs",
+                "methodName": "updateNetworkVlansEnabledState",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "updateNetworkVlansEnabledState"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateNetworkVlansEnabledState_networkId\"><label for=\"node-input-updateNetworkVlansEnabledState_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkVlansEnabledState_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkVlansEnabledState_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetworkVlansEnabledState_updateNetworkVlansEnabledState\"><label for=\"node-input-updateNetworkVlansEnabledState_updateNetworkVlansEnabledState\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateNetworkVlansEnabledState<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkVlansEnabledState_updateNetworkVlansEnabledState\" placeholder=\"msg.updateNetworkVlansEnabledState\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkVlansEnabledState_updateNetworkVlansEnabledStateType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"enabled\": true,\n    \"networkId\": \"N_24329156\"\n  }\n]",
+                "summary": "Enable/Disable VLANs for the given network"
+            }
+        ],
+        "storedParams": [],
+        "formHtml": "",
+        "method": "getNetworkVlans",
+        "x": 670,
+        "y": 640,
+        "wires": [
+            [
+                "b26c56a7.87fa68"
+            ]
+        ]
+    },
+    {
+        "id": "bcd5406e.1708e",
+        "type": "inject",
+        "z": "f4572282.d383",
+        "name": "Set Flow Environment",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "7bb107db.b74f48"
+            ]
+        ]
+    },
+    {
+        "id": "7bb107db.b74f48",
+        "type": "change",
+        "z": "f4572282.d383",
+        "name": "Flow Environment Variables - UPDATE ME",
+        "rules": [
+            {
+                "t": "set",
+                "p": "organizationId",
+                "pt": "flow",
+                "to": "549236",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "networkId",
+                "pt": "flow",
+                "to": "L_646829496481099586",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 420,
+        "wires": [
+            [
+                "78d5503c.01dee"
+            ]
+        ]
+    },
+    {
+        "id": "e4cf2a9.10c57d8",
+        "type": "comment",
+        "z": "f4572282.d383",
+        "name": "Use common settings with environment variables and input params.",
+        "info": "\n",
+        "x": 260,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "14a6290f.9bf837",
+        "type": "change",
+        "z": "f4572282.d383",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "organizationId",
+                "pt": "msg",
+                "to": "organizationId",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 480,
+        "wires": [
+            [
+                "d8c76a4c.8d49a8"
+            ]
+        ]
+    },
+    {
+        "id": "9b509e0a.15865",
+        "type": "change",
+        "z": "f4572282.d383",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "networkId",
+                "pt": "msg",
+                "to": "networkId",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 560,
+        "wires": [
+            [
+                "218ac509.7de93a"
+            ]
+        ]
+    },
+    {
+        "id": "7a5a9b10.314d44",
+        "type": "change",
+        "z": "f4572282.d383",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "networkId",
+                "pt": "msg",
+                "to": "networkId",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 600,
+        "wires": [
+            [
+                "3a2174ed.8c0edc"
+            ]
+        ]
+    },
+    {
+        "id": "82c31444.cc69e8",
+        "type": "change",
+        "z": "f4572282.d383",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "networkId",
+                "pt": "msg",
+                "to": "networkId",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 640,
+        "wires": [
+            [
+                "23b36216.75f42e"
+            ]
+        ]
+    },
+    {
+        "id": "86d2c678.b4e548",
+        "type": "inject",
+        "z": "f4572282.d383",
+        "name": "Networks",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 520,
+        "wires": [
+            [
+                "f78829d3.a5fcb8"
+            ]
+        ]
+    },
+    {
+        "id": "7b1c2015.62755",
+        "type": "debug",
+        "z": "f4572282.d383",
+        "name": "Networks",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1000,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "4363ed7e.1787e4",
+        "type": "meraki-dashboard-api",
+        "z": "f4572282.d383",
+        "service": "d7e7692b.e5f0c8",
+        "name": "getOrganizationNetworks",
+        "selectedGroup": "Networks",
+        "selectedMethod": "getOrganizationNetworks",
+        "filteredMethods": [
+            {
+                "methodGroup": "Networks",
+                "methodName": "getNetwork",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetwork_networkId\"><label for=\"node-input-getNetwork_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetwork_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetwork_networkIdType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"id\": \"L_123456\",\n    \"organizationId\": \"2930418\",\n    \"name\": \"Long Island Office\",\n    \"timeZone\": \"America/Los_Angeles\",\n    \"tags\": \" tag1 tag2 \",\n    \"type\": \"combined\",\n    \"disableMyMerakiCom\": false\n  }\n]",
+                "summary": "Return a network"
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "updateNetwork",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "updateNetwork"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateNetwork_networkId\"><label for=\"node-input-updateNetwork_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetwork_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetwork_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetwork_updateNetwork\"><label for=\"node-input-updateNetwork_updateNetwork\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateNetwork</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetwork_updateNetwork\" placeholder=\"msg.updateNetwork\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetwork_updateNetworkType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"id\": \"L_123456\",\n    \"organizationId\": \"2930418\",\n    \"name\": \"Long Island Office\",\n    \"timeZone\": \"America/Los_Angeles\",\n    \"tags\": \" tag1 tag2 \",\n    \"type\": \"combined\",\n    \"disableMyMerakiCom\": false\n  }\n]",
+                "summary": "Update a network"
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "deleteNetwork",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"deleteNetwork_networkId\"><label for=\"node-input-deleteNetwork_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-deleteNetwork_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-deleteNetwork_networkIdType\" value=\"string\" ></div>",
+                "example": "[]",
+                "summary": "Delete a network"
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "getNetworkAccessPolicies",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkAccessPolicies_networkId\"><label for=\"node-input-getNetworkAccessPolicies_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkAccessPolicies_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkAccessPolicies_networkIdType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"number\": 1,\n      \"name\": \"My access policy\",\n      \"accessType\": \"8021.x\",\n      \"guestVlan\": 3700,\n      \"radiusServers\": [\n        {\n          \"ip\": \"1.2.3.4\",\n          \"port\": 1337\n        },\n        {\n          \"ip\": \"2.3.4.5\",\n          \"port\": 1337\n        }\n      ]\n    }\n  ]\n]",
+                "summary": "List the access policies for this network. Only valid for MS networks."
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "getNetworkAirMarshal",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "t0"
+                    },
+                    {
+                        "camelCaseName": "timespan"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkAirMarshal_networkId\"><label for=\"node-input-getNetworkAirMarshal_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkAirMarshal_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkAirMarshal_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkAirMarshal_t0\"><label for=\"node-input-getNetworkAirMarshal_t0\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t0</b> <i>&nbspstring</i></span></label><p>The beginning of the timespan for the data. The maximum lookback period is 31 days from today.</p><input type=\"text\" id=\"node-input-getNetworkAirMarshal_t0\" placeholder=\"msg.t0\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkAirMarshal_t0Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkAirMarshal_timespan\"><label for=\"node-input-getNetworkAirMarshal_timespan\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label><p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.</p><input type=\"text\" id=\"node-input-getNetworkAirMarshal_timespan\" placeholder=\"msg.timespan\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkAirMarshal_timespanType\" value=\"integer\" ></div>",
+                "example": "[\n  [\n    {\n      \"ssid\": \"linksys\",\n      \"bssids\": [\n        {\n          \"bssid\": \"00:11:22:33:44:55\",\n          \"contained\": false,\n          \"detectedBy\": [\n            {\n              \"device\": \"Q234-ABCD-5678\",\n              \"rssi\": 17\n            }\n          ]\n        }\n      ],\n      \"channels\": [\n        36,\n        40\n      ],\n      \"firstSeen\": 1518365681,\n      \"lastSeen\": 1526087474,\n      \"wiredMacs\": [\n        \"00:11:22:33:44:55\"\n      ],\n      \"wiredVlans\": [\n        0,\n        108\n      ],\n      \"wiredLastSeen\": 1526087474\n    }\n  ]\n]",
+                "summary": "List Air Marshal scan results from a network"
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "bindNetwork",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "bindNetwork"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"bindNetwork_networkId\"><label for=\"node-input-bindNetwork_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-bindNetwork_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-bindNetwork_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"bindNetwork_bindNetwork\"><label for=\"node-input-bindNetwork_bindNetwork\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>bindNetwork<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-bindNetwork_bindNetwork\" placeholder=\"msg.bindNetwork\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-bindNetwork_bindNetworkType\" value=\"\" ></div>",
+                "example": "[]",
+                "summary": "Bind a network to a template."
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "getNetworkBluetoothSettings",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkBluetoothSettings_networkId\"><label for=\"node-input-getNetworkBluetoothSettings_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkBluetoothSettings_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkBluetoothSettings_networkIdType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"scanningEnabled\": true,\n    \"advertisingEnabled\": true,\n    \"uuid\": \"00000000-0000-0000-000-000000000000\",\n    \"majorMinorAssignmentMode\": \"Non-unique\",\n    \"major\": 1\n  }\n]",
+                "summary": "Return the Bluetooth settings for a network. <a href=https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)>Bluetooth settings</a> must be enabled on the network."
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "updateNetworkBluetoothSettings",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "updateNetworkBluetoothSettings"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateNetworkBluetoothSettings_networkId\"><label for=\"node-input-updateNetworkBluetoothSettings_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkBluetoothSettings_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkBluetoothSettings_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetworkBluetoothSettings_updateNetworkBluetoothSettings\"><label for=\"node-input-updateNetworkBluetoothSettings_updateNetworkBluetoothSettings\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateNetworkBluetoothSettings</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkBluetoothSettings_updateNetworkBluetoothSettings\" placeholder=\"msg.updateNetworkBluetoothSettings\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkBluetoothSettings_updateNetworkBluetoothSettingsType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"scanningEnabled\": true,\n    \"advertisingEnabled\": true,\n    \"uuid\": \"00000000-0000-0000-000-000000000000\",\n    \"majorMinorAssignmentMode\": \"Non-unique\",\n    \"major\": 1\n  }\n]",
+                "summary": "Update the Bluetooth settings for a network. See the docs page for <a href=https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)>Bluetooth settings</a>."
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "getNetworkSiteToSiteVpn",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkSiteToSiteVpn_networkId\"><label for=\"node-input-getNetworkSiteToSiteVpn_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkSiteToSiteVpn_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkSiteToSiteVpn_networkIdType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"mode\": \"spoke\",\n    \"hubs\": [\n      {\n        \"hubId\": \"N_4901849\",\n        \"useDefaultRoute\": true\n      },\n      {\n        \"hubId\": \"N_1892489\",\n        \"useDefaultRoute\": false\n      }\n    ],\n    \"subnets\": [\n      {\n        \"localSubnet\": \"192.168.1.0/24\",\n        \"useVpn\": true\n      },\n      {\n        \"localSubnet\": \"192.168.128.0/24\",\n        \"useVpn\": true\n      }\n    ]\n  }\n]",
+                "summary": "Return the site-to-site VPN settings of a network. Only valid for MX networks."
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "updateNetworkSiteToSiteVpn",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "updateNetworkSiteToSiteVpn"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateNetworkSiteToSiteVpn_networkId\"><label for=\"node-input-updateNetworkSiteToSiteVpn_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkSiteToSiteVpn_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkSiteToSiteVpn_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateNetworkSiteToSiteVpn_updateNetworkSiteToSiteVpn\"><label for=\"node-input-updateNetworkSiteToSiteVpn_updateNetworkSiteToSiteVpn\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateNetworkSiteToSiteVpn</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateNetworkSiteToSiteVpn_updateNetworkSiteToSiteVpn\" placeholder=\"msg.updateNetworkSiteToSiteVpn\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateNetworkSiteToSiteVpn_updateNetworkSiteToSiteVpnType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"mode\": \"spoke\",\n    \"hubs\": [\n      {\n        \"hubId\": \"N_4901849\",\n        \"useDefaultRoute\": true\n      },\n      {\n        \"hubId\": \"N_1892489\",\n        \"useDefaultRoute\": false\n      }\n    ],\n    \"subnets\": [\n      {\n        \"localSubnet\": \"192.168.1.0/24\",\n        \"useVpn\": true\n      },\n      {\n        \"localSubnet\": \"192.168.128.0/24\",\n        \"useVpn\": true\n      }\n    ]\n  }\n]",
+                "summary": "Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode."
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "splitNetwork",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"splitNetwork_networkId\"><label for=\"node-input-splitNetwork_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-splitNetwork_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-splitNetwork_networkIdType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"resultingNetworks\": [\n      {\n        \"id\": \"N_1234\",\n        \"organizationId\": \"2930418\",\n        \"name\": \"Long Island Office - switch\",\n        \"timeZone\": \"America/Los_Angeles\",\n        \"tags\": \" tag1 tag2 \",\n        \"type\": \"switch\",\n        \"disableMyMerakiCom\": false\n      },\n      {\n        \"id\": \"N_5678\",\n        \"organizationId\": \"2930418\",\n        \"name\": \"Long Island Office - wireless\",\n        \"timeZone\": \"America/Los_Angeles\",\n        \"tags\": \" tag1 tag2 \",\n        \"type\": \"wireless\",\n        \"disableMyMerakiCom\": false\n      }\n    ]\n  }\n]",
+                "summary": "Split a combined network into individual networks for each type of device"
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "getNetworkTraffic",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    },
+                    {
+                        "camelCaseName": "timespan"
+                    },
+                    {
+                        "camelCaseName": "deviceType"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getNetworkTraffic_networkId\"><label for=\"node-input-getNetworkTraffic_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getNetworkTraffic_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkTraffic_networkIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkTraffic_timespan\"><label for=\"node-input-getNetworkTraffic_timespan\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>timespan<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p>The timespan for the data. Must be an integer representing a duration in seconds between two hours and one month. (Mandatory.)</p><input type=\"text\" id=\"node-input-getNetworkTraffic_timespan\" placeholder=\"msg.timespan\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkTraffic_timespanType\" value=\"string\" ></div><div class=\"form-row\" id=\"getNetworkTraffic_deviceType\"><label for=\"node-input-getNetworkTraffic_deviceType\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>deviceType</b> <i>&nbspstring</i></span></label><p>Filter the data by device type: combined (default), wireless, switch, appliance. When using combined, for each rule the data will come from the device type with the most usage.</p><input type=\"text\" id=\"node-input-getNetworkTraffic_deviceType\" placeholder=\"msg.deviceType\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getNetworkTraffic_deviceTypeType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"application\": \"Gmail\",\n      \"destination\": null,\n      \"protocol\": \"TCP\",\n      \"port\": 443,\n      \"sent\": 138,\n      \"recv\": 61,\n      \"numClients\": 7,\n      \"activeTime\": 77000,\n      \"flows\": 300\n    }\n  ]\n]",
+                "summary": "The traffic analysis data for this network.\n<a href=https://documentation.meraki.com/MR/Monitoring_and_Reporting/Hostname_Visibility>Traffic Analysis with Hostname Visibility</a> must be enabled on the network.\n"
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "unbindNetwork",
+                "parameters": [
+                    {
+                        "camelCaseName": "networkId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"unbindNetwork_networkId\"><label for=\"node-input-unbindNetwork_networkId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>networkId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-unbindNetwork_networkId\" placeholder=\"msg.networkId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-unbindNetwork_networkIdType\" value=\"string\" ></div>",
+                "example": "[]",
+                "summary": "Unbind a network from a template."
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "getOrganizationNetworks",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    },
+                    {
+                        "camelCaseName": "configTemplateId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationNetworks_organizationId\"><label for=\"node-input-getOrganizationNetworks_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationNetworks_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationNetworks_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationNetworks_configTemplateId\"><label for=\"node-input-getOrganizationNetworks_configTemplateId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>configTemplateId</b> <i>&nbspstring</i></span></label><p>An optional parameter that is the ID of a config template. Will return all networks bound to that template.</p><input type=\"text\" id=\"node-input-getOrganizationNetworks_configTemplateId\" placeholder=\"msg.configTemplateId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationNetworks_configTemplateIdType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"id\": \"L_123456\",\n      \"organizationId\": \"2930418\",\n      \"name\": \"Long Island Office\",\n      \"timeZone\": \"America/Los_Angeles\",\n      \"tags\": \" tag1 tag2 \",\n      \"type\": \"combined\",\n      \"disableMyMerakiCom\": false\n    }\n  ]\n]",
+                "summary": "List the networks in an organization"
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "createOrganizationNetwork",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    },
+                    {
+                        "camelCaseName": "createOrganizationNetwork"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"createOrganizationNetwork_organizationId\"><label for=\"node-input-createOrganizationNetwork_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-createOrganizationNetwork_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-createOrganizationNetwork_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"createOrganizationNetwork_createOrganizationNetwork\"><label for=\"node-input-createOrganizationNetwork_createOrganizationNetwork\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>createOrganizationNetwork<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-createOrganizationNetwork_createOrganizationNetwork\" placeholder=\"msg.createOrganizationNetwork\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-createOrganizationNetwork_createOrganizationNetworkType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"id\": \"L_123456\",\n    \"organizationId\": \"2930418\",\n    \"name\": \"Long Island Office\",\n    \"timeZone\": \"America/Los_Angeles\",\n    \"tags\": \" tag1 tag2 \",\n    \"type\": \"combined\",\n    \"disableMyMerakiCom\": false\n  }\n]",
+                "summary": "Create a network"
+            },
+            {
+                "methodGroup": "Networks",
+                "methodName": "combineOrganizationNetworks",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    },
+                    {
+                        "camelCaseName": "combineOrganizationNetworks"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"combineOrganizationNetworks_organizationId\"><label for=\"node-input-combineOrganizationNetworks_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-combineOrganizationNetworks_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-combineOrganizationNetworks_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"combineOrganizationNetworks_combineOrganizationNetworks\"><label for=\"node-input-combineOrganizationNetworks_combineOrganizationNetworks\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>combineOrganizationNetworks<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-combineOrganizationNetworks_combineOrganizationNetworks\" placeholder=\"msg.combineOrganizationNetworks\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-combineOrganizationNetworks_combineOrganizationNetworksType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"resultingNetwork\": {\n      \"id\": \"L_123456\",\n      \"organizationId\": \"2930418\",\n      \"name\": \"Long Island Office\",\n      \"timeZone\": \"America/Los_Angeles\",\n      \"tags\": \" tag1 tag2 \",\n      \"type\": \"combined\",\n      \"disableMyMerakiCom\": false\n    }\n  }\n]",
+                "summary": "Combine multiple networks into a single network"
+            }
+        ],
+        "currentParams": [
+            {
+                "methodName": "getOrganizationNetworks",
+                "camelCaseName": "organizationId",
+                "type": "str",
+                "value": "549236"
+            }
+        ],
+        "storedParams": [
+            {
+                "methodName": "getOrganizationNetworks",
+                "camelCaseName": "organizationId",
+                "type": "str",
+                "value": "549236"
+            }
+        ],
+        "formHtml": "",
+        "method": "getOrganizationNetworks",
+        "x": 690,
+        "y": 520,
+        "wires": [
+            [
+                "7b1c2015.62755"
+            ]
+        ]
+    },
+    {
+        "id": "f78829d3.a5fcb8",
+        "type": "change",
+        "z": "f4572282.d383",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "networkId",
+                "pt": "msg",
+                "to": "networkId",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 520,
+        "wires": [
+            [
+                "4363ed7e.1787e4"
+            ]
+        ]
+    },
+    {
+        "id": "78d5503c.01dee",
+        "type": "debug",
+        "z": "f4572282.d383",
+        "name": "Flow Env Vars",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 980,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d7e7692b.e5f0c8",
+        "type": "meraki-dashboard-api-service",
+        "z": "",
+        "host": "https://api.meraki.com/api/v0",
+        "secureApiKeyHeaderOrQueryName": "X-Cisco-Meraki-API-Key",
+        "name": "DevNet Demo Sandbox"
+    }
+]
