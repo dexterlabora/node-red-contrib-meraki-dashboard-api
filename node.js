@@ -1,6 +1,12 @@
 'use strict';
 var lib = require('./lib.js');
 
+/*
+DISABLES Console.log  for production
+*/
+console.log = function() {};
+
+
 
 module.exports = function (RED) {
     function MerakiDashboardApiNode(config) {
