@@ -10,7 +10,7 @@ Install
 
 Run the following command in your Node-RED user directory - typically `~/.node-red`
         
-        npm install git+https://github.com/dexterlabora/node-red-contrib-meraki-dashboard-api
+        npm install node-red-contrib-meraki-dashboard-api
 
 
 Usage
