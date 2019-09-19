@@ -5,6 +5,8 @@ Node-RED node for meraki-dashboard-api
 
 > A full featured node for monitoring and managing the Meraki Cloud built on the Dashboard API Open API spec.
 
+[Documentation](https://dexterlabora.github.io/node-red-contrib-meraki-dashboard-api/)
+
 Install
 -------
 

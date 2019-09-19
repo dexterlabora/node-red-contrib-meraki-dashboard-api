@@ -1,7 +1,7 @@
 # Meraki Dashboard API Node-RED Node
 `node-red-contrib-meraki-dashboard-api`
 
-![](images/meraki-dashboard-api-node.png)
+<img src="images/meraki-dashboard-api-node.png" width="200"/>
 
 ## Overview
 
@@ -21,11 +21,12 @@ To make use of the node, it's expected that you have a Cisco Meraki account with
 ### Install
 
 #### via Palette Manager
-![](images/install-node-via-palette.png)
 
 Open the Node-RED editor and navigate to the palette manager. 
 
-**Manage palette** --> **Install** --> Search: **meraki-dashboard-api** --> Push: **Install**
+> **Manage palette** --> **Install** --> Search: **meraki-dashboard-api** --> Push: **Install**
+
+<img src="images/install-node-via-palette.png" width="400"/>
 
 
 #### via CLI
@@ -41,21 +42,21 @@ Then, restart node-red.
 ### Add the node to the flow editor
 Find the node from the left palette menu by searching for **meraki** and dragging the node to your editor area. 
 
-![](images/node-in-palette.png)
+<img src="images/node-in-palette.png" width="400"/>
 
 ### Configure API Service
 Double click on the node and then push the **pencil** icon to add a new service and configure its settings.
 
-![](images/edit-service.png)
+<img src="images/edit-service.png" width="400"/>
 
 Set your Meraki API key here. Its a good idea to also name the service for the given API key (i.e. Demo Lab).
 
-![](images/edit-service-apikey.png)
+<img src="images/edit-service-apikey.png" width="400"/>
 
 ### Importing Examples
 Several example flows are included to quickly start using the node. You will need to update the nodes with your service settings. 
 
-![](images/examples-menu.png)
+<img src="images/examples-menu.png" width="400"/>
 
 ## Working with Input Data
 
@@ -64,20 +65,20 @@ The node can be programmed with specific parameter variables, such as `organizat
 ### Using the Node Paramater Form
 For quick solutions or static settings, you can use the **Parameters** form within the node. The descriptions are provided for each parameter. The input box for each param accepts a string for the value. 
 
-![](images/get-organization-flow.png)
+<img src="images/get-organization-flow.png" width="400"/>
 
-![](images/edit-param.png)
+<img src="images/edit-param.png" width="400"/>
 
 ### Using the Node Input `msg` Object
 Within the parameters form, each param name is defined in the input placeholder hint. Use these values to construct a function that assigns the parameter values.
 
-![](images/blink-device-flow.png)
+<img src="images/blink-device-flow.png" width="400"/>
 
-![](images/edit-params-placeholder.png)
+<img src="images/edit-params-placeholder.png" width="400"/>
 
 If the parameter name matches the method name, then `msg.payload` can be used. This parameter represents the body being sent with a `PUT` or `POST` request using the Meraki API. 
 
-![](images/function-params.png)
+<img src="images/function-params.png" width="400"/>
 
 ## Working with Output Data
 ### Exploring the Data
@@ -85,20 +86,20 @@ If the parameter name matches the method name, then `msg.payload` can be used. T
 Use the **debug** tab to see the output of your data.
 You can then view the JSON data and expand the nested properties. 
 
-![](images/debug-output-organizations.png)
+<img src="images/debug-output-organizations.png" width="400"/>
 
 ### Splitting Arrays
 This flow will provision network clients from a JSON list
 
-![](images/provision-clients-flow.png)
+<img src="images/provision-clients-flow.png" width="400"/>
 
 A function node creates an array of client objects with their required parameters.
 
-![](images/function-client-list.png)
+<img src="images/function-client-list.png" width="400"/>
 
 The **split** node will send a `msg` for each item in the array. This means that a client object will be sent to the `provisionNetworkClient` node, one after another.  A limit of 3 msg/s was also put inline to respect the API rate limit.
  
- ![](images/node-split.png)
+ <img src="images/node-split.png" width="200"/>
 
 
 # Meraki Dashboard API
@@ -114,7 +115,7 @@ The Dashboard API can be used for many purposes. It's meant to be an open-ended 
 
 This example clones switch ports to one or more destination switches. It uses Action Batches to group multiple calls into a single request. 
 
-![](images/switch-clone-demo.gif)
+<img src="images/switch-clone-demo.gif)
 
 ## Getting a Dashboard API Key
 
