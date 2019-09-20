@@ -1,0 +1,303 @@
+[
+  {
+    "id": "296ddcc7.e41594",
+    "type": "meraki-dashboard-api",
+    "z": "98d8dab.c757228",
+    "service": "cbb0ce87.acd28",
+    "name": "getOrganizationUplinksLossAndLatency",
+    "selectedGroup": "Organizations",
+    "selectedMethod": "getOrganizationUplinksLossAndLatency",
+    "filteredMethods": [
+      {
+        "methodGroup": "Organizations",
+        "methodName": "getOrganizations",
+        "parameters": [],
+        "formHtml": "<h4>Parameters</h4>",
+        "example": "[\n  [\n    {\n      \"id\": \"2930418\",\n      \"name\": \"My organization\"\n    }\n  ]\n]",
+        "summary": "List the organizations that the user has privileges on"
+      },
+      {
+        "methodGroup": "Organizations",
+        "methodName": "createOrganization",
+        "parameters": [
+          {
+            "camelCaseName": "createOrganization"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"createOrganization_createOrganization\"><label for=\"node-input-createOrganization_createOrganization\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>createOrganization<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-createOrganization_createOrganization\" placeholder=\"msg.createOrganization\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-createOrganization_createOrganizationType\" value=\"\" ></div>",
+        "example": "[\n  {\n    \"id\": \"2930418\",\n    \"name\": \"My organization\"\n  }\n]",
+        "summary": "Create a new organization"
+      },
+      {
+        "methodGroup": "Organizations",
+        "methodName": "getOrganization",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganization_organizationId\"><label for=\"node-input-getOrganization_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganization_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganization_organizationIdType\" value=\"string\" ></div>",
+        "example": "[\n  {\n    \"id\": \"2930418\",\n    \"name\": \"My organization\"\n  }\n]",
+        "summary": "Return an organization"
+      },
+      {
+        "methodGroup": "Organizations",
+        "methodName": "updateOrganization",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          },
+          {
+            "camelCaseName": "updateOrganization"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateOrganization_organizationId\"><label for=\"node-input-updateOrganization_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganization_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganization_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateOrganization_updateOrganization\"><label for=\"node-input-updateOrganization_updateOrganization\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateOrganization</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganization_updateOrganization\" placeholder=\"msg.updateOrganization\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganization_updateOrganizationType\" value=\"\" ></div>",
+        "example": "[\n  {\n    \"id\": \"2930418\",\n    \"name\": \"My organization\"\n  }\n]",
+        "summary": "Update an organization"
+      },
+      {
+        "methodGroup": "Organizations",
+        "methodName": "deleteOrganization",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"deleteOrganization_organizationId\"><label for=\"node-input-deleteOrganization_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-deleteOrganization_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-deleteOrganization_organizationIdType\" value=\"string\" ></div>",
+        "example": "[]",
+        "summary": "Delete an organization"
+      },
+      {
+        "methodGroup": "Organizations",
+        "methodName": "claimOrganization",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          },
+          {
+            "camelCaseName": "claimOrganization"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"claimOrganization_organizationId\"><label for=\"node-input-claimOrganization_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-claimOrganization_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-claimOrganization_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"claimOrganization_claimOrganization\"><label for=\"node-input-claimOrganization_claimOrganization\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>claimOrganization</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-claimOrganization_claimOrganization\" placeholder=\"msg.claimOrganization\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-claimOrganization_claimOrganizationType\" value=\"\" ></div>",
+        "example": "[\n  {\n    \"orders\": [\n      \"4CXXXXXXX\"\n    ],\n    \"serials\": [\n      \"Q234-ABCD-5678\"\n    ],\n    \"licenses\": [\n      {\n        \"key\": \"Z2XXXXXXXXXX\",\n        \"mode\": \"addDevices\"\n      }\n    ]\n  }\n]",
+        "summary": "Claim a list of devices licenses and/or orders into an organization. When claiming by order all devices and licenses in the order will be claimed; licenses will be added to the organization and devices will be placed in the organizations inventory."
+      },
+      {
+        "methodGroup": "Organizations",
+        "methodName": "cloneOrganization",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          },
+          {
+            "camelCaseName": "cloneOrganization"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"cloneOrganization_organizationId\"><label for=\"node-input-cloneOrganization_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-cloneOrganization_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-cloneOrganization_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"cloneOrganization_cloneOrganization\"><label for=\"node-input-cloneOrganization_cloneOrganization\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>cloneOrganization<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-cloneOrganization_cloneOrganization\" placeholder=\"msg.cloneOrganization\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-cloneOrganization_cloneOrganizationType\" value=\"\" ></div>",
+        "example": "[\n  {\n    \"id\": \"2930418\",\n    \"name\": \"My organization\"\n  }\n]",
+        "summary": "Create a new organization by cloning the addressed organization"
+      },
+      {
+        "methodGroup": "Organizations",
+        "methodName": "getOrganizationDeviceStatuses",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationDeviceStatuses_organizationId\"><label for=\"node-input-getOrganizationDeviceStatuses_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationDeviceStatuses_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationDeviceStatuses_organizationIdType\" value=\"string\" ></div>",
+        "example": "[\n  [\n    {\n      \"name\": \"My AP\",\n      \"serial\": \"Q234-ABCD-5678\",\n      \"mac\": \"00:11:22:33:44:55\",\n      \"status\": \"online\",\n      \"lanIp\": \"1.2.3.4\",\n      \"publicIp\": \"123.123.123.1\",\n      \"networkId\": \"N_24329156\"\n    }\n  ]\n]",
+        "summary": "List the status of every Meraki device in the organization"
+      },
+      {
+        "methodGroup": "Organizations",
+        "methodName": "getOrganizationInventory",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationInventory_organizationId\"><label for=\"node-input-getOrganizationInventory_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationInventory_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationInventory_organizationIdType\" value=\"string\" ></div>",
+        "example": "[\n  [\n    {\n      \"mac\": \"00:11:22:33:44:55\",\n      \"serial\": \"Q234-ABCD-5678\",\n      \"networkId\": \"N_24329156\",\n      \"model\": \"MR34\",\n      \"claimedAt\": 1518365681,\n      \"publicIp\": \"123.123.123.1\",\n      \"name\": \"My AP\"\n    }\n  ]\n]",
+        "summary": "Return the inventory for an organization"
+      },
+      {
+        "methodGroup": "Organizations",
+        "methodName": "getOrganizationLicenseState",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationLicenseState_organizationId\"><label for=\"node-input-getOrganizationLicenseState_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationLicenseState_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationLicenseState_organizationIdType\" value=\"string\" ></div>",
+        "example": "[\n  {\n    \"status\": \"OK\",\n    \"expirationDate\": \"Feb 8, 2020 UTC\",\n    \"licensedDeviceCounts\": {\n      \"MS\": 100\n    }\n  }\n]",
+        "summary": "Return the license state for an organization"
+      },
+      {
+        "methodGroup": "Organizations",
+        "methodName": "getOrganizationThirdPartyVPNPeers",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationThirdPartyVPNPeers_organizationId\"><label for=\"node-input-getOrganizationThirdPartyVPNPeers_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationThirdPartyVPNPeers_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationThirdPartyVPNPeers_organizationIdType\" value=\"string\" ></div>",
+        "example": "[\n  [\n    {\n      \"name\": \"My peer 1\",\n      \"publicIp\": \"123.123.123.1\",\n      \"privateSubnets\": [\n        \"192.168.1.0/24\",\n        \"192.168.128.0/24\"\n      ],\n      \"secret\": \"asdf1234\",\n      \"ipsecPolicies\": {\n        \"ikeCipherAlgo\": [\n          \"tripledes\"\n        ],\n        \"ikeAuthAlgo\": [\n          \"sha1\"\n        ],\n        \"ikeDiffieHellmanGroup\": [\n          \"group2\"\n        ],\n        \"ikeLifetime\": 28800,\n        \"childCipherAlgo\": [\n          \"aes128\"\n        ],\n        \"childAuthAlgo\": [\n          \"sha1\"\n        ],\n        \"childPfsGroup\": [\n          \"disabled\"\n        ],\n        \"childLifetime\": 28800\n      }\n    },\n    {\n      \"name\": \"My peer 2\",\n      \"publicIp\": \"123.123.123.2\",\n      \"privateSubnets\": [\n        \"192.168.2.0/24\",\n        \"192.168.129.0/24\"\n      ],\n      \"secret\": \"asdf56785678567856785678\",\n      \"ipsecPoliciesPreset\": \"default\"\n    }\n  ]\n]",
+        "summary": "Return the third party VPN peers for an organization"
+      },
+      {
+        "methodGroup": "Organizations",
+        "methodName": "updateOrganizationThirdPartyVPNPeers",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          },
+          {
+            "camelCaseName": "updateOrganizationThirdPartyVpnPeers"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateOrganizationThirdPartyVPNPeers_organizationId\"><label for=\"node-input-updateOrganizationThirdPartyVPNPeers_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganizationThirdPartyVPNPeers_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganizationThirdPartyVPNPeers_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateOrganizationThirdPartyVPNPeers_updateOrganizationThirdPartyVpnPeers\"><label for=\"node-input-updateOrganizationThirdPartyVPNPeers_updateOrganizationThirdPartyVpnPeers\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateOrganizationThirdPartyVpnPeers<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganizationThirdPartyVPNPeers_updateOrganizationThirdPartyVpnPeers\" placeholder=\"msg.updateOrganizationThirdPartyVpnPeers\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganizationThirdPartyVPNPeers_updateOrganizationThirdPartyVpnPeersType\" value=\"\" ></div>",
+        "example": "[\n  [\n    {\n      \"name\": \"My peer 1\",\n      \"publicIp\": \"123.123.123.1\",\n      \"privateSubnets\": [\n        \"192.168.1.0/24\",\n        \"192.168.128.0/24\"\n      ],\n      \"secret\": \"asdf1234\",\n      \"ipsecPolicies\": {\n        \"ikeCipherAlgo\": [\n          \"tripledes\"\n        ],\n        \"ikeAuthAlgo\": [\n          \"sha1\"\n        ],\n        \"ikeDiffieHellmanGroup\": [\n          \"group2\"\n        ],\n        \"ikeLifetime\": 28800,\n        \"childCipherAlgo\": [\n          \"aes128\"\n        ],\n        \"childAuthAlgo\": [\n          \"sha1\"\n        ],\n        \"childPfsGroup\": [\n          \"disabled\"\n        ],\n        \"childLifetime\": 28800\n      }\n    },\n    {\n      \"name\": \"My peer 2\",\n      \"publicIp\": \"123.123.123.2\",\n      \"privateSubnets\": [\n        \"192.168.2.0/24\",\n        \"192.168.129.0/24\"\n      ],\n      \"secret\": \"asdf56785678567856785678\",\n      \"ipsecPoliciesPreset\": \"default\"\n    }\n  ]\n]",
+        "summary": "Update the third party VPN peers for an organization"
+      },
+      {
+        "methodGroup": "Organizations",
+        "methodName": "getOrganizationUplinksLossAndLatency",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          },
+          {
+            "camelCaseName": "t0"
+          },
+          {
+            "camelCaseName": "t1"
+          },
+          {
+            "camelCaseName": "timespan"
+          },
+          {
+            "camelCaseName": "uplink"
+          },
+          {
+            "camelCaseName": "ip"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationUplinksLossAndLatency_organizationId\"><label for=\"node-input-getOrganizationUplinksLossAndLatency_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationUplinksLossAndLatency_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationUplinksLossAndLatency_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationUplinksLossAndLatency_t0\"><label for=\"node-input-getOrganizationUplinksLossAndLatency_t0\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t0</b> <i>&nbspstring</i></span></label><p>The beginning of the timespan for the data. The maximum lookback period is 365 days from today.</p><input type=\"text\" id=\"node-input-getOrganizationUplinksLossAndLatency_t0\" placeholder=\"msg.t0\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationUplinksLossAndLatency_t0Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationUplinksLossAndLatency_t1\"><label for=\"node-input-getOrganizationUplinksLossAndLatency_t1\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t1</b> <i>&nbspstring</i></span></label><p>The end of the timespan for the data. t1 can be a maximum of 5 minutes after t0. The latest possible time that t1 can be is 2 minutes into the past.</p><input type=\"text\" id=\"node-input-getOrganizationUplinksLossAndLatency_t1\" placeholder=\"msg.t1\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationUplinksLossAndLatency_t1Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationUplinksLossAndLatency_timespan\"><label for=\"node-input-getOrganizationUplinksLossAndLatency_timespan\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label><p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.</p><input type=\"text\" id=\"node-input-getOrganizationUplinksLossAndLatency_timespan\" placeholder=\"msg.timespan\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationUplinksLossAndLatency_timespanType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getOrganizationUplinksLossAndLatency_uplink\"><label for=\"node-input-getOrganizationUplinksLossAndLatency_uplink\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>uplink</b> <i>&nbspstring</i></span></label><p>Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, cellular. Default will return all uplinks.</p><input type=\"text\" id=\"node-input-getOrganizationUplinksLossAndLatency_uplink\" placeholder=\"msg.uplink\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationUplinksLossAndLatency_uplinkType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationUplinksLossAndLatency_ip\"><label for=\"node-input-getOrganizationUplinksLossAndLatency_ip\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>ip</b> <i>&nbspstring</i></span></label><p>Optional filter for a specific destination IP. Default will return all destination IPs.</p><input type=\"text\" id=\"node-input-getOrganizationUplinksLossAndLatency_ip\" placeholder=\"msg.ip\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationUplinksLossAndLatency_ipType\" value=\"string\" ></div>",
+        "example": "[\n  [\n    {\n      \"networkId\": \"N_12345\",\n      \"serial\": \"Q2AB-CDEF-GHIJ\",\n      \"uplink\": \"wan1\",\n      \"ip\": \"8.8.8.8\",\n      \"timeSeries\": [\n        {\n          \"ts\": \"2019-01-31T18:46:13Z\",\n          \"lossPercent\": 5.3,\n          \"latencyMs\": 194.9\n        }\n      ]\n    }\n  ]\n]",
+        "summary": "Return the uplink loss and latency for every MX in the organization from at latest 2 minutes ago"
+      }
+    ],
+    "currentParams": [
+      {
+        "methodName": "getOrganizationUplinksLossAndLatency",
+        "camelCaseName": "organizationId",
+        "type": "str",
+        "value": "549236"
+      }
+    ],
+    "storedParams": [
+      {
+        "methodName": "getOrganizationUplinksLossAndLatency",
+        "camelCaseName": "organizationId",
+        "type": "str",
+        "value": "549236"
+      }
+    ],
+    "formHtml": "",
+    "method": "getOrganizationUplinksLossAndLatency",
+    "x": 840,
+    "y": 2380,
+    "wires": [["836e96b3.fa6718", "a2cf13a4.96123"]]
+  },
+  {
+    "id": "f3bdcdfb.c8d3b",
+    "type": "inject",
+    "z": "98d8dab.c757228",
+    "name": "Org Loss Latency to CSV file",
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 200,
+    "y": 2380,
+    "wires": [["296ddcc7.e41594"]]
+  },
+  {
+    "id": "836e96b3.fa6718",
+    "type": "debug",
+    "z": "98d8dab.c757228",
+    "name": "Org Device Statuses",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "x": 1160,
+    "y": 2380,
+    "wires": []
+  },
+  {
+    "id": "34bbd62a.ffcbaa",
+    "type": "file",
+    "z": "98d8dab.c757228",
+    "name": "",
+    "filename": "orgLossLatency.csv",
+    "appendNewline": false,
+    "createDir": false,
+    "overwriteFile": "true",
+    "x": 980,
+    "y": 2480,
+    "wires": []
+  },
+  {
+    "id": "bb4fca8f.c29f28",
+    "type": "comment",
+    "z": "98d8dab.c757228",
+    "name": "Use json2Csv node to parse nested JSON into a CSV",
+    "info": "You need to install the following node\n\nhttps://flows.nodered.org/node/node-red-contrib-json2csv\n",
+    "x": 760,
+    "y": 2440,
+    "wires": []
+  },
+  {
+    "id": "a22b0f9d.83e85",
+    "type": "comment",
+    "z": "98d8dab.c757228",
+    "name": "Uses 3rd party node to parse and write CSV file",
+    "info": "",
+    "x": 280,
+    "y": 2340,
+    "wires": []
+  },
+  {
+    "id": "a2cf13a4.96123",
+    "type": "json-2-csv",
+    "z": "98d8dab.c757228",
+    "name": "",
+    "x": 720,
+    "y": 2480,
+    "wires": [["34bbd62a.ffcbaa"]]
+  },
+  {
+    "id": "d45d93e5.4a1b6",
+    "type": "comment",
+    "z": "98d8dab.c757228",
+    "name": "Export data to a CSV file",
+    "info": "",
+    "x": 150,
+    "y": 2300,
+    "wires": []
+  },
+  {
+    "id": "cbb0ce87.acd28",
+    "type": "meraki-dashboard-api-service",
+    "z": "",
+    "host": "https://api.meraki.com/api/v0",
+    "secureApiKeyHeaderOrQueryName": "X-Cisco-Meraki-API-Key",
+    "name": "DevNet Demo Sandbox"
+  }
+]

@@ -1,0 +1,465 @@
+[
+  {
+    "id": "543a349b.69bfec",
+    "type": "meraki-dashboard-api",
+    "z": "98d8dab.c757228",
+    "service": "cbb0ce87.acd28",
+    "name": "getOrganizationApiRequests",
+    "selectedGroup": "API usage",
+    "selectedMethod": "getOrganizationApiRequests",
+    "filteredMethods": [
+      {
+        "methodGroup": "API usage",
+        "methodName": "getOrganizationApiRequests",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          },
+          {
+            "camelCaseName": "t0"
+          },
+          {
+            "camelCaseName": "t1"
+          },
+          {
+            "camelCaseName": "timespan"
+          },
+          {
+            "camelCaseName": "perPage"
+          },
+          {
+            "camelCaseName": "startingAfter"
+          },
+          {
+            "camelCaseName": "endingBefore"
+          },
+          {
+            "camelCaseName": "adminId"
+          },
+          {
+            "camelCaseName": "path"
+          },
+          {
+            "camelCaseName": "method"
+          },
+          {
+            "camelCaseName": "responseCode"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationApiRequests_organizationId\"><label for=\"node-input-getOrganizationApiRequests_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_t0\"><label for=\"node-input-getOrganizationApiRequests_t0\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t0</b> <i>&nbspstring</i></span></label><p>The beginning of the timespan for the data. The maximum lookback period is 31 days from today.</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_t0\" placeholder=\"msg.t0\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_t0Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_t1\"><label for=\"node-input-getOrganizationApiRequests_t1\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t1</b> <i>&nbspstring</i></span></label><p>The end of the timespan for the data. t1 can be a maximum of 31 days after t0.</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_t1\" placeholder=\"msg.t1\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_t1Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_timespan\"><label for=\"node-input-getOrganizationApiRequests_timespan\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label><p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_timespan\" placeholder=\"msg.timespan\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_timespanType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_perPage\"><label for=\"node-input-getOrganizationApiRequests_perPage\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>perPage</b> <i>&nbspinteger</i></span></label><p>The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_perPage\" placeholder=\"msg.perPage\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_perPageType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_startingAfter\"><label for=\"node-input-getOrganizationApiRequests_startingAfter\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>startingAfter</b> <i>&nbspstring</i></span></label><p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_startingAfter\" placeholder=\"msg.startingAfter\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_startingAfterType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_endingBefore\"><label for=\"node-input-getOrganizationApiRequests_endingBefore\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>endingBefore</b> <i>&nbspstring</i></span></label><p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_endingBefore\" placeholder=\"msg.endingBefore\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_endingBeforeType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_adminId\"><label for=\"node-input-getOrganizationApiRequests_adminId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>adminId</b> <i>&nbspstring</i></span></label><p>Filter the results by the ID of the admin who made the API requests</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_adminId\" placeholder=\"msg.adminId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_adminIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_path\"><label for=\"node-input-getOrganizationApiRequests_path\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>path</b> <i>&nbspstring</i></span></label><p>Filter the results by the path of the API requests</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_path\" placeholder=\"msg.path\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_pathType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_method\"><label for=\"node-input-getOrganizationApiRequests_method\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>method</b> <i>&nbspstring</i></span></label><p>Filter the results by the method of the API requests (must be 'GET', 'PUT', 'POST' or 'DELETE')</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_method\" placeholder=\"msg.method\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_methodType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_responseCode\"><label for=\"node-input-getOrganizationApiRequests_responseCode\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>responseCode</b> <i>&nbspinteger</i></span></label><p>Filter the results by the response code of the API requests</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_responseCode\" placeholder=\"msg.responseCode\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_responseCodeType\" value=\"integer\" ></div>",
+        "example": "[\n  [\n    {\n      \"adminId\": \"212406\",\n      \"method\": \"GET\",\n      \"host\": \"api.meraki.com\",\n      \"path\": \"/api/v0/organizations/33349/apiRequests\",\n      \"queryString\": \"timespan=604800\",\n      \"userAgent\": \"PostmanRuntime/7.6.0\",\n      \"ts\": \"2019-02-20T17:31:23Z\",\n      \"responseCode\": 200\n    }\n  ]\n]",
+        "summary": "List the API requests made by an organization"
+      }
+    ],
+    "currentParams": [
+      {
+        "methodName": "getOrganizationApiRequests",
+        "camelCaseName": "organizationId",
+        "type": "str",
+        "value": "549236"
+      }
+    ],
+    "storedParams": [
+      {
+        "methodName": "getOrganizationApiRequests",
+        "camelCaseName": "organizationId",
+        "type": "str",
+        "value": "549236"
+      }
+    ],
+    "formHtml": "",
+    "method": "getOrganizationApiRequests",
+    "x": 780,
+    "y": 2780,
+    "wires": [["84adf522.9d5078"]]
+  },
+  {
+    "id": "a619b4a0.6bcfb8",
+    "type": "meraki-dashboard-api",
+    "z": "98d8dab.c757228",
+    "service": "cbb0ce87.acd28",
+    "name": "getOrganizationAdmins",
+    "selectedGroup": "Admins",
+    "selectedMethod": "getOrganizationAdmins",
+    "filteredMethods": [
+      {
+        "methodGroup": "Admins",
+        "methodName": "getOrganizationAdmins",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationAdmins_organizationId\"><label for=\"node-input-getOrganizationAdmins_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationAdmins_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationAdmins_organizationIdType\" value=\"string\" ></div>",
+        "example": "[\n  [\n    {\n      \"id\": \"212406\",\n      \"name\": \"Miles Meraki\",\n      \"email\": \"miles@meraki.com\",\n      \"orgAccess\": \"none\",\n      \"accountStatus\": \"ok\",\n      \"twoFactorAuthEnabled\": false,\n      \"hasApiKey\": true,\n      \"lastActive\": \"2019-01-28 14:58:56 -0800\",\n      \"tags\": [\n        {\n          \"tag\": \"west\",\n          \"access\": \"read-only\"\n        }\n      ],\n      \"networks\": [\n        {\n          \"id\": \"N_24329156\",\n          \"access\": \"full\"\n        }\n      ]\n    }\n  ]\n]",
+        "summary": "List the dashboard administrators in this organization"
+      },
+      {
+        "methodGroup": "Admins",
+        "methodName": "createOrganizationAdmin",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          },
+          {
+            "camelCaseName": "createOrganizationAdmin"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"createOrganizationAdmin_organizationId\"><label for=\"node-input-createOrganizationAdmin_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-createOrganizationAdmin_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-createOrganizationAdmin_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"createOrganizationAdmin_createOrganizationAdmin\"><label for=\"node-input-createOrganizationAdmin_createOrganizationAdmin\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>createOrganizationAdmin<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-createOrganizationAdmin_createOrganizationAdmin\" placeholder=\"msg.createOrganizationAdmin\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-createOrganizationAdmin_createOrganizationAdminType\" value=\"\" ></div>",
+        "example": "[\n  {\n    \"id\": \"212406\",\n    \"name\": \"Miles Meraki\",\n    \"email\": \"miles@meraki.com\",\n    \"orgAccess\": \"none\",\n    \"accountStatus\": \"ok\",\n    \"twoFactorAuthEnabled\": false,\n    \"hasApiKey\": true,\n    \"lastActive\": \"2019-01-28 14:58:56 -0800\",\n    \"tags\": [\n      {\n        \"tag\": \"west\",\n        \"access\": \"read-only\"\n      }\n    ],\n    \"networks\": [\n      {\n        \"id\": \"N_24329156\",\n        \"access\": \"full\"\n      }\n    ]\n  }\n]",
+        "summary": "Create a new dashboard administrator"
+      },
+      {
+        "methodGroup": "Admins",
+        "methodName": "updateOrganizationAdmin",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          },
+          {
+            "camelCaseName": "id"
+          },
+          {
+            "camelCaseName": "updateOrganizationAdmin"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateOrganizationAdmin_organizationId\"><label for=\"node-input-updateOrganizationAdmin_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganizationAdmin_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganizationAdmin_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateOrganizationAdmin_id\"><label for=\"node-input-updateOrganizationAdmin_id\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>id<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganizationAdmin_id\" placeholder=\"msg.id\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganizationAdmin_idType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateOrganizationAdmin_updateOrganizationAdmin\"><label for=\"node-input-updateOrganizationAdmin_updateOrganizationAdmin\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateOrganizationAdmin</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganizationAdmin_updateOrganizationAdmin\" placeholder=\"msg.updateOrganizationAdmin\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganizationAdmin_updateOrganizationAdminType\" value=\"\" ></div>",
+        "example": "[\n  {\n    \"id\": \"212406\",\n    \"name\": \"Miles Meraki\",\n    \"email\": \"miles@meraki.com\",\n    \"orgAccess\": \"none\",\n    \"accountStatus\": \"ok\",\n    \"twoFactorAuthEnabled\": false,\n    \"hasApiKey\": true,\n    \"lastActive\": \"2019-01-28 14:58:56 -0800\",\n    \"tags\": [\n      {\n        \"tag\": \"west\",\n        \"access\": \"read-only\"\n      }\n    ],\n    \"networks\": [\n      {\n        \"id\": \"N_24329156\",\n        \"access\": \"full\"\n      }\n    ]\n  }\n]",
+        "summary": "Update an administrator"
+      },
+      {
+        "methodGroup": "Admins",
+        "methodName": "deleteOrganizationAdmin",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          },
+          {
+            "camelCaseName": "id"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"deleteOrganizationAdmin_organizationId\"><label for=\"node-input-deleteOrganizationAdmin_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-deleteOrganizationAdmin_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-deleteOrganizationAdmin_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"deleteOrganizationAdmin_id\"><label for=\"node-input-deleteOrganizationAdmin_id\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>id<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-deleteOrganizationAdmin_id\" placeholder=\"msg.id\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-deleteOrganizationAdmin_idType\" value=\"string\" ></div>",
+        "example": "[]",
+        "summary": "Revoke all access for a dashboard administrator within this organization"
+      }
+    ],
+    "currentParams": [
+      {
+        "methodName": "getOrganizationAdmins",
+        "camelCaseName": "organizationId",
+        "type": "str",
+        "value": "549236"
+      }
+    ],
+    "storedParams": [
+      {
+        "methodName": "getOrganizationAdmins",
+        "camelCaseName": "organizationId",
+        "type": "str",
+        "value": "549236"
+      }
+    ],
+    "formHtml": "",
+    "method": "getOrganizationAdmins",
+    "x": 770,
+    "y": 2660,
+    "wires": [["c8acc3b2.a2463", "1aefc487.8ccc6b"]]
+  },
+  {
+    "id": "b780068b.907f08",
+    "type": "inject",
+    "z": "98d8dab.c757228",
+    "name": "get Org Admins - first run to set state",
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "x": 230,
+    "y": 2660,
+    "wires": [["a619b4a0.6bcfb8"]]
+  },
+  {
+    "id": "c8acc3b2.a2463",
+    "type": "function",
+    "z": "98d8dab.c757228",
+    "name": "Set adminsById",
+    "func": "var admins = {};\nmsg.payload.forEach(a =>\n{\n    admins[a.id] = a;\n})\n\nflow.set('adminsById', admins)\nmsg.payload = admins;\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 1000,
+    "y": 2660,
+    "wires": [["dd11c344.9d61f"]]
+  },
+  {
+    "id": "dd11c344.9d61f",
+    "type": "debug",
+    "z": "98d8dab.c757228",
+    "name": "Admins Map",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "x": 1230,
+    "y": 2660,
+    "wires": []
+  },
+  {
+    "id": "84adf522.9d5078",
+    "type": "function",
+    "z": "98d8dab.c757228",
+    "name": "Merge data",
+    "func": "// set incoming API response data to a variable\nvar requests = msg.payload;\n\n// import the admins from our flow state\nvar admins = flow.get('adminsById');\n\n// map selected properties to each request object\nrequests.map(r => {\n    var admin = admins[r.adminId];\n        r.adminName = admin.name;\n        r.adminEmail = admin.email;\n})\n\n// set the payload back to our modified JSON\nmsg.payload = requests;\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 990,
+    "y": 2780,
+    "wires": [["15aa00d4.3a516f"]]
+  },
+  {
+    "id": "1aefc487.8ccc6b",
+    "type": "debug",
+    "z": "98d8dab.c757228",
+    "name": "org admins",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "x": 810,
+    "y": 2700,
+    "wires": []
+  },
+  {
+    "id": "66e207f1.da10d8",
+    "type": "inject",
+    "z": "98d8dab.c757228",
+    "name": "get Org API requests, merge with Admin info",
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 250,
+    "y": 2780,
+    "wires": [["543a349b.69bfec"]]
+  },
+  {
+    "id": "15aa00d4.3a516f",
+    "type": "debug",
+    "z": "98d8dab.c757228",
+    "name": "API requests, merged",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "x": 1200,
+    "y": 2780,
+    "wires": []
+  },
+  {
+    "id": "344eda8e.d97936",
+    "type": "comment",
+    "z": "98d8dab.c757228",
+    "name": "Store Merge data from two API calls, Read more...",
+    "info": "The flow combines the responses from two API\ncalls into a single JSON object.\n\nThe first call is made at launch and will \nsave the results to the Flow state. To make\nthe usage faster, the JSON array is mapped to\nan object, organized by IDs\n\nThe second call will pull in information, but\nonly names the ID of the admin making the\nrequests. \n\nThe `merge` node will loop through each item\nof the array and apply the missing info\nto a new parameter in each object with the\ndesired info from the source data. \n\n\nMore info on Flow context\nhttps://nodered.org/docs/user-guide/context\n\n",
+    "x": 230,
+    "y": 2620,
+    "wires": []
+  },
+  {
+    "id": "45c820c9.140cb",
+    "type": "comment",
+    "z": "98d8dab.c757228",
+    "name": "Update the params and API service account",
+    "info": "",
+    "x": 770,
+    "y": 2620,
+    "wires": []
+  },
+  {
+    "id": "69bed235.c9d93c",
+    "type": "meraki-dashboard-api",
+    "z": "98d8dab.c757228",
+    "service": "cbb0ce87.acd28",
+    "name": "getOrganizationApiRequests",
+    "selectedGroup": "API usage",
+    "selectedMethod": "getOrganizationApiRequests",
+    "filteredMethods": [
+      {
+        "methodGroup": "API usage",
+        "methodName": "getOrganizationApiRequests",
+        "parameters": [
+          {
+            "camelCaseName": "organizationId"
+          },
+          {
+            "camelCaseName": "t0"
+          },
+          {
+            "camelCaseName": "t1"
+          },
+          {
+            "camelCaseName": "timespan"
+          },
+          {
+            "camelCaseName": "perPage"
+          },
+          {
+            "camelCaseName": "startingAfter"
+          },
+          {
+            "camelCaseName": "endingBefore"
+          },
+          {
+            "camelCaseName": "adminId"
+          },
+          {
+            "camelCaseName": "path"
+          },
+          {
+            "camelCaseName": "method"
+          },
+          {
+            "camelCaseName": "responseCode"
+          }
+        ],
+        "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationApiRequests_organizationId\"><label for=\"node-input-getOrganizationApiRequests_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_t0\"><label for=\"node-input-getOrganizationApiRequests_t0\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t0</b> <i>&nbspstring</i></span></label><p>The beginning of the timespan for the data. The maximum lookback period is 31 days from today.</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_t0\" placeholder=\"msg.t0\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_t0Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_t1\"><label for=\"node-input-getOrganizationApiRequests_t1\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>t1</b> <i>&nbspstring</i></span></label><p>The end of the timespan for the data. t1 can be a maximum of 31 days after t0.</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_t1\" placeholder=\"msg.t1\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_t1Type\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_timespan\"><label for=\"node-input-getOrganizationApiRequests_timespan\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label><p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_timespan\" placeholder=\"msg.timespan\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_timespanType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_perPage\"><label for=\"node-input-getOrganizationApiRequests_perPage\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>perPage</b> <i>&nbspinteger</i></span></label><p>The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_perPage\" placeholder=\"msg.perPage\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_perPageType\" value=\"integer\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_startingAfter\"><label for=\"node-input-getOrganizationApiRequests_startingAfter\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>startingAfter</b> <i>&nbspstring</i></span></label><p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_startingAfter\" placeholder=\"msg.startingAfter\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_startingAfterType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_endingBefore\"><label for=\"node-input-getOrganizationApiRequests_endingBefore\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>endingBefore</b> <i>&nbspstring</i></span></label><p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_endingBefore\" placeholder=\"msg.endingBefore\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_endingBeforeType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_adminId\"><label for=\"node-input-getOrganizationApiRequests_adminId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>adminId</b> <i>&nbspstring</i></span></label><p>Filter the results by the ID of the admin who made the API requests</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_adminId\" placeholder=\"msg.adminId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_adminIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_path\"><label for=\"node-input-getOrganizationApiRequests_path\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>path</b> <i>&nbspstring</i></span></label><p>Filter the results by the path of the API requests</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_path\" placeholder=\"msg.path\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_pathType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_method\"><label for=\"node-input-getOrganizationApiRequests_method\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>method</b> <i>&nbspstring</i></span></label><p>Filter the results by the method of the API requests (must be 'GET', 'PUT', 'POST' or 'DELETE')</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_method\" placeholder=\"msg.method\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_methodType\" value=\"string\" ></div><div class=\"form-row\" id=\"getOrganizationApiRequests_responseCode\"><label for=\"node-input-getOrganizationApiRequests_responseCode\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>responseCode</b> <i>&nbspinteger</i></span></label><p>Filter the results by the response code of the API requests</p><input type=\"text\" id=\"node-input-getOrganizationApiRequests_responseCode\" placeholder=\"msg.responseCode\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationApiRequests_responseCodeType\" value=\"integer\" ></div>",
+        "example": "[\n  [\n    {\n      \"adminId\": \"212406\",\n      \"method\": \"GET\",\n      \"host\": \"api.meraki.com\",\n      \"path\": \"/api/v0/organizations/33349/apiRequests\",\n      \"queryString\": \"timespan=604800\",\n      \"userAgent\": \"PostmanRuntime/7.6.0\",\n      \"ts\": \"2019-02-20T17:31:23Z\",\n      \"responseCode\": 200\n    }\n  ]\n]",
+        "summary": "List the API requests made by an organization"
+      }
+    ],
+    "currentParams": [
+      {
+        "methodName": "getOrganizationApiRequests",
+        "camelCaseName": "organizationId",
+        "type": "str",
+        "value": "549236"
+      }
+    ],
+    "storedParams": [
+      {
+        "methodName": "getOrganizationApiRequests",
+        "camelCaseName": "organizationId",
+        "type": "str",
+        "value": "549236"
+      }
+    ],
+    "formHtml": "",
+    "method": "getOrganizationApiRequests",
+    "x": 780,
+    "y": 2920,
+    "wires": [["7e60b1dc.c5f06"]]
+  },
+  {
+    "id": "dd977d92.1fbcf",
+    "type": "inject",
+    "z": "98d8dab.c757228",
+    "name": "get Org API requests, merge with Admin info",
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 250,
+    "y": 2920,
+    "wires": [["69bed235.c9d93c"]]
+  },
+  {
+    "id": "7e60b1dc.c5f06",
+    "type": "split",
+    "z": "98d8dab.c757228",
+    "name": "",
+    "splt": "\\n",
+    "spltType": "str",
+    "arraySplt": 1,
+    "arraySpltType": "len",
+    "stream": false,
+    "addname": "",
+    "x": 480,
+    "y": 3000,
+    "wires": [["593670d3.d3d1"]]
+  },
+  {
+    "id": "9652d3a.614193",
+    "type": "join",
+    "z": "98d8dab.c757228",
+    "name": "",
+    "mode": "auto",
+    "build": "string",
+    "property": "payload",
+    "propertyType": "msg",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "accumulate": "false",
+    "timeout": "",
+    "count": "",
+    "reduceRight": false,
+    "x": 990,
+    "y": 3000,
+    "wires": [["64e57303.c1c9fc"]]
+  },
+  {
+    "id": "64e57303.c1c9fc",
+    "type": "debug",
+    "z": "98d8dab.c757228",
+    "name": "API requests, merged",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "x": 1200,
+    "y": 3000,
+    "wires": []
+  },
+  {
+    "id": "593670d3.d3d1",
+    "type": "function",
+    "z": "98d8dab.c757228",
+    "name": "Map additional properties from state",
+    "func": "// import data to add\nvar admins = flow.get('adminsById');\n// find the admin with the given ID\nvar admin = admins[msg.payload.adminId];\n\n// add the properties needed \nmsg.payload.adminEmail = admin.email;\nmsg.payload.adminName = admin.name;\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 730,
+    "y": 3000,
+    "wires": [["9652d3a.614193"]]
+  },
+  {
+    "id": "37a3963e.6221ba",
+    "type": "comment",
+    "z": "98d8dab.c757228",
+    "name": "Option 1 - using a function to map object properties",
+    "info": "",
+    "x": 250,
+    "y": 2740,
+    "wires": []
+  },
+  {
+    "id": "ee34e5d4.6b4158",
+    "type": "comment",
+    "z": "98d8dab.c757228",
+    "name": "Option 2 - using split and join nodes, for a simpler function",
+    "info": "",
+    "x": 270,
+    "y": 2880,
+    "wires": []
+  },
+  {
+    "id": "cbb0ce87.acd28",
+    "type": "meraki-dashboard-api-service",
+    "z": "",
+    "host": "https://api.meraki.com/api/v0",
+    "secureApiKeyHeaderOrQueryName": "X-Cisco-Meraki-API-Key",
+    "name": "DevNet Demo Sandbox"
+  }
+]

@@ -1,0 +1,813 @@
+[
+    {
+        "id": "129c62db.9762ad",
+        "type": "http in",
+        "z": "f314157b.2d4798",
+        "name": "",
+        "url": "/merakiWebhooks",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "57c802df.ee0d6c",
+                "e1b65fe6.9dacd"
+            ]
+        ]
+    },
+    {
+        "id": "57c802df.ee0d6c",
+        "type": "switch",
+        "z": "f314157b.2d4798",
+        "name": "UPDATE: Check Shared Secret",
+        "property": "payload.secret",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "supersecret",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 500,
+        "y": 100,
+        "wires": [
+            [
+                "7167938f.74c73c"
+            ],
+            [
+                "19b03d4d.500223"
+            ]
+        ]
+    },
+    {
+        "id": "e84cb95a.49ab08",
+        "type": "debug",
+        "z": "f314157b.2d4798",
+        "name": "Meraki Webhook Alert",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 220,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "19b03d4d.500223",
+        "type": "debug",
+        "z": "f314157b.2d4798",
+        "name": "Webhook: Invalid Secret",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 500,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f3e1e204.465bf",
+        "type": "comment",
+        "z": "f314157b.2d4798",
+        "name": "Meraki Webhook Alerts, Read more...",
+        "info": "\n\nMeraki will send Alerts to an HTTP server via\nwebhooks. \n\nAn HTTP node configured as a [post] with the path of `/merakiWebhooks`\nwill be used to receive a message from Meraki.\n\nNote: A publicly accessible address must be used to configure the Meraki\nDashboard. (consider using ngrok or hosting node-red on a public cloud)\n\n# More Info about Meraki webhooks\nhttps://developer.cisco.com/meraki/webhooks\n\n# Sample JSON\nhttps://developer.cisco.com/meraki/webhooks/#!webhook-sample-alerts\n\n\n## Postman\nYou can use the Postman collection to send samples to your Node-RED webhook \nlistener.\n\nhttps://documenter.getpostman.com/view/897512/SVfRtnU7?version=latest\n\nUpdate the `{{webhook-url}}` environment variable with your node-red address\n`http://localhost:1880/merakiWebhooks` and then send any one of the samples.",
+        "x": 170,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "867006d8.bce8f8",
+        "type": "function",
+        "z": "f314157b.2d4798",
+        "name": "UPDATE: Sample Alert: Settings Changed",
+        "func": "msg.payload = {\n  \"version\": \"0.1\",\n  \"sharedSecret\": \"foo\",\n  \"sentAt\": \"2019-07-19T06:20:39.656975Z\",\n  \"organizationId\": \"00000001\",\n  \"organizationName\": \"Miles Monitoring Inc.\",\n  \"organizationUrl\": \"https://n1.meraki.com/o//manage/organization/overview\",\n  \"networkId\": \"N_111111111111\",\n  \"networkName\": \"Main Office\",\n  \"networkUrl\": \"https://n1.meraki.com//n//manage/nodes/list\",\n  \"alertId\": \"0000000000000000\",\n  \"alertType\": \"Settings changed\",\n  \"occurredAt\": \"2019-07-19T06:15:33.504142Z\",\n  \"alertData\": {\n    \"name\": \"Routing and DHCP\",\n    \"url\": \"/manage/configure/switch_l3\",\n    \"changes\": {\n      \"createStaticRoute\": {\n        \"label\": \"Added static route on SP-Warehouse\",\n        \"newText\": \"10.10.10.0/24 -> 172.16.254.253\",\n        \"changedBy\": \"Miles Meraki (Miles@Meraki.com)\",\n        \"oldText\": \"\",\n        \"ssidId\": null\n      }\n    },\n    \"userId\": \"646829496481136255\"\n  },\n  \"deviceSerial\": \"XXXX-XXXX-XXXX\",\n  \"deviceMac\": \"00:00:00:aa:bb:cc\",\n  \"deviceName\": \"Device Foo Bar\",\n  \"deviceUrl\": \"https://n1.meraki.com//n//manage/nodes/new_list/000000000000\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 240,
+        "wires": [
+            [
+                "7167938f.74c73c"
+            ]
+        ]
+    },
+    {
+        "id": "94f9e1c3.3b86",
+        "type": "inject",
+        "z": "f314157b.2d4798",
+        "name": "Setting changed: Test",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "867006d8.bce8f8"
+            ]
+        ]
+    },
+    {
+        "id": "e1b65fe6.9dacd",
+        "type": "http response",
+        "z": "f314157b.2d4798",
+        "name": "",
+        "statusCode": "201",
+        "headers": {},
+        "x": 220,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "83cd6fed.82093",
+        "type": "switch",
+        "z": "f314157b.2d4798",
+        "name": "Flow Based on Alert Type",
+        "property": "payload.alertType",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Settings changed",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Switch port connected",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 310,
+        "y": 440,
+        "wires": [
+            [
+                "c7cddaf1.9e4a58"
+            ],
+            [
+                "649461f6.4307a"
+            ],
+            [
+                "c90b88d4.dbb938"
+            ]
+        ]
+    },
+    {
+        "id": "f049e116.2e091",
+        "type": "function",
+        "z": "f314157b.2d4798",
+        "name": "UPDATE: Sample Alert: Switch port connected",
+        "func": "msg.payload = {\n  \"version\": \"0.1\",\n  \"sharedSecret\": \"foo\",\n  \"sentAt\": \"2019-07-19T01:48:50.299151Z\",\n  \"organizationId\": \"00000001\",\n  \"organizationName\": \"Miles Monitoring Inc.\",\n  \"organizationUrl\": \"https://n1.meraki.com/o//manage/organization/overview\",\n  \"networkId\": \"L_646829496481103333\",\n  \"networkName\": \"Main Office\",\n  \"networkUrl\": \"https://n1.meraki.com//n//manage/nodes/list\",\n  \"deviceSerial\": \"Q2HP-DT5F-KMJE\",\n  \"deviceMac\": \"00:00:00:aa:bb:cc\",\n  \"deviceName\": \"Device Foo Bar\",\n  \"deviceUrl\": \"https://n1.meraki.com//n//manage/nodes/new_list/000000000000\",\n  \"alertId\": \"0000000000000000\",\n  \"alertType\": \"Switch port connected\",\n  \"occurredAt\": \"2019-07-19T00:29:02.000000Z\",\n  \"alertData\": {\n    \"portNum\": 2,\n    \"description\": \"\",\n    \"status\": 18,\n    \"prevStatus\": 0,\n    \"portDesc\": \"Corp Access\"\n  }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 520,
+        "y": 280,
+        "wires": [
+            [
+                "7167938f.74c73c"
+            ]
+        ]
+    },
+    {
+        "id": "5a7a331c.d3e18c",
+        "type": "inject",
+        "z": "f314157b.2d4798",
+        "name": "Switch port connected: Test",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "f049e116.2e091"
+            ]
+        ]
+    },
+    {
+        "id": "fb5544a2.d231f8",
+        "type": "meraki-dashboard-api",
+        "z": "f314157b.2d4798",
+        "service": "",
+        "name": "UPDATE: getOrganizationAdmins",
+        "selectedGroup": "Admins",
+        "selectedMethod": "getOrganizationAdmins",
+        "filteredMethods": [
+            {
+                "methodGroup": "Admins",
+                "methodName": "getOrganizationAdmins",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getOrganizationAdmins_organizationId\"><label for=\"node-input-getOrganizationAdmins_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getOrganizationAdmins_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getOrganizationAdmins_organizationIdType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"id\": \"212406\",\n      \"name\": \"Miles Meraki\",\n      \"email\": \"miles@meraki.com\",\n      \"orgAccess\": \"none\",\n      \"accountStatus\": \"ok\",\n      \"twoFactorAuthEnabled\": false,\n      \"hasApiKey\": true,\n      \"lastActive\": \"2019-01-28 14:58:56 -0800\",\n      \"tags\": [\n        {\n          \"tag\": \"west\",\n          \"access\": \"read-only\"\n        }\n      ],\n      \"networks\": [\n        {\n          \"id\": \"N_24329156\",\n          \"access\": \"full\"\n        }\n      ]\n    }\n  ]\n]",
+                "summary": "List the dashboard administrators in this organization"
+            },
+            {
+                "methodGroup": "Admins",
+                "methodName": "createOrganizationAdmin",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    },
+                    {
+                        "camelCaseName": "createOrganizationAdmin"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"createOrganizationAdmin_organizationId\"><label for=\"node-input-createOrganizationAdmin_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-createOrganizationAdmin_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-createOrganizationAdmin_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"createOrganizationAdmin_createOrganizationAdmin\"><label for=\"node-input-createOrganizationAdmin_createOrganizationAdmin\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>createOrganizationAdmin<span style=\"color:red;\"> *</span></b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-createOrganizationAdmin_createOrganizationAdmin\" placeholder=\"msg.createOrganizationAdmin\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-createOrganizationAdmin_createOrganizationAdminType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"id\": \"212406\",\n    \"name\": \"Miles Meraki\",\n    \"email\": \"miles@meraki.com\",\n    \"orgAccess\": \"none\",\n    \"accountStatus\": \"ok\",\n    \"twoFactorAuthEnabled\": false,\n    \"hasApiKey\": true,\n    \"lastActive\": \"2019-01-28 14:58:56 -0800\",\n    \"tags\": [\n      {\n        \"tag\": \"west\",\n        \"access\": \"read-only\"\n      }\n    ],\n    \"networks\": [\n      {\n        \"id\": \"N_24329156\",\n        \"access\": \"full\"\n      }\n    ]\n  }\n]",
+                "summary": "Create a new dashboard administrator"
+            },
+            {
+                "methodGroup": "Admins",
+                "methodName": "updateOrganizationAdmin",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    },
+                    {
+                        "camelCaseName": "id"
+                    },
+                    {
+                        "camelCaseName": "updateOrganizationAdmin"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateOrganizationAdmin_organizationId\"><label for=\"node-input-updateOrganizationAdmin_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganizationAdmin_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganizationAdmin_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateOrganizationAdmin_id\"><label for=\"node-input-updateOrganizationAdmin_id\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>id<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganizationAdmin_id\" placeholder=\"msg.id\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganizationAdmin_idType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateOrganizationAdmin_updateOrganizationAdmin\"><label for=\"node-input-updateOrganizationAdmin_updateOrganizationAdmin\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateOrganizationAdmin</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateOrganizationAdmin_updateOrganizationAdmin\" placeholder=\"msg.updateOrganizationAdmin\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateOrganizationAdmin_updateOrganizationAdminType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"id\": \"212406\",\n    \"name\": \"Miles Meraki\",\n    \"email\": \"miles@meraki.com\",\n    \"orgAccess\": \"none\",\n    \"accountStatus\": \"ok\",\n    \"twoFactorAuthEnabled\": false,\n    \"hasApiKey\": true,\n    \"lastActive\": \"2019-01-28 14:58:56 -0800\",\n    \"tags\": [\n      {\n        \"tag\": \"west\",\n        \"access\": \"read-only\"\n      }\n    ],\n    \"networks\": [\n      {\n        \"id\": \"N_24329156\",\n        \"access\": \"full\"\n      }\n    ]\n  }\n]",
+                "summary": "Update an administrator"
+            },
+            {
+                "methodGroup": "Admins",
+                "methodName": "deleteOrganizationAdmin",
+                "parameters": [
+                    {
+                        "camelCaseName": "organizationId"
+                    },
+                    {
+                        "camelCaseName": "id"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"deleteOrganizationAdmin_organizationId\"><label for=\"node-input-deleteOrganizationAdmin_organizationId\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>organizationId<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-deleteOrganizationAdmin_organizationId\" placeholder=\"msg.organizationId\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-deleteOrganizationAdmin_organizationIdType\" value=\"string\" ></div><div class=\"form-row\" id=\"deleteOrganizationAdmin_id\"><label for=\"node-input-deleteOrganizationAdmin_id\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>id<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-deleteOrganizationAdmin_id\" placeholder=\"msg.id\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-deleteOrganizationAdmin_idType\" value=\"string\" ></div>",
+                "example": "[]",
+                "summary": "Revoke all access for a dashboard administrator within this organization"
+            }
+        ],
+        "currentParams": [
+            {
+                "methodName": "getOrganizationAdmins",
+                "camelCaseName": "organizationId",
+                "type": "str",
+                "value": "549236"
+            }
+        ],
+        "storedParams": [
+            {
+                "methodName": "getOrganizationAdmins",
+                "camelCaseName": "organizationId",
+                "type": "str",
+                "value": "549236"
+            }
+        ],
+        "formHtml": "",
+        "method": "getOrganizationAdmins",
+        "x": 680,
+        "y": 620,
+        "wires": [
+            [
+                "e6f4b352.13753"
+            ]
+        ]
+    },
+    {
+        "id": "b55ce429.322988",
+        "type": "inject",
+        "z": "f314157b.2d4798",
+        "name": "get Org Admins - first run to set state",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 250,
+        "y": 620,
+        "wires": [
+            [
+                "fb5544a2.d231f8"
+            ]
+        ]
+    },
+    {
+        "id": "e6f4b352.13753",
+        "type": "function",
+        "z": "f314157b.2d4798",
+        "name": "Set adminsById",
+        "func": "var admins = {};\nmsg.payload.forEach(a =>\n{\n    admins[a.id] = a;\n})\n\nflow.set('adminsById', admins)\nmsg.payload = admins;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1000,
+        "y": 620,
+        "wires": [
+            [
+                "598a3a14.eafec4"
+            ]
+        ]
+    },
+    {
+        "id": "598a3a14.eafec4",
+        "type": "debug",
+        "z": "f314157b.2d4798",
+        "name": "Admins Map",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1210,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "c7cddaf1.9e4a58",
+        "type": "link out",
+        "z": "f314157b.2d4798",
+        "name": "Alert: Settings changed",
+        "links": [
+            "5e075762.0ddd58"
+        ],
+        "x": 575,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "649461f6.4307a",
+        "type": "link out",
+        "z": "f314157b.2d4798",
+        "name": "Alert: Switch port connected",
+        "links": [
+            "9dd19075.ed77c"
+        ],
+        "x": 575,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "c90b88d4.dbb938",
+        "type": "link out",
+        "z": "f314157b.2d4798",
+        "name": "Alert: Otherwise",
+        "links": [
+            "de3d18b1.034208"
+        ],
+        "x": 575,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6eda1587.1c7a9c",
+        "type": "comment",
+        "z": "f314157b.2d4798",
+        "name": "Webhook URL: http://locahost:1880/merakiWebhooks",
+        "info": "",
+        "x": 260,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "9f1eec71.ff26b",
+        "type": "comment",
+        "z": "f314157b.2d4798",
+        "name": "Sample Webhook Alerts",
+        "info": "",
+        "x": 160,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b8a89893.1f8aa8",
+        "type": "comment",
+        "z": "f314157b.2d4798",
+        "name": "Workflows",
+        "info": "",
+        "x": 120,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "561a4ae4.024194",
+        "type": "comment",
+        "z": "f314157b.2d4798",
+        "name": "Get initial state of Meraki API data",
+        "info": "",
+        "x": 220,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "5e075762.0ddd58",
+        "type": "link in",
+        "z": "f314157b.2d4798",
+        "name": "",
+        "links": [
+            "c7cddaf1.9e4a58"
+        ],
+        "x": 95,
+        "y": 740,
+        "wires": [
+            [
+                "b6c8d5d0.7086b8",
+                "42c60e68.1202e"
+            ]
+        ]
+    },
+    {
+        "id": "dc0a12.814b05f",
+        "type": "debug",
+        "z": "f314157b.2d4798",
+        "name": "webhook merged with API",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1160,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "b6c8d5d0.7086b8",
+        "type": "function",
+        "z": "f314157b.2d4798",
+        "name": "Map additional properties from state",
+        "func": "// import data to add\nvar admins = flow.get('adminsById');\n// find the admin with the given ID\nvar admin = admins[msg.payload.alertData.userId];\n\n// add the properties needed \nmsg.payload.alertData.userEmail = admin.email;\nmsg.payload.alertData.userName = admin.name;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 330,
+        "y": 780,
+        "wires": [
+            [
+                "dc0a12.814b05f"
+            ]
+        ]
+    },
+    {
+        "id": "7167938f.74c73c",
+        "type": "link out",
+        "z": "f314157b.2d4798",
+        "name": "Alert",
+        "links": [
+            "c6744203.f05ae"
+        ],
+        "x": 735,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c6744203.f05ae",
+        "type": "link in",
+        "z": "f314157b.2d4798",
+        "name": "",
+        "links": [
+            "7167938f.74c73c"
+        ],
+        "x": 95,
+        "y": 440,
+        "wires": [
+            [
+                "83cd6fed.82093",
+                "e84cb95a.49ab08"
+            ]
+        ]
+    },
+    {
+        "id": "53b63fc9.f7b5b",
+        "type": "comment",
+        "z": "f314157b.2d4798",
+        "name": "Route Webhook Alerts",
+        "info": "",
+        "x": 160,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "22da6d6f.0dda32",
+        "type": "comment",
+        "z": "f314157b.2d4798",
+        "name": "Settings changed: Adds admin information to the webhook alertData property",
+        "info": "",
+        "x": 350,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "42c60e68.1202e",
+        "type": "debug",
+        "z": "f314157b.2d4798",
+        "name": "Settings changed: workflow",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 300,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "e5d2690b.b6a1c8",
+        "type": "comment",
+        "z": "f314157b.2d4798",
+        "name": "The webhook alertData now includes info from the API",
+        "info": "",
+        "x": 1080,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "9dd19075.ed77c",
+        "type": "link in",
+        "z": "f314157b.2d4798",
+        "name": "",
+        "links": [
+            "649461f6.4307a"
+        ],
+        "x": 95,
+        "y": 880,
+        "wires": [
+            [
+                "9803bfc0.68f17",
+                "6efe7bf1.a62bb4",
+                "9e57bada.df5958"
+            ]
+        ]
+    },
+    {
+        "id": "9803bfc0.68f17",
+        "type": "debug",
+        "z": "f314157b.2d4798",
+        "name": "Switch port connected: workflow",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 320,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "e771a18.3bf7b6",
+        "type": "meraki-dashboard-api",
+        "z": "f314157b.2d4798",
+        "service": "",
+        "name": "getDeviceSwitchPort",
+        "selectedGroup": "Switch ports",
+        "selectedMethod": "getDeviceSwitchPort",
+        "filteredMethods": [
+            {
+                "methodGroup": "Switch ports",
+                "methodName": "getDeviceSwitchPorts",
+                "parameters": [
+                    {
+                        "camelCaseName": "serial"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getDeviceSwitchPorts_serial\"><label for=\"node-input-getDeviceSwitchPorts_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getDeviceSwitchPorts_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getDeviceSwitchPorts_serialType\" value=\"string\" ></div>",
+                "example": "[\n  [\n    {\n      \"number\": 1,\n      \"name\": \"My switch port\",\n      \"tags\": \"tag1 tag2\",\n      \"enabled\": true,\n      \"poeEnabled\": true,\n      \"type\": \"access\",\n      \"vlan\": 10,\n      \"voiceVlan\": 20,\n      \"isolationEnabled\": false,\n      \"rstpEnabled\": true,\n      \"stpGuard\": \"disabled\",\n      \"accessPolicyNumber\": \"1234\",\n      \"linkNegotiation\": \"Auto negotiate\",\n      \"portScheduleId\": \"1234\",\n      \"udld\": \"Alert only\",\n      \"macWhitelist\": [\n        \"34:56:fe:ce:8e:b0\",\n        \"34:56:fe:ce:8e:b1\"\n      ],\n      \"stickyMacWhitelist\": [\n        \"34:56:fe:ce:8e:b0\",\n        \"34:56:fe:ce:8e:b1\"\n      ],\n      \"stickyMacWhitelistLimit\": 5\n    }\n  ]\n]",
+                "summary": "List the switch ports for a switch"
+            },
+            {
+                "methodGroup": "Switch ports",
+                "methodName": "getDeviceSwitchPort",
+                "parameters": [
+                    {
+                        "camelCaseName": "serial"
+                    },
+                    {
+                        "camelCaseName": "number"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"getDeviceSwitchPort_serial\"><label for=\"node-input-getDeviceSwitchPort_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getDeviceSwitchPort_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getDeviceSwitchPort_serialType\" value=\"string\" ></div><div class=\"form-row\" id=\"getDeviceSwitchPort_number\"><label for=\"node-input-getDeviceSwitchPort_number\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>number<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-getDeviceSwitchPort_number\" placeholder=\"msg.number\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-getDeviceSwitchPort_numberType\" value=\"string\" ></div>",
+                "example": "[\n  {\n    \"number\": 1,\n    \"name\": \"My switch port\",\n    \"tags\": \"tag1 tag2\",\n    \"enabled\": true,\n    \"poeEnabled\": true,\n    \"type\": \"access\",\n    \"vlan\": 10,\n    \"voiceVlan\": 20,\n    \"isolationEnabled\": false,\n    \"rstpEnabled\": true,\n    \"stpGuard\": \"disabled\",\n    \"accessPolicyNumber\": \"1234\",\n    \"linkNegotiation\": \"Auto negotiate\",\n    \"portScheduleId\": \"1234\",\n    \"udld\": \"Alert only\",\n    \"macWhitelist\": [\n      \"34:56:fe:ce:8e:b0\",\n      \"34:56:fe:ce:8e:b1\"\n    ],\n    \"stickyMacWhitelist\": [\n      \"34:56:fe:ce:8e:b0\",\n      \"34:56:fe:ce:8e:b1\"\n    ],\n    \"stickyMacWhitelistLimit\": 5\n  }\n]",
+                "summary": "Return a switch port"
+            },
+            {
+                "methodGroup": "Switch ports",
+                "methodName": "updateDeviceSwitchPort",
+                "parameters": [
+                    {
+                        "camelCaseName": "serial"
+                    },
+                    {
+                        "camelCaseName": "number"
+                    },
+                    {
+                        "camelCaseName": "updateDeviceSwitchPort"
+                    }
+                ],
+                "formHtml": "<h4>Parameters</h4><div class=\"form-row\" id=\"updateDeviceSwitchPort_serial\"><label for=\"node-input-updateDeviceSwitchPort_serial\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>serial<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateDeviceSwitchPort_serial\" placeholder=\"msg.serial\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateDeviceSwitchPort_serialType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateDeviceSwitchPort_number\"><label for=\"node-input-updateDeviceSwitchPort_number\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>number<span style=\"color:red;\"> *</span></b> <i>&nbspstring</i></span></label><p></p><input type=\"text\" id=\"node-input-updateDeviceSwitchPort_number\" placeholder=\"msg.number\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateDeviceSwitchPort_numberType\" value=\"string\" ></div><div class=\"form-row\" id=\"updateDeviceSwitchPort_updateDeviceSwitchPort\"><label for=\"node-input-updateDeviceSwitchPort_updateDeviceSwitchPort\" style=\"width:70%\"><i class=\"fa fa-list\"></i> <span><b>updateDeviceSwitchPort</b> <i>&nbsp</i></span></label><p></p><input type=\"text\" id=\"node-input-updateDeviceSwitchPort_updateDeviceSwitchPort\" placeholder=\"msg.updateDeviceSwitchPort\" style=\"width:70%\"><input type=\"hidden\" id=\"node-input-updateDeviceSwitchPort_updateDeviceSwitchPortType\" value=\"\" ></div>",
+                "example": "[\n  {\n    \"number\": 1,\n    \"name\": \"My switch port\",\n    \"tags\": \"tag1 tag2\",\n    \"enabled\": true,\n    \"poeEnabled\": true,\n    \"type\": \"access\",\n    \"vlan\": 10,\n    \"voiceVlan\": 20,\n    \"isolationEnabled\": false,\n    \"rstpEnabled\": true,\n    \"stpGuard\": \"disabled\",\n    \"accessPolicyNumber\": \"1234\",\n    \"linkNegotiation\": \"Auto negotiate\",\n    \"portScheduleId\": \"1234\",\n    \"udld\": \"Alert only\",\n    \"macWhitelist\": [\n      \"34:56:fe:ce:8e:b0\",\n      \"34:56:fe:ce:8e:b1\"\n    ],\n    \"stickyMacWhitelist\": [\n      \"34:56:fe:ce:8e:b0\",\n      \"34:56:fe:ce:8e:b1\"\n    ],\n    \"stickyMacWhitelistLimit\": 5\n  }\n]",
+                "summary": "Update a switch port"
+            }
+        ],
+        "storedParams": [],
+        "formHtml": "",
+        "method": "getDeviceSwitchPort",
+        "x": 620,
+        "y": 920,
+        "wires": [
+            [
+                "9e57bada.df5958"
+            ]
+        ]
+    },
+    {
+        "id": "6efe7bf1.a62bb4",
+        "type": "change",
+        "z": "f314157b.2d4798",
+        "name": "Set params from webhook",
+        "rules": [
+            {
+                "t": "set",
+                "p": "serial",
+                "pt": "msg",
+                "to": "payload.deviceSerial",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "number",
+                "pt": "msg",
+                "to": "payload.alertData.portNum",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 920,
+        "wires": [
+            [
+                "e771a18.3bf7b6"
+            ]
+        ]
+    },
+    {
+        "id": "130d92e7.f6791d",
+        "type": "debug",
+        "z": "f314157b.2d4798",
+        "name": "Alert + API data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1180,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "e064893b.4e5918",
+        "type": "join",
+        "z": "f314157b.2d4798",
+        "name": "Join data in one JSON",
+        "mode": "auto",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 620,
+        "y": 980,
+        "wires": [
+            [
+                "130d92e7.f6791d"
+            ]
+        ]
+    },
+    {
+        "id": "9e57bada.df5958",
+        "type": "batch",
+        "z": "f314157b.2d4798",
+        "name": "Batch 2 operations: Alert + API call",
+        "mode": "count",
+        "count": "2",
+        "overlap": 0,
+        "interval": 10,
+        "allowEmptySequence": false,
+        "topics": [],
+        "x": 320,
+        "y": 980,
+        "wires": [
+            [
+                "e064893b.4e5918"
+            ]
+        ]
+    },
+    {
+        "id": "79510a0f.4abc94",
+        "type": "comment",
+        "z": "f314157b.2d4798",
+        "name": "Switch port connected: Add port info to an extra object in the JSON",
+        "info": "",
+        "x": 320,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "ff1cee30.353e",
+        "type": "comment",
+        "z": "f314157b.2d4798",
+        "name": "The msg.payload now includes the webhook and API data",
+        "info": "",
+        "x": 1070,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "de3d18b1.034208",
+        "type": "link in",
+        "z": "f314157b.2d4798",
+        "name": "",
+        "links": [
+            "c90b88d4.dbb938"
+        ],
+        "x": 95,
+        "y": 1100,
+        "wires": [
+            [
+                "3b8b9e36.196482"
+            ]
+        ]
+    },
+    {
+        "id": "3b8b9e36.196482",
+        "type": "debug",
+        "z": "f314157b.2d4798",
+        "name": "Otherwise: workflow",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 280,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "4c43ad47.66ef64",
+        "type": "comment",
+        "z": "f314157b.2d4798",
+        "name": "params are defined from webhook",
+        "info": "",
+        "x": 660,
+        "y": 880,
+        "wires": []
+    }
+]

@@ -1,0 +1,194 @@
+[
+  {
+    "id": "5c63663d.d8e5b8",
+    "type": "http in",
+    "z": "b63fb40d.a58f78",
+    "name": "",
+    "url": "/merakiWebhooks",
+    "method": "post",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 190,
+    "y": 140,
+    "wires": [["bb2d5ecc.a3f64", "82847be.80f6488"]]
+  },
+  {
+    "id": "bb2d5ecc.a3f64",
+    "type": "switch",
+    "z": "b63fb40d.a58f78",
+    "name": "UPDATE: Check Shared Secret",
+    "property": "payload.secret",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "supersecret",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 520,
+    "y": 140,
+    "wires": [["680e09d1.29aa18"], ["543407d4.bf6778"]]
+  },
+  {
+    "id": "510cbc5.b7f0a44",
+    "type": "debug",
+    "z": "b63fb40d.a58f78",
+    "name": "Meraki Webhook Alert",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "x": 260,
+    "y": 440,
+    "wires": []
+  },
+  {
+    "id": "543407d4.bf6778",
+    "type": "debug",
+    "z": "b63fb40d.a58f78",
+    "name": "Webhook: Invalid Secret",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "x": 520,
+    "y": 180,
+    "wires": []
+  },
+  {
+    "id": "22038ce7.2ccd54",
+    "type": "comment",
+    "z": "b63fb40d.a58f78",
+    "name": "Meraki Webhook Alerts, Read more...",
+    "info": "\n\nMeraki will send Alerts to an HTTP server via\nwebhooks. \n\nAn HTTP node configured as a [post] with the path of `/merakiWebhooks`\nwill be used to receive a message from Meraki.\n\nNote: A publicly accessible address must be used to configure the Meraki\nDashboard. (consider using ngrok or hosting node-red on a public cloud)\n\n# More Info about Meraki webhooks\nhttps://developer.cisco.com/meraki/webhooks\n\n# Sample JSON\nhttps://developer.cisco.com/meraki/webhooks/#!webhook-sample-alerts\n\n\n## Postman\nYou can use the Postman collection to send samples to your Node-RED webhook \nlistener.\n\nhttps://documenter.getpostman.com/view/897512/SVfRtnU7?version=latest\n\nUpdate the `{{webhook-url}}` environment variable with your node-red address\n`http://localhost:1880/merakiWebhooks` and then send any one of the samples.",
+    "x": 190,
+    "y": 60,
+    "wires": []
+  },
+  {
+    "id": "51016c4f.1cb764",
+    "type": "function",
+    "z": "b63fb40d.a58f78",
+    "name": "UPDATE: Sample Alert: Settings Changed",
+    "func": "msg.payload = {\n  \"version\": \"0.1\",\n  \"sharedSecret\": \"foo\",\n  \"sentAt\": \"2019-07-19T06:20:39.656975Z\",\n  \"organizationId\": \"00000001\",\n  \"organizationName\": \"Miles Monitoring Inc.\",\n  \"organizationUrl\": \"https://n1.meraki.com/o//manage/organization/overview\",\n  \"networkId\": \"N_111111111111\",\n  \"networkName\": \"Main Office\",\n  \"networkUrl\": \"https://n1.meraki.com//n//manage/nodes/list\",\n  \"alertId\": \"0000000000000000\",\n  \"alertType\": \"Settings changed\",\n  \"occurredAt\": \"2019-07-19T06:15:33.504142Z\",\n  \"alertData\": {\n    \"name\": \"Routing and DHCP\",\n    \"url\": \"/manage/configure/switch_l3\",\n    \"changes\": {\n      \"createStaticRoute\": {\n        \"label\": \"Added static route on SP-Warehouse\",\n        \"newText\": \"10.10.10.0/24 -> 172.16.254.253\",\n        \"changedBy\": \"Miles Meraki (Miles@Meraki.com)\",\n        \"oldText\": \"\",\n        \"ssidId\": null\n      }\n    },\n    \"userId\": \"646829496481136255\"\n  },\n  \"deviceSerial\": \"XXXX-XXXX-XXXX\",\n  \"deviceMac\": \"00:00:00:aa:bb:cc\",\n  \"deviceName\": \"Device Foo Bar\",\n  \"deviceUrl\": \"https://n1.meraki.com//n//manage/nodes/new_list/000000000000\"\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 520,
+    "y": 280,
+    "wires": [["680e09d1.29aa18"]]
+  },
+  {
+    "id": "87edcfea.563fd",
+    "type": "inject",
+    "z": "b63fb40d.a58f78",
+    "name": "Setting changed: Test",
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 180,
+    "y": 280,
+    "wires": [["51016c4f.1cb764"]]
+  },
+  {
+    "id": "82847be.80f6488",
+    "type": "http response",
+    "z": "b63fb40d.a58f78",
+    "name": "",
+    "statusCode": "201",
+    "headers": {},
+    "x": 240,
+    "y": 180,
+    "wires": []
+  },
+  {
+    "id": "ddf03b41.1cf368",
+    "type": "function",
+    "z": "b63fb40d.a58f78",
+    "name": "UPDATE: Sample Alert: Switch port connected",
+    "func": "msg.payload = {\n  \"version\": \"0.1\",\n  \"sharedSecret\": \"foo\",\n  \"sentAt\": \"2019-07-19T01:48:50.299151Z\",\n  \"organizationId\": \"00000001\",\n  \"organizationName\": \"Miles Monitoring Inc.\",\n  \"organizationUrl\": \"https://n1.meraki.com/o//manage/organization/overview\",\n  \"networkId\": \"L_646829496481103333\",\n  \"networkName\": \"Main Office\",\n  \"networkUrl\": \"https://n1.meraki.com//n//manage/nodes/list\",\n  \"deviceSerial\": \"Q2HP-DT5F-KMJE\",\n  \"deviceMac\": \"00:00:00:aa:bb:cc\",\n  \"deviceName\": \"Device Foo Bar\",\n  \"deviceUrl\": \"https://n1.meraki.com//n//manage/nodes/new_list/000000000000\",\n  \"alertId\": \"0000000000000000\",\n  \"alertType\": \"Switch port connected\",\n  \"occurredAt\": \"2019-07-19T00:29:02.000000Z\",\n  \"alertData\": {\n    \"portNum\": 2,\n    \"description\": \"\",\n    \"status\": 18,\n    \"prevStatus\": 0,\n    \"portDesc\": \"Corp Access\"\n  }\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 540,
+    "y": 320,
+    "wires": [["680e09d1.29aa18"]]
+  },
+  {
+    "id": "bc84fc29.e6bc",
+    "type": "inject",
+    "z": "b63fb40d.a58f78",
+    "name": "Switch port connected: Test",
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 200,
+    "y": 320,
+    "wires": [["ddf03b41.1cf368"]]
+  },
+  {
+    "id": "dae793d9.b622c",
+    "type": "comment",
+    "z": "b63fb40d.a58f78",
+    "name": "Webhook URL: http://locahost:1880/merakiWebhooks",
+    "info": "",
+    "x": 280,
+    "y": 100,
+    "wires": []
+  },
+  {
+    "id": "5ff9216e.bf7e6",
+    "type": "comment",
+    "z": "b63fb40d.a58f78",
+    "name": "Sample Webhook Alerts",
+    "info": "",
+    "x": 180,
+    "y": 240,
+    "wires": []
+  },
+  {
+    "id": "680e09d1.29aa18",
+    "type": "link out",
+    "z": "b63fb40d.a58f78",
+    "name": "Alert",
+    "links": ["e2a75c55.2f86"],
+    "x": 755,
+    "y": 220,
+    "wires": []
+  },
+  {
+    "id": "e2a75c55.2f86",
+    "type": "link in",
+    "z": "b63fb40d.a58f78",
+    "name": "",
+    "links": ["680e09d1.29aa18"],
+    "x": 115,
+    "y": 440,
+    "wires": [["510cbc5.b7f0a44"]]
+  },
+  {
+    "id": "42112c90.fe19b4",
+    "type": "comment",
+    "z": "b63fb40d.a58f78",
+    "name": "Webhook Alert Data",
+    "info": "",
+    "x": 170,
+    "y": 400,
+    "wires": []
+  }
+]

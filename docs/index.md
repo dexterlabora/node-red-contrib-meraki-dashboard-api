@@ -14,6 +14,11 @@ Cisco Meraki is a powerful cloud managed network solution. This node is a wrappe
 * Parameters and sample responses are documented in-line
 * Several example flows provided
 
+
+This example clones switch ports to one or more destination switches. It uses Action Batches to group multiple calls into a single request and periodically checks the state of the batch.
+
+![](images/switch-clone-demo.gif)
+
 ## Getting Started
 To make use of the node, it's expected that you have a Cisco Meraki account with API access. See below for more details.
 
@@ -113,9 +118,7 @@ The Dashboard API can be used for many purposes. It's meant to be an open-ended 
 * Automatically on-board and off-board new employees' teleworker setups
 * Build your own dashboard for store managers, field techs, or unique use cases
 
-This example clones switch ports to one or more destination switches. It uses Action Batches to group multiple calls into a single request. 
 
-<img src="images/switch-clone-demo.gif)
 
 ## Getting a Dashboard API Key
 
