@@ -83,6 +83,8 @@ Within the parameters form, each param name is defined in the input placeholder 
 
 If the parameter name matches the method name, then `msg.payload` can be used. This parameter represents the body being sent with a `PUT` or `POST` request using the Meraki API. 
 
+Use a function node to define the`msg` parameter values.
+<img src="images/node-red-function-node.png" width="200"/>
 <img src="images/function-params.png" width="400"/>
 
 ## Working with Output Data
@@ -93,18 +95,6 @@ You can then view the JSON data and expand the nested properties.
 
 <img src="images/debug-output-organizations.png" width="400"/>
 
-### Splitting Arrays
-This flow will provision network clients from a JSON list
-
-<img src="images/provision-clients-flow.png" width="400"/>
-
-A function node creates an array of client objects with their required parameters.
-
-<img src="images/function-client-list.png" width="400"/>
-
-The **split** node will send a `msg` for each item in the array. This means that a client object will be sent to the `provisionNetworkClient` node, one after another.  A limit of 3 msg/s was also put inline to respect the API rate limit.
- 
- <img src="images/node-split.png" width="200"/>
 
 
 # Meraki Dashboard API
