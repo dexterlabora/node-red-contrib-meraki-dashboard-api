@@ -1,11 +1,10 @@
 # Guides
 
-The Meraki Dashboard API node is very powerful but with a few helpful techniques, you can take full advantage of it and start building solutions in a couple of clicks. 
+The Meraki Dashboard API node is very powerful and with a few helpful techniques, you can take full advantage of it. Just connect the dots to start building amazing solutions in no time. 
 
 ## Environment Variables with Flow State
 
-This flow will first define a common set of parameters which is triggered by an initial run of the first flow on Deploy. 
-
+This flow will first define a common set of parameters which is triggered by an initial run of the first flow on Deploy. It is also using the most popular Meraki operations, such as listing out the organizations, networks, devices and details about the wireless and wired LAN. 
 
 <img src="images/flow-with-env.png" width="400">
 
@@ -269,8 +268,14 @@ Once the API request has been completed by the Meraki node, the results will be 
 
 <img src="images/provision-client-web-results.png" width="400">
 
+# Troubleshooting
 
-## Additional Resources
+##  Only "get" methods work.
+- Does your API key have write permissions?
+- Use your organizations subdomain instead of the default base URL.
+	- In your node's Service configuration, change the URL from `https://api.meraki.com/api/v0` to `https://n123.meraki.com/api/v0` where `n123` matches the subdomain of your Meraki Dashboard when you are logged in.
+
+# Additional Resources
 
 - Fun IoT project with LEGO - http://www.internetoflego.com
 - Node-RED Guide - http://noderedguide.com/
