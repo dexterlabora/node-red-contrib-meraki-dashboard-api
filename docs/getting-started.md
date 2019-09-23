@@ -51,7 +51,7 @@ Or you can get the examples from the source respository [here](https://github.co
 
 The node can be programmed with specific parameter variables, such as `organizationId` or `serial`. All parameters are attached to the `msg` object. The `msg.payload` is used to send changes to Meraki and will be used as the body for the API request.
 
-### Using the Node Paramater Form
+### Using the Node Parameter Form
 For quick solutions or static settings, you can use the **Parameters** form within the node. The descriptions are provided for each parameter. The input box for each param accepts a string for the value. 
 
 <img src="images/get-organization-flow.png" width="400"/>
