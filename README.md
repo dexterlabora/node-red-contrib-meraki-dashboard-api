@@ -43,7 +43,7 @@ Usage Quick Start
 - Define any required and optional parameters, either directly in the node or passed in through the input. 
 - Send any data into the input to see the API response in the output. 
 
-[Complete Documentation and Guides](docs/index.md)
+[Complete Documentation and Guides](https://dexterlabora.github.io/node-red-contrib-meraki-dashboard-api/)
 
 -------     
 [Official Meraki Dashboard API Docs](https://create.meraki.io/api)
