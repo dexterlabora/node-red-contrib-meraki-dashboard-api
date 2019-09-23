@@ -66,7 +66,7 @@ A function node creates an array of client objects with their required parameter
 The **split** node will send a `msg` for each item in the array. This means that a client object will be sent to the `provisionNetworkClient` node, one after another.  A limit of 3 msg/s was also put inline to respect the API rate limit.
  
 
- ## Action Batches
+## Action Batches
 
  The Meraki API has the ability to combine multiple "actions" into a single request, where an action is typically a "PUT/POST/DELETE" request. This reduces the frequency of calls to the API where the rate limit and increases the speed for a large number of changes.
 
@@ -109,7 +109,7 @@ Finally, the data is written to a file.
 
 ### Using json2csv Node
 
-Sometimes the JSON data is nested and challenging to parse. Other times, you just want a flow that accepts any type of response and magically parses it for you. In that case, using the third-party node [json2csv](https://flows.nodered.org/node/node-red-contrib-json2csv) you can simply drop it your flow to perform the parse before saving to a file. Just install it via the [palette manager](https://nodered.org/docs/user-guide/editor/palette/manager)
+Sometimes the JSON data is nested and challenging to parse. Other times, you just want a flow that accepts any type of response and magically parses it for you. In that case, using the third-party node [json2csv](https://flows.nodered.org/node/node-red-contrib-json2csv) you can simply drop it in your flow to perform the parse before saving to a file. Just install it via the [palette manager](https://nodered.org/docs/user-guide/editor/palette/manager)
 
 <img src="images/json2csv-node.png" width="100">
 
@@ -226,7 +226,7 @@ This workflow will be triggerd upon the `alertType` of `Settings changed`. It th
 
 The payload of the `Setting changed` alert only contains the `adminId`. It would be helpful to get more info about the admin, such as a name and email before sending this data to some destination. To accomplish this, we merge the data with the alert payload.
 
-<img src="images/webhook-workflow-map-function-debug.png" width="400">
+<img src="images/webhook-workflow-map-function-debug.png" width="300">
 
 #### Switch port connected
 This workflow will trigger a dynamic API request using the Meraki node to collect extra details about the port that was just connected to. 
@@ -238,7 +238,7 @@ To accomplish this, the **batch** and **join** nodes can be used to combine the 
 
 This output shows the array having 2 objects, one for the alert data and another for the switch port details.
 
-<img src="images/webhook-workflow-batch-join-debug.png" width="400">
+<img src="images/webhook-workflow-batch-join-debug.png" width="300">
 
 ## Web Form
 
