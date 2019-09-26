@@ -4,7 +4,7 @@ Node-RED node for meraki-dashboard-api
 
 > A full featured node for monitoring and managing the Meraki Cloud built on the Dashboard API Open API spec.
 
-[Documentation](https://dexterlabora.github.io/node-red-contrib-meraki-dashboard-api/)
+[Documentation](https://developer.cisco.com/docs/meraki-dashboard-api-node-red-node)
 
 >  <img src="docs/images/meraki-dashboard-api-node.png" width="100"/>
 
@@ -29,8 +29,8 @@ _This example clones switch ports to one or more destination switches. It uses A
 ## Install
 
 Run the following command in your Node-RED user directory - typically `~/.node-red`
-  
- npm install node-red-contrib-meraki-dashboard-api
+
+npm install node-red-contrib-meraki-dashboard-api
 
 ## Usage Quick Start
 
