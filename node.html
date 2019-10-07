@@ -147,10 +147,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getDeviceCameraAnalyticsOverview_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getDeviceCameraAnalyticsOverview_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getDeviceCameraAnalyticsOverview_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 1 hour.</p>`;
                         formHtml += `<input type="text" id="node-input-getDeviceCameraAnalyticsOverview_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getDeviceCameraAnalyticsOverview_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getDeviceCameraAnalyticsOverview_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -305,10 +305,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getDeviceCameraAnalyticsZoneHistory_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getDeviceCameraAnalyticsZoneHistory_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getDeviceCameraAnalyticsZoneHistory_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 hours. The default is 1 hour.</p>`;
                         formHtml += `<input type="text" id="node-input-getDeviceCameraAnalyticsZoneHistory_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getDeviceCameraAnalyticsZoneHistory_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getDeviceCameraAnalyticsZoneHistory_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -389,10 +389,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getDeviceClients_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getDeviceClients_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getDeviceClients_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.</p>`;
                         formHtml += `<input type="text" id="node-input-getDeviceClients_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getDeviceClients_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getDeviceClients_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -420,10 +420,6 @@ console.log = function(){};
       "linkNegotiation": "Auto negotiate",
       "portScheduleId": "1234",
       "udld": "Alert only",
-      "macWhitelist": [
-        "34:56:fe:ce:8e:b0",
-        "34:56:fe:ce:8e:b1"
-      ],
       "stickyMacWhitelist": [
         "34:56:fe:ce:8e:b0",
         "34:56:fe:ce:8e:b1"
@@ -467,10 +463,6 @@ console.log = function(){};
     "linkNegotiation": "Auto negotiate",
     "portScheduleId": "1234",
     "udld": "Alert only",
-    "macWhitelist": [
-      "34:56:fe:ce:8e:b0",
-      "34:56:fe:ce:8e:b1"
-    ],
     "stickyMacWhitelist": [
       "34:56:fe:ce:8e:b0",
       "34:56:fe:ce:8e:b1"
@@ -525,10 +517,6 @@ console.log = function(){};
     "linkNegotiation": "Auto negotiate",
     "portScheduleId": "1234",
     "udld": "Alert only",
-    "macWhitelist": [
-      "34:56:fe:ce:8e:b0",
-      "34:56:fe:ce:8e:b1"
-    ],
     "stickyMacWhitelist": [
       "34:56:fe:ce:8e:b0",
       "34:56:fe:ce:8e:b1"
@@ -580,63 +568,17 @@ console.log = function(){};
                                          
                 var example = `[
   {
-    "id": "8473",
-    "name": "A cool stack",
-    "serials": [
-      "QBAB-CDEF-GHIJ"
-    ]
-  }
-]`;
-                var parameters = []
-                var formHtml = ``;   
-                    formHtml += `<h4>Parameters</h4>`;
-                        formHtml += `<div class="form-row" id="removeNetworkSwitchStack_networkId">`;                      
-                        formHtml += `<label for="node-input-removeNetworkSwitchStack_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-removeNetworkSwitchStack_networkId" placeholder="msg.networkId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-removeNetworkSwitchStack_networkIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "networkId"
-                        })
-                        formHtml += `<div class="form-row" id="removeNetworkSwitchStack_switchStackId">`;                      
-                        formHtml += `<label for="node-input-removeNetworkSwitchStack_switchStackId" style="width:70%"><i class="fa fa-list"></i> <span><b>switchStackId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-removeNetworkSwitchStack_switchStackId" placeholder="msg.switchStackId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-removeNetworkSwitchStack_switchStackIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "switchStackId"
-                        })
-                        formHtml += `<div class="form-row" id="removeNetworkSwitchStack_removeNetworkSwitchStack">`;                      
-                        formHtml += `<label for="node-input-removeNetworkSwitchStack_removeNetworkSwitchStack" style="width:70%"><i class="fa fa-list"></i> <span><b>removeNetworkSwitchStack<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-removeNetworkSwitchStack_removeNetworkSwitchStack" placeholder="msg.removeNetworkSwitchStack" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-removeNetworkSwitchStack_removeNetworkSwitchStackType" value="" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "removeNetworkSwitchStack"
-                        })
-
-                methodGroups.push({methodGroup:"Switch stacks", methodName:"removeNetworkSwitchStack", parameters: parameters, formHtml: formHtml, example: example, summary: `Remove a switch from a stack`});
-                                         
-                var example = `[
-  {
     "id": "L_123456",
     "organizationId": "2930418",
     "name": "Long Island Office",
     "timeZone": "America/Los_Angeles",
     "tags": " tag1 tag2 ",
     "type": "combined",
+    "productTypes": [
+      "appliance",
+      "switch",
+      "wireless"
+    ],
     "disableMyMerakiCom": false
   }
 ]`;
@@ -666,6 +608,11 @@ console.log = function(){};
     "timeZone": "America/Los_Angeles",
     "tags": " tag1 tag2 ",
     "type": "combined",
+    "productTypes": [
+      "appliance",
+      "switch",
+      "wireless"
+    ],
     "disableMyMerakiCom": false
   }
 ]`;
@@ -818,10 +765,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkAirMarshal_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkAirMarshal_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkAirMarshal_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkAirMarshal_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkAirMarshal_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkAirMarshal_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -1089,8 +1036,20 @@ console.log = function(){};
                 var example = `[
   [
     {
-      "mac": "00:11:22:33:44:55",
-      "networkId": "N_24329156"
+      "id": "1284392014819",
+      "mac": "22:33:44:55:66:77",
+      "networkId": "N_24329156",
+      "name": "Miles's phone",
+      "deviceName": "Bose QuietComfort 35",
+      "manufacturer": "Bose",
+      "lastSeen": 1526087474,
+      "seenByDeviceMac": "00:11:22:33:44:55",
+      "inSightAlert": false,
+      "outOfSightAlert": false,
+      "tags": [
+        "tag1",
+        "tag2"
+      ]
     }
   ]
 ]`;
@@ -1108,6 +1067,30 @@ console.log = function(){};
 
                     parameters.push({
                         camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkBluetoothClients_t0">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkBluetoothClients_t0" style="width:70%"><i class="fa fa-list"></i> <span><b>t0</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The beginning of the timespan for the data. The maximum lookback period is 7 days from today.</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkBluetoothClients_t0" placeholder="msg.t0" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkBluetoothClients_t0Type" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "t0"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkBluetoothClients_timespan">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkBluetoothClients_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
+                        formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 7 days. The default is 1 day.</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkBluetoothClients_timespan" placeholder="msg.timespan" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkBluetoothClients_timespanType" value="number" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "timespan"
                         })
                         formHtml += `<div class="form-row" id="getNetworkBluetoothClients_perPage">`;                      
                     
@@ -1145,18 +1128,6 @@ console.log = function(){};
                     parameters.push({
                         camelCaseName: "endingBefore"
                         })
-                        formHtml += `<div class="form-row" id="getNetworkBluetoothClients_timespan">`;                      
-                    
-                        formHtml += `<label for="node-input-getNetworkBluetoothClients_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
-                        formHtml += `<p>The timespan, in seconds, used to look back from now for bluetooth clients</p>`;
-                        formHtml += `<input type="text" id="node-input-getNetworkBluetoothClients_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkBluetoothClients_timespanType" value="integer" >`;
-                        formHtml += `</div>`;
-
-
-                    parameters.push({
-                        camelCaseName: "timespan"
-                        })
                         formHtml += `<div class="form-row" id="getNetworkBluetoothClients_includeConnectivityHistory">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkBluetoothClients_includeConnectivityHistory" style="width:70%"><i class="fa fa-list"></i> <span><b>includeConnectivityHistory</b> <i>&nbspboolean</i></span></label>`;                  
@@ -1174,8 +1145,20 @@ console.log = function(){};
                                          
                 var example = `[
   {
-    "mac": "00:11:22:33:44:55",
-    "networkId": "N_24329156"
+    "id": "1284392014819",
+    "mac": "22:33:44:55:66:77",
+    "networkId": "N_24329156",
+    "name": "Miles's phone",
+    "deviceName": "Bose QuietComfort 35",
+    "manufacturer": "Bose",
+    "lastSeen": 1526087474,
+    "seenByDeviceMac": "00:11:22:33:44:55",
+    "inSightAlert": false,
+    "outOfSightAlert": false,
+    "tags": [
+      "tag1",
+      "tag2"
+    ]
   }
 ]`;
                 var parameters = []
@@ -1518,10 +1501,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkClients_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkClients_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkClients_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkClients_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkClients_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkClients_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -1642,10 +1625,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkClientsConnectionStats_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkClientsConnectionStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkClientsConnectionStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkClientsConnectionStats_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkClientsConnectionStats_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkClientsConnectionStats_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -1814,10 +1797,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkClientsLatencyStats_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkClientsLatencyStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkClientsLatencyStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkClientsLatencyStats_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkClientsLatencyStats_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkClientsLatencyStats_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -1965,7 +1948,8 @@ console.log = function(){};
         "Two-port MAC Relay"
       ]
     ],
-    "cdp": null
+    "cdp": null,
+    "status": "Online"
   }
 ]`;
                 var parameters = []
@@ -2063,10 +2047,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkClientConnectionStats_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkClientConnectionStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkClientConnectionStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkClientConnectionStats_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkClientConnectionStats_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkClientConnectionStats_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -2314,10 +2298,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkClientLatencyHistory_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkClientLatencyHistory_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkClientLatencyHistory_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 1 day.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkClientLatencyHistory_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkClientLatencyHistory_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkClientLatencyHistory_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -2420,10 +2404,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkClientLatencyStats_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkClientLatencyStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkClientLatencyStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkClientLatencyStats_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkClientLatencyStats_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkClientLatencyStats_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -2652,10 +2636,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkClientSecurityEvents_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkClientSecurityEvents_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkClientSecurityEvents_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 31 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkClientSecurityEvents_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkClientSecurityEvents_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkClientSecurityEvents_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -2971,10 +2955,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkConnectionStats_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkConnectionStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkConnectionStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkConnectionStats_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkConnectionStats_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkConnectionStats_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -3288,10 +3272,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkDevicesConnectionStats_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkDevicesConnectionStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkDevicesConnectionStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkDevicesConnectionStats_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkDevicesConnectionStats_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkDevicesConnectionStats_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -3434,10 +3418,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkDevicesLatencyStats_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkDevicesLatencyStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkDevicesLatencyStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkDevicesLatencyStats_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkDevicesLatencyStats_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkDevicesLatencyStats_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -3721,10 +3705,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkDeviceConnectionStats_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkDeviceConnectionStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkDeviceConnectionStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkDeviceConnectionStats_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkDeviceConnectionStats_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkDeviceConnectionStats_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -3851,10 +3835,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkDeviceLatencyStats_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkDeviceLatencyStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkDeviceLatencyStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkDeviceLatencyStats_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkDeviceLatencyStats_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkDeviceLatencyStats_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -4058,10 +4042,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkDeviceLossAndLatencyHistory_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkDeviceLossAndLatencyHistory_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkDeviceLossAndLatencyHistory_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkDeviceLossAndLatencyHistory_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkDeviceLossAndLatencyHistory_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkDeviceLossAndLatencyHistory_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -4083,9 +4067,11 @@ console.log = function(){};
                         formHtml += `<div class="form-row" id="getNetworkDeviceLossAndLatencyHistory_uplink">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkDeviceLossAndLatencyHistory_uplink" style="width:70%"><i class="fa fa-list"></i> <span><b>uplink</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>The WAN uplink used to obtain the requested stats. Valid uplinks are wan1, wan2, cellular. The default is wan1.</p>`;
-                        formHtml += `<input type="text" id="node-input-getNetworkDeviceLossAndLatencyHistory_uplink" placeholder="msg.uplink" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkDeviceLossAndLatencyHistory_uplinkType" value="string" >`;
+                        formHtml += `<select id="node-input-getNetworkDeviceLossAndLatencyHistory_uplink">`;
+                        formHtml += `<option value="wan1">wan1</option>`;
+                        formHtml += `<option value="wan2">wan2</option>`;
+                        formHtml += `<option value="cellular">cellular</option>`;
+                        formHtml += `</select>`;
                         formHtml += `</div>`;
 
 
@@ -4109,6 +4095,11 @@ console.log = function(){};
                                          
                 var example = `[
   {
+    "ddnsHostnames": {
+      "activeDdnsHostname": "mx1-sample.dynamic-m.com",
+      "ddnsHostnameWan1": "mx1-sample-1.dynamic-m.com",
+      "ddnsHostnameWan2": "mx1-sample-2.dynamic-m.com"
+    },
     "wan1": {
       "wanEnabled": "not configured",
       "usingStaticIp": true,
@@ -4608,10 +4599,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkFailedConnections_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkFailedConnections_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkFailedConnections_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkFailedConnections_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkFailedConnections_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkFailedConnections_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -4682,13 +4673,15 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"Wireless health", methodName:"getNetworkFailedConnections", parameters: parameters, formHtml: formHtml, example: example, summary: `List of all failed client connection events on this network in a given time range`});
                                          
                 var example = `[
-  {
-    "service": "web",
-    "access": "restricted",
-    "allowedIps": [
-      "123.123.123.1"
-    ]
-  }
+  [
+    {
+      "service": "web",
+      "access": "restricted",
+      "allowedIps": [
+        "123.123.123.1"
+      ]
+    }
+  ]
 ]`;
                 var parameters = []
                 var formHtml = ``;   
@@ -6394,10 +6387,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkLatencyStats_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkLatencyStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkLatencyStats_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkLatencyStats_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkLatencyStats_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkLatencyStats_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -7663,10 +7656,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkSecurityEvents_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkSecurityEvents_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getNetworkSecurityEvents_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSecurityEvents_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkSecurityEvents_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSecurityEvents_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -7796,12 +7789,12 @@ console.log = function(){};
                         camelCaseName: "networkId"
                         })
                         formHtml += `<div class="form-row" id="updateNetworkSiteToSiteVpn_updateNetworkSiteToSiteVpn">`;                      
-                    
-                        formHtml += `<label for="node-input-updateNetworkSiteToSiteVpn_updateNetworkSiteToSiteVpn" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSiteToSiteVpn</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<label for="node-input-updateNetworkSiteToSiteVpn_updateNetworkSiteToSiteVpn" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSiteToSiteVpn<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
                         formHtml += `<p></p>`;
                         formHtml += `<input type="text" id="node-input-updateNetworkSiteToSiteVpn_updateNetworkSiteToSiteVpn" placeholder="msg.updateNetworkSiteToSiteVpn" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-updateNetworkSiteToSiteVpn_updateNetworkSiteToSiteVpnType" value="" >`;
                         formHtml += `</div>`;
+                    
 
 
                     parameters.push({
@@ -9797,6 +9790,9 @@ console.log = function(){};
         "timeZone": "America/Los_Angeles",
         "tags": " tag1 tag2 ",
         "type": "switch",
+        "productTypes": [
+          "switch"
+        ],
         "disableMyMerakiCom": false
       },
       {
@@ -9806,6 +9802,9 @@ console.log = function(){};
         "timeZone": "America/Los_Angeles",
         "tags": " tag1 tag2 ",
         "type": "wireless",
+        "productTypes": [
+          "wireless"
+        ],
         "disableMyMerakiCom": false
       }
     ]
@@ -10883,7 +10882,8 @@ console.log = function(){};
         "serial": "Q234-ABCD-0004",
         "powerType": "useNetworkSetting"
       }
-    ]
+    ],
+    "vlan": 100
   }
 ]`;
                 var parameters = []
@@ -10924,7 +10924,8 @@ console.log = function(){};
         "serial": "Q234-ABCD-0004",
         "powerType": "useNetworkSetting"
       }
-    ]
+    ],
+    "vlan": 100
   }
 ]`;
                 var parameters = []
@@ -10956,6 +10957,271 @@ console.log = function(){};
                         })
 
                 methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Update switch network settings`});
+                                         
+                var example = `[
+  [
+    {
+      "id": "1284392014819",
+      "vlan": 100,
+      "protocol": "TCP",
+      "srcPort": 2000,
+      "srcPortRange": null,
+      "dstPort": null,
+      "dstPortRange": "3000-3100",
+      "dscp": 0
+    }
+  ]
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkSwitchSettingsQosRules_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkSwitchSettingsQosRules_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkSwitchSettingsQosRules_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSwitchSettingsQosRules_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"getNetworkSwitchSettingsQosRules", parameters: parameters, formHtml: formHtml, example: example, summary: `List quality of service rules`});
+                                         
+                var example = `[
+  {
+    "id": "1284392014819",
+    "vlan": 100,
+    "protocol": "TCP",
+    "srcPort": 2000,
+    "srcPortRange": null,
+    "dstPort": null,
+    "dstPortRange": "3000-3100",
+    "dscp": 0
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="createNetworkSwitchSettingsQosRule_networkId">`;                      
+                        formHtml += `<label for="node-input-createNetworkSwitchSettingsQosRule_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-createNetworkSwitchSettingsQosRule_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-createNetworkSwitchSettingsQosRule_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="createNetworkSwitchSettingsQosRule_createNetworkSwitchSettingsQosRule">`;                      
+                        formHtml += `<label for="node-input-createNetworkSwitchSettingsQosRule_createNetworkSwitchSettingsQosRule" style="width:70%"><i class="fa fa-list"></i> <span><b>createNetworkSwitchSettingsQosRule<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-createNetworkSwitchSettingsQosRule_createNetworkSwitchSettingsQosRule" placeholder="msg.createNetworkSwitchSettingsQosRule" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-createNetworkSwitchSettingsQosRule_createNetworkSwitchSettingsQosRuleType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "createNetworkSwitchSettingsQosRule"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"createNetworkSwitchSettingsQosRule", parameters: parameters, formHtml: formHtml, example: example, summary: `Add a quality of service rule`});
+                                         
+                var example = `[
+  {
+    "ruleIds": [
+      "1284392014819",
+      "2983092129865"
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkSwitchSettingsQosRulesOrder_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkSwitchSettingsQosRulesOrder_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkSwitchSettingsQosRulesOrder_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSwitchSettingsQosRulesOrder_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"getNetworkSwitchSettingsQosRulesOrder", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the quality of service rule IDs by order in which they will be processed by the switch`});
+                                         
+                var example = `[
+  {
+    "ruleIds": [
+      "1284392014819",
+      "2983092129865"
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsQosRulesOrder_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsQosRulesOrder_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsQosRulesOrder_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsQosRulesOrder_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsQosRulesOrder_updateNetworkSwitchSettingsQosRulesOrder">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsQosRulesOrder_updateNetworkSwitchSettingsQosRulesOrder" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSwitchSettingsQosRulesOrder<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsQosRulesOrder_updateNetworkSwitchSettingsQosRulesOrder" placeholder="msg.updateNetworkSwitchSettingsQosRulesOrder" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsQosRulesOrder_updateNetworkSwitchSettingsQosRulesOrderType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkSwitchSettingsQosRulesOrder"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettingsQosRulesOrder", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the order in which the rules should be processed by the switch`});
+                                         
+                var example = `[
+  {
+    "id": "1284392014819",
+    "vlan": 100,
+    "protocol": "TCP",
+    "srcPort": 2000,
+    "srcPortRange": null,
+    "dstPort": null,
+    "dstPortRange": "3000-3100",
+    "dscp": 0
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkSwitchSettingsQosRule_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkSwitchSettingsQosRule_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkSwitchSettingsQosRule_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSwitchSettingsQosRule_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkSwitchSettingsQosRule_qosRuleId">`;                      
+                        formHtml += `<label for="node-input-getNetworkSwitchSettingsQosRule_qosRuleId" style="width:70%"><i class="fa fa-list"></i> <span><b>qosRuleId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkSwitchSettingsQosRule_qosRuleId" placeholder="msg.qosRuleId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSwitchSettingsQosRule_qosRuleIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "qosRuleId"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"getNetworkSwitchSettingsQosRule", parameters: parameters, formHtml: formHtml, example: example, summary: `Return a quality of service rule`});
+                                         
+                var example = `[]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="deleteNetworkSwitchSettingsQosRule_networkId">`;                      
+                        formHtml += `<label for="node-input-deleteNetworkSwitchSettingsQosRule_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-deleteNetworkSwitchSettingsQosRule_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteNetworkSwitchSettingsQosRule_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="deleteNetworkSwitchSettingsQosRule_qosRuleId">`;                      
+                        formHtml += `<label for="node-input-deleteNetworkSwitchSettingsQosRule_qosRuleId" style="width:70%"><i class="fa fa-list"></i> <span><b>qosRuleId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-deleteNetworkSwitchSettingsQosRule_qosRuleId" placeholder="msg.qosRuleId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteNetworkSwitchSettingsQosRule_qosRuleIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "qosRuleId"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"deleteNetworkSwitchSettingsQosRule", parameters: parameters, formHtml: formHtml, example: example, summary: `Delete a quality of service rule`});
+                                         
+                var example = `[
+  {
+    "id": "1284392014819",
+    "vlan": 100,
+    "protocol": "TCP",
+    "srcPort": 2000,
+    "srcPortRange": null,
+    "dstPort": null,
+    "dstPortRange": "3000-3100",
+    "dscp": 0
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsQosRule_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsQosRule_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsQosRule_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsQosRule_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsQosRule_qosRuleId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsQosRule_qosRuleId" style="width:70%"><i class="fa fa-list"></i> <span><b>qosRuleId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsQosRule_qosRuleId" placeholder="msg.qosRuleId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsQosRule_qosRuleIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "qosRuleId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsQosRule_updateNetworkSwitchSettingsQosRule">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsQosRule_updateNetworkSwitchSettingsQosRule" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSwitchSettingsQosRule</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsQosRule_updateNetworkSwitchSettingsQosRule" placeholder="msg.updateNetworkSwitchSettingsQosRule" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsQosRule_updateNetworkSwitchSettingsQosRuleType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkSwitchSettingsQosRule"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettingsQosRule", parameters: parameters, formHtml: formHtml, example: example, summary: `Update a quality of service rule`});
                                          
                 var example = `[
   [
@@ -11151,6 +11417,57 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"Switch stacks", methodName:"addNetworkSwitchStack", parameters: parameters, formHtml: formHtml, example: example, summary: `Add a switch to a stack`});
                                          
                 var example = `[
+  {
+    "id": "8473",
+    "name": "A cool stack",
+    "serials": [
+      "QBAB-CDEF-GHIJ"
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="removeNetworkSwitchStack_networkId">`;                      
+                        formHtml += `<label for="node-input-removeNetworkSwitchStack_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-removeNetworkSwitchStack_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-removeNetworkSwitchStack_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="removeNetworkSwitchStack_switchStackId">`;                      
+                        formHtml += `<label for="node-input-removeNetworkSwitchStack_switchStackId" style="width:70%"><i class="fa fa-list"></i> <span><b>switchStackId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-removeNetworkSwitchStack_switchStackId" placeholder="msg.switchStackId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-removeNetworkSwitchStack_switchStackIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "switchStackId"
+                        })
+                        formHtml += `<div class="form-row" id="removeNetworkSwitchStack_removeNetworkSwitchStack">`;                      
+                        formHtml += `<label for="node-input-removeNetworkSwitchStack_removeNetworkSwitchStack" style="width:70%"><i class="fa fa-list"></i> <span><b>removeNetworkSwitchStack<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-removeNetworkSwitchStack_removeNetworkSwitchStack" placeholder="msg.removeNetworkSwitchStack" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-removeNetworkSwitchStack_removeNetworkSwitchStackType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "removeNetworkSwitchStack"
+                        })
+
+                methodGroups.push({methodGroup:"Switch stacks", methodName:"removeNetworkSwitchStack", parameters: parameters, formHtml: formHtml, example: example, summary: `Remove a switch from a stack`});
+                                         
+                var example = `[
   [
     {
       "host": "1.2.3.4",
@@ -11252,13 +11569,25 @@ console.log = function(){};
                     parameters.push({
                         camelCaseName: "networkId"
                         })
-                        formHtml += `<div class="form-row" id="getNetworkTraffic_timespan">`;                      
-                        formHtml += `<label for="node-input-getNetworkTraffic_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>The timespan for the data. Must be an integer representing a duration in seconds between two hours and one month. (Mandatory.)</p>`;
-                        formHtml += `<input type="text" id="node-input-getNetworkTraffic_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkTraffic_timespanType" value="string" >`;
-                        formHtml += `</div>`;
+                        formHtml += `<div class="form-row" id="getNetworkTraffic_t0">`;                      
                     
+                        formHtml += `<label for="node-input-getNetworkTraffic_t0" style="width:70%"><i class="fa fa-list"></i> <span><b>t0</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The beginning of the timespan for the data. The maximum lookback period is 30 days from today.</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkTraffic_t0" placeholder="msg.t0" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkTraffic_t0Type" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "t0"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkTraffic_timespan">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkTraffic_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
+                        formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 30 days.</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkTraffic_timespan" placeholder="msg.timespan" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkTraffic_timespanType" value="number" >`;
+                        formHtml += `</div>`;
 
 
                     parameters.push({
@@ -11267,7 +11596,9 @@ console.log = function(){};
                         formHtml += `<div class="form-row" id="getNetworkTraffic_deviceType">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkTraffic_deviceType" style="width:70%"><i class="fa fa-list"></i> <span><b>deviceType</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>Filter the data by device type: combined (default), wireless, switch, appliance. When using combined, for each rule the data will come from the device type with the most usage.</p>`;
+                        formHtml += `<p>    Filter the data by device type: combined (default), wireless, switch, appliance.
+    When using combined, for each rule the data will come from the device type with the most usage.
+</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkTraffic_deviceType" placeholder="msg.deviceType" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-getNetworkTraffic_deviceTypeType" value="string" >`;
                         formHtml += `</div>`;
@@ -11277,8 +11608,8 @@ console.log = function(){};
                         camelCaseName: "deviceType"
                         })
 
-                methodGroups.push({methodGroup:"Networks", methodName:"getNetworkTraffic", parameters: parameters, formHtml: formHtml, example: example, summary: `The traffic analysis data for this network.
-<a href=https://documentation.meraki.com/MR/Monitoring_and_Reporting/Hostname_Visibility>Traffic Analysis with Hostname Visibility</a> must be enabled on the network.
+                methodGroups.push({methodGroup:"Networks", methodName:"getNetworkTraffic", parameters: parameters, formHtml: formHtml, example: example, summary: `    The traffic analysis data for this network.
+    <a href=https://documentation.meraki.com/MR/Monitoring_and_Reporting/Hostname_Visibility>Traffic Analysis with Hostname Visibility</a> must be enabled on the network.
 `});
                                          
                 var example = `[
@@ -12238,8 +12569,8 @@ console.log = function(){};
                         formHtml += `<div class="form-row" id="getNetworkWirelessRfProfiles_includeTemplateProfiles">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkWirelessRfProfiles_includeTemplateProfiles" style="width:70%"><i class="fa fa-list"></i> <span><b>includeTemplateProfiles</b> <i>&nbspboolean</i></span></label>`;                  
-                        formHtml += `<p>      If the network is bound to a template, this parameter controls whether or not the non-basic RF profiles defined on the template
-      should be included in the response alongside the non-basic profiles defined on the bound network. Defaults to false.
+                        formHtml += `<p>    If the network is bound to a template, this parameter controls whether or not the non-basic RF profiles defined on the template
+    should be included in the response alongside the non-basic profiles defined on the bound network. Defaults to false.
 </p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkWirelessRfProfiles_includeTemplateProfiles" placeholder="msg.includeTemplateProfiles" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-getNetworkWirelessRfProfiles_includeTemplateProfilesType" value="boolean" >`;
@@ -13536,10 +13867,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getOrganizationApiRequests_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getOrganizationApiRequests_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getOrganizationApiRequests_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getOrganizationApiRequests_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getOrganizationApiRequests_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationApiRequests_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -13632,6 +13963,345 @@ console.log = function(){};
                         })
 
                 methodGroups.push({methodGroup:"API usage", methodName:"getOrganizationApiRequests", parameters: parameters, formHtml: formHtml, example: example, summary: `List the API requests made by an organization`});
+                                         
+                var example = `[
+  [
+    {
+      "brandingPolicyId": "456",
+      "name": "My Branding Policy",
+      "enabled": true,
+      "adminSettings": {
+        "appliesTo": "All admins of networks...",
+        "values": [
+          "N_1234",
+          "L_5678"
+        ]
+      },
+      "helpSettings": {
+        "helpTab": "show",
+        "getHelpSubtab": "default or inherit",
+        "communitySubtab": "show",
+        "casesSubtab": "hide",
+        "dataProtectionRequestsSubtab": "default or inherit",
+        "getHelpSubtabKnowledgeBaseSearch": "<h1>Some custom HTML content</h1>",
+        "universalSearchKnowledgeBaseSearch": "hide",
+        "ciscoMerakiProductDocumentation": "show",
+        "supportContactInfo": "show",
+        "newFeaturesSubtab": "show",
+        "firewallInfoSubtab": "hide",
+        "apiDocsSubtab": "default or inherit",
+        "hardwareReplacementsSubtab": "hide",
+        "smForums": "hide"
+      }
+    }
+  ]
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getOrganizationBrandingPolicies_organizationId">`;                      
+                        formHtml += `<label for="node-input-getOrganizationBrandingPolicies_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationBrandingPolicies_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationBrandingPolicies_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+
+                methodGroups.push({methodGroup:"Dashboard branding policies", methodName:"getOrganizationBrandingPolicies", parameters: parameters, formHtml: formHtml, example: example, summary: `List the branding policies of an organization`});
+                                         
+                var example = `[
+  {
+    "brandingPolicyId": "456",
+    "name": "My Branding Policy",
+    "enabled": true,
+    "adminSettings": {
+      "appliesTo": "All admins of networks...",
+      "values": [
+        "N_1234",
+        "L_5678"
+      ]
+    },
+    "helpSettings": {
+      "helpTab": "show",
+      "getHelpSubtab": "default or inherit",
+      "communitySubtab": "show",
+      "casesSubtab": "hide",
+      "dataProtectionRequestsSubtab": "default or inherit",
+      "getHelpSubtabKnowledgeBaseSearch": "<h1>Some custom HTML content</h1>",
+      "universalSearchKnowledgeBaseSearch": "hide",
+      "ciscoMerakiProductDocumentation": "show",
+      "supportContactInfo": "show",
+      "newFeaturesSubtab": "show",
+      "firewallInfoSubtab": "hide",
+      "apiDocsSubtab": "default or inherit",
+      "hardwareReplacementsSubtab": "hide",
+      "smForums": "hide"
+    }
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="createOrganizationBrandingPolicy_organizationId">`;                      
+                        formHtml += `<label for="node-input-createOrganizationBrandingPolicy_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-createOrganizationBrandingPolicy_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-createOrganizationBrandingPolicy_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="createOrganizationBrandingPolicy_createOrganizationBrandingPolicy">`;                      
+                        formHtml += `<label for="node-input-createOrganizationBrandingPolicy_createOrganizationBrandingPolicy" style="width:70%"><i class="fa fa-list"></i> <span><b>createOrganizationBrandingPolicy<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-createOrganizationBrandingPolicy_createOrganizationBrandingPolicy" placeholder="msg.createOrganizationBrandingPolicy" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-createOrganizationBrandingPolicy_createOrganizationBrandingPolicyType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "createOrganizationBrandingPolicy"
+                        })
+
+                methodGroups.push({methodGroup:"Dashboard branding policies", methodName:"createOrganizationBrandingPolicy", parameters: parameters, formHtml: formHtml, example: example, summary: `Add a new branding policy to an organization`});
+                                         
+                var example = `[
+  {
+    "brandingPolicyIds": [
+      "123",
+      "456",
+      "789"
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getOrganizationBrandingPoliciesPriorities_organizationId">`;                      
+                        formHtml += `<label for="node-input-getOrganizationBrandingPoliciesPriorities_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationBrandingPoliciesPriorities_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationBrandingPoliciesPriorities_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+
+                methodGroups.push({methodGroup:"Dashboard branding policies", methodName:"getOrganizationBrandingPoliciesPriorities", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the branding policy IDs of an organization in priority order. IDs are ordered in ascending order of priority (IDs later in the array have higher priority).`});
+                                         
+                var example = `[
+  {
+    "brandingPolicyIds": [
+      "123",
+      "456",
+      "789"
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateOrganizationBrandingPoliciesPriorities_organizationId">`;                      
+                        formHtml += `<label for="node-input-updateOrganizationBrandingPoliciesPriorities_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateOrganizationBrandingPoliciesPriorities_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateOrganizationBrandingPoliciesPriorities_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="updateOrganizationBrandingPoliciesPriorities_updateOrganizationBrandingPoliciesPriorities">`;                      
+                        formHtml += `<label for="node-input-updateOrganizationBrandingPoliciesPriorities_updateOrganizationBrandingPoliciesPriorities" style="width:70%"><i class="fa fa-list"></i> <span><b>updateOrganizationBrandingPoliciesPriorities<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateOrganizationBrandingPoliciesPriorities_updateOrganizationBrandingPoliciesPriorities" placeholder="msg.updateOrganizationBrandingPoliciesPriorities" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateOrganizationBrandingPoliciesPriorities_updateOrganizationBrandingPoliciesPrioritiesType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "updateOrganizationBrandingPoliciesPriorities"
+                        })
+
+                methodGroups.push({methodGroup:"Dashboard branding policies", methodName:"updateOrganizationBrandingPoliciesPriorities", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the priority ordering of an organizations branding policies.`});
+                                         
+                var example = `[
+  {
+    "brandingPolicyId": "456",
+    "name": "My Branding Policy",
+    "enabled": true,
+    "adminSettings": {
+      "appliesTo": "All admins of networks...",
+      "values": [
+        "N_1234",
+        "L_5678"
+      ]
+    },
+    "helpSettings": {
+      "helpTab": "show",
+      "getHelpSubtab": "default or inherit",
+      "communitySubtab": "show",
+      "casesSubtab": "hide",
+      "dataProtectionRequestsSubtab": "default or inherit",
+      "getHelpSubtabKnowledgeBaseSearch": "<h1>Some custom HTML content</h1>",
+      "universalSearchKnowledgeBaseSearch": "hide",
+      "ciscoMerakiProductDocumentation": "show",
+      "supportContactInfo": "show",
+      "newFeaturesSubtab": "show",
+      "firewallInfoSubtab": "hide",
+      "apiDocsSubtab": "default or inherit",
+      "hardwareReplacementsSubtab": "hide",
+      "smForums": "hide"
+    }
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getOrganizationBrandingPolicy_organizationId">`;                      
+                        formHtml += `<label for="node-input-getOrganizationBrandingPolicy_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationBrandingPolicy_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationBrandingPolicy_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationBrandingPolicy_brandingPolicyId">`;                      
+                        formHtml += `<label for="node-input-getOrganizationBrandingPolicy_brandingPolicyId" style="width:70%"><i class="fa fa-list"></i> <span><b>brandingPolicyId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationBrandingPolicy_brandingPolicyId" placeholder="msg.brandingPolicyId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationBrandingPolicy_brandingPolicyIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "brandingPolicyId"
+                        })
+
+                methodGroups.push({methodGroup:"Dashboard branding policies", methodName:"getOrganizationBrandingPolicy", parameters: parameters, formHtml: formHtml, example: example, summary: `Return a branding policy`});
+                                         
+                var example = `[
+  {
+    "brandingPolicyId": "456",
+    "name": "My Branding Policy",
+    "enabled": true,
+    "adminSettings": {
+      "appliesTo": "All admins of networks...",
+      "values": [
+        "N_1234",
+        "L_5678"
+      ]
+    },
+    "helpSettings": {
+      "helpTab": "show",
+      "getHelpSubtab": "default or inherit",
+      "communitySubtab": "show",
+      "casesSubtab": "hide",
+      "dataProtectionRequestsSubtab": "default or inherit",
+      "getHelpSubtabKnowledgeBaseSearch": "<h1>Some custom HTML content</h1>",
+      "universalSearchKnowledgeBaseSearch": "hide",
+      "ciscoMerakiProductDocumentation": "show",
+      "supportContactInfo": "show",
+      "newFeaturesSubtab": "show",
+      "firewallInfoSubtab": "hide",
+      "apiDocsSubtab": "default or inherit",
+      "hardwareReplacementsSubtab": "hide",
+      "smForums": "hide"
+    }
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateOrganizationBrandingPolicy_organizationId">`;                      
+                        formHtml += `<label for="node-input-updateOrganizationBrandingPolicy_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateOrganizationBrandingPolicy_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateOrganizationBrandingPolicy_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="updateOrganizationBrandingPolicy_brandingPolicyId">`;                      
+                        formHtml += `<label for="node-input-updateOrganizationBrandingPolicy_brandingPolicyId" style="width:70%"><i class="fa fa-list"></i> <span><b>brandingPolicyId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateOrganizationBrandingPolicy_brandingPolicyId" placeholder="msg.brandingPolicyId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateOrganizationBrandingPolicy_brandingPolicyIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "brandingPolicyId"
+                        })
+                        formHtml += `<div class="form-row" id="updateOrganizationBrandingPolicy_updateOrganizationBrandingPolicy">`;                      
+                    
+                        formHtml += `<label for="node-input-updateOrganizationBrandingPolicy_updateOrganizationBrandingPolicy" style="width:70%"><i class="fa fa-list"></i> <span><b>updateOrganizationBrandingPolicy</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateOrganizationBrandingPolicy_updateOrganizationBrandingPolicy" placeholder="msg.updateOrganizationBrandingPolicy" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateOrganizationBrandingPolicy_updateOrganizationBrandingPolicyType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateOrganizationBrandingPolicy"
+                        })
+
+                methodGroups.push({methodGroup:"Dashboard branding policies", methodName:"updateOrganizationBrandingPolicy", parameters: parameters, formHtml: formHtml, example: example, summary: `Update a branding policy`});
+                                         
+                var example = `[]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="deleteOrganizationBrandingPolicy_organizationId">`;                      
+                        formHtml += `<label for="node-input-deleteOrganizationBrandingPolicy_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-deleteOrganizationBrandingPolicy_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteOrganizationBrandingPolicy_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="deleteOrganizationBrandingPolicy_brandingPolicyId">`;                      
+                        formHtml += `<label for="node-input-deleteOrganizationBrandingPolicy_brandingPolicyId" style="width:70%"><i class="fa fa-list"></i> <span><b>brandingPolicyId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-deleteOrganizationBrandingPolicy_brandingPolicyId" placeholder="msg.brandingPolicyId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteOrganizationBrandingPolicy_brandingPolicyIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "brandingPolicyId"
+                        })
+
+                methodGroups.push({methodGroup:"Dashboard branding policies", methodName:"deleteOrganizationBrandingPolicy", parameters: parameters, formHtml: formHtml, example: example, summary: `Delete a branding policy`});
                                          
                 var example = `[
   {
@@ -13854,7 +14524,8 @@ console.log = function(){};
     "serial": "Q234-ABCD-5678",
     "model": "MR34",
     "mac": "00:11:22:33:44:55",
-    "lanIp": "1.2.3.4"
+    "lanIp": "1.2.3.4",
+    "firmware": "wireless-25-14"
   }
 ]`;
                 var parameters = []
@@ -13978,6 +14649,11 @@ console.log = function(){};
       "timeZone": "America/Los_Angeles",
       "tags": " tag1 tag2 ",
       "type": "combined",
+      "productTypes": [
+        "appliance",
+        "switch",
+        "wireless"
+      ],
       "disableMyMerakiCom": false
     }
   ]
@@ -14020,6 +14696,11 @@ console.log = function(){};
     "timeZone": "America/Los_Angeles",
     "tags": " tag1 tag2 ",
     "type": "combined",
+    "productTypes": [
+      "appliance",
+      "switch",
+      "wireless"
+    ],
     "disableMyMerakiCom": false
   }
 ]`;
@@ -14062,6 +14743,11 @@ console.log = function(){};
       "timeZone": "America/Los_Angeles",
       "tags": " tag1 tag2 ",
       "type": "combined",
+      "productTypes": [
+        "appliance",
+        "switch",
+        "wireless"
+      ],
       "disableMyMerakiCom": false
     }
   }
@@ -14523,10 +15209,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getOrganizationSecurityEvents_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getOrganizationSecurityEvents_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getOrganizationSecurityEvents_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.</p>`;
                         formHtml += `<input type="text" id="node-input-getOrganizationSecurityEvents_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getOrganizationSecurityEvents_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationSecurityEvents_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -14838,10 +15524,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getOrganizationUplinksLossAndLatency_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getOrganizationUplinksLossAndLatency_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getOrganizationUplinksLossAndLatency_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.</p>`;
                         formHtml += `<input type="text" id="node-input-getOrganizationUplinksLossAndLatency_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getOrganizationUplinksLossAndLatency_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationUplinksLossAndLatency_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -14851,9 +15537,11 @@ console.log = function(){};
                         formHtml += `<div class="form-row" id="getOrganizationUplinksLossAndLatency_uplink">`;                      
                     
                         formHtml += `<label for="node-input-getOrganizationUplinksLossAndLatency_uplink" style="width:70%"><i class="fa fa-list"></i> <span><b>uplink</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, cellular. Default will return all uplinks.</p>`;
-                        formHtml += `<input type="text" id="node-input-getOrganizationUplinksLossAndLatency_uplink" placeholder="msg.uplink" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getOrganizationUplinksLossAndLatency_uplinkType" value="string" >`;
+                        formHtml += `<select id="node-input-getOrganizationUplinksLossAndLatency_uplink">`;
+                        formHtml += `<option value="wan1">wan1</option>`;
+                        formHtml += `<option value="wan2">wan2</option>`;
+                        formHtml += `<option value="cellular">cellular</option>`;
+                        formHtml += `</select>`;
                         formHtml += `</div>`;
 
 
@@ -15006,10 +15694,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getOrganizationWebhookLogs_timespan">`;                      
                     
-                        formHtml += `<label for="node-input-getOrganizationWebhookLogs_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<label for="node-input-getOrganizationWebhookLogs_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
                         formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.</p>`;
                         formHtml += `<input type="text" id="node-input-getOrganizationWebhookLogs_timespan" placeholder="msg.timespan" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getOrganizationWebhookLogs_timespanType" value="integer" >`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationWebhookLogs_timespanType" value="number" >`;
                         formHtml += `</div>`;
 
 
@@ -15257,6 +15945,7 @@ console.log = function(){};
             <option value="Config templates" >Config templates</option>
             <option value="Content filtering categories" >Content filtering categories</option>
             <option value="Content filtering rules" >Content filtering rules</option>
+            <option value="Dashboard branding policies" >Dashboard branding policies</option>
             <option value="Devices" >Devices</option>
             <option value="Firewalled services" >Firewalled services</option>
             <option value="Group policies" >Group policies</option>
@@ -15376,7 +16065,7 @@ return msg;
 
 
     <p>Cisco Meraki Dashboard Node</p>
-    &nbsp &nbsp &nbsp<i>OAS version: 0.3.0</i>
+    &nbsp &nbsp &nbsp<i>OAS version: 0.4.0</i>
     <hr/>
     <br>
     <p>The Cisco Meraki Dashboard API is a modern REST API based on the <a href="https://swagger.io/docs/specification/about/" target="_blank">OpenAPI</a> specification. 

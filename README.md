@@ -1,4 +1,5 @@
-# node-red-contrib-meraki-dashboard-api
+node-red-contrib-meraki-dashboard-api
+=====================
 
 Node-RED node for meraki-dashboard-api
 
@@ -57,3 +58,5 @@ Cory Guynn, 2019
 ## License
 
 Apache 2.0
+
+
