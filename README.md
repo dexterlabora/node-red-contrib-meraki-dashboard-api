@@ -6,9 +6,9 @@ Node-RED node for the Cisco Meraki Dashboard API
 
 [Documentation](https://developer.cisco.com/docs/meraki-dashboard-api-node-red-node)
 
->  <img src="./docs/images/meraki-dashboard-api-node.png" width="100"/>
+>  <img src="https://github.com/dexterlabora/node-red-contrib-meraki-dashboard-api/blob/master/docs/images/meraki-dashboard-api-node.png?raw=true" width="100"/>
 
-<img src="./docs/images/getOrganizationApiRequests-screenshot-edit.png" width="400">
+<img src="https://github.com/dexterlabora/node-red-contrib-meraki-dashboard-api/blob/master/docs/images/getOrganizationApiRequests-screenshot-edit.png?raw=true" width="400">
 
 ## Overview
 
@@ -24,7 +24,7 @@ Cisco Meraki is a powerful cloud managed network solution. This node is a wrappe
 
 _This example clones switch ports to one or more destination switches. It uses Action Batches to group multiple calls into a single request and periodically checks the state of the batch._
 
-![](./docs/images/switch-clone-demo.gif)
+![](https://github.com/dexterlabora/node-red-contrib-meraki-dashboard-api/blob/master/docs/images/switch-clone-demo.gif?raw=true)
 
 ## Install
 
