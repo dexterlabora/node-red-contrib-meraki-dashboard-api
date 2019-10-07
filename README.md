@@ -1,15 +1,14 @@
-node-red-contrib-meraki-dashboard-api
-=====================
+# node-red-contrib-meraki-dashboard-api
 
-Node-RED node for meraki-dashboard-api
+Node-RED node for the Cisco Meraki Dashboard API
 
 > A full featured node for monitoring and managing the Meraki Cloud built on the Dashboard API Open API spec.
 
 [Documentation](https://developer.cisco.com/docs/meraki-dashboard-api-node-red-node)
 
->  <img src="docs/images/meraki-dashboard-api-node.png" width="100"/>
+>  <img src="./docs/images/meraki-dashboard-api-node.png" width="100"/>
 
-<img src="docs/images/getOrganizationApiRequests-screenshot-edit.png" width="400">
+<img src="./docs/images/getOrganizationApiRequests-screenshot-edit.png" width="400">
 
 ## Overview
 
@@ -25,7 +24,7 @@ Cisco Meraki is a powerful cloud managed network solution. This node is a wrappe
 
 _This example clones switch ports to one or more destination switches. It uses Action Batches to group multiple calls into a single request and periodically checks the state of the batch._
 
-![](docs/images/switch-clone-demo.gif)
+![](./docs/images/switch-clone-demo.gif)
 
 ## Install
 
@@ -58,5 +57,3 @@ Cory Guynn, 2019
 ## License
 
 Apache 2.0
-
-
