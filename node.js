@@ -23,23 +23,38 @@ module.exports = function (RED) {
         node.on('input', function (msg) {
             var node = this;
             var errorFlag = false;
-            console.log("this.service.host", this.service.host);
-            console.log("node.js.mustache config", config);
-            console.log("node.js.mustache this", this);
+            //console.log("this.service.host", this.service.host);
+            //console.log("node.js.mustache config", config);
+            //console.log("node.js.mustache this", this);
             var client;
             if (this.service && this.service.host) {
-                client = new lib.MerakiDashboardApi({ domain: this.service.host });
+                if(msg.service){
+                    if (msg.service.host) {
+                        // override apiUrl with input msg
+                        client = new lib.MerakiDashboardApi({ domain: msg.service.host });
+                }              
+                }else{
+                    client = new lib.MerakiDashboardApi({ domain: this.service.host });
+                }
             } else {
                 node.error('Host in configuration node is not specified.', msg);
                 errorFlag = true;
             }
             if (!errorFlag && this.service && this.service.credentials && this.service.credentials.secureApiKeyValue) {
-                if (this.service.secureApiKeyIsQuery) {
-                    client.setApiKey(this.service.credentials.secureApiKeyValue,
-                                     this.service.secureApiKeyHeaderOrQueryName, true);
-                } else {
-                    client.setApiKey(this.service.credentials.secureApiKeyValue,
-                                     this.service.secureApiKeyHeaderOrQueryName, false);
+                if(msg.service){
+                    if (msg.service.apiKey) {
+                        // override apiKey with input msg
+                        client.setApiKey(msg.service.apiKey,
+                            this.service.secureApiKeyHeaderOrQueryName, false);
+                    }              
+                }else{
+                    if (this.service.secureApiKeyIsQuery) {
+                        client.setApiKey(this.service.credentials.secureApiKeyValue,
+                                        this.service.secureApiKeyHeaderOrQueryName, true);
+                    } else {
+                        client.setApiKey(this.service.credentials.secureApiKeyValue,
+                                        this.service.secureApiKeyHeaderOrQueryName, false);
+                    }
                 }
             }
             if (!errorFlag) {

@@ -1,8 +1,8 @@
 [
   {
-    "id": "f798c736.e1e2f8",
+    "id": "3680eef.fd6cd12",
     "type": "inject",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "Organization",
     "topic": "",
     "payload": "",
@@ -11,14 +11,14 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 130,
-    "y": 480,
-    "wires": [["14a6290f.9bf837"]]
+    "x": 210,
+    "y": 460,
+    "wires": [["acf79c3.9db0d6"]]
   },
   {
-    "id": "9a2676f1.c7d9b8",
+    "id": "11a551c4.f8af3e",
     "type": "debug",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "Organization",
     "active": true,
     "tosidebar": true,
@@ -26,14 +26,14 @@
     "tostatus": false,
     "complete": "payload",
     "targetType": "msg",
-    "x": 990,
-    "y": 480,
+    "x": 1070,
+    "y": 460,
     "wires": []
   },
   {
-    "id": "9914b12d.99c51",
+    "id": "18872878.da6f38",
     "type": "inject",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "SSIDs",
     "topic": "",
     "payload": "",
@@ -42,14 +42,14 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 110,
-    "y": 600,
-    "wires": [["7a5a9b10.314d44"]]
+    "x": 190,
+    "y": 580,
+    "wires": [["3f7234dd.3116bc"]]
   },
   {
-    "id": "1251571e.9b27c9",
+    "id": "3c98006c.38629",
     "type": "debug",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "SSIDs",
     "active": true,
     "tosidebar": true,
@@ -57,14 +57,14 @@
     "tostatus": false,
     "complete": "payload",
     "targetType": "msg",
-    "x": 1010,
-    "y": 600,
+    "x": 1090,
+    "y": 580,
     "wires": []
   },
   {
-    "id": "36a07ba4.36b4e4",
+    "id": "96053b64.9dfdb8",
     "type": "inject",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "VLANs",
     "topic": "",
     "payload": "",
@@ -73,14 +73,14 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 110,
-    "y": 640,
-    "wires": [["82c31444.cc69e8"]]
+    "x": 190,
+    "y": 620,
+    "wires": [["b49b33a1.238e8"]]
   },
   {
-    "id": "b26c56a7.87fa68",
+    "id": "bbf8ec23.0f0b9",
     "type": "debug",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "VLANs",
     "active": true,
     "tosidebar": true,
@@ -88,14 +88,14 @@
     "tostatus": false,
     "complete": "payload",
     "targetType": "msg",
-    "x": 1010,
-    "y": 640,
+    "x": 1090,
+    "y": 620,
     "wires": []
   },
   {
-    "id": "cb485153.62343",
+    "id": "67c53a95.0a30c4",
     "type": "inject",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "Devices",
     "topic": "",
     "payload": "",
@@ -104,14 +104,14 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 110,
-    "y": 560,
-    "wires": [["9b509e0a.15865"]]
+    "x": 190,
+    "y": 540,
+    "wires": [["5b8521d5.598d1"]]
   },
   {
-    "id": "20c497c5.051368",
+    "id": "bd5b0ac3.1009d8",
     "type": "debug",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "Devices",
     "active": true,
     "tosidebar": true,
@@ -119,14 +119,14 @@
     "tostatus": false,
     "complete": "payload",
     "targetType": "msg",
-    "x": 1000,
-    "y": 560,
+    "x": 1080,
+    "y": 540,
     "wires": []
   },
   {
-    "id": "d8c76a4c.8d49a8",
+    "id": "8dacf8ae.d79e38",
     "type": "meraki-dashboard-api",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "service": "d7e7692b.e5f0c8",
     "name": "getOrganization",
     "selectedGroup": "Organizations",
@@ -315,14 +315,14 @@
     "storedParams": [],
     "formHtml": "",
     "method": "getOrganization",
-    "x": 660,
-    "y": 480,
-    "wires": [["9a2676f1.c7d9b8"]]
+    "x": 740,
+    "y": 460,
+    "wires": [["11a551c4.f8af3e"]]
   },
   {
-    "id": "218ac509.7de93a",
+    "id": "d3366fc7.afd57",
     "type": "meraki-dashboard-api",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "service": "d7e7692b.e5f0c8",
     "name": "getNetworkDevices",
     "selectedGroup": "Devices",
@@ -557,14 +557,14 @@
     ],
     "formHtml": "",
     "method": "getNetworkDevices",
-    "x": 670,
-    "y": 560,
-    "wires": [["20c497c5.051368"]]
+    "x": 750,
+    "y": 540,
+    "wires": [["bd5b0ac3.1009d8"]]
   },
   {
-    "id": "3a2174ed.8c0edc",
+    "id": "91a9519e.d629c",
     "type": "meraki-dashboard-api",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "service": "d7e7692b.e5f0c8",
     "name": "getNetworkSsids",
     "selectedGroup": "SSIDs",
@@ -634,14 +634,14 @@
     "storedParams": [],
     "formHtml": "",
     "method": "getNetworkSsids",
-    "x": 670,
-    "y": 600,
-    "wires": [["1251571e.9b27c9"]]
+    "x": 750,
+    "y": 580,
+    "wires": [["3c98006c.38629"]]
   },
   {
-    "id": "23b36216.75f42e",
+    "id": "bc89d5fc.710bb8",
     "type": "meraki-dashboard-api",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "service": "d7e7692b.e5f0c8",
     "name": "getNetworkVlans",
     "selectedGroup": "VLANs",
@@ -753,14 +753,14 @@
     "storedParams": [],
     "formHtml": "",
     "method": "getNetworkVlans",
-    "x": 670,
-    "y": 640,
-    "wires": [["b26c56a7.87fa68"]]
+    "x": 750,
+    "y": 620,
+    "wires": [["bbf8ec23.0f0b9"]]
   },
   {
-    "id": "bcd5406e.1708e",
+    "id": "18473c6b.b71624",
     "type": "inject",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "Set Flow Environment",
     "topic": "",
     "payload": "",
@@ -769,14 +769,14 @@
     "crontab": "",
     "once": true,
     "onceDelay": 0.1,
-    "x": 160,
-    "y": 420,
-    "wires": [["7bb107db.b74f48"]]
+    "x": 240,
+    "y": 400,
+    "wires": [["508bc5e9.3a706c"]]
   },
   {
-    "id": "7bb107db.b74f48",
+    "id": "508bc5e9.3a706c",
     "type": "change",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "Flow Environment Variables - UPDATE ME",
     "rules": [
       {
@@ -799,24 +799,24 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 460,
-    "y": 420,
-    "wires": [["78d5503c.01dee"]]
+    "x": 540,
+    "y": 400,
+    "wires": [["f9728a50.d295c8"]]
   },
   {
-    "id": "e4cf2a9.10c57d8",
+    "id": "bb1089e7.fd9798",
     "type": "comment",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "Use common settings with environment variables and input params.",
     "info": "\n",
-    "x": 260,
-    "y": 380,
+    "x": 340,
+    "y": 360,
     "wires": []
   },
   {
-    "id": "14a6290f.9bf837",
+    "id": "acf79c3.9db0d6",
     "type": "change",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "",
     "rules": [
       {
@@ -832,14 +832,14 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 400,
-    "y": 480,
-    "wires": [["d8c76a4c.8d49a8"]]
+    "x": 480,
+    "y": 460,
+    "wires": [["8dacf8ae.d79e38"]]
   },
   {
-    "id": "9b509e0a.15865",
+    "id": "5b8521d5.598d1",
     "type": "change",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "",
     "rules": [
       {
@@ -855,14 +855,14 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 390,
-    "y": 560,
-    "wires": [["218ac509.7de93a"]]
+    "x": 470,
+    "y": 540,
+    "wires": [["d3366fc7.afd57"]]
   },
   {
-    "id": "7a5a9b10.314d44",
+    "id": "3f7234dd.3116bc",
     "type": "change",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "",
     "rules": [
       {
@@ -878,14 +878,14 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 390,
-    "y": 600,
-    "wires": [["3a2174ed.8c0edc"]]
+    "x": 470,
+    "y": 580,
+    "wires": [["91a9519e.d629c"]]
   },
   {
-    "id": "82c31444.cc69e8",
+    "id": "b49b33a1.238e8",
     "type": "change",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "",
     "rules": [
       {
@@ -901,14 +901,14 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 390,
-    "y": 640,
-    "wires": [["23b36216.75f42e"]]
+    "x": 470,
+    "y": 620,
+    "wires": [["bc89d5fc.710bb8"]]
   },
   {
-    "id": "86d2c678.b4e548",
+    "id": "1467dd40.08d753",
     "type": "inject",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "Networks",
     "topic": "",
     "payload": "",
@@ -917,14 +917,14 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 120,
-    "y": 520,
-    "wires": [["f78829d3.a5fcb8"]]
+    "x": 200,
+    "y": 500,
+    "wires": [["612817c6.d2f9d8"]]
   },
   {
-    "id": "7b1c2015.62755",
+    "id": "320eb726.b204c8",
     "type": "debug",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "Networks",
     "active": true,
     "tosidebar": true,
@@ -932,14 +932,14 @@
     "tostatus": false,
     "complete": "payload",
     "targetType": "msg",
-    "x": 1000,
-    "y": 520,
+    "x": 1080,
+    "y": 500,
     "wires": []
   },
   {
-    "id": "4363ed7e.1787e4",
+    "id": "b03cf12c.fad32",
     "type": "meraki-dashboard-api",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "service": "d7e7692b.e5f0c8",
     "name": "getOrganizationNetworks",
     "selectedGroup": "Networks",
@@ -1176,7 +1176,7 @@
         "methodName": "getOrganizationNetworks",
         "camelCaseName": "organizationId",
         "type": "str",
-        "value": "549236"
+        "value": ""
       }
     ],
     "storedParams": [
@@ -1184,26 +1184,26 @@
         "methodName": "getOrganizationNetworks",
         "camelCaseName": "organizationId",
         "type": "str",
-        "value": "549236"
+        "value": ""
       }
     ],
     "formHtml": "",
     "method": "getOrganizationNetworks",
-    "x": 690,
-    "y": 520,
-    "wires": [["7b1c2015.62755"]]
+    "x": 770,
+    "y": 500,
+    "wires": [["320eb726.b204c8"]]
   },
   {
-    "id": "f78829d3.a5fcb8",
+    "id": "612817c6.d2f9d8",
     "type": "change",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "",
     "rules": [
       {
         "t": "set",
-        "p": "networkId",
+        "p": "organizationId",
         "pt": "msg",
-        "to": "networkId",
+        "to": "organizationId",
         "tot": "flow"
       }
     ],
@@ -1212,14 +1212,14 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 390,
-    "y": 520,
-    "wires": [["4363ed7e.1787e4"]]
+    "x": 480,
+    "y": 500,
+    "wires": [["b03cf12c.fad32"]]
   },
   {
-    "id": "78d5503c.01dee",
+    "id": "f9728a50.d295c8",
     "type": "debug",
-    "z": "f4572282.d383",
+    "z": "e332df12.348ab",
     "name": "Flow Env Vars",
     "active": true,
     "tosidebar": true,
@@ -1227,8 +1227,8 @@
     "tostatus": false,
     "complete": "payload",
     "targetType": "msg",
-    "x": 980,
-    "y": 420,
+    "x": 1060,
+    "y": 400,
     "wires": []
   },
   {
