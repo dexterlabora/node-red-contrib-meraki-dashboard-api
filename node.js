@@ -10135,6 +10135,72 @@ module.exports = function (RED) {
                                 result = client.swapNetworkWarmspare(swapNetworkWarmspare_parameters);
                 console.log('result', result);
             }
+            if (!errorFlag && node.method === 'getNetworkSwitchAccessControlLists') {
+                var getNetworkSwitchAccessControlLists_parameters = [];
+                var getNetworkSwitchAccessControlLists_nodeParam;
+                var getNetworkSwitchAccessControlLists_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkSwitchAccessControlLists_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkSwitchAccessControlLists_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkSwitchAccessControlLists_nodeParamType === 'str') {
+                    console.log('getNetworkSwitchAccessControlLists_nodeParamType is "str"');
+                    getNetworkSwitchAccessControlLists_parameters.networkId = getNetworkSwitchAccessControlLists_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkSwitchAccessControlLists_nodeParamType is not "str"')
+                    getNetworkSwitchAccessControlLists_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkSwitchAccessControlLists(getNetworkSwitchAccessControlLists_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkSwitchAccessControlLists') {
+                var updateNetworkSwitchAccessControlLists_parameters = [];
+                var updateNetworkSwitchAccessControlLists_nodeParam;
+                var updateNetworkSwitchAccessControlLists_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkSwitchAccessControlLists_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkSwitchAccessControlLists_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkSwitchAccessControlLists_nodeParamType === 'str') {
+                    console.log('updateNetworkSwitchAccessControlLists_nodeParamType is "str"');
+                    updateNetworkSwitchAccessControlLists_parameters.networkId = updateNetworkSwitchAccessControlLists_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkSwitchAccessControlLists_nodeParamType is not "str"')
+                    updateNetworkSwitchAccessControlLists_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkSwitchAccessControlLists_nodeParam = storedParamValsMap['updateNetworkSwitchAccessControlLists'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchAccessControlLists");
+
+                updateNetworkSwitchAccessControlLists_nodeParamType = storedParamTypeMap['updateNetworkSwitchAccessControlLists'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchAccessControlLists");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkSwitchAccessControlLists_parameters.updateNetworkSwitchAccessControlLists = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkSwitchAccessControlLists(updateNetworkSwitchAccessControlLists_parameters);
+                console.log('result', result);
+            }
             if (!errorFlag && node.method === 'getNetworkSwitchPortSchedules') {
                 var getNetworkSwitchPortSchedules_parameters = [];
                 var getNetworkSwitchPortSchedules_nodeParam;
@@ -10365,6 +10431,138 @@ module.exports = function (RED) {
                     errorFlag = true;
                 }
                                 result = client.updateNetworkSwitchSettings(updateNetworkSwitchSettings_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkSwitchSettingsDhcpServerPolicy') {
+                var getNetworkSwitchSettingsDhcpServerPolicy_parameters = [];
+                var getNetworkSwitchSettingsDhcpServerPolicy_nodeParam;
+                var getNetworkSwitchSettingsDhcpServerPolicy_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkSwitchSettingsDhcpServerPolicy_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkSwitchSettingsDhcpServerPolicy_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkSwitchSettingsDhcpServerPolicy_nodeParamType === 'str') {
+                    console.log('getNetworkSwitchSettingsDhcpServerPolicy_nodeParamType is "str"');
+                    getNetworkSwitchSettingsDhcpServerPolicy_parameters.networkId = getNetworkSwitchSettingsDhcpServerPolicy_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkSwitchSettingsDhcpServerPolicy_nodeParamType is not "str"')
+                    getNetworkSwitchSettingsDhcpServerPolicy_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkSwitchSettingsDhcpServerPolicy(getNetworkSwitchSettingsDhcpServerPolicy_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkSwitchSettingsDhcpServerPolicy') {
+                var updateNetworkSwitchSettingsDhcpServerPolicy_parameters = [];
+                var updateNetworkSwitchSettingsDhcpServerPolicy_nodeParam;
+                var updateNetworkSwitchSettingsDhcpServerPolicy_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkSwitchSettingsDhcpServerPolicy_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkSwitchSettingsDhcpServerPolicy_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkSwitchSettingsDhcpServerPolicy_nodeParamType === 'str') {
+                    console.log('updateNetworkSwitchSettingsDhcpServerPolicy_nodeParamType is "str"');
+                    updateNetworkSwitchSettingsDhcpServerPolicy_parameters.networkId = updateNetworkSwitchSettingsDhcpServerPolicy_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkSwitchSettingsDhcpServerPolicy_nodeParamType is not "str"')
+                    updateNetworkSwitchSettingsDhcpServerPolicy_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkSwitchSettingsDhcpServerPolicy_nodeParam = storedParamValsMap['updateNetworkSwitchSettingsDhcpServerPolicy'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchSettingsDhcpServerPolicy");
+
+                updateNetworkSwitchSettingsDhcpServerPolicy_nodeParamType = storedParamTypeMap['updateNetworkSwitchSettingsDhcpServerPolicy'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchSettingsDhcpServerPolicy");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkSwitchSettingsDhcpServerPolicy_parameters.updateNetworkSwitchSettingsDhcpServerPolicy = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkSwitchSettingsDhcpServerPolicy(updateNetworkSwitchSettingsDhcpServerPolicy_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkSwitchSettingsDscpToCosMappings') {
+                var getNetworkSwitchSettingsDscpToCosMappings_parameters = [];
+                var getNetworkSwitchSettingsDscpToCosMappings_nodeParam;
+                var getNetworkSwitchSettingsDscpToCosMappings_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkSwitchSettingsDscpToCosMappings_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkSwitchSettingsDscpToCosMappings_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkSwitchSettingsDscpToCosMappings_nodeParamType === 'str') {
+                    console.log('getNetworkSwitchSettingsDscpToCosMappings_nodeParamType is "str"');
+                    getNetworkSwitchSettingsDscpToCosMappings_parameters.networkId = getNetworkSwitchSettingsDscpToCosMappings_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkSwitchSettingsDscpToCosMappings_nodeParamType is not "str"')
+                    getNetworkSwitchSettingsDscpToCosMappings_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkSwitchSettingsDscpToCosMappings(getNetworkSwitchSettingsDscpToCosMappings_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkSwitchSettingsDscpToCosMappings') {
+                var updateNetworkSwitchSettingsDscpToCosMappings_parameters = [];
+                var updateNetworkSwitchSettingsDscpToCosMappings_nodeParam;
+                var updateNetworkSwitchSettingsDscpToCosMappings_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkSwitchSettingsDscpToCosMappings_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkSwitchSettingsDscpToCosMappings_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkSwitchSettingsDscpToCosMappings_nodeParamType === 'str') {
+                    console.log('updateNetworkSwitchSettingsDscpToCosMappings_nodeParamType is "str"');
+                    updateNetworkSwitchSettingsDscpToCosMappings_parameters.networkId = updateNetworkSwitchSettingsDscpToCosMappings_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkSwitchSettingsDscpToCosMappings_nodeParamType is not "str"')
+                    updateNetworkSwitchSettingsDscpToCosMappings_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkSwitchSettingsDscpToCosMappings_nodeParam = storedParamValsMap['updateNetworkSwitchSettingsDscpToCosMappings'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchSettingsDscpToCosMappings");
+
+                updateNetworkSwitchSettingsDscpToCosMappings_nodeParamType = storedParamTypeMap['updateNetworkSwitchSettingsDscpToCosMappings'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchSettingsDscpToCosMappings");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkSwitchSettingsDscpToCosMappings_parameters.updateNetworkSwitchSettingsDscpToCosMappings = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkSwitchSettingsDscpToCosMappings(updateNetworkSwitchSettingsDscpToCosMappings_parameters);
                 console.log('result', result);
             }
             if (!errorFlag && node.method === 'getNetworkSwitchSettingsMtu') {
@@ -13253,6 +13451,23 @@ module.exports = function (RED) {
                     console.log('getOrganizationApiRequests_nodeParamType is not "str"')
                     getOrganizationApiRequests_parameters.responseCode = RED.util.getMessageProperty(msg, "responseCode");
                 }
+                                
+                getOrganizationApiRequests_nodeParam = storedParamValsMap['sourceIp'] ||
+                    RED.util.getMessageProperty(msg, "sourceIp");
+
+                getOrganizationApiRequests_nodeParamType = storedParamTypeMap['sourceIp'] ||
+                    RED.util.getMessageProperty(msg, "sourceIp");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationApiRequests_nodeParamType === 'str') {
+                    console.log('getOrganizationApiRequests_nodeParamType is "str"');
+                    getOrganizationApiRequests_parameters.sourceIp = getOrganizationApiRequests_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationApiRequests_nodeParamType is not "str"')
+                    getOrganizationApiRequests_parameters.sourceIp = RED.util.getMessageProperty(msg, "sourceIp");
+                }
                                 result = client.getOrganizationApiRequests(getOrganizationApiRequests_parameters);
                 console.log('result', result);
             }
@@ -13844,6 +14059,23 @@ module.exports = function (RED) {
                     console.log('getOrganizationInventory_nodeParamType is not "str"')
                     getOrganizationInventory_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
                 }
+                                
+                getOrganizationInventory_nodeParam = storedParamValsMap['includeLicenseInfo'] ||
+                    RED.util.getMessageProperty(msg, "includeLicenseInfo");
+
+                getOrganizationInventory_nodeParamType = storedParamTypeMap['includeLicenseInfo'] ||
+                    RED.util.getMessageProperty(msg, "includeLicenseInfo");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationInventory_nodeParamType === 'str') {
+                    console.log('getOrganizationInventory_nodeParamType is "str"');
+                    getOrganizationInventory_parameters.includeLicenseInfo = getOrganizationInventory_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationInventory_nodeParamType is not "str"')
+                    getOrganizationInventory_parameters.includeLicenseInfo = RED.util.getMessageProperty(msg, "includeLicenseInfo");
+                }
                                 result = client.getOrganizationInventory(getOrganizationInventory_parameters);
                 console.log('result', result);
             }
@@ -13870,6 +14102,397 @@ module.exports = function (RED) {
                     getOrganizationLicenseState_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
                 }
                                 result = client.getOrganizationLicenseState(getOrganizationLicenseState_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getOrganizationLicenses') {
+                var getOrganizationLicenses_parameters = [];
+                var getOrganizationLicenses_nodeParam;
+                var getOrganizationLicenses_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getOrganizationLicenses_nodeParam = storedParamValsMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                getOrganizationLicenses_nodeParamType = storedParamTypeMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationLicenses_nodeParamType === 'str') {
+                    console.log('getOrganizationLicenses_nodeParamType is "str"');
+                    getOrganizationLicenses_parameters.organizationId = getOrganizationLicenses_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationLicenses_nodeParamType is not "str"')
+                    getOrganizationLicenses_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
+                }
+                                
+                getOrganizationLicenses_nodeParam = storedParamValsMap['perPage'] ||
+                    RED.util.getMessageProperty(msg, "perPage");
+
+                getOrganizationLicenses_nodeParamType = storedParamTypeMap['perPage'] ||
+                    RED.util.getMessageProperty(msg, "perPage");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationLicenses_nodeParamType === 'str') {
+                    console.log('getOrganizationLicenses_nodeParamType is "str"');
+                    getOrganizationLicenses_parameters.perPage = getOrganizationLicenses_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationLicenses_nodeParamType is not "str"')
+                    getOrganizationLicenses_parameters.perPage = RED.util.getMessageProperty(msg, "perPage");
+                }
+                                
+                getOrganizationLicenses_nodeParam = storedParamValsMap['startingAfter'] ||
+                    RED.util.getMessageProperty(msg, "startingAfter");
+
+                getOrganizationLicenses_nodeParamType = storedParamTypeMap['startingAfter'] ||
+                    RED.util.getMessageProperty(msg, "startingAfter");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationLicenses_nodeParamType === 'str') {
+                    console.log('getOrganizationLicenses_nodeParamType is "str"');
+                    getOrganizationLicenses_parameters.startingAfter = getOrganizationLicenses_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationLicenses_nodeParamType is not "str"')
+                    getOrganizationLicenses_parameters.startingAfter = RED.util.getMessageProperty(msg, "startingAfter");
+                }
+                                
+                getOrganizationLicenses_nodeParam = storedParamValsMap['endingBefore'] ||
+                    RED.util.getMessageProperty(msg, "endingBefore");
+
+                getOrganizationLicenses_nodeParamType = storedParamTypeMap['endingBefore'] ||
+                    RED.util.getMessageProperty(msg, "endingBefore");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationLicenses_nodeParamType === 'str') {
+                    console.log('getOrganizationLicenses_nodeParamType is "str"');
+                    getOrganizationLicenses_parameters.endingBefore = getOrganizationLicenses_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationLicenses_nodeParamType is not "str"')
+                    getOrganizationLicenses_parameters.endingBefore = RED.util.getMessageProperty(msg, "endingBefore");
+                }
+                                
+                getOrganizationLicenses_nodeParam = storedParamValsMap['deviceSerial'] ||
+                    RED.util.getMessageProperty(msg, "deviceSerial");
+
+                getOrganizationLicenses_nodeParamType = storedParamTypeMap['deviceSerial'] ||
+                    RED.util.getMessageProperty(msg, "deviceSerial");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationLicenses_nodeParamType === 'str') {
+                    console.log('getOrganizationLicenses_nodeParamType is "str"');
+                    getOrganizationLicenses_parameters.deviceSerial = getOrganizationLicenses_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationLicenses_nodeParamType is not "str"')
+                    getOrganizationLicenses_parameters.deviceSerial = RED.util.getMessageProperty(msg, "deviceSerial");
+                }
+                                
+                getOrganizationLicenses_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getOrganizationLicenses_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationLicenses_nodeParamType === 'str') {
+                    console.log('getOrganizationLicenses_nodeParamType is "str"');
+                    getOrganizationLicenses_parameters.networkId = getOrganizationLicenses_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationLicenses_nodeParamType is not "str"')
+                    getOrganizationLicenses_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                getOrganizationLicenses_nodeParam = storedParamValsMap['state'] ||
+                    RED.util.getMessageProperty(msg, "state");
+
+                getOrganizationLicenses_nodeParamType = storedParamTypeMap['state'] ||
+                    RED.util.getMessageProperty(msg, "state");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationLicenses_nodeParamType === 'str') {
+                    console.log('getOrganizationLicenses_nodeParamType is "str"');
+                    getOrganizationLicenses_parameters.state = getOrganizationLicenses_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationLicenses_nodeParamType is not "str"')
+                    getOrganizationLicenses_parameters.state = RED.util.getMessageProperty(msg, "state");
+                }
+                                result = client.getOrganizationLicenses(getOrganizationLicenses_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'assignOrganizationLicensesSeats') {
+                var assignOrganizationLicensesSeats_parameters = [];
+                var assignOrganizationLicensesSeats_nodeParam;
+                var assignOrganizationLicensesSeats_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                assignOrganizationLicensesSeats_nodeParam = storedParamValsMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                assignOrganizationLicensesSeats_nodeParamType = storedParamTypeMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (assignOrganizationLicensesSeats_nodeParamType === 'str') {
+                    console.log('assignOrganizationLicensesSeats_nodeParamType is "str"');
+                    assignOrganizationLicensesSeats_parameters.organizationId = assignOrganizationLicensesSeats_nodeParam || undefined;
+                } else {
+                    console.log('assignOrganizationLicensesSeats_nodeParamType is not "str"')
+                    assignOrganizationLicensesSeats_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
+                }
+                                
+                assignOrganizationLicensesSeats_nodeParam = storedParamValsMap['assignOrganizationLicensesSeats'] ||
+                    RED.util.getMessageProperty(msg, "assignOrganizationLicensesSeats");
+
+                assignOrganizationLicensesSeats_nodeParamType = storedParamTypeMap['assignOrganizationLicensesSeats'] ||
+                    RED.util.getMessageProperty(msg, "assignOrganizationLicensesSeats");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    assignOrganizationLicensesSeats_parameters.assignOrganizationLicensesSeats = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.assignOrganizationLicensesSeats(assignOrganizationLicensesSeats_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'moveOrganizationLicenses') {
+                var moveOrganizationLicenses_parameters = [];
+                var moveOrganizationLicenses_nodeParam;
+                var moveOrganizationLicenses_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                moveOrganizationLicenses_nodeParam = storedParamValsMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                moveOrganizationLicenses_nodeParamType = storedParamTypeMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (moveOrganizationLicenses_nodeParamType === 'str') {
+                    console.log('moveOrganizationLicenses_nodeParamType is "str"');
+                    moveOrganizationLicenses_parameters.organizationId = moveOrganizationLicenses_nodeParam || undefined;
+                } else {
+                    console.log('moveOrganizationLicenses_nodeParamType is not "str"')
+                    moveOrganizationLicenses_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
+                }
+                                
+                moveOrganizationLicenses_nodeParam = storedParamValsMap['moveOrganizationLicenses'] ||
+                    RED.util.getMessageProperty(msg, "moveOrganizationLicenses");
+
+                moveOrganizationLicenses_nodeParamType = storedParamTypeMap['moveOrganizationLicenses'] ||
+                    RED.util.getMessageProperty(msg, "moveOrganizationLicenses");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    moveOrganizationLicenses_parameters.moveOrganizationLicenses = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.moveOrganizationLicenses(moveOrganizationLicenses_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'moveOrganizationLicensesSeats') {
+                var moveOrganizationLicensesSeats_parameters = [];
+                var moveOrganizationLicensesSeats_nodeParam;
+                var moveOrganizationLicensesSeats_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                moveOrganizationLicensesSeats_nodeParam = storedParamValsMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                moveOrganizationLicensesSeats_nodeParamType = storedParamTypeMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (moveOrganizationLicensesSeats_nodeParamType === 'str') {
+                    console.log('moveOrganizationLicensesSeats_nodeParamType is "str"');
+                    moveOrganizationLicensesSeats_parameters.organizationId = moveOrganizationLicensesSeats_nodeParam || undefined;
+                } else {
+                    console.log('moveOrganizationLicensesSeats_nodeParamType is not "str"')
+                    moveOrganizationLicensesSeats_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
+                }
+                                
+                moveOrganizationLicensesSeats_nodeParam = storedParamValsMap['moveOrganizationLicensesSeats'] ||
+                    RED.util.getMessageProperty(msg, "moveOrganizationLicensesSeats");
+
+                moveOrganizationLicensesSeats_nodeParamType = storedParamTypeMap['moveOrganizationLicensesSeats'] ||
+                    RED.util.getMessageProperty(msg, "moveOrganizationLicensesSeats");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    moveOrganizationLicensesSeats_parameters.moveOrganizationLicensesSeats = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.moveOrganizationLicensesSeats(moveOrganizationLicensesSeats_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'renewOrganizationLicensesSeats') {
+                var renewOrganizationLicensesSeats_parameters = [];
+                var renewOrganizationLicensesSeats_nodeParam;
+                var renewOrganizationLicensesSeats_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                renewOrganizationLicensesSeats_nodeParam = storedParamValsMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                renewOrganizationLicensesSeats_nodeParamType = storedParamTypeMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (renewOrganizationLicensesSeats_nodeParamType === 'str') {
+                    console.log('renewOrganizationLicensesSeats_nodeParamType is "str"');
+                    renewOrganizationLicensesSeats_parameters.organizationId = renewOrganizationLicensesSeats_nodeParam || undefined;
+                } else {
+                    console.log('renewOrganizationLicensesSeats_nodeParamType is not "str"')
+                    renewOrganizationLicensesSeats_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
+                }
+                                
+                renewOrganizationLicensesSeats_nodeParam = storedParamValsMap['renewOrganizationLicensesSeats'] ||
+                    RED.util.getMessageProperty(msg, "renewOrganizationLicensesSeats");
+
+                renewOrganizationLicensesSeats_nodeParamType = storedParamTypeMap['renewOrganizationLicensesSeats'] ||
+                    RED.util.getMessageProperty(msg, "renewOrganizationLicensesSeats");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    renewOrganizationLicensesSeats_parameters.renewOrganizationLicensesSeats = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.renewOrganizationLicensesSeats(renewOrganizationLicensesSeats_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getOrganizationLicense') {
+                var getOrganizationLicense_parameters = [];
+                var getOrganizationLicense_nodeParam;
+                var getOrganizationLicense_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getOrganizationLicense_nodeParam = storedParamValsMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                getOrganizationLicense_nodeParamType = storedParamTypeMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationLicense_nodeParamType === 'str') {
+                    console.log('getOrganizationLicense_nodeParamType is "str"');
+                    getOrganizationLicense_parameters.organizationId = getOrganizationLicense_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationLicense_nodeParamType is not "str"')
+                    getOrganizationLicense_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
+                }
+                                
+                getOrganizationLicense_nodeParam = storedParamValsMap['licenseId'] ||
+                    RED.util.getMessageProperty(msg, "licenseId");
+
+                getOrganizationLicense_nodeParamType = storedParamTypeMap['licenseId'] ||
+                    RED.util.getMessageProperty(msg, "licenseId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationLicense_nodeParamType === 'str') {
+                    console.log('getOrganizationLicense_nodeParamType is "str"');
+                    getOrganizationLicense_parameters.licenseId = getOrganizationLicense_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationLicense_nodeParamType is not "str"')
+                    getOrganizationLicense_parameters.licenseId = RED.util.getMessageProperty(msg, "licenseId");
+                }
+                                result = client.getOrganizationLicense(getOrganizationLicense_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateOrganizationLicense') {
+                var updateOrganizationLicense_parameters = [];
+                var updateOrganizationLicense_nodeParam;
+                var updateOrganizationLicense_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateOrganizationLicense_nodeParam = storedParamValsMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                updateOrganizationLicense_nodeParamType = storedParamTypeMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateOrganizationLicense_nodeParamType === 'str') {
+                    console.log('updateOrganizationLicense_nodeParamType is "str"');
+                    updateOrganizationLicense_parameters.organizationId = updateOrganizationLicense_nodeParam || undefined;
+                } else {
+                    console.log('updateOrganizationLicense_nodeParamType is not "str"')
+                    updateOrganizationLicense_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
+                }
+                                
+                updateOrganizationLicense_nodeParam = storedParamValsMap['licenseId'] ||
+                    RED.util.getMessageProperty(msg, "licenseId");
+
+                updateOrganizationLicense_nodeParamType = storedParamTypeMap['licenseId'] ||
+                    RED.util.getMessageProperty(msg, "licenseId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateOrganizationLicense_nodeParamType === 'str') {
+                    console.log('updateOrganizationLicense_nodeParamType is "str"');
+                    updateOrganizationLicense_parameters.licenseId = updateOrganizationLicense_nodeParam || undefined;
+                } else {
+                    console.log('updateOrganizationLicense_nodeParamType is not "str"')
+                    updateOrganizationLicense_parameters.licenseId = RED.util.getMessageProperty(msg, "licenseId");
+                }
+                                
+                updateOrganizationLicense_nodeParam = storedParamValsMap['updateOrganizationLicense'] ||
+                    RED.util.getMessageProperty(msg, "updateOrganizationLicense");
+
+                updateOrganizationLicense_nodeParamType = storedParamTypeMap['updateOrganizationLicense'] ||
+                    RED.util.getMessageProperty(msg, "updateOrganizationLicense");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateOrganizationLicense_parameters.updateOrganizationLicense = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateOrganizationLicense(updateOrganizationLicense_parameters);
                 console.log('result', result);
             }
             if (!errorFlag && node.method === 'getOrganizationNetworks') {
@@ -14110,21 +14733,21 @@ module.exports = function (RED) {
                     getOrganizationSamlRole_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
                 }
                                 
-                getOrganizationSamlRole_nodeParam = storedParamValsMap['id'] ||
-                    RED.util.getMessageProperty(msg, "id");
+                getOrganizationSamlRole_nodeParam = storedParamValsMap['samlRoleId'] ||
+                    RED.util.getMessageProperty(msg, "samlRoleId");
 
-                getOrganizationSamlRole_nodeParamType = storedParamTypeMap['id'] ||
-                    RED.util.getMessageProperty(msg, "id");
+                getOrganizationSamlRole_nodeParamType = storedParamTypeMap['samlRoleId'] ||
+                    RED.util.getMessageProperty(msg, "samlRoleId");
 
                 // Check if its the body param
 
                 // notBodyParam                                            
                 if (getOrganizationSamlRole_nodeParamType === 'str') {
                     console.log('getOrganizationSamlRole_nodeParamType is "str"');
-                    getOrganizationSamlRole_parameters.id = getOrganizationSamlRole_nodeParam || undefined;
+                    getOrganizationSamlRole_parameters.samlRoleId = getOrganizationSamlRole_nodeParam || undefined;
                 } else {
                     console.log('getOrganizationSamlRole_nodeParamType is not "str"')
-                    getOrganizationSamlRole_parameters.id = RED.util.getMessageProperty(msg, "id");
+                    getOrganizationSamlRole_parameters.samlRoleId = RED.util.getMessageProperty(msg, "samlRoleId");
                 }
                                 result = client.getOrganizationSamlRole(getOrganizationSamlRole_parameters);
                 console.log('result', result);
@@ -14152,21 +14775,21 @@ module.exports = function (RED) {
                     updateOrganizationSamlRole_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
                 }
                                 
-                updateOrganizationSamlRole_nodeParam = storedParamValsMap['id'] ||
-                    RED.util.getMessageProperty(msg, "id");
+                updateOrganizationSamlRole_nodeParam = storedParamValsMap['samlRoleId'] ||
+                    RED.util.getMessageProperty(msg, "samlRoleId");
 
-                updateOrganizationSamlRole_nodeParamType = storedParamTypeMap['id'] ||
-                    RED.util.getMessageProperty(msg, "id");
+                updateOrganizationSamlRole_nodeParamType = storedParamTypeMap['samlRoleId'] ||
+                    RED.util.getMessageProperty(msg, "samlRoleId");
 
                 // Check if its the body param
 
                 // notBodyParam                                            
                 if (updateOrganizationSamlRole_nodeParamType === 'str') {
                     console.log('updateOrganizationSamlRole_nodeParamType is "str"');
-                    updateOrganizationSamlRole_parameters.id = updateOrganizationSamlRole_nodeParam || undefined;
+                    updateOrganizationSamlRole_parameters.samlRoleId = updateOrganizationSamlRole_nodeParam || undefined;
                 } else {
                     console.log('updateOrganizationSamlRole_nodeParamType is not "str"')
-                    updateOrganizationSamlRole_parameters.id = RED.util.getMessageProperty(msg, "id");
+                    updateOrganizationSamlRole_parameters.samlRoleId = RED.util.getMessageProperty(msg, "samlRoleId");
                 }
                                 
                 updateOrganizationSamlRole_nodeParam = storedParamValsMap['updateOrganizationSamlRole'] ||
@@ -14210,21 +14833,21 @@ module.exports = function (RED) {
                     deleteOrganizationSamlRole_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
                 }
                                 
-                deleteOrganizationSamlRole_nodeParam = storedParamValsMap['id'] ||
-                    RED.util.getMessageProperty(msg, "id");
+                deleteOrganizationSamlRole_nodeParam = storedParamValsMap['samlRoleId'] ||
+                    RED.util.getMessageProperty(msg, "samlRoleId");
 
-                deleteOrganizationSamlRole_nodeParamType = storedParamTypeMap['id'] ||
-                    RED.util.getMessageProperty(msg, "id");
+                deleteOrganizationSamlRole_nodeParamType = storedParamTypeMap['samlRoleId'] ||
+                    RED.util.getMessageProperty(msg, "samlRoleId");
 
                 // Check if its the body param
 
                 // notBodyParam                                            
                 if (deleteOrganizationSamlRole_nodeParamType === 'str') {
                     console.log('deleteOrganizationSamlRole_nodeParamType is "str"');
-                    deleteOrganizationSamlRole_parameters.id = deleteOrganizationSamlRole_nodeParam || undefined;
+                    deleteOrganizationSamlRole_parameters.samlRoleId = deleteOrganizationSamlRole_nodeParam || undefined;
                 } else {
                     console.log('deleteOrganizationSamlRole_nodeParamType is not "str"')
-                    deleteOrganizationSamlRole_parameters.id = RED.util.getMessageProperty(msg, "id");
+                    deleteOrganizationSamlRole_parameters.samlRoleId = RED.util.getMessageProperty(msg, "samlRoleId");
                 }
                                 result = client.deleteOrganizationSamlRole(deleteOrganizationSamlRole_parameters);
                 console.log('result', result);

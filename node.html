@@ -420,11 +420,16 @@ console.log = function(){};
       "linkNegotiation": "Auto negotiate",
       "portScheduleId": "1234",
       "udld": "Alert only",
+      "macWhitelist": [
+        "34:56:fe:ce:8e:a0",
+        "34:56:fe:ce:8e:a1"
+      ],
       "stickyMacWhitelist": [
         "34:56:fe:ce:8e:b0",
         "34:56:fe:ce:8e:b1"
       ],
-      "stickyMacWhitelistLimit": 5
+      "stickyMacWhitelistLimit": 5,
+      "stormControlEnabled": true
     }
   ]
 ]`;
@@ -463,11 +468,16 @@ console.log = function(){};
     "linkNegotiation": "Auto negotiate",
     "portScheduleId": "1234",
     "udld": "Alert only",
+    "macWhitelist": [
+      "34:56:fe:ce:8e:a0",
+      "34:56:fe:ce:8e:a1"
+    ],
     "stickyMacWhitelist": [
       "34:56:fe:ce:8e:b0",
       "34:56:fe:ce:8e:b1"
     ],
-    "stickyMacWhitelistLimit": 5
+    "stickyMacWhitelistLimit": 5,
+    "stormControlEnabled": true
   }
 ]`;
                 var parameters = []
@@ -517,11 +527,16 @@ console.log = function(){};
     "linkNegotiation": "Auto negotiate",
     "portScheduleId": "1234",
     "udld": "Alert only",
+    "macWhitelist": [
+      "34:56:fe:ce:8e:a0",
+      "34:56:fe:ce:8e:a1"
+    ],
     "stickyMacWhitelist": [
       "34:56:fe:ce:8e:b0",
       "34:56:fe:ce:8e:b1"
     ],
-    "stickyMacWhitelistLimit": 5
+    "stickyMacWhitelistLimit": 5,
+    "stormControlEnabled": true
   }
 ]`;
                 var parameters = []
@@ -579,7 +594,8 @@ console.log = function(){};
       "switch",
       "wireless"
     ],
-    "disableMyMerakiCom": false
+    "disableMyMerakiCom": false,
+    "enrollmentString": "long-island-office"
   }
 ]`;
                 var parameters = []
@@ -613,7 +629,8 @@ console.log = function(){};
       "switch",
       "wireless"
     ],
-    "disableMyMerakiCom": false
+    "disableMyMerakiCom": false,
+    "enrollmentString": "long-island-office"
   }
 ]`;
                 var parameters = []
@@ -9881,6 +9898,7 @@ console.log = function(){};
                 var example = `[
   [
     {
+      "appId": "1234",
       "bundleSize": null,
       "createdAt": "2018-02-11T00:00:00Z",
       "dynamicSize": null,
@@ -10066,7 +10084,7 @@ console.log = function(){};
       "certPem": "-----BEGIN CERTIFICATE-----\n-----END CERTIFICATE-----\n",
       "issuer": "",
       "subject": "",
-      "id": 15
+      "id": "15"
     }
   ]
 ]`;
@@ -10276,6 +10294,7 @@ console.log = function(){};
                 var example = `[
   [
     {
+      "appId": "1234",
       "bundleSize": null,
       "createdAt": "2018-02-11T00:00:00Z",
       "dynamicSize": null,
@@ -10534,7 +10553,8 @@ console.log = function(){};
         "productTypes": [
           "switch"
         ],
-        "disableMyMerakiCom": false
+        "disableMyMerakiCom": false,
+        "enrollmentString": "long-island-office"
       },
       {
         "id": "N_5678",
@@ -10546,7 +10566,8 @@ console.log = function(){};
         "productTypes": [
           "wireless"
         ],
-        "disableMyMerakiCom": false
+        "disableMyMerakiCom": false,
+        "enrollmentString": "long-island-office"
       }
     ]
   }
@@ -11349,6 +11370,110 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"MX warm spare settings", methodName:"swapNetworkWarmspare", parameters: parameters, formHtml: formHtml, example: example, summary: `Swap MX primary and warm spare appliances`});
                                          
                 var example = `[
+  {
+    "rules": [
+      {
+        "comment": "Deny SSH",
+        "policy": "deny",
+        "ipVersion": "ipv4",
+        "protocol": "tcp",
+        "srcCidr": "10.1.10.0/24",
+        "srcPort": "any",
+        "dstCidr": "172.16.30/24",
+        "dstPort": 22,
+        "vlan": 10
+      },
+      {
+        "comment": "Default rule",
+        "policy": "allow",
+        "ipVersion": "any",
+        "protocol": "any",
+        "srcCidr": "any",
+        "srcPort": "any",
+        "dstCidr": "any",
+        "dstPort": "any",
+        "vlan": "any"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkSwitchAccessControlLists_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkSwitchAccessControlLists_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkSwitchAccessControlLists_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSwitchAccessControlLists_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Switch ACLs", methodName:"getNetworkSwitchAccessControlLists", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the access control lists for a MS network`});
+                                         
+                var example = `[
+  {
+    "rules": [
+      {
+        "comment": "Deny SSH",
+        "policy": "deny",
+        "ipVersion": "ipv4",
+        "protocol": "tcp",
+        "srcCidr": "10.1.10.0/24",
+        "srcPort": "any",
+        "dstCidr": "172.16.30/24",
+        "dstPort": 22,
+        "vlan": 10
+      },
+      {
+        "comment": "Default rule",
+        "policy": "allow",
+        "ipVersion": "any",
+        "protocol": "any",
+        "srcCidr": "any",
+        "srcPort": "any",
+        "dstCidr": "any",
+        "dstPort": "any",
+        "vlan": "any"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchAccessControlLists_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchAccessControlLists_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchAccessControlLists_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchAccessControlLists_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchAccessControlLists_updateNetworkSwitchAccessControlLists">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchAccessControlLists_updateNetworkSwitchAccessControlLists" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSwitchAccessControlLists<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchAccessControlLists_updateNetworkSwitchAccessControlLists" placeholder="msg.updateNetworkSwitchAccessControlLists" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchAccessControlLists_updateNetworkSwitchAccessControlListsType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkSwitchAccessControlLists"
+                        })
+
+                methodGroups.push({methodGroup:"Switch ACLs", methodName:"updateNetworkSwitchAccessControlLists", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the access control lists for a MS network`});
+                                         
+                var example = `[
   [
     {
       "id": "1234",
@@ -11698,6 +11823,142 @@ console.log = function(){};
                         })
 
                 methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Update switch network settings`});
+                                         
+                var example = `[
+  {
+    "defaultPolicy": "block",
+    "allowedServers": [
+      "00:50:56:00:00:01",
+      "00:50:56:00:00:02"
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkSwitchSettingsDhcpServerPolicy_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkSwitchSettingsDhcpServerPolicy_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkSwitchSettingsDhcpServerPolicy_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSwitchSettingsDhcpServerPolicy_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"getNetworkSwitchSettingsDhcpServerPolicy", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the DHCP server policy`});
+                                         
+                var example = `[
+  {
+    "defaultPolicy": "block",
+    "allowedServers": [
+      "00:50:56:00:00:01",
+      "00:50:56:00:00:02"
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsDhcpServerPolicy_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsDhcpServerPolicy_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsDhcpServerPolicy_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsDhcpServerPolicy_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsDhcpServerPolicy_updateNetworkSwitchSettingsDhcpServerPolicy">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsDhcpServerPolicy_updateNetworkSwitchSettingsDhcpServerPolicy" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSwitchSettingsDhcpServerPolicy</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsDhcpServerPolicy_updateNetworkSwitchSettingsDhcpServerPolicy" placeholder="msg.updateNetworkSwitchSettingsDhcpServerPolicy" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsDhcpServerPolicy_updateNetworkSwitchSettingsDhcpServerPolicyType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkSwitchSettingsDhcpServerPolicy"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettingsDhcpServerPolicy", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the DHCP server policy`});
+                                         
+                var example = `[
+  {
+    "mappings": [
+      {
+        "dscp": 1,
+        "cos": 1,
+        "title": "Video"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkSwitchSettingsDscpToCosMappings_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkSwitchSettingsDscpToCosMappings_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkSwitchSettingsDscpToCosMappings_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSwitchSettingsDscpToCosMappings_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"getNetworkSwitchSettingsDscpToCosMappings", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the DSCP to CoS mappings`});
+                                         
+                var example = `[
+  {
+    "mappings": [
+      {
+        "dscp": 1,
+        "cos": 1,
+        "title": "Video"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsDscpToCosMappings_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsDscpToCosMappings_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsDscpToCosMappings_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsDscpToCosMappings_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsDscpToCosMappings_updateNetworkSwitchSettingsDscpToCosMappings">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsDscpToCosMappings_updateNetworkSwitchSettingsDscpToCosMappings" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSwitchSettingsDscpToCosMappings<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsDscpToCosMappings_updateNetworkSwitchSettingsDscpToCosMappings" placeholder="msg.updateNetworkSwitchSettingsDscpToCosMappings" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsDscpToCosMappings_updateNetworkSwitchSettingsDscpToCosMappingsType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkSwitchSettingsDscpToCosMappings"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettingsDscpToCosMappings", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the DSCP to CoS mappings`});
                                          
                 var example = `[
   {
@@ -14877,7 +15138,8 @@ console.log = function(){};
       "queryString": "timespan=604800",
       "userAgent": "PostmanRuntime/7.6.0",
       "ts": "2019-02-20T17:31:23Z",
-      "responseCode": 200
+      "responseCode": 200,
+      "sourceIp": "123.123.123.1"
     }
   ]
 ]`;
@@ -15015,6 +15277,18 @@ console.log = function(){};
 
                     parameters.push({
                         camelCaseName: "responseCode"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationApiRequests_sourceIp">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationApiRequests_sourceIp" style="width:70%"><i class="fa fa-list"></i> <span><b>sourceIp</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>Filter the results by the IP address of the originating API request</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationApiRequests_sourceIp" placeholder="msg.sourceIp" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationApiRequests_sourceIpType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "sourceIp"
                         })
 
                 methodGroups.push({methodGroup:"API usage", methodName:"getOrganizationApiRequests", parameters: parameters, formHtml: formHtml, example: example, summary: `List the API requests made by an organization`});
@@ -15666,6 +15940,18 @@ console.log = function(){};
                     parameters.push({
                         camelCaseName: "organizationId"
                         })
+                        formHtml += `<div class="form-row" id="getOrganizationInventory_includeLicenseInfo">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationInventory_includeLicenseInfo" style="width:70%"><i class="fa fa-list"></i> <span><b>includeLicenseInfo</b> <i>&nbspboolean</i></span></label>`;                  
+                        formHtml += `<p>When this parameter is true, each entity in the response will include the license expiration date of the device (if any). Only applies to organizations that support per-device licensing. Defaults to false.</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationInventory_includeLicenseInfo" placeholder="msg.includeLicenseInfo" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationInventory_includeLicenseInfoType" value="boolean" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "includeLicenseInfo"
+                        })
 
                 methodGroups.push({methodGroup:"Organizations", methodName:"getOrganizationInventory", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the inventory for an organization`});
                                          
@@ -15699,6 +15985,433 @@ console.log = function(){};
                 var example = `[
   [
     {
+      "id": "1234",
+      "licenseType": "MX64-ENT",
+      "licenseKey": "Z21234567890",
+      "orderNumber": "4C1234567",
+      "deviceSerial": "Q234-ABCD-5678",
+      "networkId": "N_24329156",
+      "state": "active",
+      "seatCount": null,
+      "totalDurationInDays": 425,
+      "durationInDays": 365,
+      "permanentlyQueuedLicenses": [
+        {
+          "id": "5678",
+          "licenseType": "MX64-ENT",
+          "licenseKey": "Z21234567890",
+          "orderNumber": "4C1234567",
+          "durationInDays": 60
+        }
+      ],
+      "claimDate": "2019-08-29T12:40:10Z",
+      "activationDate": "2019-09-01T15:01:46Z",
+      "expirationDate": "2020-10-30T15:01:46Z"
+    }
+  ]
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getOrganizationLicenses_organizationId">`;                      
+                        formHtml += `<label for="node-input-getOrganizationLicenses_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationLicenses_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationLicenses_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationLicenses_perPage">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationLicenses_perPage" style="width:70%"><i class="fa fa-list"></i> <span><b>perPage</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<p>The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationLicenses_perPage" placeholder="msg.perPage" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationLicenses_perPageType" value="integer" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "perPage"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationLicenses_startingAfter">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationLicenses_startingAfter" style="width:70%"><i class="fa fa-list"></i> <span><b>startingAfter</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationLicenses_startingAfter" placeholder="msg.startingAfter" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationLicenses_startingAfterType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "startingAfter"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationLicenses_endingBefore">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationLicenses_endingBefore" style="width:70%"><i class="fa fa-list"></i> <span><b>endingBefore</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationLicenses_endingBefore" placeholder="msg.endingBefore" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationLicenses_endingBeforeType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "endingBefore"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationLicenses_deviceSerial">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationLicenses_deviceSerial" style="width:70%"><i class="fa fa-list"></i> <span><b>deviceSerial</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>Filter the licenses to those assigned to a particular device</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationLicenses_deviceSerial" placeholder="msg.deviceSerial" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationLicenses_deviceSerialType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "deviceSerial"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationLicenses_networkId">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationLicenses_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>Filter the licenses to those assigned in a particular network</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationLicenses_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationLicenses_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationLicenses_state">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationLicenses_state" style="width:70%"><i class="fa fa-list"></i> <span><b>state</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<select id="node-input-getOrganizationLicenses_state">`;
+                        formHtml += `<option value="active">active</option>`;
+                        formHtml += `<option value="expired">expired</option>`;
+                        formHtml += `<option value="expiring">expiring</option>`;
+                        formHtml += `<option value="unused">unused</option>`;
+                        formHtml += `<option value="unusedActive">unusedActive</option>`;
+                        formHtml += `<option value="recentlyQueued">recentlyQueued</option>`;
+                        formHtml += `</select>`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "state"
+                        })
+
+                methodGroups.push({methodGroup:"Licenses", methodName:"getOrganizationLicenses", parameters: parameters, formHtml: formHtml, example: example, summary: `List the licenses for an organization`});
+                                         
+                var example = `[
+  {
+    "resultingLicenses": [
+      {
+        "id": "1234",
+        "licenseType": "SME",
+        "licenseKey": "Z21234567890",
+        "orderNumber": "4C1234567",
+        "deviceSerial": null,
+        "networkId": "N_24329156",
+        "state": "active",
+        "seatCount": 25,
+        "totalDurationInDays": 365,
+        "durationInDays": 365,
+        "permanentlyQueuedLicenses": [],
+        "claimDate": "2019-08-29T12:40:10Z",
+        "activationDate": "2019-09-01T15:01:46Z",
+        "expirationDate": "2020-08-31T15:01:46Z"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="assignOrganizationLicensesSeats_organizationId">`;                      
+                        formHtml += `<label for="node-input-assignOrganizationLicensesSeats_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-assignOrganizationLicensesSeats_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-assignOrganizationLicensesSeats_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="assignOrganizationLicensesSeats_assignOrganizationLicensesSeats">`;                      
+                        formHtml += `<label for="node-input-assignOrganizationLicensesSeats_assignOrganizationLicensesSeats" style="width:70%"><i class="fa fa-list"></i> <span><b>assignOrganizationLicensesSeats<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-assignOrganizationLicensesSeats_assignOrganizationLicensesSeats" placeholder="msg.assignOrganizationLicensesSeats" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-assignOrganizationLicensesSeats_assignOrganizationLicensesSeatsType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "assignOrganizationLicensesSeats"
+                        })
+
+                methodGroups.push({methodGroup:"Licenses", methodName:"assignOrganizationLicensesSeats", parameters: parameters, formHtml: formHtml, example: example, summary: `Assign SM seats to a network. This will increase the managed SM device limit of the network`});
+                                         
+                var example = `[
+  {
+    "destOrganizationId": "2930418",
+    "licenseIds": [
+      "123",
+      "456"
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="moveOrganizationLicenses_organizationId">`;                      
+                        formHtml += `<label for="node-input-moveOrganizationLicenses_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-moveOrganizationLicenses_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-moveOrganizationLicenses_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="moveOrganizationLicenses_moveOrganizationLicenses">`;                      
+                        formHtml += `<label for="node-input-moveOrganizationLicenses_moveOrganizationLicenses" style="width:70%"><i class="fa fa-list"></i> <span><b>moveOrganizationLicenses<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-moveOrganizationLicenses_moveOrganizationLicenses" placeholder="msg.moveOrganizationLicenses" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-moveOrganizationLicenses_moveOrganizationLicensesType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "moveOrganizationLicenses"
+                        })
+
+                methodGroups.push({methodGroup:"Licenses", methodName:"moveOrganizationLicenses", parameters: parameters, formHtml: formHtml, example: example, summary: `Move licenses to another organization. This will also move any devices that the licenses are assigned to`});
+                                         
+                var example = `[
+  {
+    "destOrganizationId": "2930418",
+    "licenseId": "1234",
+    "seatCount": 20
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="moveOrganizationLicensesSeats_organizationId">`;                      
+                        formHtml += `<label for="node-input-moveOrganizationLicensesSeats_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-moveOrganizationLicensesSeats_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-moveOrganizationLicensesSeats_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="moveOrganizationLicensesSeats_moveOrganizationLicensesSeats">`;                      
+                        formHtml += `<label for="node-input-moveOrganizationLicensesSeats_moveOrganizationLicensesSeats" style="width:70%"><i class="fa fa-list"></i> <span><b>moveOrganizationLicensesSeats<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-moveOrganizationLicensesSeats_moveOrganizationLicensesSeats" placeholder="msg.moveOrganizationLicensesSeats" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-moveOrganizationLicensesSeats_moveOrganizationLicensesSeatsType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "moveOrganizationLicensesSeats"
+                        })
+
+                methodGroups.push({methodGroup:"Licenses", methodName:"moveOrganizationLicensesSeats", parameters: parameters, formHtml: formHtml, example: example, summary: `Move SM seats to another organization`});
+                                         
+                var example = `[
+  {
+    "resultingLicenses": [
+      {
+        "id": "1234",
+        "licenseType": "SME",
+        "licenseKey": "Z21234567890",
+        "orderNumber": "4C1234567",
+        "deviceSerial": null,
+        "networkId": "N_24329156",
+        "state": "active",
+        "seatCount": 25,
+        "totalDurationInDays": 365,
+        "durationInDays": 365,
+        "permanentlyQueuedLicenses": [],
+        "claimDate": "2019-08-29T12:40:10Z",
+        "activationDate": "2019-09-01T15:01:46Z",
+        "expirationDate": "2020-08-31T15:01:46Z"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="renewOrganizationLicensesSeats_organizationId">`;                      
+                        formHtml += `<label for="node-input-renewOrganizationLicensesSeats_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-renewOrganizationLicensesSeats_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-renewOrganizationLicensesSeats_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="renewOrganizationLicensesSeats_renewOrganizationLicensesSeats">`;                      
+                        formHtml += `<label for="node-input-renewOrganizationLicensesSeats_renewOrganizationLicensesSeats" style="width:70%"><i class="fa fa-list"></i> <span><b>renewOrganizationLicensesSeats<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-renewOrganizationLicensesSeats_renewOrganizationLicensesSeats" placeholder="msg.renewOrganizationLicensesSeats" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-renewOrganizationLicensesSeats_renewOrganizationLicensesSeatsType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "renewOrganizationLicensesSeats"
+                        })
+
+                methodGroups.push({methodGroup:"Licenses", methodName:"renewOrganizationLicensesSeats", parameters: parameters, formHtml: formHtml, example: example, summary: `Renew SM seats of a license. This will extend the license expiration date of managed SM devices covered by this license`});
+                                         
+                var example = `[
+  {
+    "id": "1234",
+    "licenseType": "MX64-ENT",
+    "licenseKey": "Z21234567890",
+    "orderNumber": "4C1234567",
+    "deviceSerial": "Q234-ABCD-5678",
+    "networkId": "N_24329156",
+    "state": "active",
+    "seatCount": null,
+    "totalDurationInDays": 425,
+    "durationInDays": 365,
+    "permanentlyQueuedLicenses": [
+      {
+        "id": "5678",
+        "licenseType": "MX64-ENT",
+        "licenseKey": "Z21234567890",
+        "orderNumber": "4C1234567",
+        "durationInDays": 60
+      }
+    ],
+    "claimDate": "2019-08-29T12:40:10Z",
+    "activationDate": "2019-09-01T15:01:46Z",
+    "expirationDate": "2020-10-30T15:01:46Z"
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getOrganizationLicense_organizationId">`;                      
+                        formHtml += `<label for="node-input-getOrganizationLicense_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationLicense_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationLicense_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationLicense_licenseId">`;                      
+                        formHtml += `<label for="node-input-getOrganizationLicense_licenseId" style="width:70%"><i class="fa fa-list"></i> <span><b>licenseId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationLicense_licenseId" placeholder="msg.licenseId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationLicense_licenseIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "licenseId"
+                        })
+
+                methodGroups.push({methodGroup:"Licenses", methodName:"getOrganizationLicense", parameters: parameters, formHtml: formHtml, example: example, summary: `Display a license`});
+                                         
+                var example = `[
+  {
+    "id": "1234",
+    "licenseType": "MX64-ENT",
+    "licenseKey": "Z21234567890",
+    "orderNumber": "4C1234567",
+    "deviceSerial": "Q234-ABCD-5678",
+    "networkId": "N_24329156",
+    "state": "active",
+    "seatCount": null,
+    "totalDurationInDays": 425,
+    "durationInDays": 365,
+    "permanentlyQueuedLicenses": [
+      {
+        "id": "5678",
+        "licenseType": "MX64-ENT",
+        "licenseKey": "Z21234567890",
+        "orderNumber": "4C1234567",
+        "durationInDays": 60
+      }
+    ],
+    "claimDate": "2019-08-29T12:40:10Z",
+    "activationDate": "2019-09-01T15:01:46Z",
+    "expirationDate": "2020-10-30T15:01:46Z"
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateOrganizationLicense_organizationId">`;                      
+                        formHtml += `<label for="node-input-updateOrganizationLicense_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateOrganizationLicense_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateOrganizationLicense_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="updateOrganizationLicense_licenseId">`;                      
+                        formHtml += `<label for="node-input-updateOrganizationLicense_licenseId" style="width:70%"><i class="fa fa-list"></i> <span><b>licenseId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateOrganizationLicense_licenseId" placeholder="msg.licenseId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateOrganizationLicense_licenseIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "licenseId"
+                        })
+                        formHtml += `<div class="form-row" id="updateOrganizationLicense_updateOrganizationLicense">`;                      
+                    
+                        formHtml += `<label for="node-input-updateOrganizationLicense_updateOrganizationLicense" style="width:70%"><i class="fa fa-list"></i> <span><b>updateOrganizationLicense</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateOrganizationLicense_updateOrganizationLicense" placeholder="msg.updateOrganizationLicense" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateOrganizationLicense_updateOrganizationLicenseType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateOrganizationLicense"
+                        })
+
+                methodGroups.push({methodGroup:"Licenses", methodName:"updateOrganizationLicense", parameters: parameters, formHtml: formHtml, example: example, summary: `Update a license`});
+                                         
+                var example = `[
+  [
+    {
       "id": "L_123456",
       "organizationId": "2930418",
       "name": "Long Island Office",
@@ -15710,7 +16423,8 @@ console.log = function(){};
         "switch",
         "wireless"
       ],
-      "disableMyMerakiCom": false
+      "disableMyMerakiCom": false,
+      "enrollmentString": "long-island-office"
     }
   ]
 ]`;
@@ -15757,7 +16471,8 @@ console.log = function(){};
       "switch",
       "wireless"
     ],
-    "disableMyMerakiCom": false
+    "disableMyMerakiCom": false,
+    "enrollmentString": "long-island-office"
   }
 ]`;
                 var parameters = []
@@ -15804,7 +16519,8 @@ console.log = function(){};
         "switch",
         "wireless"
       ],
-      "disableMyMerakiCom": false
+      "disableMyMerakiCom": false,
+      "enrollmentString": "long-island-office"
     }
   }
 ]`;
@@ -16009,17 +16725,17 @@ console.log = function(){};
                     parameters.push({
                         camelCaseName: "organizationId"
                         })
-                        formHtml += `<div class="form-row" id="getOrganizationSamlRole_id">`;                      
-                        formHtml += `<label for="node-input-getOrganizationSamlRole_id" style="width:70%"><i class="fa fa-list"></i> <span><b>id<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<div class="form-row" id="getOrganizationSamlRole_samlRoleId">`;                      
+                        formHtml += `<label for="node-input-getOrganizationSamlRole_samlRoleId" style="width:70%"><i class="fa fa-list"></i> <span><b>samlRoleId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
                         formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-getOrganizationSamlRole_id" placeholder="msg.id" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getOrganizationSamlRole_idType" value="string" >`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationSamlRole_samlRoleId" placeholder="msg.samlRoleId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationSamlRole_samlRoleIdType" value="string" >`;
                         formHtml += `</div>`;
                     
 
 
                     parameters.push({
-                        camelCaseName: "id"
+                        camelCaseName: "samlRoleId"
                         })
 
                 methodGroups.push({methodGroup:"SAML roles", methodName:"getOrganizationSamlRole", parameters: parameters, formHtml: formHtml, example: example, summary: `Return a SAML role`});
@@ -16058,17 +16774,17 @@ console.log = function(){};
                     parameters.push({
                         camelCaseName: "organizationId"
                         })
-                        formHtml += `<div class="form-row" id="updateOrganizationSamlRole_id">`;                      
-                        formHtml += `<label for="node-input-updateOrganizationSamlRole_id" style="width:70%"><i class="fa fa-list"></i> <span><b>id<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<div class="form-row" id="updateOrganizationSamlRole_samlRoleId">`;                      
+                        formHtml += `<label for="node-input-updateOrganizationSamlRole_samlRoleId" style="width:70%"><i class="fa fa-list"></i> <span><b>samlRoleId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
                         formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-updateOrganizationSamlRole_id" placeholder="msg.id" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-updateOrganizationSamlRole_idType" value="string" >`;
+                        formHtml += `<input type="text" id="node-input-updateOrganizationSamlRole_samlRoleId" placeholder="msg.samlRoleId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateOrganizationSamlRole_samlRoleIdType" value="string" >`;
                         formHtml += `</div>`;
                     
 
 
                     parameters.push({
-                        camelCaseName: "id"
+                        camelCaseName: "samlRoleId"
                         })
                         formHtml += `<div class="form-row" id="updateOrganizationSamlRole_updateOrganizationSamlRole">`;                      
                     
@@ -16101,17 +16817,17 @@ console.log = function(){};
                     parameters.push({
                         camelCaseName: "organizationId"
                         })
-                        formHtml += `<div class="form-row" id="deleteOrganizationSamlRole_id">`;                      
-                        formHtml += `<label for="node-input-deleteOrganizationSamlRole_id" style="width:70%"><i class="fa fa-list"></i> <span><b>id<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<div class="form-row" id="deleteOrganizationSamlRole_samlRoleId">`;                      
+                        formHtml += `<label for="node-input-deleteOrganizationSamlRole_samlRoleId" style="width:70%"><i class="fa fa-list"></i> <span><b>samlRoleId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
                         formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-deleteOrganizationSamlRole_id" placeholder="msg.id" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-deleteOrganizationSamlRole_idType" value="string" >`;
+                        formHtml += `<input type="text" id="node-input-deleteOrganizationSamlRole_samlRoleId" placeholder="msg.samlRoleId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteOrganizationSamlRole_samlRoleIdType" value="string" >`;
                         formHtml += `</div>`;
                     
 
 
                     parameters.push({
-                        camelCaseName: "id"
+                        camelCaseName: "samlRoleId"
                         })
 
                 methodGroups.push({methodGroup:"SAML roles", methodName:"deleteOrganizationSamlRole", parameters: parameters, formHtml: formHtml, example: example, summary: `Remove a SAML role`});
@@ -16420,6 +17136,7 @@ console.log = function(){};
     {
       "name": "My peer 2",
       "publicIp": "123.123.123.2",
+      "remoteId": "miles@meraki.com",
       "privateSubnets": [
         "192.168.2.0/24",
         "192.168.129.0/24"
@@ -16483,6 +17200,7 @@ console.log = function(){};
     {
       "name": "My peer 2",
       "publicIp": "123.123.123.2",
+      "remoteId": "miles@meraki.com",
       "privateSubnets": [
         "192.168.2.0/24",
         "192.168.129.0/24"
@@ -17010,6 +17728,7 @@ console.log = function(){};
             <option value="Group policies" >Group policies</option>
             <option value="HTTP servers" >HTTP servers</option>
             <option value="Intrusion settings" >Intrusion settings</option>
+            <option value="Licenses" >Licenses</option>
             <option value="MR L3 firewall" >MR L3 firewall</option>
             <option value="MV Sense" >MV Sense</option>
             <option value="MX 1:1 NAT rules" >MX 1:1 NAT rules</option>
@@ -17040,6 +17759,7 @@ console.log = function(){};
             <option value="Security events" >Security events</option>
             <option value="Splash login attempts" >Splash login attempts</option>
             <option value="Splash settings" >Splash settings</option>
+            <option value="Switch ACLs" >Switch ACLs</option>
             <option value="Switch port schedules" >Switch port schedules</option>
             <option value="Switch ports" >Switch ports</option>
             <option value="Switch profiles" >Switch profiles</option>
@@ -17125,7 +17845,7 @@ return msg;
 
 
     <p>Cisco Meraki Dashboard Node</p>
-    &nbsp &nbsp &nbsp<i>OAS version: 0.5.0</i>
+    &nbsp &nbsp &nbsp<i>OAS version: 0.6.0</i>
     <hr/>
     <br>
     <p>The Cisco Meraki Dashboard API is a modern REST API based on the <a href="https://swagger.io/docs/specification/about/" target="_blank">OpenAPI</a> specification. 
