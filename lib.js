@@ -6950,7 +6950,7 @@ Verbs in the API follow the usual REST conventions:
     return deferred.promise;
  };
 /**
- * Return the splash authorization for a client, for each SSID they've associated with through splash. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.
+ * Return the splash authorization for a client, for each SSID they've associated with through splash. Only enabled SSIDs with Click-through splash enabled will be included. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.
  * @method
  * @name MerakiDashboardApi#getNetworkClientSplashAuthorizationStatus
  * @param {object} parameters - method options and parameters
@@ -7933,6 +7933,283 @@ Verbs in the API follow the usual REST conventions:
     queryParameters = mergeQueryParams(parameters, queryParameters);
 
     this.request('GET', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * Return the connectivity testing destinations for an MX network
+ * @method
+ * @name MerakiDashboardApi#getNetworkConnectivityMonitoringDestinations
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.getNetworkConnectivityMonitoringDestinations = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/connectivityMonitoringDestinations';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('GET', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * Update the connectivity testing destinations for an MX network
+ * @method
+ * @name MerakiDashboardApi#updateNetworkConnectivityMonitoringDestinations
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+     * @param {} parameters.updateNetworkConnectivityMonitoringDestinations - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.updateNetworkConnectivityMonitoringDestinations = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/connectivityMonitoringDestinations';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+        
+        
+        
+            if(parameters['updateNetworkConnectivityMonitoringDestinations'] !== undefined){
+                body = parameters['updateNetworkConnectivityMonitoringDestinations'];
+            }
+
+
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('PUT', domain + path, parameters, body, headers, queryParameters, form, deferred);
 
     return deferred.promise;
  };
@@ -12313,6 +12590,362 @@ Verbs in the API follow the usual REST conventions:
     return deferred.promise;
  };
 /**
+ * List the events for the network
+ * @method
+ * @name MerakiDashboardApi#getNetworkEvents
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+     * @param {string} parameters.productType - The product type to fetch events for. This parameter is required for networks with multiple device types. Valid types are wireless, appliance, switch, systemsManager, and camera
+     * @param {array} parameters.includedEventTypes - A list of event types. The returned events will be filtered to only include events with these types.
+     * @param {array} parameters.excludedEventTypes - A list of event types. The returned events will be filtered to exclude events with these types.
+     * @param {string} parameters.deviceMac - The MAC address of the Meraki device which the list of events will be filtered with
+     * @param {string} parameters.deviceSerial - The serial of the Meraki device which the list of events will be filtered with
+     * @param {string} parameters.deviceName - The name of the Meraki device which the list of events will be filtered with
+     * @param {string} parameters.clientIp - The IP of the client which the list of events will be filtered with. Only supported for track-by-IP networks.
+     * @param {string} parameters.clientMac - The MAC address of the client which the list of events will be filtered with. Only supported for track-by-MAC networks.
+     * @param {string} parameters.clientName - The name, or partial name, of the client which the list of events will be filtered with
+     * @param {string} parameters.smDeviceMac - The MAC address of the Systems Manager device which the list of events will be filtered with
+     * @param {string} parameters.smDeviceName - The name of the Systems Manager device which the list of events will be filtered with
+     * @param {integer} parameters.perPage - The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
+     * @param {string} parameters.startingAfter - A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+     * @param {string} parameters.endingBefore - A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+ */
+ MerakiDashboardApi.prototype.getNetworkEvents = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/events';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+
+                if(parameters['productType'] !== undefined){
+                    queryParameters['productType'] = parameters['productType'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['includedEventTypes'] !== undefined){
+                    queryParameters['includedEventTypes'] = parameters['includedEventTypes'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['excludedEventTypes'] !== undefined){
+                    queryParameters['excludedEventTypes'] = parameters['excludedEventTypes'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['deviceMac'] !== undefined){
+                    queryParameters['deviceMac'] = parameters['deviceMac'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['deviceSerial'] !== undefined){
+                    queryParameters['deviceSerial'] = parameters['deviceSerial'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['deviceName'] !== undefined){
+                    queryParameters['deviceName'] = parameters['deviceName'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['clientIp'] !== undefined){
+                    queryParameters['clientIp'] = parameters['clientIp'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['clientMac'] !== undefined){
+                    queryParameters['clientMac'] = parameters['clientMac'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['clientName'] !== undefined){
+                    queryParameters['clientName'] = parameters['clientName'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['smDeviceMac'] !== undefined){
+                    queryParameters['smDeviceMac'] = parameters['smDeviceMac'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['smDeviceName'] !== undefined){
+                    queryParameters['smDeviceName'] = parameters['smDeviceName'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['perPage'] !== undefined){
+                    queryParameters['perPage'] = parameters['perPage'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['startingAfter'] !== undefined){
+                    queryParameters['startingAfter'] = parameters['startingAfter'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['endingBefore'] !== undefined){
+                    queryParameters['endingBefore'] = parameters['endingBefore'];
+                }
+        
+        
+        
+
+
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('GET', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * List the event type to human-readable description
+ * @method
+ * @name MerakiDashboardApi#getNetworkEventsEventTypes
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.getNetworkEventsEventTypes = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/events/eventTypes';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('GET', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
  * List of all failed client connection events on this network in a given time range
  * @method
  * @name MerakiDashboardApi#getNetworkFailedConnections
@@ -13034,6 +13667,896 @@ Verbs in the API follow the usual REST conventions:
     queryParameters = mergeQueryParams(parameters, queryParameters);
 
     this.request('PUT', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * List the floor plans that belong to your network
+ * @method
+ * @name MerakiDashboardApi#getNetworkFloorPlans
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.getNetworkFloorPlans = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/floorPlans';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('GET', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * Upload a floor plan
+ * @method
+ * @name MerakiDashboardApi#createNetworkFloorPlan
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+     * @param {} parameters.createNetworkFloorPlan - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.createNetworkFloorPlan = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/floorPlans';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+        
+        
+        
+            if(parameters['createNetworkFloorPlan'] !== undefined){
+                body = parameters['createNetworkFloorPlan'];
+            }
+
+
+        if(parameters['createNetworkFloorPlan'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: createNetworkFloorPlan'));
+            return deferred.promise;
+        }
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('POST', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * Find a floor plan by ID
+ * @method
+ * @name MerakiDashboardApi#getNetworkFloorPlan
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+     * @param {string} parameters.floorPlanId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.getNetworkFloorPlan = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/floorPlans/{floorPlanId}';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+        
+            path = path.replace('{floorPlanId}', parameters['floorPlanId']);
+        
+        
+
+
+        if(parameters['floorPlanId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: floorPlanId'));
+            return deferred.promise;
+        }
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('GET', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * Update a floor plan's geolocation and other meta data
+ * @method
+ * @name MerakiDashboardApi#updateNetworkFloorPlan
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+     * @param {string} parameters.floorPlanId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+     * @param {} parameters.updateNetworkFloorPlan - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.updateNetworkFloorPlan = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/floorPlans/{floorPlanId}';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+        
+            path = path.replace('{floorPlanId}', parameters['floorPlanId']);
+        
+        
+
+
+        if(parameters['floorPlanId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: floorPlanId'));
+            return deferred.promise;
+        }
+ 
+        
+        
+        
+            if(parameters['updateNetworkFloorPlan'] !== undefined){
+                body = parameters['updateNetworkFloorPlan'];
+            }
+
+
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('PUT', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * Destroy a floor plan
+ * @method
+ * @name MerakiDashboardApi#deleteNetworkFloorPlan
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+     * @param {string} parameters.floorPlanId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.deleteNetworkFloorPlan = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/floorPlans/{floorPlanId}';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+        
+            path = path.replace('{floorPlanId}', parameters['floorPlanId']);
+        
+        
+
+
+        if(parameters['floorPlanId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: floorPlanId'));
+            return deferred.promise;
+        }
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('DELETE', domain + path, parameters, body, headers, queryParameters, form, deferred);
 
     return deferred.promise;
  };
@@ -21011,6 +22534,184 @@ Verbs in the API follow the usual REST conventions:
     return deferred.promise;
  };
 /**
+ * Refresh the details of a device
+ * @method
+ * @name MerakiDashboardApi#refreshNetworkSmDeviceDetails
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+     * @param {string} parameters.deviceId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.refreshNetworkSmDeviceDetails = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/sm/device/{deviceId}/refreshDetails';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+        
+            path = path.replace('{deviceId}', parameters['deviceId']);
+        
+        
+
+
+        if(parameters['deviceId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: deviceId'));
+            return deferred.promise;
+        }
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('POST', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
  * List the devices enrolled in an SM network with various specified fields and filters
  * @method
  * @name MerakiDashboardApi#getNetworkSmDevices
@@ -21092,11 +22793,11 @@ Verbs in the API follow the usual REST conventions:
      * @param {string} parameters.serials - Filter devices by serial(s). Multiple serials can be passed in as comma separated values.
      * @param {string} parameters.ids - Filter devices by id(s). Multiple ids can be passed in as comma separated values.
      * @param {string} parameters.scope - Specify a scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags as comma separated values.
-     * @param {string} parameters.batchToken - On networks with more than 1000 devices, the device list will be limited to 1000 devices per query.
-    If there are more devices to be seen, a batch token will be returned as a part of the device list. To see the remainder of
-    the devices, pass in the batchToken as a parameter in the next request. Requests made with the batchToken do not require
-    additional parameters as the batchToken includes the parameters passed in with the original request. Additional parameters
-    passed in with the batchToken will be ignored.
+     * @param {integer} parameters.batchSize - Number of devices to return, 1000 is the default as well as the max.
+     * @param {string} parameters.batchToken - If the network has more devices than the batch size, a batch token will be returned
+    as a part of the device list. To see the remainder of the devices, pass in the batchToken as a parameter in the next request.
+    Requests made with the batchToken do not require additional parameters as the batchToken includes the parameters passed in
+    with the original request. Additional parameters passed in with the batchToken will be ignored.
  */
  MerakiDashboardApi.prototype.getNetworkSmDevices = function(parameters){
     if(parameters === undefined) {
@@ -21164,6 +22865,16 @@ Verbs in the API follow the usual REST conventions:
 
                 if(parameters['scope'] !== undefined){
                     queryParameters['scope'] = parameters['scope'];
+                }
+        
+        
+        
+
+
+ 
+
+                if(parameters['batchSize'] !== undefined){
+                    queryParameters['batchSize'] = parameters['batchSize'];
                 }
         
         
@@ -29265,7 +30976,7 @@ Verbs in the API follow the usual REST conventions:
     return deferred.promise;
  };
 /**
- * List the static routes for this network
+ * List the static routes for an MX or teleworker network
  * @method
  * @name MerakiDashboardApi#getNetworkStaticRoutes
  * @param {object} parameters - method options and parameters
@@ -29366,7 +31077,7 @@ Verbs in the API follow the usual REST conventions:
     return deferred.promise;
  };
 /**
- * Add a static route
+ * Add a static route for an MX or teleworker network
  * @method
  * @name MerakiDashboardApi#createNetworkStaticRoute
  * @param {object} parameters - method options and parameters
@@ -29542,7 +31253,7 @@ Verbs in the API follow the usual REST conventions:
     return deferred.promise;
  };
 /**
- * Return a static route
+ * Return a static route for an MX or teleworker network
  * @method
  * @name MerakiDashboardApi#getNetworkStaticRoute
  * @param {object} parameters - method options and parameters
@@ -29720,7 +31431,7 @@ Verbs in the API follow the usual REST conventions:
     return deferred.promise;
  };
 /**
- * Update a static route
+ * Update a static route for an MX or teleworker network
  * @method
  * @name MerakiDashboardApi#updateNetworkStaticRoute
  * @param {object} parameters - method options and parameters
@@ -29973,7 +31684,7 @@ Verbs in the API follow the usual REST conventions:
     return deferred.promise;
  };
 /**
- * Delete a static route from a network
+ * Delete a static route from an MX or teleworker network
  * @method
  * @name MerakiDashboardApi#deleteNetworkStaticRoute
  * @param {object} parameters - method options and parameters
@@ -31241,6 +32952,283 @@ Verbs in the API follow the usual REST conventions:
     return deferred.promise;
  };
 /**
+ * Return the MTU configuration
+ * @method
+ * @name MerakiDashboardApi#getNetworkSwitchSettingsMtu
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.getNetworkSwitchSettingsMtu = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/switch/settings/mtu';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('GET', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * Update the MTU configuration
+ * @method
+ * @name MerakiDashboardApi#updateNetworkSwitchSettingsMtu
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+     * @param {} parameters.updateNetworkSwitchSettingsMtu - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.updateNetworkSwitchSettingsMtu = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/switch/settings/mtu';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+        
+        
+        
+            if(parameters['updateNetworkSwitchSettingsMtu'] !== undefined){
+                body = parameters['updateNetworkSwitchSettingsMtu'];
+            }
+
+
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('PUT', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
  * List quality of service rules
  * @method
  * @name MerakiDashboardApi#getNetworkSwitchSettingsQosRules
@@ -32401,6 +34389,560 @@ Verbs in the API follow the usual REST conventions:
         
             if(parameters['updateNetworkSwitchSettingsQosRule'] !== undefined){
                 body = parameters['updateNetworkSwitchSettingsQosRule'];
+            }
+
+
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('PUT', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * Return the global enhanced storm control configuration
+ * @method
+ * @name MerakiDashboardApi#getNetworkSwitchSettingsStormControl
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.getNetworkSwitchSettingsStormControl = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/switch/settings/stormControl';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('GET', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * Update the global enhanced storm control configuration
+ * @method
+ * @name MerakiDashboardApi#updateNetworkSwitchSettingsStormControl
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+     * @param {} parameters.updateNetworkSwitchSettingsStormControl - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.updateNetworkSwitchSettingsStormControl = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/switch/settings/stormControl';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+        
+        
+        
+            if(parameters['updateNetworkSwitchSettingsStormControl'] !== undefined){
+                body = parameters['updateNetworkSwitchSettingsStormControl'];
+            }
+
+
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('PUT', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * Returns STP settings
+ * @method
+ * @name MerakiDashboardApi#getNetworkSwitchSettingsStp
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.getNetworkSwitchSettingsStp = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/switch/settings/stp';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('GET', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * Updates STP settings
+ * @method
+ * @name MerakiDashboardApi#updateNetworkSwitchSettingsStp
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+     * @param {} parameters.updateNetworkSwitchSettingsStp - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.updateNetworkSwitchSettingsStp = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/switch/settings/stp';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+        
+        
+        
+            if(parameters['updateNetworkSwitchSettingsStp'] !== undefined){
+                body = parameters['updateNetworkSwitchSettingsStp'];
             }
 
 
@@ -37467,6 +40009,283 @@ Verbs in the API follow the usual REST conventions:
     queryParameters = mergeQueryParams(parameters, queryParameters);
 
     this.request('GET', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * Return the wireless settings for a network
+ * @method
+ * @name MerakiDashboardApi#getNetworkWirelessSettings
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.getNetworkWirelessSettings = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/wireless/settings';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('GET', domain + path, parameters, body, headers, queryParameters, form, deferred);
+
+    return deferred.promise;
+ };
+/**
+ * Update the wireless settings for a network
+ * @method
+ * @name MerakiDashboardApi#updateNetworkWirelessSettings
+ * @param {object} parameters - method options and parameters
+     * @param {string} parameters.networkId - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+     * @param {} parameters.updateNetworkWirelessSettings - The Cisco Meraki Dashboard API is a modern REST API based on the [OpenAPI](https://swagger.io/docs/specification/about/) specification.
+
+## What can the API be used for?
+The Dashboard API can be used for many purposes. It's meant to be an open-ended tool. Here are some examples of use cases:
+
+* Add new organizations, admins, networks, devices, VLANs, and more
+* Configure networks at scale
+* Automatically on-board and off-board new employees' teleworker setups
+* Build your own dashboard for store managers, field techs, or unique use cases
+
+## Enabling the Dashboard API
+1. Begin by logging into [Meraki Dashboard](https://dashboard.meraki.com) and navigating to **Organization > Settings**
+
+2. Locate the section titled **Dashboard API access** and select **Enable Access**, then **Save** your changes
+
+3. After enabling the API, choose your username at the top-right of the Meraki Dashboard and select **my profile**
+
+4. Locate the section titled **Dashboard API access** and select **Generate new API key**
+
+*Note: The API key is associated with a Dashboard administrator account. You can generate, revoke, and regenerate your API key on your profile.*
+
+**Keep your API key safe as it provides authentication to all of your organizations with the API enabled. If your API key is shared, you can regenerate your API key at any time. This will revoke the existing API key.**
+
+Copy and store your API key in a safe place. Dashboard does not store API keys in plaintext for security reasons, so this is the only time you will be able to record it. If you lose or forget your API key, you will have to revoke it and generate a new one.
+
+Every request must specify an API key via a request header.
+
+The API key must be specified in the URL header. The API will return a 404 (rather than a 403) in response to a request with a missing or incorrect API key in order to prevent leaking the existence of resources to unauthorized users.
+
+`X-Cisco-Meraki-API-Key: <secret key>`
+
+Read more about API [authorization](../api/#/python/getting-started/authorizing-your-client)
+
+
+## Versioning
+Once an API version is released, we will make only backwards-compatible changes to it. Backwards-compatible changes include:
+
+* Adding new API resources
+
+* Adding new optional request parameters to existing API methods
+
+* Adding new properties to existing API responses
+
+* Changing the order of properties in existing API responses
+
+## Rate Limit
+* The Dashboard API is limited to **5 calls per second**, per organization.
+* A burst of 5 additional calls are allowed in the first second, so a maximum of 15 calls in the first 2 seconds.
+* The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
+* An error with a `429` status code will be returned when the rate limit has been exceeded.
+* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+
+
+## Additional Details
+Identifiers in the API are opaque strings. A `{networkId}`, for example, might be the string "126043", whereas an `{orderId}` might contain characters, such as "4S1234567". Client applications must not try to parse them as numbers. Even identifiers that look like numbers might be too long to encode without loss of precision in Javascript, where the only numeric type is IEEE 754 floating point.
+
+Verbs in the API follow the usual REST conventions:
+
+`GET` returns the value of a resource or a list of resources, depending on whether an identifier is specified. For example, a `GET` of `/organizations` returns a list of organizations, whereas a `GET` of `/organizations/{organizationId}` returns a particular organization.
+
+`POST` adds a new resource, as in a `POST` to `/organizations/{organizationId}/admins`, or performs some other non-idempotent change.
+
+`PUT` updates a resource. `PUTs` are idempotent; they update a resource, creating it first if it does not already exist. A `PUT` should specify all the fields of a resource; the API will revert omitted fields to their default value.
+
+`DELETE` removes a resource.
+
+ */
+ MerakiDashboardApi.prototype.updateNetworkWirelessSettings = function(parameters){
+    if(parameters === undefined) {
+        parameters = {};
+    }
+    var deferred = Q.defer();
+    var domain = this.domain,  path = '/networks/{networkId}/wireless/settings';
+    var body = {}, queryParameters = {}, headers = {}, form = {};
+
+        headers = this.setAuthHeaders(headers);
+        headers['Accept'] = ['application/json'];
+        headers['Content-Type'] = ['application/json'];
+
+        
+            path = path.replace('{networkId}', parameters['networkId']);
+        
+        
+
+
+        if(parameters['networkId'] === undefined){
+            deferred.reject(new Error('Missing required  parameter: networkId'));
+            return deferred.promise;
+        }
+ 
+        
+        
+        
+            if(parameters['updateNetworkWirelessSettings'] !== undefined){
+                body = parameters['updateNetworkWirelessSettings'];
+            }
+
+
+ 
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request('PUT', domain + path, parameters, body, headers, queryParameters, form, deferred);
 
     return deferred.promise;
  };

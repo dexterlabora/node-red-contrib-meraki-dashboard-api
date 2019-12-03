@@ -2727,7 +2727,7 @@ console.log = function(){};
                         camelCaseName: "clientId"
                         })
 
-                methodGroups.push({methodGroup:"Clients", methodName:"getNetworkClientSplashAuthorizationStatus", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the splash authorization for a client for each SSID theyve associated with through splash. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.`});
+                methodGroups.push({methodGroup:"Clients", methodName:"getNetworkClientSplashAuthorizationStatus", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the splash authorization for a client for each SSID theyve associated with through splash. Only enabled SSIDs with Click-through splash enabled will be included. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.`});
                                          
                 var example = `[
   {
@@ -3006,6 +3006,90 @@ console.log = function(){};
                                          
                 var example = `[
   {
+    "destinations": [
+      {
+        "ip": "8.8.8.8",
+        "description": "Google"
+      },
+      {
+        "ip": "1.23.45.67",
+        "description": "test description"
+      },
+      {
+        "ip": "9.8.7.6",
+        "description": null
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkConnectivityMonitoringDestinations_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkConnectivityMonitoringDestinations_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkConnectivityMonitoringDestinations_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkConnectivityMonitoringDestinations_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Connectivity monitoring destinations", methodName:"getNetworkConnectivityMonitoringDestinations", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the connectivity testing destinations for an MX network`});
+                                         
+                var example = `[
+  {
+    "destinations": [
+      {
+        "ip": "8.8.8.8",
+        "description": "Google"
+      },
+      {
+        "ip": "1.23.45.67",
+        "description": "test description"
+      },
+      {
+        "ip": "9.8.7.6",
+        "description": null
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkConnectivityMonitoringDestinations_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkConnectivityMonitoringDestinations_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkConnectivityMonitoringDestinations_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkConnectivityMonitoringDestinations_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkConnectivityMonitoringDestinations_updateNetworkConnectivityMonitoringDestinations">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkConnectivityMonitoringDestinations_updateNetworkConnectivityMonitoringDestinations" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkConnectivityMonitoringDestinations</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkConnectivityMonitoringDestinations_updateNetworkConnectivityMonitoringDestinations" placeholder="msg.updateNetworkConnectivityMonitoringDestinations" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkConnectivityMonitoringDestinations_updateNetworkConnectivityMonitoringDestinationsType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkConnectivityMonitoringDestinations"
+                        })
+
+                methodGroups.push({methodGroup:"Connectivity monitoring destinations", methodName:"updateNetworkConnectivityMonitoringDestinations", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the connectivity testing destinations for an MX network`});
+                                         
+                var example = `[
+  {
     "allowedUrlPatterns": [
       "http://www.example.org",
       "http://help.com.au"
@@ -3154,7 +3238,8 @@ console.log = function(){};
         "major": 5,
         "minor": 3
       },
-      "firmware": "wireless-25-14"
+      "firmware": "wireless-25-14",
+      "floorPlanId": "g_1234567"
     }
   ]
 ]`;
@@ -3497,7 +3582,8 @@ console.log = function(){};
       "major": 5,
       "minor": 3
     },
-    "firmware": "wireless-25-14"
+    "firmware": "wireless-25-14",
+    "floorPlanId": "g_1234567"
   }
 ]`;
                 var parameters = []
@@ -3548,7 +3634,8 @@ console.log = function(){};
       "major": 5,
       "minor": 3
     },
-    "firmware": "wireless-25-14"
+    "firmware": "wireless-25-14",
+    "floorPlanId": "g_1234567"
   }
 ]`;
                 var parameters = []
@@ -4501,6 +4588,249 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"SSIDs", methodName:"getNetworkDeviceWirelessStatus", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the SSID statuses of an access point`});
                                          
                 var example = `[
+  {
+    "message": null,
+    "pageStartAt": "2018-02-11T00:00:00.090210Z",
+    "pageEndAt": "2018-02-11T00:00:00.090210Z",
+    "events": [
+      {
+        "occurredAt": "2018-02-11T00:00:00.090210Z",
+        "networkId": "N_24329156",
+        "type": "association",
+        "description": "802.11 association",
+        "clientId": "k74272e",
+        "clientDescription": "Miles's phone",
+        "deviceSerial": "Q234-ABCD-5678",
+        "deviceName": "My AP",
+        "ssidNumber": 1,
+        "ssidName": "My SSID",
+        "eventData": {
+          "radio": "1",
+          "vap": "1",
+          "client_mac": "22:33:44:55:66:77",
+          "client_ip": "1.2.3.4",
+          "channel": "36",
+          "rssi": "12",
+          "aid": "2104009183"
+        }
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkEvents_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkEvents_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_productType">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_productType" style="width:70%"><i class="fa fa-list"></i> <span><b>productType</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The product type to fetch events for. This parameter is required for networks with multiple device types. Valid types are wireless, appliance, switch, systemsManager, and camera</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_productType" placeholder="msg.productType" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_productTypeType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "productType"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_includedEventTypes">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_includedEventTypes" style="width:70%"><i class="fa fa-list"></i> <span><b>includedEventTypes</b> <i>&nbsparray</i></span></label>`;                  
+                        formHtml += `<p>A list of event types. The returned events will be filtered to only include events with these types.</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_includedEventTypes" placeholder="msg.includedEventTypes" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_includedEventTypesType" value="array" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "includedEventTypes"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_excludedEventTypes">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_excludedEventTypes" style="width:70%"><i class="fa fa-list"></i> <span><b>excludedEventTypes</b> <i>&nbsparray</i></span></label>`;                  
+                        formHtml += `<p>A list of event types. The returned events will be filtered to exclude events with these types.</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_excludedEventTypes" placeholder="msg.excludedEventTypes" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_excludedEventTypesType" value="array" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "excludedEventTypes"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_deviceMac">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_deviceMac" style="width:70%"><i class="fa fa-list"></i> <span><b>deviceMac</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The MAC address of the Meraki device which the list of events will be filtered with</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_deviceMac" placeholder="msg.deviceMac" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_deviceMacType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "deviceMac"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_deviceSerial">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_deviceSerial" style="width:70%"><i class="fa fa-list"></i> <span><b>deviceSerial</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The serial of the Meraki device which the list of events will be filtered with</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_deviceSerial" placeholder="msg.deviceSerial" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_deviceSerialType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "deviceSerial"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_deviceName">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_deviceName" style="width:70%"><i class="fa fa-list"></i> <span><b>deviceName</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The name of the Meraki device which the list of events will be filtered with</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_deviceName" placeholder="msg.deviceName" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_deviceNameType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "deviceName"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_clientIp">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_clientIp" style="width:70%"><i class="fa fa-list"></i> <span><b>clientIp</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The IP of the client which the list of events will be filtered with. Only supported for track-by-IP networks.</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_clientIp" placeholder="msg.clientIp" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_clientIpType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "clientIp"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_clientMac">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_clientMac" style="width:70%"><i class="fa fa-list"></i> <span><b>clientMac</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The MAC address of the client which the list of events will be filtered with. Only supported for track-by-MAC networks.</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_clientMac" placeholder="msg.clientMac" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_clientMacType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "clientMac"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_clientName">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_clientName" style="width:70%"><i class="fa fa-list"></i> <span><b>clientName</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The name, or partial name, of the client which the list of events will be filtered with</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_clientName" placeholder="msg.clientName" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_clientNameType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "clientName"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_smDeviceMac">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_smDeviceMac" style="width:70%"><i class="fa fa-list"></i> <span><b>smDeviceMac</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The MAC address of the Systems Manager device which the list of events will be filtered with</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_smDeviceMac" placeholder="msg.smDeviceMac" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_smDeviceMacType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "smDeviceMac"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_smDeviceName">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_smDeviceName" style="width:70%"><i class="fa fa-list"></i> <span><b>smDeviceName</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The name of the Systems Manager device which the list of events will be filtered with</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_smDeviceName" placeholder="msg.smDeviceName" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_smDeviceNameType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "smDeviceName"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_perPage">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_perPage" style="width:70%"><i class="fa fa-list"></i> <span><b>perPage</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<p>The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_perPage" placeholder="msg.perPage" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_perPageType" value="integer" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "perPage"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_startingAfter">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_startingAfter" style="width:70%"><i class="fa fa-list"></i> <span><b>startingAfter</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_startingAfter" placeholder="msg.startingAfter" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_startingAfterType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "startingAfter"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkEvents_endingBefore">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkEvents_endingBefore" style="width:70%"><i class="fa fa-list"></i> <span><b>endingBefore</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEvents_endingBefore" placeholder="msg.endingBefore" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEvents_endingBeforeType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "endingBefore"
+                        })
+
+                methodGroups.push({methodGroup:"Events", methodName:"getNetworkEvents", parameters: parameters, formHtml: formHtml, example: example, summary: `List the events for the network`});
+                                         
+                var example = `[
+  [
+    {
+      "category": "802.11",
+      "type": "association",
+      "description": "802.11 association"
+    }
+  ]
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkEventsEventTypes_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkEventsEventTypes_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkEventsEventTypes_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkEventsEventTypes_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Events", methodName:"getNetworkEventsEventTypes", parameters: parameters, formHtml: formHtml, example: example, summary: `List the event type to human-readable description`});
+                                         
+                var example = `[
   [
     {
       "ssidNumber": 0,
@@ -4790,6 +5120,375 @@ console.log = function(){};
                         })
 
                 methodGroups.push({methodGroup:"Firewalled services", methodName:"updateNetworkFirewalledService", parameters: parameters, formHtml: formHtml, example: example, summary: `Updates the accessibility settings for the given service (ICMP web or SNMP)`});
+                                         
+                var example = `[
+  [
+    {
+      "floorPlanId": "g_1234567",
+      "imageUrl": "https://meraki-na.s3.amazonaws.com/assets/...",
+      "imageUrlExpiresAt": "2019-06-11 16:04:54 +00:00",
+      "imageExtension": "png",
+      "imageMd5": "2a9edd3f4ffd80130c647d13eacb59f3",
+      "name": "HQ Floor Plan",
+      "devices": [
+        {
+          "name": "My AP",
+          "lat": 37.4180951010362,
+          "lng": -122.098531723022,
+          "serial": "Q234-ABCD-5678",
+          "mac": "00:11:22:33:44:55",
+          "model": "MR34",
+          "address": "1600 Pennsylvania Ave",
+          "notes": "My AP's note",
+          "lanIp": "1.2.3.4",
+          "tags": " recently-added ",
+          "networkId": "N_24329156",
+          "beaconIdParams": {
+            "uuid": "00000000-0000-0000-0000-000000000000",
+            "major": 5,
+            "minor": 3
+          },
+          "firmware": "wireless-25-14",
+          "floorPlanId": "g_1234567"
+        }
+      ],
+      "width": 100,
+      "height": 150,
+      "center": {
+        "lat": 37.770040510499996,
+        "lng": -122.38714009525
+      },
+      "bottomLeftCorner": {
+        "lat": 37.7696461495,
+        "lng": -122.3880815506
+      },
+      "bottomRightCorner": {
+        "lat": 37.771524649766654,
+        "lng": -122.38795275055205
+      },
+      "topLeftCorner": {
+        "lat": 37.769700101836364,
+        "lng": -122.3888684251381
+      },
+      "topRightCorner": {
+        "lat": 37.77157860210302,
+        "lng": -122.38873962509012
+      }
+    }
+  ]
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkFloorPlans_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkFloorPlans_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkFloorPlans_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkFloorPlans_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Floorplans", methodName:"getNetworkFloorPlans", parameters: parameters, formHtml: formHtml, example: example, summary: `List the floor plans that belong to your network`});
+                                         
+                var example = `[
+  {
+    "floorPlanId": "g_1234567",
+    "imageUrl": "https://meraki-na.s3.amazonaws.com/assets/...",
+    "imageUrlExpiresAt": "2019-06-11 16:04:54 +00:00",
+    "imageExtension": "png",
+    "imageMd5": "2a9edd3f4ffd80130c647d13eacb59f3",
+    "name": "HQ Floor Plan",
+    "devices": [
+      {
+        "name": "My AP",
+        "lat": 37.4180951010362,
+        "lng": -122.098531723022,
+        "serial": "Q234-ABCD-5678",
+        "mac": "00:11:22:33:44:55",
+        "model": "MR34",
+        "address": "1600 Pennsylvania Ave",
+        "notes": "My AP's note",
+        "lanIp": "1.2.3.4",
+        "tags": " recently-added ",
+        "networkId": "N_24329156",
+        "beaconIdParams": {
+          "uuid": "00000000-0000-0000-0000-000000000000",
+          "major": 5,
+          "minor": 3
+        },
+        "firmware": "wireless-25-14",
+        "floorPlanId": "g_1234567"
+      }
+    ],
+    "width": 100,
+    "height": 150,
+    "center": {
+      "lat": 37.770040510499996,
+      "lng": -122.38714009525
+    },
+    "bottomLeftCorner": {
+      "lat": 37.7696461495,
+      "lng": -122.3880815506
+    },
+    "bottomRightCorner": {
+      "lat": 37.771524649766654,
+      "lng": -122.38795275055205
+    },
+    "topLeftCorner": {
+      "lat": 37.769700101836364,
+      "lng": -122.3888684251381
+    },
+    "topRightCorner": {
+      "lat": 37.77157860210302,
+      "lng": -122.38873962509012
+    }
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="createNetworkFloorPlan_networkId">`;                      
+                        formHtml += `<label for="node-input-createNetworkFloorPlan_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-createNetworkFloorPlan_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-createNetworkFloorPlan_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="createNetworkFloorPlan_createNetworkFloorPlan">`;                      
+                        formHtml += `<label for="node-input-createNetworkFloorPlan_createNetworkFloorPlan" style="width:70%"><i class="fa fa-list"></i> <span><b>createNetworkFloorPlan<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-createNetworkFloorPlan_createNetworkFloorPlan" placeholder="msg.createNetworkFloorPlan" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-createNetworkFloorPlan_createNetworkFloorPlanType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "createNetworkFloorPlan"
+                        })
+
+                methodGroups.push({methodGroup:"Floorplans", methodName:"createNetworkFloorPlan", parameters: parameters, formHtml: formHtml, example: example, summary: `Upload a floor plan`});
+                                         
+                var example = `[
+  {
+    "floorPlanId": "g_1234567",
+    "imageUrl": "https://meraki-na.s3.amazonaws.com/assets/...",
+    "imageUrlExpiresAt": "2019-06-11 16:04:54 +00:00",
+    "imageExtension": "png",
+    "imageMd5": "2a9edd3f4ffd80130c647d13eacb59f3",
+    "name": "HQ Floor Plan",
+    "devices": [
+      {
+        "name": "My AP",
+        "lat": 37.4180951010362,
+        "lng": -122.098531723022,
+        "serial": "Q234-ABCD-5678",
+        "mac": "00:11:22:33:44:55",
+        "model": "MR34",
+        "address": "1600 Pennsylvania Ave",
+        "notes": "My AP's note",
+        "lanIp": "1.2.3.4",
+        "tags": " recently-added ",
+        "networkId": "N_24329156",
+        "beaconIdParams": {
+          "uuid": "00000000-0000-0000-0000-000000000000",
+          "major": 5,
+          "minor": 3
+        },
+        "firmware": "wireless-25-14",
+        "floorPlanId": "g_1234567"
+      }
+    ],
+    "width": 100,
+    "height": 150,
+    "center": {
+      "lat": 37.770040510499996,
+      "lng": -122.38714009525
+    },
+    "bottomLeftCorner": {
+      "lat": 37.7696461495,
+      "lng": -122.3880815506
+    },
+    "bottomRightCorner": {
+      "lat": 37.771524649766654,
+      "lng": -122.38795275055205
+    },
+    "topLeftCorner": {
+      "lat": 37.769700101836364,
+      "lng": -122.3888684251381
+    },
+    "topRightCorner": {
+      "lat": 37.77157860210302,
+      "lng": -122.38873962509012
+    }
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkFloorPlan_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkFloorPlan_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkFloorPlan_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkFloorPlan_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkFloorPlan_floorPlanId">`;                      
+                        formHtml += `<label for="node-input-getNetworkFloorPlan_floorPlanId" style="width:70%"><i class="fa fa-list"></i> <span><b>floorPlanId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkFloorPlan_floorPlanId" placeholder="msg.floorPlanId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkFloorPlan_floorPlanIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "floorPlanId"
+                        })
+
+                methodGroups.push({methodGroup:"Floorplans", methodName:"getNetworkFloorPlan", parameters: parameters, formHtml: formHtml, example: example, summary: `Find a floor plan by ID`});
+                                         
+                var example = `[
+  {
+    "floorPlanId": "g_1234567",
+    "imageUrl": "https://meraki-na.s3.amazonaws.com/assets/...",
+    "imageUrlExpiresAt": "2019-06-11 16:04:54 +00:00",
+    "imageExtension": "png",
+    "imageMd5": "2a9edd3f4ffd80130c647d13eacb59f3",
+    "name": "HQ Floor Plan",
+    "devices": [
+      {
+        "name": "My AP",
+        "lat": 37.4180951010362,
+        "lng": -122.098531723022,
+        "serial": "Q234-ABCD-5678",
+        "mac": "00:11:22:33:44:55",
+        "model": "MR34",
+        "address": "1600 Pennsylvania Ave",
+        "notes": "My AP's note",
+        "lanIp": "1.2.3.4",
+        "tags": " recently-added ",
+        "networkId": "N_24329156",
+        "beaconIdParams": {
+          "uuid": "00000000-0000-0000-0000-000000000000",
+          "major": 5,
+          "minor": 3
+        },
+        "firmware": "wireless-25-14",
+        "floorPlanId": "g_1234567"
+      }
+    ],
+    "width": 100,
+    "height": 150,
+    "center": {
+      "lat": 37.770040510499996,
+      "lng": -122.38714009525
+    },
+    "bottomLeftCorner": {
+      "lat": 37.7696461495,
+      "lng": -122.3880815506
+    },
+    "bottomRightCorner": {
+      "lat": 37.771524649766654,
+      "lng": -122.38795275055205
+    },
+    "topLeftCorner": {
+      "lat": 37.769700101836364,
+      "lng": -122.3888684251381
+    },
+    "topRightCorner": {
+      "lat": 37.77157860210302,
+      "lng": -122.38873962509012
+    }
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkFloorPlan_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkFloorPlan_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkFloorPlan_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkFloorPlan_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkFloorPlan_floorPlanId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkFloorPlan_floorPlanId" style="width:70%"><i class="fa fa-list"></i> <span><b>floorPlanId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkFloorPlan_floorPlanId" placeholder="msg.floorPlanId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkFloorPlan_floorPlanIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "floorPlanId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkFloorPlan_updateNetworkFloorPlan">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkFloorPlan_updateNetworkFloorPlan" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkFloorPlan</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkFloorPlan_updateNetworkFloorPlan" placeholder="msg.updateNetworkFloorPlan" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkFloorPlan_updateNetworkFloorPlanType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkFloorPlan"
+                        })
+
+                methodGroups.push({methodGroup:"Floorplans", methodName:"updateNetworkFloorPlan", parameters: parameters, formHtml: formHtml, example: example, summary: `Update a floor plans geolocation and other meta data`});
+                                         
+                var example = `[]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="deleteNetworkFloorPlan_networkId">`;                      
+                        formHtml += `<label for="node-input-deleteNetworkFloorPlan_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-deleteNetworkFloorPlan_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteNetworkFloorPlan_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="deleteNetworkFloorPlan_floorPlanId">`;                      
+                        formHtml += `<label for="node-input-deleteNetworkFloorPlan_floorPlanId" style="width:70%"><i class="fa fa-list"></i> <span><b>floorPlanId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-deleteNetworkFloorPlan_floorPlanId" placeholder="msg.floorPlanId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteNetworkFloorPlan_floorPlanIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "floorPlanId"
+                        })
+
+                methodGroups.push({methodGroup:"Floorplans", methodName:"deleteNetworkFloorPlan", parameters: parameters, formHtml: formHtml, example: example, summary: `Destroy a floor plan`});
                                          
                 var example = `[
   [
@@ -8133,6 +8832,37 @@ console.log = function(){};
 
                 methodGroups.push({methodGroup:"SM", methodName:"wipeNetworkSmDevice", parameters: parameters, formHtml: formHtml, example: example, summary: `Wipe a device`});
                                          
+                var example = `[]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="refreshNetworkSmDeviceDetails_networkId">`;                      
+                        formHtml += `<label for="node-input-refreshNetworkSmDeviceDetails_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-refreshNetworkSmDeviceDetails_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-refreshNetworkSmDeviceDetails_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="refreshNetworkSmDeviceDetails_deviceId">`;                      
+                        formHtml += `<label for="node-input-refreshNetworkSmDeviceDetails_deviceId" style="width:70%"><i class="fa fa-list"></i> <span><b>deviceId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-refreshNetworkSmDeviceDetails_deviceId" placeholder="msg.deviceId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-refreshNetworkSmDeviceDetails_deviceIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "deviceId"
+                        })
+
+                methodGroups.push({methodGroup:"SM", methodName:"refreshNetworkSmDeviceDetails", parameters: parameters, formHtml: formHtml, example: example, summary: `Refresh the details of a device`});
+                                         
                 var example = `[
   {
     "devices": [
@@ -8236,14 +8966,25 @@ console.log = function(){};
                     parameters.push({
                         camelCaseName: "scope"
                         })
+                        formHtml += `<div class="form-row" id="getNetworkSmDevices_batchSize">`;                      
+                    
+                        formHtml += `<label for="node-input-getNetworkSmDevices_batchSize" style="width:70%"><i class="fa fa-list"></i> <span><b>batchSize</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<p>Number of devices to return, 1000 is the default as well as the max.</p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkSmDevices_batchSize" placeholder="msg.batchSize" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSmDevices_batchSizeType" value="integer" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "batchSize"
+                        })
                         formHtml += `<div class="form-row" id="getNetworkSmDevices_batchToken">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkSmDevices_batchToken" style="width:70%"><i class="fa fa-list"></i> <span><b>batchToken</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>On networks with more than 1000 devices, the device list will be limited to 1000 devices per query.
-    If there are more devices to be seen, a batch token will be returned as a part of the device list. To see the remainder of
-    the devices, pass in the batchToken as a parameter in the next request. Requests made with the batchToken do not require
-    additional parameters as the batchToken includes the parameters passed in with the original request. Additional parameters
-    passed in with the batchToken will be ignored.</p>`;
+                        formHtml += `<p>If the network has more devices than the batch size, a batch token will be returned
+    as a part of the device list. To see the remainder of the devices, pass in the batchToken as a parameter in the next request.
+    Requests made with the batchToken do not require additional parameters as the batchToken includes the parameters passed in
+    with the original request. Additional parameters passed in with the batchToken will be ignored.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSmDevices_batchToken" placeholder="msg.batchToken" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-getNetworkSmDevices_batchTokenType" value="string" >`;
                         formHtml += `</div>`;
@@ -10418,7 +11159,7 @@ console.log = function(){};
                         camelCaseName: "networkId"
                         })
 
-                methodGroups.push({methodGroup:"Static routes", methodName:"getNetworkStaticRoutes", parameters: parameters, formHtml: formHtml, example: example, summary: `List the static routes for this network`});
+                methodGroups.push({methodGroup:"MX static routes", methodName:"getNetworkStaticRoutes", parameters: parameters, formHtml: formHtml, example: example, summary: `List the static routes for an MX or teleworker network`});
                                          
                 var example = `[
   {
@@ -10455,7 +11196,7 @@ console.log = function(){};
                         camelCaseName: "createNetworkStaticRoute"
                         })
 
-                methodGroups.push({methodGroup:"Static routes", methodName:"createNetworkStaticRoute", parameters: parameters, formHtml: formHtml, example: example, summary: `Add a static route`});
+                methodGroups.push({methodGroup:"MX static routes", methodName:"createNetworkStaticRoute", parameters: parameters, formHtml: formHtml, example: example, summary: `Add a static route for an MX or teleworker network`});
                                          
                 var example = `[
   {
@@ -10497,7 +11238,7 @@ console.log = function(){};
                         camelCaseName: "srId"
                         })
 
-                methodGroups.push({methodGroup:"Static routes", methodName:"getNetworkStaticRoute", parameters: parameters, formHtml: formHtml, example: example, summary: `Return a static route`});
+                methodGroups.push({methodGroup:"MX static routes", methodName:"getNetworkStaticRoute", parameters: parameters, formHtml: formHtml, example: example, summary: `Return a static route for an MX or teleworker network`});
                                          
                 var example = `[
   {
@@ -10551,7 +11292,7 @@ console.log = function(){};
                         camelCaseName: "updateNetworkStaticRoute"
                         })
 
-                methodGroups.push({methodGroup:"Static routes", methodName:"updateNetworkStaticRoute", parameters: parameters, formHtml: formHtml, example: example, summary: `Update a static route`});
+                methodGroups.push({methodGroup:"MX static routes", methodName:"updateNetworkStaticRoute", parameters: parameters, formHtml: formHtml, example: example, summary: `Update a static route for an MX or teleworker network`});
                                          
                 var example = `[]`;
                 var parameters = []
@@ -10582,7 +11323,7 @@ console.log = function(){};
                         camelCaseName: "srId"
                         })
 
-                methodGroups.push({methodGroup:"Static routes", methodName:"deleteNetworkStaticRoute", parameters: parameters, formHtml: formHtml, example: example, summary: `Delete a static route from a network`});
+                methodGroups.push({methodGroup:"MX static routes", methodName:"deleteNetworkStaticRoute", parameters: parameters, formHtml: formHtml, example: example, summary: `Delete a static route from an MX or teleworker network`});
                                          
                 var example = `[
   {
@@ -10864,6 +11605,7 @@ console.log = function(){};
                                          
                 var example = `[
   {
+    "vlan": 100,
     "useCombinedPower": false,
     "powerExceptions": [
       {
@@ -10882,8 +11624,7 @@ console.log = function(){};
         "serial": "Q234-ABCD-0004",
         "powerType": "useNetworkSetting"
       }
-    ],
-    "vlan": 100
+    ]
   }
 ]`;
                 var parameters = []
@@ -10906,6 +11647,7 @@ console.log = function(){};
                                          
                 var example = `[
   {
+    "vlan": 100,
     "useCombinedPower": false,
     "powerExceptions": [
       {
@@ -10924,8 +11666,7 @@ console.log = function(){};
         "serial": "Q234-ABCD-0004",
         "powerType": "useNetworkSetting"
       }
-    ],
-    "vlan": 100
+    ]
   }
 ]`;
                 var parameters = []
@@ -10957,6 +11698,98 @@ console.log = function(){};
                         })
 
                 methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Update switch network settings`});
+                                         
+                var example = `[
+  {
+    "defaultMtuSize": 9578,
+    "overrides": [
+      {
+        "switches": [
+          "Q234-ABCD-0001",
+          "Q234-ABCD-0002",
+          "Q234-ABCD-0003"
+        ],
+        "mtuSize": 1500
+      },
+      {
+        "switchProfiles": [
+          "1284392014819",
+          "2983092129865"
+        ],
+        "mtuSize": 1600
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkSwitchSettingsMtu_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkSwitchSettingsMtu_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkSwitchSettingsMtu_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSwitchSettingsMtu_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"getNetworkSwitchSettingsMtu", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the MTU configuration`});
+                                         
+                var example = `[
+  {
+    "defaultMtuSize": 9578,
+    "overrides": [
+      {
+        "switches": [
+          "Q234-ABCD-0001",
+          "Q234-ABCD-0002",
+          "Q234-ABCD-0003"
+        ],
+        "mtuSize": 1500
+      },
+      {
+        "switchProfiles": [
+          "1284392014819",
+          "2983092129865"
+        ],
+        "mtuSize": 1600
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsMtu_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsMtu_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsMtu_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsMtu_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsMtu_updateNetworkSwitchSettingsMtu">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsMtu_updateNetworkSwitchSettingsMtu" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSwitchSettingsMtu</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsMtu_updateNetworkSwitchSettingsMtu" placeholder="msg.updateNetworkSwitchSettingsMtu" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsMtu_updateNetworkSwitchSettingsMtuType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkSwitchSettingsMtu"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettingsMtu", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the MTU configuration`});
                                          
                 var example = `[
   [
@@ -11222,6 +12055,162 @@ console.log = function(){};
                         })
 
                 methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettingsQosRule", parameters: parameters, formHtml: formHtml, example: example, summary: `Update a quality of service rule`});
+                                         
+                var example = `[
+  {
+    "broadcastThreshold": 30,
+    "multicastThreshold": 30,
+    "unknownUnicastThreshold": 30
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkSwitchSettingsStormControl_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkSwitchSettingsStormControl_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkSwitchSettingsStormControl_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSwitchSettingsStormControl_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"getNetworkSwitchSettingsStormControl", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the global enhanced storm control configuration`});
+                                         
+                var example = `[
+  {
+    "broadcastThreshold": 30,
+    "multicastThreshold": 30,
+    "unknownUnicastThreshold": 30
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsStormControl_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsStormControl_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsStormControl_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsStormControl_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsStormControl_updateNetworkSwitchSettingsStormControl">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsStormControl_updateNetworkSwitchSettingsStormControl" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSwitchSettingsStormControl</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsStormControl_updateNetworkSwitchSettingsStormControl" placeholder="msg.updateNetworkSwitchSettingsStormControl" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsStormControl_updateNetworkSwitchSettingsStormControlType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkSwitchSettingsStormControl"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettingsStormControl", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the global enhanced storm control configuration`});
+                                         
+                var example = `[
+  {
+    "rstpEnabled": true,
+    "stpBridgePriority": [
+      {
+        "switches": [
+          "Q234-ABCD-0001",
+          "Q234-ABCD-0002",
+          "Q234-ABCD-0003"
+        ],
+        "stpPriority": 4096
+      },
+      {
+        "stacks": [
+          "789102",
+          "123456",
+          "129102"
+        ],
+        "stpPriority": 28672
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkSwitchSettingsStp_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkSwitchSettingsStp_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkSwitchSettingsStp_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSwitchSettingsStp_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"getNetworkSwitchSettingsStp", parameters: parameters, formHtml: formHtml, example: example, summary: `Returns STP settings`});
+                                         
+                var example = `[
+  {
+    "rstpEnabled": true,
+    "stpBridgePriority": [
+      {
+        "switches": [
+          "Q234-ABCD-0001",
+          "Q234-ABCD-0002",
+          "Q234-ABCD-0003"
+        ],
+        "stpPriority": 4096
+      },
+      {
+        "stacks": [
+          "789102",
+          "123456",
+          "129102"
+        ],
+        "stpPriority": 28672
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsStp_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsStp_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsStp_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsStp_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsStp_updateNetworkSwitchSettingsStp">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsStp_updateNetworkSwitchSettingsStp" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSwitchSettingsStp</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsStp_updateNetworkSwitchSettingsStp" placeholder="msg.updateNetworkSwitchSettingsStp" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsStp_updateNetworkSwitchSettingsStpType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkSwitchSettingsStp"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettingsStp", parameters: parameters, formHtml: formHtml, example: example, summary: `Updates STP settings`});
                                          
                 var example = `[
   [
@@ -12898,6 +13887,68 @@ console.log = function(){};
                                          
                 var example = `[
   {
+    "meshingEnabled": true,
+    "ipv6BridgeEnabled": false,
+    "locationAnalyticsEnabled": false
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkWirelessSettings_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkWirelessSettings_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkWirelessSettings_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkWirelessSettings_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Wireless settings", methodName:"getNetworkWirelessSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the wireless settings for a network`});
+                                         
+                var example = `[
+  {
+    "meshingEnabled": true,
+    "ipv6BridgeEnabled": false,
+    "locationAnalyticsEnabled": false
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkWirelessSettings_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkWirelessSettings_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkWirelessSettings_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkWirelessSettings_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkWirelessSettings_updateNetworkWirelessSettings">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkWirelessSettings_updateNetworkWirelessSettings" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkWirelessSettings</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkWirelessSettings_updateNetworkWirelessSettings" placeholder="msg.updateNetworkWirelessSettings" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkWirelessSettings_updateNetworkWirelessSettingsType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkWirelessSettings"
+                        })
+
+                methodGroups.push({methodGroup:"Wireless settings", methodName:"updateNetworkWirelessSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the wireless settings for a network`});
+                                         
+                var example = `[
+  {
     "success": true
   }
 ]`;
@@ -13263,7 +14314,8 @@ console.log = function(){};
   [
     {
       "id": "2930418",
-      "name": "My organization"
+      "name": "My organization",
+      "url": "https://dashboard.meraki.com/o/VjjsAd/manage/organization/overview"
     }
   ]
 ]`;
@@ -13276,7 +14328,8 @@ console.log = function(){};
                 var example = `[
   {
     "id": "2930418",
-    "name": "My organization"
+    "name": "My organization",
+    "url": "https://dashboard.meraki.com/o/VjjsAd/manage/organization/overview"
   }
 ]`;
                 var parameters = []
@@ -13300,7 +14353,8 @@ console.log = function(){};
                 var example = `[
   {
     "id": "2930418",
-    "name": "My organization"
+    "name": "My organization",
+    "url": "https://dashboard.meraki.com/o/VjjsAd/manage/organization/overview"
   }
 ]`;
                 var parameters = []
@@ -13324,7 +14378,8 @@ console.log = function(){};
                 var example = `[
   {
     "id": "2930418",
-    "name": "My organization"
+    "name": "My organization",
+    "url": "https://dashboard.meraki.com/o/VjjsAd/manage/organization/overview"
   }
 ]`;
                 var parameters = []
@@ -14352,7 +15407,8 @@ console.log = function(){};
                 var example = `[
   {
     "id": "2930418",
-    "name": "My organization"
+    "name": "My organization",
+    "url": "https://dashboard.meraki.com/o/VjjsAd/manage/organization/overview"
   }
 ]`;
                 var parameters = []
@@ -15943,11 +16999,14 @@ console.log = function(){};
             <option value="Cameras" >Cameras</option>
             <option value="Clients" >Clients</option>
             <option value="Config templates" >Config templates</option>
+            <option value="Connectivity monitoring destinations" >Connectivity monitoring destinations</option>
             <option value="Content filtering categories" >Content filtering categories</option>
             <option value="Content filtering rules" >Content filtering rules</option>
             <option value="Dashboard branding policies" >Dashboard branding policies</option>
             <option value="Devices" >Devices</option>
+            <option value="Events" >Events</option>
             <option value="Firewalled services" >Firewalled services</option>
+            <option value="Floorplans" >Floorplans</option>
             <option value="Group policies" >Group policies</option>
             <option value="HTTP servers" >HTTP servers</option>
             <option value="Intrusion settings" >Intrusion settings</option>
@@ -15962,6 +17021,7 @@ console.log = function(){};
             <option value="MX VPN firewall" >MX VPN firewall</option>
             <option value="MX cellular firewall" >MX cellular firewall</option>
             <option value="MX port forwarding rules" >MX port forwarding rules</option>
+            <option value="MX static routes" >MX static routes</option>
             <option value="MX warm spare settings" >MX warm spare settings</option>
             <option value="Malware settings" >Malware settings</option>
             <option value="Management interface settings" >Management interface settings</option>
@@ -15980,7 +17040,6 @@ console.log = function(){};
             <option value="Security events" >Security events</option>
             <option value="Splash login attempts" >Splash login attempts</option>
             <option value="Splash settings" >Splash settings</option>
-            <option value="Static routes" >Static routes</option>
             <option value="Switch port schedules" >Switch port schedules</option>
             <option value="Switch ports" >Switch ports</option>
             <option value="Switch profiles" >Switch profiles</option>
@@ -15993,6 +17052,7 @@ console.log = function(){};
             <option value="VLANs" >VLANs</option>
             <option value="Webhook logs" >Webhook logs</option>
             <option value="Wireless health" >Wireless health</option>
+            <option value="Wireless settings" >Wireless settings</option>
         </select>
     </div>
     <div class="form-row">
@@ -16065,7 +17125,7 @@ return msg;
 
 
     <p>Cisco Meraki Dashboard Node</p>
-    &nbsp &nbsp &nbsp<i>OAS version: 0.4.0</i>
+    &nbsp &nbsp &nbsp<i>OAS version: 0.5.0</i>
     <hr/>
     <br>
     <p>The Cisco Meraki Dashboard API is a modern REST API based on the <a href="https://swagger.io/docs/specification/about/" target="_blank">OpenAPI</a> specification. 

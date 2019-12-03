@@ -3010,6 +3010,72 @@ module.exports = function (RED) {
                                 result = client.getNetworkConnectionStats(getNetworkConnectionStats_parameters);
                 console.log('result', result);
             }
+            if (!errorFlag && node.method === 'getNetworkConnectivityMonitoringDestinations') {
+                var getNetworkConnectivityMonitoringDestinations_parameters = [];
+                var getNetworkConnectivityMonitoringDestinations_nodeParam;
+                var getNetworkConnectivityMonitoringDestinations_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkConnectivityMonitoringDestinations_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkConnectivityMonitoringDestinations_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkConnectivityMonitoringDestinations_nodeParamType === 'str') {
+                    console.log('getNetworkConnectivityMonitoringDestinations_nodeParamType is "str"');
+                    getNetworkConnectivityMonitoringDestinations_parameters.networkId = getNetworkConnectivityMonitoringDestinations_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkConnectivityMonitoringDestinations_nodeParamType is not "str"')
+                    getNetworkConnectivityMonitoringDestinations_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkConnectivityMonitoringDestinations(getNetworkConnectivityMonitoringDestinations_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkConnectivityMonitoringDestinations') {
+                var updateNetworkConnectivityMonitoringDestinations_parameters = [];
+                var updateNetworkConnectivityMonitoringDestinations_nodeParam;
+                var updateNetworkConnectivityMonitoringDestinations_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkConnectivityMonitoringDestinations_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkConnectivityMonitoringDestinations_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkConnectivityMonitoringDestinations_nodeParamType === 'str') {
+                    console.log('updateNetworkConnectivityMonitoringDestinations_nodeParamType is "str"');
+                    updateNetworkConnectivityMonitoringDestinations_parameters.networkId = updateNetworkConnectivityMonitoringDestinations_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkConnectivityMonitoringDestinations_nodeParamType is not "str"')
+                    updateNetworkConnectivityMonitoringDestinations_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkConnectivityMonitoringDestinations_nodeParam = storedParamValsMap['updateNetworkConnectivityMonitoringDestinations'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkConnectivityMonitoringDestinations");
+
+                updateNetworkConnectivityMonitoringDestinations_nodeParamType = storedParamTypeMap['updateNetworkConnectivityMonitoringDestinations'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkConnectivityMonitoringDestinations");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkConnectivityMonitoringDestinations_parameters.updateNetworkConnectivityMonitoringDestinations = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkConnectivityMonitoringDestinations(updateNetworkConnectivityMonitoringDestinations_parameters);
+                console.log('result', result);
+            }
             if (!errorFlag && node.method === 'getNetworkContentFiltering') {
                 var getNetworkContentFiltering_parameters = [];
                 var getNetworkContentFiltering_nodeParam;
@@ -4514,6 +4580,294 @@ module.exports = function (RED) {
                                 result = client.getNetworkDeviceWirelessStatus(getNetworkDeviceWirelessStatus_parameters);
                 console.log('result', result);
             }
+            if (!errorFlag && node.method === 'getNetworkEvents') {
+                var getNetworkEvents_parameters = [];
+                var getNetworkEvents_nodeParam;
+                var getNetworkEvents_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkEvents_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.networkId = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['productType'] ||
+                    RED.util.getMessageProperty(msg, "productType");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['productType'] ||
+                    RED.util.getMessageProperty(msg, "productType");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.productType = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.productType = RED.util.getMessageProperty(msg, "productType");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['includedEventTypes'] ||
+                    RED.util.getMessageProperty(msg, "includedEventTypes");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['includedEventTypes'] ||
+                    RED.util.getMessageProperty(msg, "includedEventTypes");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.includedEventTypes = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.includedEventTypes = RED.util.getMessageProperty(msg, "includedEventTypes");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['excludedEventTypes'] ||
+                    RED.util.getMessageProperty(msg, "excludedEventTypes");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['excludedEventTypes'] ||
+                    RED.util.getMessageProperty(msg, "excludedEventTypes");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.excludedEventTypes = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.excludedEventTypes = RED.util.getMessageProperty(msg, "excludedEventTypes");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['deviceMac'] ||
+                    RED.util.getMessageProperty(msg, "deviceMac");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['deviceMac'] ||
+                    RED.util.getMessageProperty(msg, "deviceMac");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.deviceMac = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.deviceMac = RED.util.getMessageProperty(msg, "deviceMac");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['deviceSerial'] ||
+                    RED.util.getMessageProperty(msg, "deviceSerial");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['deviceSerial'] ||
+                    RED.util.getMessageProperty(msg, "deviceSerial");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.deviceSerial = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.deviceSerial = RED.util.getMessageProperty(msg, "deviceSerial");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['deviceName'] ||
+                    RED.util.getMessageProperty(msg, "deviceName");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['deviceName'] ||
+                    RED.util.getMessageProperty(msg, "deviceName");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.deviceName = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.deviceName = RED.util.getMessageProperty(msg, "deviceName");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['clientIp'] ||
+                    RED.util.getMessageProperty(msg, "clientIp");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['clientIp'] ||
+                    RED.util.getMessageProperty(msg, "clientIp");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.clientIp = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.clientIp = RED.util.getMessageProperty(msg, "clientIp");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['clientMac'] ||
+                    RED.util.getMessageProperty(msg, "clientMac");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['clientMac'] ||
+                    RED.util.getMessageProperty(msg, "clientMac");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.clientMac = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.clientMac = RED.util.getMessageProperty(msg, "clientMac");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['clientName'] ||
+                    RED.util.getMessageProperty(msg, "clientName");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['clientName'] ||
+                    RED.util.getMessageProperty(msg, "clientName");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.clientName = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.clientName = RED.util.getMessageProperty(msg, "clientName");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['smDeviceMac'] ||
+                    RED.util.getMessageProperty(msg, "smDeviceMac");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['smDeviceMac'] ||
+                    RED.util.getMessageProperty(msg, "smDeviceMac");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.smDeviceMac = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.smDeviceMac = RED.util.getMessageProperty(msg, "smDeviceMac");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['smDeviceName'] ||
+                    RED.util.getMessageProperty(msg, "smDeviceName");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['smDeviceName'] ||
+                    RED.util.getMessageProperty(msg, "smDeviceName");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.smDeviceName = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.smDeviceName = RED.util.getMessageProperty(msg, "smDeviceName");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['perPage'] ||
+                    RED.util.getMessageProperty(msg, "perPage");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['perPage'] ||
+                    RED.util.getMessageProperty(msg, "perPage");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.perPage = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.perPage = RED.util.getMessageProperty(msg, "perPage");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['startingAfter'] ||
+                    RED.util.getMessageProperty(msg, "startingAfter");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['startingAfter'] ||
+                    RED.util.getMessageProperty(msg, "startingAfter");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.startingAfter = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.startingAfter = RED.util.getMessageProperty(msg, "startingAfter");
+                }
+                                
+                getNetworkEvents_nodeParam = storedParamValsMap['endingBefore'] ||
+                    RED.util.getMessageProperty(msg, "endingBefore");
+
+                getNetworkEvents_nodeParamType = storedParamTypeMap['endingBefore'] ||
+                    RED.util.getMessageProperty(msg, "endingBefore");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEvents_nodeParamType === 'str') {
+                    console.log('getNetworkEvents_nodeParamType is "str"');
+                    getNetworkEvents_parameters.endingBefore = getNetworkEvents_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEvents_nodeParamType is not "str"')
+                    getNetworkEvents_parameters.endingBefore = RED.util.getMessageProperty(msg, "endingBefore");
+                }
+                                result = client.getNetworkEvents(getNetworkEvents_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkEventsEventTypes') {
+                var getNetworkEventsEventTypes_parameters = [];
+                var getNetworkEventsEventTypes_nodeParam;
+                var getNetworkEventsEventTypes_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkEventsEventTypes_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkEventsEventTypes_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkEventsEventTypes_nodeParamType === 'str') {
+                    console.log('getNetworkEventsEventTypes_nodeParamType is "str"');
+                    getNetworkEventsEventTypes_parameters.networkId = getNetworkEventsEventTypes_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkEventsEventTypes_nodeParamType is not "str"')
+                    getNetworkEventsEventTypes_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkEventsEventTypes(getNetworkEventsEventTypes_parameters);
+                console.log('result', result);
+            }
             if (!errorFlag && node.method === 'getNetworkFailedConnections') {
                 var getNetworkFailedConnections_parameters = [];
                 var getNetworkFailedConnections_nodeParam;
@@ -4798,6 +5152,214 @@ module.exports = function (RED) {
                     errorFlag = true;
                 }
                                 result = client.updateNetworkFirewalledService(updateNetworkFirewalledService_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkFloorPlans') {
+                var getNetworkFloorPlans_parameters = [];
+                var getNetworkFloorPlans_nodeParam;
+                var getNetworkFloorPlans_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkFloorPlans_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkFloorPlans_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkFloorPlans_nodeParamType === 'str') {
+                    console.log('getNetworkFloorPlans_nodeParamType is "str"');
+                    getNetworkFloorPlans_parameters.networkId = getNetworkFloorPlans_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkFloorPlans_nodeParamType is not "str"')
+                    getNetworkFloorPlans_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkFloorPlans(getNetworkFloorPlans_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'createNetworkFloorPlan') {
+                var createNetworkFloorPlan_parameters = [];
+                var createNetworkFloorPlan_nodeParam;
+                var createNetworkFloorPlan_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                createNetworkFloorPlan_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                createNetworkFloorPlan_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (createNetworkFloorPlan_nodeParamType === 'str') {
+                    console.log('createNetworkFloorPlan_nodeParamType is "str"');
+                    createNetworkFloorPlan_parameters.networkId = createNetworkFloorPlan_nodeParam || undefined;
+                } else {
+                    console.log('createNetworkFloorPlan_nodeParamType is not "str"')
+                    createNetworkFloorPlan_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                createNetworkFloorPlan_nodeParam = storedParamValsMap['createNetworkFloorPlan'] ||
+                    RED.util.getMessageProperty(msg, "createNetworkFloorPlan");
+
+                createNetworkFloorPlan_nodeParamType = storedParamTypeMap['createNetworkFloorPlan'] ||
+                    RED.util.getMessageProperty(msg, "createNetworkFloorPlan");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    createNetworkFloorPlan_parameters.createNetworkFloorPlan = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.createNetworkFloorPlan(createNetworkFloorPlan_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkFloorPlan') {
+                var getNetworkFloorPlan_parameters = [];
+                var getNetworkFloorPlan_nodeParam;
+                var getNetworkFloorPlan_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkFloorPlan_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkFloorPlan_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkFloorPlan_nodeParamType === 'str') {
+                    console.log('getNetworkFloorPlan_nodeParamType is "str"');
+                    getNetworkFloorPlan_parameters.networkId = getNetworkFloorPlan_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkFloorPlan_nodeParamType is not "str"')
+                    getNetworkFloorPlan_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                getNetworkFloorPlan_nodeParam = storedParamValsMap['floorPlanId'] ||
+                    RED.util.getMessageProperty(msg, "floorPlanId");
+
+                getNetworkFloorPlan_nodeParamType = storedParamTypeMap['floorPlanId'] ||
+                    RED.util.getMessageProperty(msg, "floorPlanId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkFloorPlan_nodeParamType === 'str') {
+                    console.log('getNetworkFloorPlan_nodeParamType is "str"');
+                    getNetworkFloorPlan_parameters.floorPlanId = getNetworkFloorPlan_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkFloorPlan_nodeParamType is not "str"')
+                    getNetworkFloorPlan_parameters.floorPlanId = RED.util.getMessageProperty(msg, "floorPlanId");
+                }
+                                result = client.getNetworkFloorPlan(getNetworkFloorPlan_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkFloorPlan') {
+                var updateNetworkFloorPlan_parameters = [];
+                var updateNetworkFloorPlan_nodeParam;
+                var updateNetworkFloorPlan_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkFloorPlan_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkFloorPlan_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkFloorPlan_nodeParamType === 'str') {
+                    console.log('updateNetworkFloorPlan_nodeParamType is "str"');
+                    updateNetworkFloorPlan_parameters.networkId = updateNetworkFloorPlan_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkFloorPlan_nodeParamType is not "str"')
+                    updateNetworkFloorPlan_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkFloorPlan_nodeParam = storedParamValsMap['floorPlanId'] ||
+                    RED.util.getMessageProperty(msg, "floorPlanId");
+
+                updateNetworkFloorPlan_nodeParamType = storedParamTypeMap['floorPlanId'] ||
+                    RED.util.getMessageProperty(msg, "floorPlanId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkFloorPlan_nodeParamType === 'str') {
+                    console.log('updateNetworkFloorPlan_nodeParamType is "str"');
+                    updateNetworkFloorPlan_parameters.floorPlanId = updateNetworkFloorPlan_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkFloorPlan_nodeParamType is not "str"')
+                    updateNetworkFloorPlan_parameters.floorPlanId = RED.util.getMessageProperty(msg, "floorPlanId");
+                }
+                                
+                updateNetworkFloorPlan_nodeParam = storedParamValsMap['updateNetworkFloorPlan'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkFloorPlan");
+
+                updateNetworkFloorPlan_nodeParamType = storedParamTypeMap['updateNetworkFloorPlan'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkFloorPlan");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkFloorPlan_parameters.updateNetworkFloorPlan = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkFloorPlan(updateNetworkFloorPlan_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'deleteNetworkFloorPlan') {
+                var deleteNetworkFloorPlan_parameters = [];
+                var deleteNetworkFloorPlan_nodeParam;
+                var deleteNetworkFloorPlan_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                deleteNetworkFloorPlan_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                deleteNetworkFloorPlan_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (deleteNetworkFloorPlan_nodeParamType === 'str') {
+                    console.log('deleteNetworkFloorPlan_nodeParamType is "str"');
+                    deleteNetworkFloorPlan_parameters.networkId = deleteNetworkFloorPlan_nodeParam || undefined;
+                } else {
+                    console.log('deleteNetworkFloorPlan_nodeParamType is not "str"')
+                    deleteNetworkFloorPlan_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                deleteNetworkFloorPlan_nodeParam = storedParamValsMap['floorPlanId'] ||
+                    RED.util.getMessageProperty(msg, "floorPlanId");
+
+                deleteNetworkFloorPlan_nodeParamType = storedParamTypeMap['floorPlanId'] ||
+                    RED.util.getMessageProperty(msg, "floorPlanId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (deleteNetworkFloorPlan_nodeParamType === 'str') {
+                    console.log('deleteNetworkFloorPlan_nodeParamType is "str"');
+                    deleteNetworkFloorPlan_parameters.floorPlanId = deleteNetworkFloorPlan_nodeParam || undefined;
+                } else {
+                    console.log('deleteNetworkFloorPlan_nodeParamType is not "str"')
+                    deleteNetworkFloorPlan_parameters.floorPlanId = RED.util.getMessageProperty(msg, "floorPlanId");
+                }
+                                result = client.deleteNetworkFloorPlan(deleteNetworkFloorPlan_parameters);
                 console.log('result', result);
             }
             if (!errorFlag && node.method === 'getNetworkGroupPolicies') {
@@ -7135,6 +7697,48 @@ module.exports = function (RED) {
                                 result = client.wipeNetworkSmDevice(wipeNetworkSmDevice_parameters);
                 console.log('result', result);
             }
+            if (!errorFlag && node.method === 'refreshNetworkSmDeviceDetails') {
+                var refreshNetworkSmDeviceDetails_parameters = [];
+                var refreshNetworkSmDeviceDetails_nodeParam;
+                var refreshNetworkSmDeviceDetails_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                refreshNetworkSmDeviceDetails_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                refreshNetworkSmDeviceDetails_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (refreshNetworkSmDeviceDetails_nodeParamType === 'str') {
+                    console.log('refreshNetworkSmDeviceDetails_nodeParamType is "str"');
+                    refreshNetworkSmDeviceDetails_parameters.networkId = refreshNetworkSmDeviceDetails_nodeParam || undefined;
+                } else {
+                    console.log('refreshNetworkSmDeviceDetails_nodeParamType is not "str"')
+                    refreshNetworkSmDeviceDetails_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                refreshNetworkSmDeviceDetails_nodeParam = storedParamValsMap['deviceId'] ||
+                    RED.util.getMessageProperty(msg, "deviceId");
+
+                refreshNetworkSmDeviceDetails_nodeParamType = storedParamTypeMap['deviceId'] ||
+                    RED.util.getMessageProperty(msg, "deviceId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (refreshNetworkSmDeviceDetails_nodeParamType === 'str') {
+                    console.log('refreshNetworkSmDeviceDetails_nodeParamType is "str"');
+                    refreshNetworkSmDeviceDetails_parameters.deviceId = refreshNetworkSmDeviceDetails_nodeParam || undefined;
+                } else {
+                    console.log('refreshNetworkSmDeviceDetails_nodeParamType is not "str"')
+                    refreshNetworkSmDeviceDetails_parameters.deviceId = RED.util.getMessageProperty(msg, "deviceId");
+                }
+                                result = client.refreshNetworkSmDeviceDetails(refreshNetworkSmDeviceDetails_parameters);
+                console.log('result', result);
+            }
             if (!errorFlag && node.method === 'getNetworkSmDevices') {
                 var getNetworkSmDevices_parameters = [];
                 var getNetworkSmDevices_nodeParam;
@@ -7241,6 +7845,23 @@ module.exports = function (RED) {
                 } else {
                     console.log('getNetworkSmDevices_nodeParamType is not "str"')
                     getNetworkSmDevices_parameters.scope = RED.util.getMessageProperty(msg, "scope");
+                }
+                                
+                getNetworkSmDevices_nodeParam = storedParamValsMap['batchSize'] ||
+                    RED.util.getMessageProperty(msg, "batchSize");
+
+                getNetworkSmDevices_nodeParamType = storedParamTypeMap['batchSize'] ||
+                    RED.util.getMessageProperty(msg, "batchSize");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkSmDevices_nodeParamType === 'str') {
+                    console.log('getNetworkSmDevices_nodeParamType is "str"');
+                    getNetworkSmDevices_parameters.batchSize = getNetworkSmDevices_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkSmDevices_nodeParamType is not "str"')
+                    getNetworkSmDevices_parameters.batchSize = RED.util.getMessageProperty(msg, "batchSize");
                 }
                                 
                 getNetworkSmDevices_nodeParam = storedParamValsMap['batchToken'] ||
@@ -9746,6 +10367,72 @@ module.exports = function (RED) {
                                 result = client.updateNetworkSwitchSettings(updateNetworkSwitchSettings_parameters);
                 console.log('result', result);
             }
+            if (!errorFlag && node.method === 'getNetworkSwitchSettingsMtu') {
+                var getNetworkSwitchSettingsMtu_parameters = [];
+                var getNetworkSwitchSettingsMtu_nodeParam;
+                var getNetworkSwitchSettingsMtu_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkSwitchSettingsMtu_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkSwitchSettingsMtu_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkSwitchSettingsMtu_nodeParamType === 'str') {
+                    console.log('getNetworkSwitchSettingsMtu_nodeParamType is "str"');
+                    getNetworkSwitchSettingsMtu_parameters.networkId = getNetworkSwitchSettingsMtu_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkSwitchSettingsMtu_nodeParamType is not "str"')
+                    getNetworkSwitchSettingsMtu_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkSwitchSettingsMtu(getNetworkSwitchSettingsMtu_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkSwitchSettingsMtu') {
+                var updateNetworkSwitchSettingsMtu_parameters = [];
+                var updateNetworkSwitchSettingsMtu_nodeParam;
+                var updateNetworkSwitchSettingsMtu_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkSwitchSettingsMtu_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkSwitchSettingsMtu_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkSwitchSettingsMtu_nodeParamType === 'str') {
+                    console.log('updateNetworkSwitchSettingsMtu_nodeParamType is "str"');
+                    updateNetworkSwitchSettingsMtu_parameters.networkId = updateNetworkSwitchSettingsMtu_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkSwitchSettingsMtu_nodeParamType is not "str"')
+                    updateNetworkSwitchSettingsMtu_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkSwitchSettingsMtu_nodeParam = storedParamValsMap['updateNetworkSwitchSettingsMtu'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchSettingsMtu");
+
+                updateNetworkSwitchSettingsMtu_nodeParamType = storedParamTypeMap['updateNetworkSwitchSettingsMtu'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchSettingsMtu");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkSwitchSettingsMtu_parameters.updateNetworkSwitchSettingsMtu = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkSwitchSettingsMtu(updateNetworkSwitchSettingsMtu_parameters);
+                console.log('result', result);
+            }
             if (!errorFlag && node.method === 'getNetworkSwitchSettingsQosRules') {
                 var getNetworkSwitchSettingsQosRules_parameters = [];
                 var getNetworkSwitchSettingsQosRules_nodeParam;
@@ -10018,6 +10705,138 @@ module.exports = function (RED) {
                     errorFlag = true;
                 }
                                 result = client.updateNetworkSwitchSettingsQosRule(updateNetworkSwitchSettingsQosRule_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkSwitchSettingsStormControl') {
+                var getNetworkSwitchSettingsStormControl_parameters = [];
+                var getNetworkSwitchSettingsStormControl_nodeParam;
+                var getNetworkSwitchSettingsStormControl_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkSwitchSettingsStormControl_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkSwitchSettingsStormControl_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkSwitchSettingsStormControl_nodeParamType === 'str') {
+                    console.log('getNetworkSwitchSettingsStormControl_nodeParamType is "str"');
+                    getNetworkSwitchSettingsStormControl_parameters.networkId = getNetworkSwitchSettingsStormControl_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkSwitchSettingsStormControl_nodeParamType is not "str"')
+                    getNetworkSwitchSettingsStormControl_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkSwitchSettingsStormControl(getNetworkSwitchSettingsStormControl_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkSwitchSettingsStormControl') {
+                var updateNetworkSwitchSettingsStormControl_parameters = [];
+                var updateNetworkSwitchSettingsStormControl_nodeParam;
+                var updateNetworkSwitchSettingsStormControl_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkSwitchSettingsStormControl_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkSwitchSettingsStormControl_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkSwitchSettingsStormControl_nodeParamType === 'str') {
+                    console.log('updateNetworkSwitchSettingsStormControl_nodeParamType is "str"');
+                    updateNetworkSwitchSettingsStormControl_parameters.networkId = updateNetworkSwitchSettingsStormControl_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkSwitchSettingsStormControl_nodeParamType is not "str"')
+                    updateNetworkSwitchSettingsStormControl_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkSwitchSettingsStormControl_nodeParam = storedParamValsMap['updateNetworkSwitchSettingsStormControl'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchSettingsStormControl");
+
+                updateNetworkSwitchSettingsStormControl_nodeParamType = storedParamTypeMap['updateNetworkSwitchSettingsStormControl'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchSettingsStormControl");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkSwitchSettingsStormControl_parameters.updateNetworkSwitchSettingsStormControl = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkSwitchSettingsStormControl(updateNetworkSwitchSettingsStormControl_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkSwitchSettingsStp') {
+                var getNetworkSwitchSettingsStp_parameters = [];
+                var getNetworkSwitchSettingsStp_nodeParam;
+                var getNetworkSwitchSettingsStp_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkSwitchSettingsStp_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkSwitchSettingsStp_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkSwitchSettingsStp_nodeParamType === 'str') {
+                    console.log('getNetworkSwitchSettingsStp_nodeParamType is "str"');
+                    getNetworkSwitchSettingsStp_parameters.networkId = getNetworkSwitchSettingsStp_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkSwitchSettingsStp_nodeParamType is not "str"')
+                    getNetworkSwitchSettingsStp_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkSwitchSettingsStp(getNetworkSwitchSettingsStp_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkSwitchSettingsStp') {
+                var updateNetworkSwitchSettingsStp_parameters = [];
+                var updateNetworkSwitchSettingsStp_nodeParam;
+                var updateNetworkSwitchSettingsStp_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkSwitchSettingsStp_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkSwitchSettingsStp_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkSwitchSettingsStp_nodeParamType === 'str') {
+                    console.log('updateNetworkSwitchSettingsStp_nodeParamType is "str"');
+                    updateNetworkSwitchSettingsStp_parameters.networkId = updateNetworkSwitchSettingsStp_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkSwitchSettingsStp_nodeParamType is not "str"')
+                    updateNetworkSwitchSettingsStp_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkSwitchSettingsStp_nodeParam = storedParamValsMap['updateNetworkSwitchSettingsStp'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchSettingsStp");
+
+                updateNetworkSwitchSettingsStp_nodeParamType = storedParamTypeMap['updateNetworkSwitchSettingsStp'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchSettingsStp");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkSwitchSettingsStp_parameters.updateNetworkSwitchSettingsStp = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkSwitchSettingsStp(updateNetworkSwitchSettingsStp_parameters);
                 console.log('result', result);
             }
             if (!errorFlag && node.method === 'getNetworkSwitchStacks') {
@@ -11264,6 +12083,72 @@ module.exports = function (RED) {
                     getNetworkWirelessRfProfile_parameters.rfProfileId = RED.util.getMessageProperty(msg, "rfProfileId");
                 }
                                 result = client.getNetworkWirelessRfProfile(getNetworkWirelessRfProfile_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkWirelessSettings') {
+                var getNetworkWirelessSettings_parameters = [];
+                var getNetworkWirelessSettings_nodeParam;
+                var getNetworkWirelessSettings_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkWirelessSettings_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkWirelessSettings_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkWirelessSettings_nodeParamType === 'str') {
+                    console.log('getNetworkWirelessSettings_nodeParamType is "str"');
+                    getNetworkWirelessSettings_parameters.networkId = getNetworkWirelessSettings_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkWirelessSettings_nodeParamType is not "str"')
+                    getNetworkWirelessSettings_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkWirelessSettings(getNetworkWirelessSettings_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkWirelessSettings') {
+                var updateNetworkWirelessSettings_parameters = [];
+                var updateNetworkWirelessSettings_nodeParam;
+                var updateNetworkWirelessSettings_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkWirelessSettings_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkWirelessSettings_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkWirelessSettings_nodeParamType === 'str') {
+                    console.log('updateNetworkWirelessSettings_nodeParamType is "str"');
+                    updateNetworkWirelessSettings_parameters.networkId = updateNetworkWirelessSettings_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkWirelessSettings_nodeParamType is not "str"')
+                    updateNetworkWirelessSettings_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkWirelessSettings_nodeParam = storedParamValsMap['updateNetworkWirelessSettings'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkWirelessSettings");
+
+                updateNetworkWirelessSettings_nodeParamType = storedParamTypeMap['updateNetworkWirelessSettings'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkWirelessSettings");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkWirelessSettings_parameters.updateNetworkWirelessSettings = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkWirelessSettings(updateNetworkWirelessSettings_parameters);
                 console.log('result', result);
             }
             if (!errorFlag && node.method === 'lockNetworkSmDevices') {
