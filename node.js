@@ -389,6 +389,204 @@ module.exports = function (RED) {
                                 result = client.getDeviceCameraAnalyticsZoneHistory(getDeviceCameraAnalyticsZoneHistory_parameters);
                 console.log('result', result);
             }
+            if (!errorFlag && node.method === 'getDeviceCameraQualityAndRetentionSettings') {
+                var getDeviceCameraQualityAndRetentionSettings_parameters = [];
+                var getDeviceCameraQualityAndRetentionSettings_nodeParam;
+                var getDeviceCameraQualityAndRetentionSettings_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getDeviceCameraQualityAndRetentionSettings_nodeParam = storedParamValsMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                getDeviceCameraQualityAndRetentionSettings_nodeParamType = storedParamTypeMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getDeviceCameraQualityAndRetentionSettings_nodeParamType === 'str') {
+                    console.log('getDeviceCameraQualityAndRetentionSettings_nodeParamType is "str"');
+                    getDeviceCameraQualityAndRetentionSettings_parameters.serial = getDeviceCameraQualityAndRetentionSettings_nodeParam || undefined;
+                } else {
+                    console.log('getDeviceCameraQualityAndRetentionSettings_nodeParamType is not "str"')
+                    getDeviceCameraQualityAndRetentionSettings_parameters.serial = RED.util.getMessageProperty(msg, "serial");
+                }
+                                result = client.getDeviceCameraQualityAndRetentionSettings(getDeviceCameraQualityAndRetentionSettings_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateDeviceCameraQualityAndRetentionSettings') {
+                var updateDeviceCameraQualityAndRetentionSettings_parameters = [];
+                var updateDeviceCameraQualityAndRetentionSettings_nodeParam;
+                var updateDeviceCameraQualityAndRetentionSettings_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateDeviceCameraQualityAndRetentionSettings_nodeParam = storedParamValsMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                updateDeviceCameraQualityAndRetentionSettings_nodeParamType = storedParamTypeMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateDeviceCameraQualityAndRetentionSettings_nodeParamType === 'str') {
+                    console.log('updateDeviceCameraQualityAndRetentionSettings_nodeParamType is "str"');
+                    updateDeviceCameraQualityAndRetentionSettings_parameters.serial = updateDeviceCameraQualityAndRetentionSettings_nodeParam || undefined;
+                } else {
+                    console.log('updateDeviceCameraQualityAndRetentionSettings_nodeParamType is not "str"')
+                    updateDeviceCameraQualityAndRetentionSettings_parameters.serial = RED.util.getMessageProperty(msg, "serial");
+                }
+                                
+                updateDeviceCameraQualityAndRetentionSettings_nodeParam = storedParamValsMap['updateDeviceCameraQualityAndRetentionSettings'] ||
+                    RED.util.getMessageProperty(msg, "updateDeviceCameraQualityAndRetentionSettings");
+
+                updateDeviceCameraQualityAndRetentionSettings_nodeParamType = storedParamTypeMap['updateDeviceCameraQualityAndRetentionSettings'] ||
+                    RED.util.getMessageProperty(msg, "updateDeviceCameraQualityAndRetentionSettings");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateDeviceCameraQualityAndRetentionSettings_parameters.updateDeviceCameraQualityAndRetentionSettings = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateDeviceCameraQualityAndRetentionSettings(updateDeviceCameraQualityAndRetentionSettings_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getDeviceCellularGatewaySettings') {
+                var getDeviceCellularGatewaySettings_parameters = [];
+                var getDeviceCellularGatewaySettings_nodeParam;
+                var getDeviceCellularGatewaySettings_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getDeviceCellularGatewaySettings_nodeParam = storedParamValsMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                getDeviceCellularGatewaySettings_nodeParamType = storedParamTypeMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getDeviceCellularGatewaySettings_nodeParamType === 'str') {
+                    console.log('getDeviceCellularGatewaySettings_nodeParamType is "str"');
+                    getDeviceCellularGatewaySettings_parameters.serial = getDeviceCellularGatewaySettings_nodeParam || undefined;
+                } else {
+                    console.log('getDeviceCellularGatewaySettings_nodeParamType is not "str"')
+                    getDeviceCellularGatewaySettings_parameters.serial = RED.util.getMessageProperty(msg, "serial");
+                }
+                                result = client.getDeviceCellularGatewaySettings(getDeviceCellularGatewaySettings_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateDeviceCellularGatewaySettings') {
+                var updateDeviceCellularGatewaySettings_parameters = [];
+                var updateDeviceCellularGatewaySettings_nodeParam;
+                var updateDeviceCellularGatewaySettings_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateDeviceCellularGatewaySettings_nodeParam = storedParamValsMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                updateDeviceCellularGatewaySettings_nodeParamType = storedParamTypeMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateDeviceCellularGatewaySettings_nodeParamType === 'str') {
+                    console.log('updateDeviceCellularGatewaySettings_nodeParamType is "str"');
+                    updateDeviceCellularGatewaySettings_parameters.serial = updateDeviceCellularGatewaySettings_nodeParam || undefined;
+                } else {
+                    console.log('updateDeviceCellularGatewaySettings_nodeParamType is not "str"')
+                    updateDeviceCellularGatewaySettings_parameters.serial = RED.util.getMessageProperty(msg, "serial");
+                }
+                                
+                updateDeviceCellularGatewaySettings_nodeParam = storedParamValsMap['updateDeviceCellularGatewaySettings'] ||
+                    RED.util.getMessageProperty(msg, "updateDeviceCellularGatewaySettings");
+
+                updateDeviceCellularGatewaySettings_nodeParamType = storedParamTypeMap['updateDeviceCellularGatewaySettings'] ||
+                    RED.util.getMessageProperty(msg, "updateDeviceCellularGatewaySettings");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateDeviceCellularGatewaySettings_parameters.updateDeviceCellularGatewaySettings = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateDeviceCellularGatewaySettings(updateDeviceCellularGatewaySettings_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getDeviceCellularGatewaySettingsPortForwardingRules') {
+                var getDeviceCellularGatewaySettingsPortForwardingRules_parameters = [];
+                var getDeviceCellularGatewaySettingsPortForwardingRules_nodeParam;
+                var getDeviceCellularGatewaySettingsPortForwardingRules_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getDeviceCellularGatewaySettingsPortForwardingRules_nodeParam = storedParamValsMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                getDeviceCellularGatewaySettingsPortForwardingRules_nodeParamType = storedParamTypeMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getDeviceCellularGatewaySettingsPortForwardingRules_nodeParamType === 'str') {
+                    console.log('getDeviceCellularGatewaySettingsPortForwardingRules_nodeParamType is "str"');
+                    getDeviceCellularGatewaySettingsPortForwardingRules_parameters.serial = getDeviceCellularGatewaySettingsPortForwardingRules_nodeParam || undefined;
+                } else {
+                    console.log('getDeviceCellularGatewaySettingsPortForwardingRules_nodeParamType is not "str"')
+                    getDeviceCellularGatewaySettingsPortForwardingRules_parameters.serial = RED.util.getMessageProperty(msg, "serial");
+                }
+                                result = client.getDeviceCellularGatewaySettingsPortForwardingRules(getDeviceCellularGatewaySettingsPortForwardingRules_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateDeviceCellularGatewaySettingsPortForwardingRules') {
+                var updateDeviceCellularGatewaySettingsPortForwardingRules_parameters = [];
+                var updateDeviceCellularGatewaySettingsPortForwardingRules_nodeParam;
+                var updateDeviceCellularGatewaySettingsPortForwardingRules_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateDeviceCellularGatewaySettingsPortForwardingRules_nodeParam = storedParamValsMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                updateDeviceCellularGatewaySettingsPortForwardingRules_nodeParamType = storedParamTypeMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateDeviceCellularGatewaySettingsPortForwardingRules_nodeParamType === 'str') {
+                    console.log('updateDeviceCellularGatewaySettingsPortForwardingRules_nodeParamType is "str"');
+                    updateDeviceCellularGatewaySettingsPortForwardingRules_parameters.serial = updateDeviceCellularGatewaySettingsPortForwardingRules_nodeParam || undefined;
+                } else {
+                    console.log('updateDeviceCellularGatewaySettingsPortForwardingRules_nodeParamType is not "str"')
+                    updateDeviceCellularGatewaySettingsPortForwardingRules_parameters.serial = RED.util.getMessageProperty(msg, "serial");
+                }
+                                
+                updateDeviceCellularGatewaySettingsPortForwardingRules_nodeParam = storedParamValsMap['updateDeviceCellularGatewaySettingsPortForwardingRules'] ||
+                    RED.util.getMessageProperty(msg, "updateDeviceCellularGatewaySettingsPortForwardingRules");
+
+                updateDeviceCellularGatewaySettingsPortForwardingRules_nodeParamType = storedParamTypeMap['updateDeviceCellularGatewaySettingsPortForwardingRules'] ||
+                    RED.util.getMessageProperty(msg, "updateDeviceCellularGatewaySettingsPortForwardingRules");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateDeviceCellularGatewaySettingsPortForwardingRules_parameters.updateDeviceCellularGatewaySettingsPortForwardingRules = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateDeviceCellularGatewaySettingsPortForwardingRules(updateDeviceCellularGatewaySettingsPortForwardingRules_parameters);
+                console.log('result', result);
+            }
             if (!errorFlag && node.method === 'getDeviceClients') {
                 var getDeviceClients_parameters = [];
                 var getDeviceClients_nodeParam;
@@ -446,6 +644,124 @@ module.exports = function (RED) {
                     getDeviceClients_parameters.timespan = RED.util.getMessageProperty(msg, "timespan");
                 }
                                 result = client.getDeviceClients(getDeviceClients_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getDeviceSwitchPortStatuses') {
+                var getDeviceSwitchPortStatuses_parameters = [];
+                var getDeviceSwitchPortStatuses_nodeParam;
+                var getDeviceSwitchPortStatuses_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getDeviceSwitchPortStatuses_nodeParam = storedParamValsMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                getDeviceSwitchPortStatuses_nodeParamType = storedParamTypeMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getDeviceSwitchPortStatuses_nodeParamType === 'str') {
+                    console.log('getDeviceSwitchPortStatuses_nodeParamType is "str"');
+                    getDeviceSwitchPortStatuses_parameters.serial = getDeviceSwitchPortStatuses_nodeParam || undefined;
+                } else {
+                    console.log('getDeviceSwitchPortStatuses_nodeParamType is not "str"')
+                    getDeviceSwitchPortStatuses_parameters.serial = RED.util.getMessageProperty(msg, "serial");
+                }
+                                
+                getDeviceSwitchPortStatuses_nodeParam = storedParamValsMap['t0'] ||
+                    RED.util.getMessageProperty(msg, "t0");
+
+                getDeviceSwitchPortStatuses_nodeParamType = storedParamTypeMap['t0'] ||
+                    RED.util.getMessageProperty(msg, "t0");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getDeviceSwitchPortStatuses_nodeParamType === 'str') {
+                    console.log('getDeviceSwitchPortStatuses_nodeParamType is "str"');
+                    getDeviceSwitchPortStatuses_parameters.t0 = getDeviceSwitchPortStatuses_nodeParam || undefined;
+                } else {
+                    console.log('getDeviceSwitchPortStatuses_nodeParamType is not "str"')
+                    getDeviceSwitchPortStatuses_parameters.t0 = RED.util.getMessageProperty(msg, "t0");
+                }
+                                
+                getDeviceSwitchPortStatuses_nodeParam = storedParamValsMap['timespan'] ||
+                    RED.util.getMessageProperty(msg, "timespan");
+
+                getDeviceSwitchPortStatuses_nodeParamType = storedParamTypeMap['timespan'] ||
+                    RED.util.getMessageProperty(msg, "timespan");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getDeviceSwitchPortStatuses_nodeParamType === 'str') {
+                    console.log('getDeviceSwitchPortStatuses_nodeParamType is "str"');
+                    getDeviceSwitchPortStatuses_parameters.timespan = getDeviceSwitchPortStatuses_nodeParam || undefined;
+                } else {
+                    console.log('getDeviceSwitchPortStatuses_nodeParamType is not "str"')
+                    getDeviceSwitchPortStatuses_parameters.timespan = RED.util.getMessageProperty(msg, "timespan");
+                }
+                                result = client.getDeviceSwitchPortStatuses(getDeviceSwitchPortStatuses_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getDeviceSwitchPortStatusesPackets') {
+                var getDeviceSwitchPortStatusesPackets_parameters = [];
+                var getDeviceSwitchPortStatusesPackets_nodeParam;
+                var getDeviceSwitchPortStatusesPackets_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getDeviceSwitchPortStatusesPackets_nodeParam = storedParamValsMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                getDeviceSwitchPortStatusesPackets_nodeParamType = storedParamTypeMap['serial'] ||
+                    RED.util.getMessageProperty(msg, "serial");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getDeviceSwitchPortStatusesPackets_nodeParamType === 'str') {
+                    console.log('getDeviceSwitchPortStatusesPackets_nodeParamType is "str"');
+                    getDeviceSwitchPortStatusesPackets_parameters.serial = getDeviceSwitchPortStatusesPackets_nodeParam || undefined;
+                } else {
+                    console.log('getDeviceSwitchPortStatusesPackets_nodeParamType is not "str"')
+                    getDeviceSwitchPortStatusesPackets_parameters.serial = RED.util.getMessageProperty(msg, "serial");
+                }
+                                
+                getDeviceSwitchPortStatusesPackets_nodeParam = storedParamValsMap['t0'] ||
+                    RED.util.getMessageProperty(msg, "t0");
+
+                getDeviceSwitchPortStatusesPackets_nodeParamType = storedParamTypeMap['t0'] ||
+                    RED.util.getMessageProperty(msg, "t0");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getDeviceSwitchPortStatusesPackets_nodeParamType === 'str') {
+                    console.log('getDeviceSwitchPortStatusesPackets_nodeParamType is "str"');
+                    getDeviceSwitchPortStatusesPackets_parameters.t0 = getDeviceSwitchPortStatusesPackets_nodeParam || undefined;
+                } else {
+                    console.log('getDeviceSwitchPortStatusesPackets_nodeParamType is not "str"')
+                    getDeviceSwitchPortStatusesPackets_parameters.t0 = RED.util.getMessageProperty(msg, "t0");
+                }
+                                
+                getDeviceSwitchPortStatusesPackets_nodeParam = storedParamValsMap['timespan'] ||
+                    RED.util.getMessageProperty(msg, "timespan");
+
+                getDeviceSwitchPortStatusesPackets_nodeParamType = storedParamTypeMap['timespan'] ||
+                    RED.util.getMessageProperty(msg, "timespan");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getDeviceSwitchPortStatusesPackets_nodeParamType === 'str') {
+                    console.log('getDeviceSwitchPortStatusesPackets_nodeParamType is "str"');
+                    getDeviceSwitchPortStatusesPackets_parameters.timespan = getDeviceSwitchPortStatusesPackets_nodeParam || undefined;
+                } else {
+                    console.log('getDeviceSwitchPortStatusesPackets_nodeParamType is not "str"')
+                    getDeviceSwitchPortStatusesPackets_parameters.timespan = RED.util.getMessageProperty(msg, "timespan");
+                }
+                                result = client.getDeviceSwitchPortStatusesPackets(getDeviceSwitchPortStatusesPackets_parameters);
                 console.log('result', result);
             }
             if (!errorFlag && node.method === 'getDeviceSwitchPorts') {
@@ -812,6 +1128,72 @@ module.exports = function (RED) {
                     errorFlag = true;
                 }
                                 result = client.updateNetworkAlertSettings(updateNetworkAlertSettings_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkApplianceFirewallInboundFirewallRules') {
+                var getNetworkApplianceFirewallInboundFirewallRules_parameters = [];
+                var getNetworkApplianceFirewallInboundFirewallRules_nodeParam;
+                var getNetworkApplianceFirewallInboundFirewallRules_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkApplianceFirewallInboundFirewallRules_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkApplianceFirewallInboundFirewallRules_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkApplianceFirewallInboundFirewallRules_nodeParamType === 'str') {
+                    console.log('getNetworkApplianceFirewallInboundFirewallRules_nodeParamType is "str"');
+                    getNetworkApplianceFirewallInboundFirewallRules_parameters.networkId = getNetworkApplianceFirewallInboundFirewallRules_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkApplianceFirewallInboundFirewallRules_nodeParamType is not "str"')
+                    getNetworkApplianceFirewallInboundFirewallRules_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkApplianceFirewallInboundFirewallRules(getNetworkApplianceFirewallInboundFirewallRules_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkApplianceFirewallInboundFirewallRules') {
+                var updateNetworkApplianceFirewallInboundFirewallRules_parameters = [];
+                var updateNetworkApplianceFirewallInboundFirewallRules_nodeParam;
+                var updateNetworkApplianceFirewallInboundFirewallRules_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkApplianceFirewallInboundFirewallRules_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkApplianceFirewallInboundFirewallRules_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkApplianceFirewallInboundFirewallRules_nodeParamType === 'str') {
+                    console.log('updateNetworkApplianceFirewallInboundFirewallRules_nodeParamType is "str"');
+                    updateNetworkApplianceFirewallInboundFirewallRules_parameters.networkId = updateNetworkApplianceFirewallInboundFirewallRules_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkApplianceFirewallInboundFirewallRules_nodeParamType is not "str"')
+                    updateNetworkApplianceFirewallInboundFirewallRules_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkApplianceFirewallInboundFirewallRules_nodeParam = storedParamValsMap['updateNetworkApplianceFirewallInboundFirewallRules'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkApplianceFirewallInboundFirewallRules");
+
+                updateNetworkApplianceFirewallInboundFirewallRules_nodeParamType = storedParamTypeMap['updateNetworkApplianceFirewallInboundFirewallRules'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkApplianceFirewallInboundFirewallRules");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkApplianceFirewallInboundFirewallRules_parameters.updateNetworkApplianceFirewallInboundFirewallRules = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkApplianceFirewallInboundFirewallRules(updateNetworkApplianceFirewallInboundFirewallRules_parameters);
                 console.log('result', result);
             }
             if (!errorFlag && node.method === 'getNetworkAppliancePorts') {
@@ -1249,6 +1631,239 @@ module.exports = function (RED) {
                                 result = client.updateNetworkBluetoothSettings(updateNetworkBluetoothSettings_parameters);
                 console.log('result', result);
             }
+            if (!errorFlag && node.method === 'getNetworkCameraQualityRetentionProfiles') {
+                var getNetworkCameraQualityRetentionProfiles_parameters = [];
+                var getNetworkCameraQualityRetentionProfiles_nodeParam;
+                var getNetworkCameraQualityRetentionProfiles_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkCameraQualityRetentionProfiles_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkCameraQualityRetentionProfiles_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkCameraQualityRetentionProfiles_nodeParamType === 'str') {
+                    console.log('getNetworkCameraQualityRetentionProfiles_nodeParamType is "str"');
+                    getNetworkCameraQualityRetentionProfiles_parameters.networkId = getNetworkCameraQualityRetentionProfiles_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkCameraQualityRetentionProfiles_nodeParamType is not "str"')
+                    getNetworkCameraQualityRetentionProfiles_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkCameraQualityRetentionProfiles(getNetworkCameraQualityRetentionProfiles_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'createNetworkCameraQualityRetentionProfile') {
+                var createNetworkCameraQualityRetentionProfile_parameters = [];
+                var createNetworkCameraQualityRetentionProfile_nodeParam;
+                var createNetworkCameraQualityRetentionProfile_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                createNetworkCameraQualityRetentionProfile_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                createNetworkCameraQualityRetentionProfile_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (createNetworkCameraQualityRetentionProfile_nodeParamType === 'str') {
+                    console.log('createNetworkCameraQualityRetentionProfile_nodeParamType is "str"');
+                    createNetworkCameraQualityRetentionProfile_parameters.networkId = createNetworkCameraQualityRetentionProfile_nodeParam || undefined;
+                } else {
+                    console.log('createNetworkCameraQualityRetentionProfile_nodeParamType is not "str"')
+                    createNetworkCameraQualityRetentionProfile_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                createNetworkCameraQualityRetentionProfile_nodeParam = storedParamValsMap['createNetworkCameraQualityRetentionProfile'] ||
+                    RED.util.getMessageProperty(msg, "createNetworkCameraQualityRetentionProfile");
+
+                createNetworkCameraQualityRetentionProfile_nodeParamType = storedParamTypeMap['createNetworkCameraQualityRetentionProfile'] ||
+                    RED.util.getMessageProperty(msg, "createNetworkCameraQualityRetentionProfile");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    createNetworkCameraQualityRetentionProfile_parameters.createNetworkCameraQualityRetentionProfile = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.createNetworkCameraQualityRetentionProfile(createNetworkCameraQualityRetentionProfile_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkCameraQualityRetentionProfile') {
+                var getNetworkCameraQualityRetentionProfile_parameters = [];
+                var getNetworkCameraQualityRetentionProfile_nodeParam;
+                var getNetworkCameraQualityRetentionProfile_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkCameraQualityRetentionProfile_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkCameraQualityRetentionProfile_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkCameraQualityRetentionProfile_nodeParamType === 'str') {
+                    console.log('getNetworkCameraQualityRetentionProfile_nodeParamType is "str"');
+                    getNetworkCameraQualityRetentionProfile_parameters.networkId = getNetworkCameraQualityRetentionProfile_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkCameraQualityRetentionProfile_nodeParamType is not "str"')
+                    getNetworkCameraQualityRetentionProfile_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                getNetworkCameraQualityRetentionProfile_nodeParam = storedParamValsMap['qualityRetentionProfileId'] ||
+                    RED.util.getMessageProperty(msg, "qualityRetentionProfileId");
+
+                getNetworkCameraQualityRetentionProfile_nodeParamType = storedParamTypeMap['qualityRetentionProfileId'] ||
+                    RED.util.getMessageProperty(msg, "qualityRetentionProfileId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkCameraQualityRetentionProfile_nodeParamType === 'str') {
+                    console.log('getNetworkCameraQualityRetentionProfile_nodeParamType is "str"');
+                    getNetworkCameraQualityRetentionProfile_parameters.qualityRetentionProfileId = getNetworkCameraQualityRetentionProfile_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkCameraQualityRetentionProfile_nodeParamType is not "str"')
+                    getNetworkCameraQualityRetentionProfile_parameters.qualityRetentionProfileId = RED.util.getMessageProperty(msg, "qualityRetentionProfileId");
+                }
+                                result = client.getNetworkCameraQualityRetentionProfile(getNetworkCameraQualityRetentionProfile_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkCameraQualityRetentionProfile') {
+                var updateNetworkCameraQualityRetentionProfile_parameters = [];
+                var updateNetworkCameraQualityRetentionProfile_nodeParam;
+                var updateNetworkCameraQualityRetentionProfile_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkCameraQualityRetentionProfile_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkCameraQualityRetentionProfile_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkCameraQualityRetentionProfile_nodeParamType === 'str') {
+                    console.log('updateNetworkCameraQualityRetentionProfile_nodeParamType is "str"');
+                    updateNetworkCameraQualityRetentionProfile_parameters.networkId = updateNetworkCameraQualityRetentionProfile_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkCameraQualityRetentionProfile_nodeParamType is not "str"')
+                    updateNetworkCameraQualityRetentionProfile_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkCameraQualityRetentionProfile_nodeParam = storedParamValsMap['qualityRetentionProfileId'] ||
+                    RED.util.getMessageProperty(msg, "qualityRetentionProfileId");
+
+                updateNetworkCameraQualityRetentionProfile_nodeParamType = storedParamTypeMap['qualityRetentionProfileId'] ||
+                    RED.util.getMessageProperty(msg, "qualityRetentionProfileId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkCameraQualityRetentionProfile_nodeParamType === 'str') {
+                    console.log('updateNetworkCameraQualityRetentionProfile_nodeParamType is "str"');
+                    updateNetworkCameraQualityRetentionProfile_parameters.qualityRetentionProfileId = updateNetworkCameraQualityRetentionProfile_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkCameraQualityRetentionProfile_nodeParamType is not "str"')
+                    updateNetworkCameraQualityRetentionProfile_parameters.qualityRetentionProfileId = RED.util.getMessageProperty(msg, "qualityRetentionProfileId");
+                }
+                                
+                updateNetworkCameraQualityRetentionProfile_nodeParam = storedParamValsMap['updateNetworkCameraQualityRetentionProfile'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkCameraQualityRetentionProfile");
+
+                updateNetworkCameraQualityRetentionProfile_nodeParamType = storedParamTypeMap['updateNetworkCameraQualityRetentionProfile'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkCameraQualityRetentionProfile");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkCameraQualityRetentionProfile_parameters.updateNetworkCameraQualityRetentionProfile = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkCameraQualityRetentionProfile(updateNetworkCameraQualityRetentionProfile_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'deleteNetworkCameraQualityRetentionProfile') {
+                var deleteNetworkCameraQualityRetentionProfile_parameters = [];
+                var deleteNetworkCameraQualityRetentionProfile_nodeParam;
+                var deleteNetworkCameraQualityRetentionProfile_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                deleteNetworkCameraQualityRetentionProfile_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                deleteNetworkCameraQualityRetentionProfile_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (deleteNetworkCameraQualityRetentionProfile_nodeParamType === 'str') {
+                    console.log('deleteNetworkCameraQualityRetentionProfile_nodeParamType is "str"');
+                    deleteNetworkCameraQualityRetentionProfile_parameters.networkId = deleteNetworkCameraQualityRetentionProfile_nodeParam || undefined;
+                } else {
+                    console.log('deleteNetworkCameraQualityRetentionProfile_nodeParamType is not "str"')
+                    deleteNetworkCameraQualityRetentionProfile_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                deleteNetworkCameraQualityRetentionProfile_nodeParam = storedParamValsMap['qualityRetentionProfileId'] ||
+                    RED.util.getMessageProperty(msg, "qualityRetentionProfileId");
+
+                deleteNetworkCameraQualityRetentionProfile_nodeParamType = storedParamTypeMap['qualityRetentionProfileId'] ||
+                    RED.util.getMessageProperty(msg, "qualityRetentionProfileId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (deleteNetworkCameraQualityRetentionProfile_nodeParamType === 'str') {
+                    console.log('deleteNetworkCameraQualityRetentionProfile_nodeParamType is "str"');
+                    deleteNetworkCameraQualityRetentionProfile_parameters.qualityRetentionProfileId = deleteNetworkCameraQualityRetentionProfile_nodeParam || undefined;
+                } else {
+                    console.log('deleteNetworkCameraQualityRetentionProfile_nodeParamType is not "str"')
+                    deleteNetworkCameraQualityRetentionProfile_parameters.qualityRetentionProfileId = RED.util.getMessageProperty(msg, "qualityRetentionProfileId");
+                }
+                                result = client.deleteNetworkCameraQualityRetentionProfile(deleteNetworkCameraQualityRetentionProfile_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkCameraSchedules') {
+                var getNetworkCameraSchedules_parameters = [];
+                var getNetworkCameraSchedules_nodeParam;
+                var getNetworkCameraSchedules_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkCameraSchedules_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkCameraSchedules_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkCameraSchedules_nodeParamType === 'str') {
+                    console.log('getNetworkCameraSchedules_nodeParamType is "str"');
+                    getNetworkCameraSchedules_parameters.networkId = getNetworkCameraSchedules_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkCameraSchedules_nodeParamType is not "str"')
+                    getNetworkCameraSchedules_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkCameraSchedules(getNetworkCameraSchedules_parameters);
+                console.log('result', result);
+            }
             if (!errorFlag && node.method === 'generateNetworkCameraSnapshot') {
                 var generateNetworkCameraSnapshot_parameters = [];
                 var generateNetworkCameraSnapshot_nodeParam;
@@ -1430,6 +2045,270 @@ module.exports = function (RED) {
                     errorFlag = true;
                 }
                                 result = client.updateNetworkCellularFirewallRules(updateNetworkCellularFirewallRules_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations') {
+                var getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_parameters = [];
+                var getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParam;
+                var getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParamType === 'str') {
+                    console.log('getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParamType is "str"');
+                    getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_parameters.networkId = getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParamType is not "str"')
+                    getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations(getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations') {
+                var updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_parameters = [];
+                var updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParam;
+                var updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParamType === 'str') {
+                    console.log('updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParamType is "str"');
+                    updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_parameters.networkId = updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParamType is not "str"')
+                    updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParam = storedParamValsMap['updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations");
+
+                updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_nodeParamType = storedParamTypeMap['updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_parameters.updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations(updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkCellularGatewaySettingsDhcp') {
+                var getNetworkCellularGatewaySettingsDhcp_parameters = [];
+                var getNetworkCellularGatewaySettingsDhcp_nodeParam;
+                var getNetworkCellularGatewaySettingsDhcp_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkCellularGatewaySettingsDhcp_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkCellularGatewaySettingsDhcp_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkCellularGatewaySettingsDhcp_nodeParamType === 'str') {
+                    console.log('getNetworkCellularGatewaySettingsDhcp_nodeParamType is "str"');
+                    getNetworkCellularGatewaySettingsDhcp_parameters.networkId = getNetworkCellularGatewaySettingsDhcp_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkCellularGatewaySettingsDhcp_nodeParamType is not "str"')
+                    getNetworkCellularGatewaySettingsDhcp_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkCellularGatewaySettingsDhcp(getNetworkCellularGatewaySettingsDhcp_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkCellularGatewaySettingsDhcp') {
+                var updateNetworkCellularGatewaySettingsDhcp_parameters = [];
+                var updateNetworkCellularGatewaySettingsDhcp_nodeParam;
+                var updateNetworkCellularGatewaySettingsDhcp_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkCellularGatewaySettingsDhcp_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkCellularGatewaySettingsDhcp_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkCellularGatewaySettingsDhcp_nodeParamType === 'str') {
+                    console.log('updateNetworkCellularGatewaySettingsDhcp_nodeParamType is "str"');
+                    updateNetworkCellularGatewaySettingsDhcp_parameters.networkId = updateNetworkCellularGatewaySettingsDhcp_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkCellularGatewaySettingsDhcp_nodeParamType is not "str"')
+                    updateNetworkCellularGatewaySettingsDhcp_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkCellularGatewaySettingsDhcp_nodeParam = storedParamValsMap['updateNetworkCellularGatewaySettingsDhcp'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkCellularGatewaySettingsDhcp");
+
+                updateNetworkCellularGatewaySettingsDhcp_nodeParamType = storedParamTypeMap['updateNetworkCellularGatewaySettingsDhcp'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkCellularGatewaySettingsDhcp");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkCellularGatewaySettingsDhcp_parameters.updateNetworkCellularGatewaySettingsDhcp = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkCellularGatewaySettingsDhcp(updateNetworkCellularGatewaySettingsDhcp_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkCellularGatewaySettingsSubnetPool') {
+                var getNetworkCellularGatewaySettingsSubnetPool_parameters = [];
+                var getNetworkCellularGatewaySettingsSubnetPool_nodeParam;
+                var getNetworkCellularGatewaySettingsSubnetPool_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkCellularGatewaySettingsSubnetPool_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkCellularGatewaySettingsSubnetPool_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkCellularGatewaySettingsSubnetPool_nodeParamType === 'str') {
+                    console.log('getNetworkCellularGatewaySettingsSubnetPool_nodeParamType is "str"');
+                    getNetworkCellularGatewaySettingsSubnetPool_parameters.networkId = getNetworkCellularGatewaySettingsSubnetPool_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkCellularGatewaySettingsSubnetPool_nodeParamType is not "str"')
+                    getNetworkCellularGatewaySettingsSubnetPool_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkCellularGatewaySettingsSubnetPool(getNetworkCellularGatewaySettingsSubnetPool_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkCellularGatewaySettingsSubnetPool') {
+                var updateNetworkCellularGatewaySettingsSubnetPool_parameters = [];
+                var updateNetworkCellularGatewaySettingsSubnetPool_nodeParam;
+                var updateNetworkCellularGatewaySettingsSubnetPool_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkCellularGatewaySettingsSubnetPool_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkCellularGatewaySettingsSubnetPool_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkCellularGatewaySettingsSubnetPool_nodeParamType === 'str') {
+                    console.log('updateNetworkCellularGatewaySettingsSubnetPool_nodeParamType is "str"');
+                    updateNetworkCellularGatewaySettingsSubnetPool_parameters.networkId = updateNetworkCellularGatewaySettingsSubnetPool_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkCellularGatewaySettingsSubnetPool_nodeParamType is not "str"')
+                    updateNetworkCellularGatewaySettingsSubnetPool_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkCellularGatewaySettingsSubnetPool_nodeParam = storedParamValsMap['updateNetworkCellularGatewaySettingsSubnetPool'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkCellularGatewaySettingsSubnetPool");
+
+                updateNetworkCellularGatewaySettingsSubnetPool_nodeParamType = storedParamTypeMap['updateNetworkCellularGatewaySettingsSubnetPool'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkCellularGatewaySettingsSubnetPool");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkCellularGatewaySettingsSubnetPool_parameters.updateNetworkCellularGatewaySettingsSubnetPool = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkCellularGatewaySettingsSubnetPool(updateNetworkCellularGatewaySettingsSubnetPool_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkCellularGatewaySettingsUplink') {
+                var getNetworkCellularGatewaySettingsUplink_parameters = [];
+                var getNetworkCellularGatewaySettingsUplink_nodeParam;
+                var getNetworkCellularGatewaySettingsUplink_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkCellularGatewaySettingsUplink_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkCellularGatewaySettingsUplink_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkCellularGatewaySettingsUplink_nodeParamType === 'str') {
+                    console.log('getNetworkCellularGatewaySettingsUplink_nodeParamType is "str"');
+                    getNetworkCellularGatewaySettingsUplink_parameters.networkId = getNetworkCellularGatewaySettingsUplink_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkCellularGatewaySettingsUplink_nodeParamType is not "str"')
+                    getNetworkCellularGatewaySettingsUplink_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkCellularGatewaySettingsUplink(getNetworkCellularGatewaySettingsUplink_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkCellularGatewaySettingsUplink') {
+                var updateNetworkCellularGatewaySettingsUplink_parameters = [];
+                var updateNetworkCellularGatewaySettingsUplink_nodeParam;
+                var updateNetworkCellularGatewaySettingsUplink_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkCellularGatewaySettingsUplink_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkCellularGatewaySettingsUplink_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkCellularGatewaySettingsUplink_nodeParamType === 'str') {
+                    console.log('updateNetworkCellularGatewaySettingsUplink_nodeParamType is "str"');
+                    updateNetworkCellularGatewaySettingsUplink_parameters.networkId = updateNetworkCellularGatewaySettingsUplink_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkCellularGatewaySettingsUplink_nodeParamType is not "str"')
+                    updateNetworkCellularGatewaySettingsUplink_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkCellularGatewaySettingsUplink_nodeParam = storedParamValsMap['updateNetworkCellularGatewaySettingsUplink'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkCellularGatewaySettingsUplink");
+
+                updateNetworkCellularGatewaySettingsUplink_nodeParamType = storedParamTypeMap['updateNetworkCellularGatewaySettingsUplink'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkCellularGatewaySettingsUplink");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkCellularGatewaySettingsUplink_parameters.updateNetworkCellularGatewaySettingsUplink = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkCellularGatewaySettingsUplink(updateNetworkCellularGatewaySettingsUplink_parameters);
                 console.log('result', result);
             }
             if (!errorFlag && node.method === 'getNetworkClients') {
@@ -8048,488 +8927,6 @@ module.exports = function (RED) {
                                 result = client.unenrollNetworkSmDevice(unenrollNetworkSmDevice_parameters);
                 console.log('result', result);
             }
-            if (!errorFlag && node.method === 'createNetworkSmProfileClarity') {
-                var createNetworkSmProfileClarity_parameters = [];
-                var createNetworkSmProfileClarity_nodeParam;
-                var createNetworkSmProfileClarity_nodeParamType;
-                console.log('check if body param   msg.payload, ', msg.payload);
-                
-                createNetworkSmProfileClarity_nodeParam = storedParamValsMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                createNetworkSmProfileClarity_nodeParamType = storedParamTypeMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (createNetworkSmProfileClarity_nodeParamType === 'str') {
-                    console.log('createNetworkSmProfileClarity_nodeParamType is "str"');
-                    createNetworkSmProfileClarity_parameters.networkId = createNetworkSmProfileClarity_nodeParam || undefined;
-                } else {
-                    console.log('createNetworkSmProfileClarity_nodeParamType is not "str"')
-                    createNetworkSmProfileClarity_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
-                }
-                                
-                createNetworkSmProfileClarity_nodeParam = storedParamValsMap['createNetworkSmProfileClarity'] ||
-                    RED.util.getMessageProperty(msg, "createNetworkSmProfileClarity");
-
-                createNetworkSmProfileClarity_nodeParamType = storedParamTypeMap['createNetworkSmProfileClarity'] ||
-                    RED.util.getMessageProperty(msg, "createNetworkSmProfileClarity");
-
-                // Check if its the body param
-
-                // isBodyParam
-                if (typeof msg.payload === 'object') {
-                    createNetworkSmProfileClarity_parameters.createNetworkSmProfileClarity = msg.payload;
-                } else {
-                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
-                    errorFlag = true;
-                }
-                                result = client.createNetworkSmProfileClarity(createNetworkSmProfileClarity_parameters);
-                console.log('result', result);
-            }
-            if (!errorFlag && node.method === 'updateNetworkSmProfileClarity') {
-                var updateNetworkSmProfileClarity_parameters = [];
-                var updateNetworkSmProfileClarity_nodeParam;
-                var updateNetworkSmProfileClarity_nodeParamType;
-                console.log('check if body param   msg.payload, ', msg.payload);
-                
-                updateNetworkSmProfileClarity_nodeParam = storedParamValsMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                updateNetworkSmProfileClarity_nodeParamType = storedParamTypeMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (updateNetworkSmProfileClarity_nodeParamType === 'str') {
-                    console.log('updateNetworkSmProfileClarity_nodeParamType is "str"');
-                    updateNetworkSmProfileClarity_parameters.networkId = updateNetworkSmProfileClarity_nodeParam || undefined;
-                } else {
-                    console.log('updateNetworkSmProfileClarity_nodeParamType is not "str"')
-                    updateNetworkSmProfileClarity_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
-                }
-                                
-                updateNetworkSmProfileClarity_nodeParam = storedParamValsMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                updateNetworkSmProfileClarity_nodeParamType = storedParamTypeMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (updateNetworkSmProfileClarity_nodeParamType === 'str') {
-                    console.log('updateNetworkSmProfileClarity_nodeParamType is "str"');
-                    updateNetworkSmProfileClarity_parameters.profileId = updateNetworkSmProfileClarity_nodeParam || undefined;
-                } else {
-                    console.log('updateNetworkSmProfileClarity_nodeParamType is not "str"')
-                    updateNetworkSmProfileClarity_parameters.profileId = RED.util.getMessageProperty(msg, "profileId");
-                }
-                                
-                updateNetworkSmProfileClarity_nodeParam = storedParamValsMap['updateNetworkSmProfileClarity'] ||
-                    RED.util.getMessageProperty(msg, "updateNetworkSmProfileClarity");
-
-                updateNetworkSmProfileClarity_nodeParamType = storedParamTypeMap['updateNetworkSmProfileClarity'] ||
-                    RED.util.getMessageProperty(msg, "updateNetworkSmProfileClarity");
-
-                // Check if its the body param
-
-                // isBodyParam
-                if (typeof msg.payload === 'object') {
-                    updateNetworkSmProfileClarity_parameters.updateNetworkSmProfileClarity = msg.payload;
-                } else {
-                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
-                    errorFlag = true;
-                }
-                                result = client.updateNetworkSmProfileClarity(updateNetworkSmProfileClarity_parameters);
-                console.log('result', result);
-            }
-            if (!errorFlag && node.method === 'addNetworkSmProfileClarity') {
-                var addNetworkSmProfileClarity_parameters = [];
-                var addNetworkSmProfileClarity_nodeParam;
-                var addNetworkSmProfileClarity_nodeParamType;
-                console.log('check if body param   msg.payload, ', msg.payload);
-                
-                addNetworkSmProfileClarity_nodeParam = storedParamValsMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                addNetworkSmProfileClarity_nodeParamType = storedParamTypeMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (addNetworkSmProfileClarity_nodeParamType === 'str') {
-                    console.log('addNetworkSmProfileClarity_nodeParamType is "str"');
-                    addNetworkSmProfileClarity_parameters.networkId = addNetworkSmProfileClarity_nodeParam || undefined;
-                } else {
-                    console.log('addNetworkSmProfileClarity_nodeParamType is not "str"')
-                    addNetworkSmProfileClarity_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
-                }
-                                
-                addNetworkSmProfileClarity_nodeParam = storedParamValsMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                addNetworkSmProfileClarity_nodeParamType = storedParamTypeMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (addNetworkSmProfileClarity_nodeParamType === 'str') {
-                    console.log('addNetworkSmProfileClarity_nodeParamType is "str"');
-                    addNetworkSmProfileClarity_parameters.profileId = addNetworkSmProfileClarity_nodeParam || undefined;
-                } else {
-                    console.log('addNetworkSmProfileClarity_nodeParamType is not "str"')
-                    addNetworkSmProfileClarity_parameters.profileId = RED.util.getMessageProperty(msg, "profileId");
-                }
-                                
-                addNetworkSmProfileClarity_nodeParam = storedParamValsMap['addNetworkSmProfileClarity'] ||
-                    RED.util.getMessageProperty(msg, "addNetworkSmProfileClarity");
-
-                addNetworkSmProfileClarity_nodeParamType = storedParamTypeMap['addNetworkSmProfileClarity'] ||
-                    RED.util.getMessageProperty(msg, "addNetworkSmProfileClarity");
-
-                // Check if its the body param
-
-                // isBodyParam
-                if (typeof msg.payload === 'object') {
-                    addNetworkSmProfileClarity_parameters.addNetworkSmProfileClarity = msg.payload;
-                } else {
-                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
-                    errorFlag = true;
-                }
-                                result = client.addNetworkSmProfileClarity(addNetworkSmProfileClarity_parameters);
-                console.log('result', result);
-            }
-            if (!errorFlag && node.method === 'getNetworkSmProfileClarity') {
-                var getNetworkSmProfileClarity_parameters = [];
-                var getNetworkSmProfileClarity_nodeParam;
-                var getNetworkSmProfileClarity_nodeParamType;
-                console.log('check if body param   msg.payload, ', msg.payload);
-                
-                getNetworkSmProfileClarity_nodeParam = storedParamValsMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                getNetworkSmProfileClarity_nodeParamType = storedParamTypeMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (getNetworkSmProfileClarity_nodeParamType === 'str') {
-                    console.log('getNetworkSmProfileClarity_nodeParamType is "str"');
-                    getNetworkSmProfileClarity_parameters.networkId = getNetworkSmProfileClarity_nodeParam || undefined;
-                } else {
-                    console.log('getNetworkSmProfileClarity_nodeParamType is not "str"')
-                    getNetworkSmProfileClarity_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
-                }
-                                
-                getNetworkSmProfileClarity_nodeParam = storedParamValsMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                getNetworkSmProfileClarity_nodeParamType = storedParamTypeMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (getNetworkSmProfileClarity_nodeParamType === 'str') {
-                    console.log('getNetworkSmProfileClarity_nodeParamType is "str"');
-                    getNetworkSmProfileClarity_parameters.profileId = getNetworkSmProfileClarity_nodeParam || undefined;
-                } else {
-                    console.log('getNetworkSmProfileClarity_nodeParamType is not "str"')
-                    getNetworkSmProfileClarity_parameters.profileId = RED.util.getMessageProperty(msg, "profileId");
-                }
-                                result = client.getNetworkSmProfileClarity(getNetworkSmProfileClarity_parameters);
-                console.log('result', result);
-            }
-            if (!errorFlag && node.method === 'deleteNetworkSmProfileClarity') {
-                var deleteNetworkSmProfileClarity_parameters = [];
-                var deleteNetworkSmProfileClarity_nodeParam;
-                var deleteNetworkSmProfileClarity_nodeParamType;
-                console.log('check if body param   msg.payload, ', msg.payload);
-                
-                deleteNetworkSmProfileClarity_nodeParam = storedParamValsMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                deleteNetworkSmProfileClarity_nodeParamType = storedParamTypeMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (deleteNetworkSmProfileClarity_nodeParamType === 'str') {
-                    console.log('deleteNetworkSmProfileClarity_nodeParamType is "str"');
-                    deleteNetworkSmProfileClarity_parameters.networkId = deleteNetworkSmProfileClarity_nodeParam || undefined;
-                } else {
-                    console.log('deleteNetworkSmProfileClarity_nodeParamType is not "str"')
-                    deleteNetworkSmProfileClarity_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
-                }
-                                
-                deleteNetworkSmProfileClarity_nodeParam = storedParamValsMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                deleteNetworkSmProfileClarity_nodeParamType = storedParamTypeMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (deleteNetworkSmProfileClarity_nodeParamType === 'str') {
-                    console.log('deleteNetworkSmProfileClarity_nodeParamType is "str"');
-                    deleteNetworkSmProfileClarity_parameters.profileId = deleteNetworkSmProfileClarity_nodeParam || undefined;
-                } else {
-                    console.log('deleteNetworkSmProfileClarity_nodeParamType is not "str"')
-                    deleteNetworkSmProfileClarity_parameters.profileId = RED.util.getMessageProperty(msg, "profileId");
-                }
-                                result = client.deleteNetworkSmProfileClarity(deleteNetworkSmProfileClarity_parameters);
-                console.log('result', result);
-            }
-            if (!errorFlag && node.method === 'createNetworkSmProfileUmbrella') {
-                var createNetworkSmProfileUmbrella_parameters = [];
-                var createNetworkSmProfileUmbrella_nodeParam;
-                var createNetworkSmProfileUmbrella_nodeParamType;
-                console.log('check if body param   msg.payload, ', msg.payload);
-                
-                createNetworkSmProfileUmbrella_nodeParam = storedParamValsMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                createNetworkSmProfileUmbrella_nodeParamType = storedParamTypeMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (createNetworkSmProfileUmbrella_nodeParamType === 'str') {
-                    console.log('createNetworkSmProfileUmbrella_nodeParamType is "str"');
-                    createNetworkSmProfileUmbrella_parameters.networkId = createNetworkSmProfileUmbrella_nodeParam || undefined;
-                } else {
-                    console.log('createNetworkSmProfileUmbrella_nodeParamType is not "str"')
-                    createNetworkSmProfileUmbrella_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
-                }
-                                
-                createNetworkSmProfileUmbrella_nodeParam = storedParamValsMap['createNetworkSmProfileUmbrella'] ||
-                    RED.util.getMessageProperty(msg, "createNetworkSmProfileUmbrella");
-
-                createNetworkSmProfileUmbrella_nodeParamType = storedParamTypeMap['createNetworkSmProfileUmbrella'] ||
-                    RED.util.getMessageProperty(msg, "createNetworkSmProfileUmbrella");
-
-                // Check if its the body param
-
-                // isBodyParam
-                if (typeof msg.payload === 'object') {
-                    createNetworkSmProfileUmbrella_parameters.createNetworkSmProfileUmbrella = msg.payload;
-                } else {
-                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
-                    errorFlag = true;
-                }
-                                result = client.createNetworkSmProfileUmbrella(createNetworkSmProfileUmbrella_parameters);
-                console.log('result', result);
-            }
-            if (!errorFlag && node.method === 'updateNetworkSmProfileUmbrella') {
-                var updateNetworkSmProfileUmbrella_parameters = [];
-                var updateNetworkSmProfileUmbrella_nodeParam;
-                var updateNetworkSmProfileUmbrella_nodeParamType;
-                console.log('check if body param   msg.payload, ', msg.payload);
-                
-                updateNetworkSmProfileUmbrella_nodeParam = storedParamValsMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                updateNetworkSmProfileUmbrella_nodeParamType = storedParamTypeMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (updateNetworkSmProfileUmbrella_nodeParamType === 'str') {
-                    console.log('updateNetworkSmProfileUmbrella_nodeParamType is "str"');
-                    updateNetworkSmProfileUmbrella_parameters.networkId = updateNetworkSmProfileUmbrella_nodeParam || undefined;
-                } else {
-                    console.log('updateNetworkSmProfileUmbrella_nodeParamType is not "str"')
-                    updateNetworkSmProfileUmbrella_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
-                }
-                                
-                updateNetworkSmProfileUmbrella_nodeParam = storedParamValsMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                updateNetworkSmProfileUmbrella_nodeParamType = storedParamTypeMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (updateNetworkSmProfileUmbrella_nodeParamType === 'str') {
-                    console.log('updateNetworkSmProfileUmbrella_nodeParamType is "str"');
-                    updateNetworkSmProfileUmbrella_parameters.profileId = updateNetworkSmProfileUmbrella_nodeParam || undefined;
-                } else {
-                    console.log('updateNetworkSmProfileUmbrella_nodeParamType is not "str"')
-                    updateNetworkSmProfileUmbrella_parameters.profileId = RED.util.getMessageProperty(msg, "profileId");
-                }
-                                
-                updateNetworkSmProfileUmbrella_nodeParam = storedParamValsMap['updateNetworkSmProfileUmbrella'] ||
-                    RED.util.getMessageProperty(msg, "updateNetworkSmProfileUmbrella");
-
-                updateNetworkSmProfileUmbrella_nodeParamType = storedParamTypeMap['updateNetworkSmProfileUmbrella'] ||
-                    RED.util.getMessageProperty(msg, "updateNetworkSmProfileUmbrella");
-
-                // Check if its the body param
-
-                // isBodyParam
-                if (typeof msg.payload === 'object') {
-                    updateNetworkSmProfileUmbrella_parameters.updateNetworkSmProfileUmbrella = msg.payload;
-                } else {
-                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
-                    errorFlag = true;
-                }
-                                result = client.updateNetworkSmProfileUmbrella(updateNetworkSmProfileUmbrella_parameters);
-                console.log('result', result);
-            }
-            if (!errorFlag && node.method === 'addNetworkSmProfileUmbrella') {
-                var addNetworkSmProfileUmbrella_parameters = [];
-                var addNetworkSmProfileUmbrella_nodeParam;
-                var addNetworkSmProfileUmbrella_nodeParamType;
-                console.log('check if body param   msg.payload, ', msg.payload);
-                
-                addNetworkSmProfileUmbrella_nodeParam = storedParamValsMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                addNetworkSmProfileUmbrella_nodeParamType = storedParamTypeMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (addNetworkSmProfileUmbrella_nodeParamType === 'str') {
-                    console.log('addNetworkSmProfileUmbrella_nodeParamType is "str"');
-                    addNetworkSmProfileUmbrella_parameters.networkId = addNetworkSmProfileUmbrella_nodeParam || undefined;
-                } else {
-                    console.log('addNetworkSmProfileUmbrella_nodeParamType is not "str"')
-                    addNetworkSmProfileUmbrella_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
-                }
-                                
-                addNetworkSmProfileUmbrella_nodeParam = storedParamValsMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                addNetworkSmProfileUmbrella_nodeParamType = storedParamTypeMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (addNetworkSmProfileUmbrella_nodeParamType === 'str') {
-                    console.log('addNetworkSmProfileUmbrella_nodeParamType is "str"');
-                    addNetworkSmProfileUmbrella_parameters.profileId = addNetworkSmProfileUmbrella_nodeParam || undefined;
-                } else {
-                    console.log('addNetworkSmProfileUmbrella_nodeParamType is not "str"')
-                    addNetworkSmProfileUmbrella_parameters.profileId = RED.util.getMessageProperty(msg, "profileId");
-                }
-                                
-                addNetworkSmProfileUmbrella_nodeParam = storedParamValsMap['addNetworkSmProfileUmbrella'] ||
-                    RED.util.getMessageProperty(msg, "addNetworkSmProfileUmbrella");
-
-                addNetworkSmProfileUmbrella_nodeParamType = storedParamTypeMap['addNetworkSmProfileUmbrella'] ||
-                    RED.util.getMessageProperty(msg, "addNetworkSmProfileUmbrella");
-
-                // Check if its the body param
-
-                // isBodyParam
-                if (typeof msg.payload === 'object') {
-                    addNetworkSmProfileUmbrella_parameters.addNetworkSmProfileUmbrella = msg.payload;
-                } else {
-                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
-                    errorFlag = true;
-                }
-                                result = client.addNetworkSmProfileUmbrella(addNetworkSmProfileUmbrella_parameters);
-                console.log('result', result);
-            }
-            if (!errorFlag && node.method === 'getNetworkSmProfileUmbrella') {
-                var getNetworkSmProfileUmbrella_parameters = [];
-                var getNetworkSmProfileUmbrella_nodeParam;
-                var getNetworkSmProfileUmbrella_nodeParamType;
-                console.log('check if body param   msg.payload, ', msg.payload);
-                
-                getNetworkSmProfileUmbrella_nodeParam = storedParamValsMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                getNetworkSmProfileUmbrella_nodeParamType = storedParamTypeMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (getNetworkSmProfileUmbrella_nodeParamType === 'str') {
-                    console.log('getNetworkSmProfileUmbrella_nodeParamType is "str"');
-                    getNetworkSmProfileUmbrella_parameters.networkId = getNetworkSmProfileUmbrella_nodeParam || undefined;
-                } else {
-                    console.log('getNetworkSmProfileUmbrella_nodeParamType is not "str"')
-                    getNetworkSmProfileUmbrella_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
-                }
-                                
-                getNetworkSmProfileUmbrella_nodeParam = storedParamValsMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                getNetworkSmProfileUmbrella_nodeParamType = storedParamTypeMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (getNetworkSmProfileUmbrella_nodeParamType === 'str') {
-                    console.log('getNetworkSmProfileUmbrella_nodeParamType is "str"');
-                    getNetworkSmProfileUmbrella_parameters.profileId = getNetworkSmProfileUmbrella_nodeParam || undefined;
-                } else {
-                    console.log('getNetworkSmProfileUmbrella_nodeParamType is not "str"')
-                    getNetworkSmProfileUmbrella_parameters.profileId = RED.util.getMessageProperty(msg, "profileId");
-                }
-                                result = client.getNetworkSmProfileUmbrella(getNetworkSmProfileUmbrella_parameters);
-                console.log('result', result);
-            }
-            if (!errorFlag && node.method === 'deleteNetworkSmProfileUmbrella') {
-                var deleteNetworkSmProfileUmbrella_parameters = [];
-                var deleteNetworkSmProfileUmbrella_nodeParam;
-                var deleteNetworkSmProfileUmbrella_nodeParamType;
-                console.log('check if body param   msg.payload, ', msg.payload);
-                
-                deleteNetworkSmProfileUmbrella_nodeParam = storedParamValsMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                deleteNetworkSmProfileUmbrella_nodeParamType = storedParamTypeMap['networkId'] ||
-                    RED.util.getMessageProperty(msg, "networkId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (deleteNetworkSmProfileUmbrella_nodeParamType === 'str') {
-                    console.log('deleteNetworkSmProfileUmbrella_nodeParamType is "str"');
-                    deleteNetworkSmProfileUmbrella_parameters.networkId = deleteNetworkSmProfileUmbrella_nodeParam || undefined;
-                } else {
-                    console.log('deleteNetworkSmProfileUmbrella_nodeParamType is not "str"')
-                    deleteNetworkSmProfileUmbrella_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
-                }
-                                
-                deleteNetworkSmProfileUmbrella_nodeParam = storedParamValsMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                deleteNetworkSmProfileUmbrella_nodeParamType = storedParamTypeMap['profileId'] ||
-                    RED.util.getMessageProperty(msg, "profileId");
-
-                // Check if its the body param
-
-                // notBodyParam                                            
-                if (deleteNetworkSmProfileUmbrella_nodeParamType === 'str') {
-                    console.log('deleteNetworkSmProfileUmbrella_nodeParamType is "str"');
-                    deleteNetworkSmProfileUmbrella_parameters.profileId = deleteNetworkSmProfileUmbrella_nodeParam || undefined;
-                } else {
-                    console.log('deleteNetworkSmProfileUmbrella_nodeParamType is not "str"')
-                    deleteNetworkSmProfileUmbrella_parameters.profileId = RED.util.getMessageProperty(msg, "profileId");
-                }
-                                result = client.deleteNetworkSmProfileUmbrella(deleteNetworkSmProfileUmbrella_parameters);
-                console.log('result', result);
-            }
             if (!errorFlag && node.method === 'getNetworkSmProfiles') {
                 var getNetworkSmProfiles_parameters = [];
                 var getNetworkSmProfiles_nodeParam;
@@ -10201,6 +10598,172 @@ module.exports = function (RED) {
                                 result = client.updateNetworkSwitchAccessControlLists(updateNetworkSwitchAccessControlLists_parameters);
                 console.log('result', result);
             }
+            if (!errorFlag && node.method === 'getNetworkSwitchLinkAggregations') {
+                var getNetworkSwitchLinkAggregations_parameters = [];
+                var getNetworkSwitchLinkAggregations_nodeParam;
+                var getNetworkSwitchLinkAggregations_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkSwitchLinkAggregations_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkSwitchLinkAggregations_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkSwitchLinkAggregations_nodeParamType === 'str') {
+                    console.log('getNetworkSwitchLinkAggregations_nodeParamType is "str"');
+                    getNetworkSwitchLinkAggregations_parameters.networkId = getNetworkSwitchLinkAggregations_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkSwitchLinkAggregations_nodeParamType is not "str"')
+                    getNetworkSwitchLinkAggregations_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkSwitchLinkAggregations(getNetworkSwitchLinkAggregations_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'createNetworkSwitchLinkAggregation') {
+                var createNetworkSwitchLinkAggregation_parameters = [];
+                var createNetworkSwitchLinkAggregation_nodeParam;
+                var createNetworkSwitchLinkAggregation_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                createNetworkSwitchLinkAggregation_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                createNetworkSwitchLinkAggregation_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (createNetworkSwitchLinkAggregation_nodeParamType === 'str') {
+                    console.log('createNetworkSwitchLinkAggregation_nodeParamType is "str"');
+                    createNetworkSwitchLinkAggregation_parameters.networkId = createNetworkSwitchLinkAggregation_nodeParam || undefined;
+                } else {
+                    console.log('createNetworkSwitchLinkAggregation_nodeParamType is not "str"')
+                    createNetworkSwitchLinkAggregation_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                createNetworkSwitchLinkAggregation_nodeParam = storedParamValsMap['createNetworkSwitchLinkAggregation'] ||
+                    RED.util.getMessageProperty(msg, "createNetworkSwitchLinkAggregation");
+
+                createNetworkSwitchLinkAggregation_nodeParamType = storedParamTypeMap['createNetworkSwitchLinkAggregation'] ||
+                    RED.util.getMessageProperty(msg, "createNetworkSwitchLinkAggregation");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    createNetworkSwitchLinkAggregation_parameters.createNetworkSwitchLinkAggregation = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.createNetworkSwitchLinkAggregation(createNetworkSwitchLinkAggregation_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkSwitchLinkAggregation') {
+                var updateNetworkSwitchLinkAggregation_parameters = [];
+                var updateNetworkSwitchLinkAggregation_nodeParam;
+                var updateNetworkSwitchLinkAggregation_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkSwitchLinkAggregation_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkSwitchLinkAggregation_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkSwitchLinkAggregation_nodeParamType === 'str') {
+                    console.log('updateNetworkSwitchLinkAggregation_nodeParamType is "str"');
+                    updateNetworkSwitchLinkAggregation_parameters.networkId = updateNetworkSwitchLinkAggregation_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkSwitchLinkAggregation_nodeParamType is not "str"')
+                    updateNetworkSwitchLinkAggregation_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkSwitchLinkAggregation_nodeParam = storedParamValsMap['linkAggregationId'] ||
+                    RED.util.getMessageProperty(msg, "linkAggregationId");
+
+                updateNetworkSwitchLinkAggregation_nodeParamType = storedParamTypeMap['linkAggregationId'] ||
+                    RED.util.getMessageProperty(msg, "linkAggregationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkSwitchLinkAggregation_nodeParamType === 'str') {
+                    console.log('updateNetworkSwitchLinkAggregation_nodeParamType is "str"');
+                    updateNetworkSwitchLinkAggregation_parameters.linkAggregationId = updateNetworkSwitchLinkAggregation_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkSwitchLinkAggregation_nodeParamType is not "str"')
+                    updateNetworkSwitchLinkAggregation_parameters.linkAggregationId = RED.util.getMessageProperty(msg, "linkAggregationId");
+                }
+                                
+                updateNetworkSwitchLinkAggregation_nodeParam = storedParamValsMap['updateNetworkSwitchLinkAggregation'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchLinkAggregation");
+
+                updateNetworkSwitchLinkAggregation_nodeParamType = storedParamTypeMap['updateNetworkSwitchLinkAggregation'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchLinkAggregation");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkSwitchLinkAggregation_parameters.updateNetworkSwitchLinkAggregation = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkSwitchLinkAggregation(updateNetworkSwitchLinkAggregation_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'deleteNetworkSwitchLinkAggregation') {
+                var deleteNetworkSwitchLinkAggregation_parameters = [];
+                var deleteNetworkSwitchLinkAggregation_nodeParam;
+                var deleteNetworkSwitchLinkAggregation_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                deleteNetworkSwitchLinkAggregation_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                deleteNetworkSwitchLinkAggregation_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (deleteNetworkSwitchLinkAggregation_nodeParamType === 'str') {
+                    console.log('deleteNetworkSwitchLinkAggregation_nodeParamType is "str"');
+                    deleteNetworkSwitchLinkAggregation_parameters.networkId = deleteNetworkSwitchLinkAggregation_nodeParam || undefined;
+                } else {
+                    console.log('deleteNetworkSwitchLinkAggregation_nodeParamType is not "str"')
+                    deleteNetworkSwitchLinkAggregation_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                deleteNetworkSwitchLinkAggregation_nodeParam = storedParamValsMap['linkAggregationId'] ||
+                    RED.util.getMessageProperty(msg, "linkAggregationId");
+
+                deleteNetworkSwitchLinkAggregation_nodeParamType = storedParamTypeMap['linkAggregationId'] ||
+                    RED.util.getMessageProperty(msg, "linkAggregationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (deleteNetworkSwitchLinkAggregation_nodeParamType === 'str') {
+                    console.log('deleteNetworkSwitchLinkAggregation_nodeParamType is "str"');
+                    deleteNetworkSwitchLinkAggregation_parameters.linkAggregationId = deleteNetworkSwitchLinkAggregation_nodeParam || undefined;
+                } else {
+                    console.log('deleteNetworkSwitchLinkAggregation_nodeParamType is not "str"')
+                    deleteNetworkSwitchLinkAggregation_parameters.linkAggregationId = RED.util.getMessageProperty(msg, "linkAggregationId");
+                }
+                                result = client.deleteNetworkSwitchLinkAggregation(deleteNetworkSwitchLinkAggregation_parameters);
+                console.log('result', result);
+            }
             if (!errorFlag && node.method === 'getNetworkSwitchPortSchedules') {
                 var getNetworkSwitchPortSchedules_parameters = [];
                 var getNetworkSwitchPortSchedules_nodeParam;
@@ -10629,6 +11192,72 @@ module.exports = function (RED) {
                     errorFlag = true;
                 }
                                 result = client.updateNetworkSwitchSettingsMtu(updateNetworkSwitchSettingsMtu_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getNetworkSwitchSettingsMulticast') {
+                var getNetworkSwitchSettingsMulticast_parameters = [];
+                var getNetworkSwitchSettingsMulticast_nodeParam;
+                var getNetworkSwitchSettingsMulticast_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getNetworkSwitchSettingsMulticast_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                getNetworkSwitchSettingsMulticast_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getNetworkSwitchSettingsMulticast_nodeParamType === 'str') {
+                    console.log('getNetworkSwitchSettingsMulticast_nodeParamType is "str"');
+                    getNetworkSwitchSettingsMulticast_parameters.networkId = getNetworkSwitchSettingsMulticast_nodeParam || undefined;
+                } else {
+                    console.log('getNetworkSwitchSettingsMulticast_nodeParamType is not "str"')
+                    getNetworkSwitchSettingsMulticast_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                result = client.getNetworkSwitchSettingsMulticast(getNetworkSwitchSettingsMulticast_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateNetworkSwitchSettingsMulticast') {
+                var updateNetworkSwitchSettingsMulticast_parameters = [];
+                var updateNetworkSwitchSettingsMulticast_nodeParam;
+                var updateNetworkSwitchSettingsMulticast_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateNetworkSwitchSettingsMulticast_nodeParam = storedParamValsMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                updateNetworkSwitchSettingsMulticast_nodeParamType = storedParamTypeMap['networkId'] ||
+                    RED.util.getMessageProperty(msg, "networkId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateNetworkSwitchSettingsMulticast_nodeParamType === 'str') {
+                    console.log('updateNetworkSwitchSettingsMulticast_nodeParamType is "str"');
+                    updateNetworkSwitchSettingsMulticast_parameters.networkId = updateNetworkSwitchSettingsMulticast_nodeParam || undefined;
+                } else {
+                    console.log('updateNetworkSwitchSettingsMulticast_nodeParamType is not "str"')
+                    updateNetworkSwitchSettingsMulticast_parameters.networkId = RED.util.getMessageProperty(msg, "networkId");
+                }
+                                
+                updateNetworkSwitchSettingsMulticast_nodeParam = storedParamValsMap['updateNetworkSwitchSettingsMulticast'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchSettingsMulticast");
+
+                updateNetworkSwitchSettingsMulticast_nodeParamType = storedParamTypeMap['updateNetworkSwitchSettingsMulticast'] ||
+                    RED.util.getMessageProperty(msg, "updateNetworkSwitchSettingsMulticast");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateNetworkSwitchSettingsMulticast_parameters.updateNetworkSwitchSettingsMulticast = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateNetworkSwitchSettingsMulticast(updateNetworkSwitchSettingsMulticast_parameters);
                 console.log('result', result);
             }
             if (!errorFlag && node.method === 'getNetworkSwitchSettingsQosRules') {
@@ -14034,7 +14663,232 @@ module.exports = function (RED) {
                     console.log('getOrganizationDevices_nodeParamType is not "str"')
                     getOrganizationDevices_parameters.endingBefore = RED.util.getMessageProperty(msg, "endingBefore");
                 }
+                                
+                getOrganizationDevices_nodeParam = storedParamValsMap['configurationUpdatedAfter'] ||
+                    RED.util.getMessageProperty(msg, "configurationUpdatedAfter");
+
+                getOrganizationDevices_nodeParamType = storedParamTypeMap['configurationUpdatedAfter'] ||
+                    RED.util.getMessageProperty(msg, "configurationUpdatedAfter");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationDevices_nodeParamType === 'str') {
+                    console.log('getOrganizationDevices_nodeParamType is "str"');
+                    getOrganizationDevices_parameters.configurationUpdatedAfter = getOrganizationDevices_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationDevices_nodeParamType is not "str"')
+                    getOrganizationDevices_parameters.configurationUpdatedAfter = RED.util.getMessageProperty(msg, "configurationUpdatedAfter");
+                }
                                 result = client.getOrganizationDevices(getOrganizationDevices_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getOrganizationInsightMonitoredMediaServers') {
+                var getOrganizationInsightMonitoredMediaServers_parameters = [];
+                var getOrganizationInsightMonitoredMediaServers_nodeParam;
+                var getOrganizationInsightMonitoredMediaServers_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getOrganizationInsightMonitoredMediaServers_nodeParam = storedParamValsMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                getOrganizationInsightMonitoredMediaServers_nodeParamType = storedParamTypeMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationInsightMonitoredMediaServers_nodeParamType === 'str') {
+                    console.log('getOrganizationInsightMonitoredMediaServers_nodeParamType is "str"');
+                    getOrganizationInsightMonitoredMediaServers_parameters.organizationId = getOrganizationInsightMonitoredMediaServers_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationInsightMonitoredMediaServers_nodeParamType is not "str"')
+                    getOrganizationInsightMonitoredMediaServers_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
+                }
+                                result = client.getOrganizationInsightMonitoredMediaServers(getOrganizationInsightMonitoredMediaServers_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'createOrganizationInsightMonitoredMediaServer') {
+                var createOrganizationInsightMonitoredMediaServer_parameters = [];
+                var createOrganizationInsightMonitoredMediaServer_nodeParam;
+                var createOrganizationInsightMonitoredMediaServer_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                createOrganizationInsightMonitoredMediaServer_nodeParam = storedParamValsMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                createOrganizationInsightMonitoredMediaServer_nodeParamType = storedParamTypeMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (createOrganizationInsightMonitoredMediaServer_nodeParamType === 'str') {
+                    console.log('createOrganizationInsightMonitoredMediaServer_nodeParamType is "str"');
+                    createOrganizationInsightMonitoredMediaServer_parameters.organizationId = createOrganizationInsightMonitoredMediaServer_nodeParam || undefined;
+                } else {
+                    console.log('createOrganizationInsightMonitoredMediaServer_nodeParamType is not "str"')
+                    createOrganizationInsightMonitoredMediaServer_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
+                }
+                                
+                createOrganizationInsightMonitoredMediaServer_nodeParam = storedParamValsMap['createOrganizationInsightMonitoredMediaServer'] ||
+                    RED.util.getMessageProperty(msg, "createOrganizationInsightMonitoredMediaServer");
+
+                createOrganizationInsightMonitoredMediaServer_nodeParamType = storedParamTypeMap['createOrganizationInsightMonitoredMediaServer'] ||
+                    RED.util.getMessageProperty(msg, "createOrganizationInsightMonitoredMediaServer");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    createOrganizationInsightMonitoredMediaServer_parameters.createOrganizationInsightMonitoredMediaServer = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.createOrganizationInsightMonitoredMediaServer(createOrganizationInsightMonitoredMediaServer_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'getOrganizationInsightMonitoredMediaServer') {
+                var getOrganizationInsightMonitoredMediaServer_parameters = [];
+                var getOrganizationInsightMonitoredMediaServer_nodeParam;
+                var getOrganizationInsightMonitoredMediaServer_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                getOrganizationInsightMonitoredMediaServer_nodeParam = storedParamValsMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                getOrganizationInsightMonitoredMediaServer_nodeParamType = storedParamTypeMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationInsightMonitoredMediaServer_nodeParamType === 'str') {
+                    console.log('getOrganizationInsightMonitoredMediaServer_nodeParamType is "str"');
+                    getOrganizationInsightMonitoredMediaServer_parameters.organizationId = getOrganizationInsightMonitoredMediaServer_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationInsightMonitoredMediaServer_nodeParamType is not "str"')
+                    getOrganizationInsightMonitoredMediaServer_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
+                }
+                                
+                getOrganizationInsightMonitoredMediaServer_nodeParam = storedParamValsMap['monitoredMediaServerId'] ||
+                    RED.util.getMessageProperty(msg, "monitoredMediaServerId");
+
+                getOrganizationInsightMonitoredMediaServer_nodeParamType = storedParamTypeMap['monitoredMediaServerId'] ||
+                    RED.util.getMessageProperty(msg, "monitoredMediaServerId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (getOrganizationInsightMonitoredMediaServer_nodeParamType === 'str') {
+                    console.log('getOrganizationInsightMonitoredMediaServer_nodeParamType is "str"');
+                    getOrganizationInsightMonitoredMediaServer_parameters.monitoredMediaServerId = getOrganizationInsightMonitoredMediaServer_nodeParam || undefined;
+                } else {
+                    console.log('getOrganizationInsightMonitoredMediaServer_nodeParamType is not "str"')
+                    getOrganizationInsightMonitoredMediaServer_parameters.monitoredMediaServerId = RED.util.getMessageProperty(msg, "monitoredMediaServerId");
+                }
+                                result = client.getOrganizationInsightMonitoredMediaServer(getOrganizationInsightMonitoredMediaServer_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'updateOrganizationInsightMonitoredMediaServer') {
+                var updateOrganizationInsightMonitoredMediaServer_parameters = [];
+                var updateOrganizationInsightMonitoredMediaServer_nodeParam;
+                var updateOrganizationInsightMonitoredMediaServer_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                updateOrganizationInsightMonitoredMediaServer_nodeParam = storedParamValsMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                updateOrganizationInsightMonitoredMediaServer_nodeParamType = storedParamTypeMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateOrganizationInsightMonitoredMediaServer_nodeParamType === 'str') {
+                    console.log('updateOrganizationInsightMonitoredMediaServer_nodeParamType is "str"');
+                    updateOrganizationInsightMonitoredMediaServer_parameters.organizationId = updateOrganizationInsightMonitoredMediaServer_nodeParam || undefined;
+                } else {
+                    console.log('updateOrganizationInsightMonitoredMediaServer_nodeParamType is not "str"')
+                    updateOrganizationInsightMonitoredMediaServer_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
+                }
+                                
+                updateOrganizationInsightMonitoredMediaServer_nodeParam = storedParamValsMap['monitoredMediaServerId'] ||
+                    RED.util.getMessageProperty(msg, "monitoredMediaServerId");
+
+                updateOrganizationInsightMonitoredMediaServer_nodeParamType = storedParamTypeMap['monitoredMediaServerId'] ||
+                    RED.util.getMessageProperty(msg, "monitoredMediaServerId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (updateOrganizationInsightMonitoredMediaServer_nodeParamType === 'str') {
+                    console.log('updateOrganizationInsightMonitoredMediaServer_nodeParamType is "str"');
+                    updateOrganizationInsightMonitoredMediaServer_parameters.monitoredMediaServerId = updateOrganizationInsightMonitoredMediaServer_nodeParam || undefined;
+                } else {
+                    console.log('updateOrganizationInsightMonitoredMediaServer_nodeParamType is not "str"')
+                    updateOrganizationInsightMonitoredMediaServer_parameters.monitoredMediaServerId = RED.util.getMessageProperty(msg, "monitoredMediaServerId");
+                }
+                                
+                updateOrganizationInsightMonitoredMediaServer_nodeParam = storedParamValsMap['updateOrganizationInsightMonitoredMediaServer'] ||
+                    RED.util.getMessageProperty(msg, "updateOrganizationInsightMonitoredMediaServer");
+
+                updateOrganizationInsightMonitoredMediaServer_nodeParamType = storedParamTypeMap['updateOrganizationInsightMonitoredMediaServer'] ||
+                    RED.util.getMessageProperty(msg, "updateOrganizationInsightMonitoredMediaServer");
+
+                // Check if its the body param
+
+                // isBodyParam
+                if (typeof msg.payload === 'object') {
+                    updateOrganizationInsightMonitoredMediaServer_parameters.updateOrganizationInsightMonitoredMediaServer = msg.payload;
+                } else {
+                    node.error('Unsupported type: \'' + (typeof msg.payload) + '\', ' + 'msg.payload must be JSON object or buffer.', msg);
+                    errorFlag = true;
+                }
+                                result = client.updateOrganizationInsightMonitoredMediaServer(updateOrganizationInsightMonitoredMediaServer_parameters);
+                console.log('result', result);
+            }
+            if (!errorFlag && node.method === 'deleteOrganizationInsightMonitoredMediaServer') {
+                var deleteOrganizationInsightMonitoredMediaServer_parameters = [];
+                var deleteOrganizationInsightMonitoredMediaServer_nodeParam;
+                var deleteOrganizationInsightMonitoredMediaServer_nodeParamType;
+                console.log('check if body param   msg.payload, ', msg.payload);
+                
+                deleteOrganizationInsightMonitoredMediaServer_nodeParam = storedParamValsMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                deleteOrganizationInsightMonitoredMediaServer_nodeParamType = storedParamTypeMap['organizationId'] ||
+                    RED.util.getMessageProperty(msg, "organizationId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (deleteOrganizationInsightMonitoredMediaServer_nodeParamType === 'str') {
+                    console.log('deleteOrganizationInsightMonitoredMediaServer_nodeParamType is "str"');
+                    deleteOrganizationInsightMonitoredMediaServer_parameters.organizationId = deleteOrganizationInsightMonitoredMediaServer_nodeParam || undefined;
+                } else {
+                    console.log('deleteOrganizationInsightMonitoredMediaServer_nodeParamType is not "str"')
+                    deleteOrganizationInsightMonitoredMediaServer_parameters.organizationId = RED.util.getMessageProperty(msg, "organizationId");
+                }
+                                
+                deleteOrganizationInsightMonitoredMediaServer_nodeParam = storedParamValsMap['monitoredMediaServerId'] ||
+                    RED.util.getMessageProperty(msg, "monitoredMediaServerId");
+
+                deleteOrganizationInsightMonitoredMediaServer_nodeParamType = storedParamTypeMap['monitoredMediaServerId'] ||
+                    RED.util.getMessageProperty(msg, "monitoredMediaServerId");
+
+                // Check if its the body param
+
+                // notBodyParam                                            
+                if (deleteOrganizationInsightMonitoredMediaServer_nodeParamType === 'str') {
+                    console.log('deleteOrganizationInsightMonitoredMediaServer_nodeParamType is "str"');
+                    deleteOrganizationInsightMonitoredMediaServer_parameters.monitoredMediaServerId = deleteOrganizationInsightMonitoredMediaServer_nodeParam || undefined;
+                } else {
+                    console.log('deleteOrganizationInsightMonitoredMediaServer_nodeParamType is not "str"')
+                    deleteOrganizationInsightMonitoredMediaServer_parameters.monitoredMediaServerId = RED.util.getMessageProperty(msg, "monitoredMediaServerId");
+                }
+                                result = client.deleteOrganizationInsightMonitoredMediaServer(deleteOrganizationInsightMonitoredMediaServer_parameters);
                 console.log('result', result);
             }
             if (!errorFlag && node.method === 'getOrganizationInventory') {

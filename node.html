@@ -220,7 +220,13 @@ console.log = function(){};
     {
       "id": "0",
       "type": "occupancy",
-      "label": "Full Frame"
+      "label": "Full Frame",
+      "regionOfInterest": {
+        "x0": "0.00",
+        "y0": "0.00",
+        "x1": "1.00",
+        "y1": "1.00"
+      }
     }
   ]
 ]`;
@@ -345,6 +351,278 @@ console.log = function(){};
                                          
                 var example = `[
   {
+    "motionBasedRetentionEnabled": false,
+    "audioRecordingEnabled": false,
+    "restrictedBandwidthModeEnabled": false,
+    "profileId": null,
+    "quality": "Standard",
+    "resolution": 720
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getDeviceCameraQualityAndRetentionSettings_serial">`;                      
+                        formHtml += `<label for="node-input-getDeviceCameraQualityAndRetentionSettings_serial" style="width:70%"><i class="fa fa-list"></i> <span><b>serial<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getDeviceCameraQualityAndRetentionSettings_serial" placeholder="msg.serial" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getDeviceCameraQualityAndRetentionSettings_serialType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "serial"
+                        })
+
+                methodGroups.push({methodGroup:"Cameras", methodName:"getDeviceCameraQualityAndRetentionSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Returns quality and retention settings for the given camera`});
+                                         
+                var example = `[
+  {
+    "motionBasedRetentionEnabled": false,
+    "audioRecordingEnabled": false,
+    "restrictedBandwidthModeEnabled": false,
+    "profileId": null,
+    "quality": "Standard",
+    "resolution": 720
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateDeviceCameraQualityAndRetentionSettings_serial">`;                      
+                        formHtml += `<label for="node-input-updateDeviceCameraQualityAndRetentionSettings_serial" style="width:70%"><i class="fa fa-list"></i> <span><b>serial<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateDeviceCameraQualityAndRetentionSettings_serial" placeholder="msg.serial" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateDeviceCameraQualityAndRetentionSettings_serialType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "serial"
+                        })
+                        formHtml += `<div class="form-row" id="updateDeviceCameraQualityAndRetentionSettings_updateDeviceCameraQualityAndRetentionSettings">`;                      
+                    
+                        formHtml += `<label for="node-input-updateDeviceCameraQualityAndRetentionSettings_updateDeviceCameraQualityAndRetentionSettings" style="width:70%"><i class="fa fa-list"></i> <span><b>updateDeviceCameraQualityAndRetentionSettings</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateDeviceCameraQualityAndRetentionSettings_updateDeviceCameraQualityAndRetentionSettings" placeholder="msg.updateDeviceCameraQualityAndRetentionSettings" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateDeviceCameraQualityAndRetentionSettings_updateDeviceCameraQualityAndRetentionSettingsType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateDeviceCameraQualityAndRetentionSettings"
+                        })
+
+                methodGroups.push({methodGroup:"Cameras", methodName:"updateDeviceCameraQualityAndRetentionSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Update quality and retention settings for the given camera`});
+                                         
+                var example = `[
+  {
+    "deviceName": "name of the MG",
+    "deviceLanIp": "192.168.0.33",
+    "deviceSubnet": "192.168.0.32/27",
+    "fixedIpAssignments": [
+      {
+        "mac": "0b:00:00:00:00:ac",
+        "name": "server 1",
+        "ip": "192.168.0.10"
+      },
+      {
+        "mac": "0b:00:00:00:00:ab",
+        "name": "server 2",
+        "ip": "192.168.0.20"
+      }
+    ],
+    "reservedIpRanges": [
+      {
+        "start": "192.168.1.0",
+        "end": "192.168.1.1",
+        "comment": "A reserved IP range"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getDeviceCellularGatewaySettings_serial">`;                      
+                        formHtml += `<label for="node-input-getDeviceCellularGatewaySettings_serial" style="width:70%"><i class="fa fa-list"></i> <span><b>serial<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getDeviceCellularGatewaySettings_serial" placeholder="msg.serial" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getDeviceCellularGatewaySettings_serialType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "serial"
+                        })
+
+                methodGroups.push({methodGroup:"MG LAN settings", methodName:"getDeviceCellularGatewaySettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Show the LAN Settings of a MG`});
+                                         
+                var example = `[
+  {
+    "deviceName": "name of the MG",
+    "deviceLanIp": "192.168.0.33",
+    "deviceSubnet": "192.168.0.32/27",
+    "fixedIpAssignments": [
+      {
+        "mac": "0b:00:00:00:00:ac",
+        "name": "server 1",
+        "ip": "192.168.0.10"
+      },
+      {
+        "mac": "0b:00:00:00:00:ab",
+        "name": "server 2",
+        "ip": "192.168.0.20"
+      }
+    ],
+    "reservedIpRanges": [
+      {
+        "start": "192.168.1.0",
+        "end": "192.168.1.1",
+        "comment": "A reserved IP range"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateDeviceCellularGatewaySettings_serial">`;                      
+                        formHtml += `<label for="node-input-updateDeviceCellularGatewaySettings_serial" style="width:70%"><i class="fa fa-list"></i> <span><b>serial<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateDeviceCellularGatewaySettings_serial" placeholder="msg.serial" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateDeviceCellularGatewaySettings_serialType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "serial"
+                        })
+                        formHtml += `<div class="form-row" id="updateDeviceCellularGatewaySettings_updateDeviceCellularGatewaySettings">`;                      
+                    
+                        formHtml += `<label for="node-input-updateDeviceCellularGatewaySettings_updateDeviceCellularGatewaySettings" style="width:70%"><i class="fa fa-list"></i> <span><b>updateDeviceCellularGatewaySettings</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateDeviceCellularGatewaySettings_updateDeviceCellularGatewaySettings" placeholder="msg.updateDeviceCellularGatewaySettings" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateDeviceCellularGatewaySettings_updateDeviceCellularGatewaySettingsType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateDeviceCellularGatewaySettings"
+                        })
+
+                methodGroups.push({methodGroup:"MG LAN settings", methodName:"updateDeviceCellularGatewaySettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the LAN Settings for a single MG.`});
+                                         
+                var example = `[
+  {
+    "rules": [
+      {
+        "lanIp": "172.31.128.5",
+        "name": "test",
+        "access": "any",
+        "publicPort": "11-12",
+        "localPort": "4",
+        "uplink": "both",
+        "protocol": "tcp"
+      },
+      {
+        "lanIp": "172.31.128.5",
+        "name": "test 2",
+        "access": "restricted",
+        "allowedIps": [
+          "10.10.10.10",
+          "10.10.10.11"
+        ],
+        "publicPort": "99",
+        "localPort": "5",
+        "uplink": "both",
+        "protocol": "tcp"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getDeviceCellularGatewaySettingsPortForwardingRules_serial">`;                      
+                        formHtml += `<label for="node-input-getDeviceCellularGatewaySettingsPortForwardingRules_serial" style="width:70%"><i class="fa fa-list"></i> <span><b>serial<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getDeviceCellularGatewaySettingsPortForwardingRules_serial" placeholder="msg.serial" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getDeviceCellularGatewaySettingsPortForwardingRules_serialType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "serial"
+                        })
+
+                methodGroups.push({methodGroup:"MG port forwarding rules", methodName:"getDeviceCellularGatewaySettingsPortForwardingRules", parameters: parameters, formHtml: formHtml, example: example, summary: `Returns the port forwarding rules for a single MG.`});
+                                         
+                var example = `[
+  {
+    "rules": [
+      {
+        "lanIp": "172.31.128.5",
+        "name": "test",
+        "access": "any",
+        "publicPort": "11-12",
+        "localPort": "4",
+        "uplink": "both",
+        "protocol": "tcp"
+      },
+      {
+        "lanIp": "172.31.128.5",
+        "name": "test 2",
+        "access": "restricted",
+        "allowedIps": [
+          "10.10.10.10",
+          "10.10.10.11"
+        ],
+        "publicPort": "99",
+        "localPort": "5",
+        "uplink": "both",
+        "protocol": "tcp"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateDeviceCellularGatewaySettingsPortForwardingRules_serial">`;                      
+                        formHtml += `<label for="node-input-updateDeviceCellularGatewaySettingsPortForwardingRules_serial" style="width:70%"><i class="fa fa-list"></i> <span><b>serial<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateDeviceCellularGatewaySettingsPortForwardingRules_serial" placeholder="msg.serial" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateDeviceCellularGatewaySettingsPortForwardingRules_serialType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "serial"
+                        })
+                        formHtml += `<div class="form-row" id="updateDeviceCellularGatewaySettingsPortForwardingRules_updateDeviceCellularGatewaySettingsPortForwardingRules">`;                      
+                    
+                        formHtml += `<label for="node-input-updateDeviceCellularGatewaySettingsPortForwardingRules_updateDeviceCellularGatewaySettingsPortForwardingRules" style="width:70%"><i class="fa fa-list"></i> <span><b>updateDeviceCellularGatewaySettingsPortForwardingRules</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateDeviceCellularGatewaySettingsPortForwardingRules_updateDeviceCellularGatewaySettingsPortForwardingRules" placeholder="msg.updateDeviceCellularGatewaySettingsPortForwardingRules" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateDeviceCellularGatewaySettingsPortForwardingRules_updateDeviceCellularGatewaySettingsPortForwardingRulesType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateDeviceCellularGatewaySettingsPortForwardingRules"
+                        })
+
+                methodGroups.push({methodGroup:"MG port forwarding rules", methodName:"updateDeviceCellularGatewaySettingsPortForwardingRules", parameters: parameters, formHtml: formHtml, example: example, summary: `Updates the port forwarding rules for a single MG.`});
+                                         
+                var example = `[
+  {
     "usage": {
       "sent": 138,
       "recv": 61
@@ -401,6 +679,191 @@ console.log = function(){};
                         })
 
                 methodGroups.push({methodGroup:"Clients", methodName:"getDeviceClients", parameters: parameters, formHtml: formHtml, example: example, summary: `List the clients of a device up to a maximum of a month ago. The usage of each client is returned in kilobytes. If the device is a switch the switchport is returned; otherwise the switchport field is null.`});
+                                         
+                var example = `[
+  [
+    {
+      "portId": "1",
+      "enabled": true,
+      "status": "Connected",
+      "errors": [
+        "PoE overload",
+        "Very high proportion of CRC errors"
+      ],
+      "warnings": [
+        "PoE port was denied power",
+        "High proportion of CRC errors"
+      ],
+      "speed": "10 Gbps",
+      "duplex": "full",
+      "usageInKb": {
+        "total": 40867,
+        "sent": 23008,
+        "recv": 17859
+      },
+      "cdp": {
+        "systemName": "",
+        "platform": "MS350-24X",
+        "deviceId": "0c8ddbddee:ff",
+        "portId": "Port 20",
+        "nativeVlan": 1,
+        "address": "10.0,0.1",
+        "managementAddress": "10.0.0.100",
+        "version": "1",
+        "vtpManagementDomain": "",
+        "capabilities": "Switch"
+      },
+      "lldp": {
+        "systemName": "MS350-24X - Test",
+        "systemDescription": "MS350-24X Cloud Managed PoE Switch",
+        "portId": "20",
+        "portDescription": "Port 20",
+        "chassisId": "0c:8d:db:dd:ee:ff",
+        "managementVlan": 1,
+        "portVlan": 1,
+        "managementAddress": "10.0.0.100",
+        "systemCapabilities": "switch"
+      },
+      "clientCount": 10
+    }
+  ]
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getDeviceSwitchPortStatuses_serial">`;                      
+                        formHtml += `<label for="node-input-getDeviceSwitchPortStatuses_serial" style="width:70%"><i class="fa fa-list"></i> <span><b>serial<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getDeviceSwitchPortStatuses_serial" placeholder="msg.serial" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getDeviceSwitchPortStatuses_serialType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "serial"
+                        })
+                        formHtml += `<div class="form-row" id="getDeviceSwitchPortStatuses_t0">`;                      
+                    
+                        formHtml += `<label for="node-input-getDeviceSwitchPortStatuses_t0" style="width:70%"><i class="fa fa-list"></i> <span><b>t0</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The beginning of the timespan for the data. The maximum lookback period is 31 days from today.</p>`;
+                        formHtml += `<input type="text" id="node-input-getDeviceSwitchPortStatuses_t0" placeholder="msg.t0" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getDeviceSwitchPortStatuses_t0Type" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "t0"
+                        })
+                        formHtml += `<div class="form-row" id="getDeviceSwitchPortStatuses_timespan">`;                      
+                    
+                        formHtml += `<label for="node-input-getDeviceSwitchPortStatuses_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
+                        formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.</p>`;
+                        formHtml += `<input type="text" id="node-input-getDeviceSwitchPortStatuses_timespan" placeholder="msg.timespan" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getDeviceSwitchPortStatuses_timespanType" value="number" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "timespan"
+                        })
+
+                methodGroups.push({methodGroup:"Switch ports", methodName:"getDeviceSwitchPortStatuses", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the status for all the ports of a switch`});
+                                         
+                var example = `[
+  [
+    {
+      "portId": "1",
+      "packets": [
+        {
+          "desc": "Total",
+          "total": 112081,
+          "sent": 104135,
+          "recv": 7946,
+          "ratePerSec": {
+            "total": 1,
+            "sent": 1,
+            "recv": 0
+          }
+        },
+        {
+          "desc": "Broadcast",
+          "total": 30884,
+          "sent": 30370,
+          "recv": 514,
+          "ratePerSec": {
+            "total": 0,
+            "sent": 0,
+            "recv": 0
+          }
+        },
+        {
+          "desc": "Multicast",
+          "total": 67620,
+          "sent": 66849,
+          "recv": 771,
+          "ratePerSec": {
+            "total": 0,
+            "sent": 0,
+            "recv": 0
+          }
+        },
+        {
+          "desc": "CRC align errors",
+          "total": 0,
+          "sent": 0,
+          "recv": 0,
+          "ratePerSec": {
+            "total": 0,
+            "sent": 0,
+            "recv": 0
+          }
+        }
+      ]
+    }
+  ]
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getDeviceSwitchPortStatusesPackets_serial">`;                      
+                        formHtml += `<label for="node-input-getDeviceSwitchPortStatusesPackets_serial" style="width:70%"><i class="fa fa-list"></i> <span><b>serial<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getDeviceSwitchPortStatusesPackets_serial" placeholder="msg.serial" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getDeviceSwitchPortStatusesPackets_serialType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "serial"
+                        })
+                        formHtml += `<div class="form-row" id="getDeviceSwitchPortStatusesPackets_t0">`;                      
+                    
+                        formHtml += `<label for="node-input-getDeviceSwitchPortStatusesPackets_t0" style="width:70%"><i class="fa fa-list"></i> <span><b>t0</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The beginning of the timespan for the data. The maximum lookback period is 1 day from today.</p>`;
+                        formHtml += `<input type="text" id="node-input-getDeviceSwitchPortStatusesPackets_t0" placeholder="msg.t0" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getDeviceSwitchPortStatusesPackets_t0Type" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "t0"
+                        })
+                        formHtml += `<div class="form-row" id="getDeviceSwitchPortStatusesPackets_timespan">`;                      
+                    
+                        formHtml += `<label for="node-input-getDeviceSwitchPortStatusesPackets_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
+                        formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 1 day. The default is 1 day.</p>`;
+                        formHtml += `<input type="text" id="node-input-getDeviceSwitchPortStatusesPackets_timespan" placeholder="msg.timespan" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getDeviceSwitchPortStatusesPackets_timespanType" value="number" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "timespan"
+                        })
+
+                methodGroups.push({methodGroup:"Switch ports", methodName:"getDeviceSwitchPortStatusesPackets", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the packet counters for all the ports of a switch`});
                                          
                 var example = `[
   [
@@ -898,6 +1361,88 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"Alert settings", methodName:"updateNetworkAlertSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the alert configuration for this network`});
                                          
                 var example = `[
+  {
+    "rules": [
+      {
+        "comment": "Allow TCP traffic to subnet with HTTP servers.",
+        "policy": "allow",
+        "protocol": "tcp",
+        "destPort": 443,
+        "destCidr": "192.168.1.0/24",
+        "srcPort": "Any",
+        "srcCidr": "Any",
+        "syslogEnabled": false
+      }
+    ],
+    "syslogDefaultRule": true
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkApplianceFirewallInboundFirewallRules_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkApplianceFirewallInboundFirewallRules_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkApplianceFirewallInboundFirewallRules_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkApplianceFirewallInboundFirewallRules_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"MX inbound firewall", methodName:"getNetworkApplianceFirewallInboundFirewallRules", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the inbound firewall rules for an MX network`});
+                                         
+                var example = `[
+  {
+    "rules": [
+      {
+        "comment": "Allow TCP traffic to subnet with HTTP servers.",
+        "policy": "allow",
+        "protocol": "tcp",
+        "destPort": 443,
+        "destCidr": "192.168.1.0/24",
+        "srcPort": "Any",
+        "srcCidr": "Any",
+        "syslogEnabled": false
+      }
+    ],
+    "syslogDefaultRule": true
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkApplianceFirewallInboundFirewallRules_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkApplianceFirewallInboundFirewallRules_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkApplianceFirewallInboundFirewallRules_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkApplianceFirewallInboundFirewallRules_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkApplianceFirewallInboundFirewallRules_updateNetworkApplianceFirewallInboundFirewallRules">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkApplianceFirewallInboundFirewallRules_updateNetworkApplianceFirewallInboundFirewallRules" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkApplianceFirewallInboundFirewallRules</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkApplianceFirewallInboundFirewallRules_updateNetworkApplianceFirewallInboundFirewallRules" placeholder="msg.updateNetworkApplianceFirewallInboundFirewallRules" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkApplianceFirewallInboundFirewallRules_updateNetworkApplianceFirewallInboundFirewallRulesType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkApplianceFirewallInboundFirewallRules"
+                        })
+
+                methodGroups.push({methodGroup:"MX inbound firewall", methodName:"updateNetworkApplianceFirewallInboundFirewallRules", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the inbound firewall rules of an MX network`});
+                                         
+                var example = `[
   [
     {
       "number": 1,
@@ -1299,6 +1844,313 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"Networks", methodName:"updateNetworkBluetoothSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the Bluetooth settings for a network. See the docs page for <a href=https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)>Bluetooth settings</a>.`});
                                          
                 var example = `[
+  [
+    {
+      "id": "1234",
+      "networkId": "N_24329156",
+      "name": "Sample quality retention profile",
+      "restrictedBandwidthModeEnabled": true,
+      "motionBasedRetentionEnabled": false,
+      "audioRecordingEnabled": false,
+      "cloudArchiveEnabled": false,
+      "maxRetentionDays": 7,
+      "scheduleId": null,
+      "videoSettings": {
+        "MV32": {
+          "quality": "Enhanced",
+          "resolution": "1080x1080"
+        },
+        "MV21/MV71": {
+          "quality": "High",
+          "resolution": "1280x720"
+        },
+        "MV12/MV22/MV72": {
+          "quality": "High",
+          "resolution": "1920x1080"
+        },
+        "MV12WE": {
+          "quality": "High",
+          "resolution": "1920x1080"
+        }
+      }
+    }
+  ]
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkCameraQualityRetentionProfiles_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkCameraQualityRetentionProfiles_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkCameraQualityRetentionProfiles_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkCameraQualityRetentionProfiles_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Camera quality retention profiles", methodName:"getNetworkCameraQualityRetentionProfiles", parameters: parameters, formHtml: formHtml, example: example, summary: `List the quality retention profiles for this network`});
+                                         
+                var example = `[
+  {
+    "id": "1234",
+    "networkId": "N_24329156",
+    "name": "Sample quality retention profile",
+    "restrictedBandwidthModeEnabled": true,
+    "motionBasedRetentionEnabled": false,
+    "audioRecordingEnabled": false,
+    "cloudArchiveEnabled": false,
+    "maxRetentionDays": 7,
+    "scheduleId": null,
+    "videoSettings": {
+      "MV32": {
+        "quality": "Enhanced",
+        "resolution": "1080x1080"
+      },
+      "MV21/MV71": {
+        "quality": "High",
+        "resolution": "1280x720"
+      },
+      "MV12/MV22/MV72": {
+        "quality": "High",
+        "resolution": "1920x1080"
+      },
+      "MV12WE": {
+        "quality": "High",
+        "resolution": "1920x1080"
+      }
+    }
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="createNetworkCameraQualityRetentionProfile_networkId">`;                      
+                        formHtml += `<label for="node-input-createNetworkCameraQualityRetentionProfile_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-createNetworkCameraQualityRetentionProfile_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-createNetworkCameraQualityRetentionProfile_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="createNetworkCameraQualityRetentionProfile_createNetworkCameraQualityRetentionProfile">`;                      
+                        formHtml += `<label for="node-input-createNetworkCameraQualityRetentionProfile_createNetworkCameraQualityRetentionProfile" style="width:70%"><i class="fa fa-list"></i> <span><b>createNetworkCameraQualityRetentionProfile<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-createNetworkCameraQualityRetentionProfile_createNetworkCameraQualityRetentionProfile" placeholder="msg.createNetworkCameraQualityRetentionProfile" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-createNetworkCameraQualityRetentionProfile_createNetworkCameraQualityRetentionProfileType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "createNetworkCameraQualityRetentionProfile"
+                        })
+
+                methodGroups.push({methodGroup:"Camera quality retention profiles", methodName:"createNetworkCameraQualityRetentionProfile", parameters: parameters, formHtml: formHtml, example: example, summary: `Creates new quality retention profile for this network.`});
+                                         
+                var example = `[
+  {
+    "id": "1234",
+    "networkId": "N_24329156",
+    "name": "Sample quality retention profile",
+    "restrictedBandwidthModeEnabled": true,
+    "motionBasedRetentionEnabled": false,
+    "audioRecordingEnabled": false,
+    "cloudArchiveEnabled": false,
+    "maxRetentionDays": 7,
+    "scheduleId": null,
+    "videoSettings": {
+      "MV32": {
+        "quality": "Enhanced",
+        "resolution": "1080x1080"
+      },
+      "MV21/MV71": {
+        "quality": "High",
+        "resolution": "1280x720"
+      },
+      "MV12/MV22/MV72": {
+        "quality": "High",
+        "resolution": "1920x1080"
+      },
+      "MV12WE": {
+        "quality": "High",
+        "resolution": "1920x1080"
+      }
+    }
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkCameraQualityRetentionProfile_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkCameraQualityRetentionProfile_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkCameraQualityRetentionProfile_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkCameraQualityRetentionProfile_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="getNetworkCameraQualityRetentionProfile_qualityRetentionProfileId">`;                      
+                        formHtml += `<label for="node-input-getNetworkCameraQualityRetentionProfile_qualityRetentionProfileId" style="width:70%"><i class="fa fa-list"></i> <span><b>qualityRetentionProfileId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkCameraQualityRetentionProfile_qualityRetentionProfileId" placeholder="msg.qualityRetentionProfileId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkCameraQualityRetentionProfile_qualityRetentionProfileIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "qualityRetentionProfileId"
+                        })
+
+                methodGroups.push({methodGroup:"Camera quality retention profiles", methodName:"getNetworkCameraQualityRetentionProfile", parameters: parameters, formHtml: formHtml, example: example, summary: `Retrieve a single quality retention profile`});
+                                         
+                var example = `[
+  {
+    "id": "1234",
+    "networkId": "N_24329156",
+    "name": "Sample quality retention profile",
+    "restrictedBandwidthModeEnabled": true,
+    "motionBasedRetentionEnabled": false,
+    "audioRecordingEnabled": false,
+    "cloudArchiveEnabled": false,
+    "maxRetentionDays": 7,
+    "scheduleId": null,
+    "videoSettings": {
+      "MV32": {
+        "quality": "Enhanced",
+        "resolution": "1080x1080"
+      },
+      "MV21/MV71": {
+        "quality": "High",
+        "resolution": "1280x720"
+      },
+      "MV12/MV22/MV72": {
+        "quality": "High",
+        "resolution": "1920x1080"
+      },
+      "MV12WE": {
+        "quality": "High",
+        "resolution": "1920x1080"
+      }
+    }
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkCameraQualityRetentionProfile_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkCameraQualityRetentionProfile_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkCameraQualityRetentionProfile_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkCameraQualityRetentionProfile_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkCameraQualityRetentionProfile_qualityRetentionProfileId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkCameraQualityRetentionProfile_qualityRetentionProfileId" style="width:70%"><i class="fa fa-list"></i> <span><b>qualityRetentionProfileId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkCameraQualityRetentionProfile_qualityRetentionProfileId" placeholder="msg.qualityRetentionProfileId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkCameraQualityRetentionProfile_qualityRetentionProfileIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "qualityRetentionProfileId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkCameraQualityRetentionProfile_updateNetworkCameraQualityRetentionProfile">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkCameraQualityRetentionProfile_updateNetworkCameraQualityRetentionProfile" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkCameraQualityRetentionProfile</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkCameraQualityRetentionProfile_updateNetworkCameraQualityRetentionProfile" placeholder="msg.updateNetworkCameraQualityRetentionProfile" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkCameraQualityRetentionProfile_updateNetworkCameraQualityRetentionProfileType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkCameraQualityRetentionProfile"
+                        })
+
+                methodGroups.push({methodGroup:"Camera quality retention profiles", methodName:"updateNetworkCameraQualityRetentionProfile", parameters: parameters, formHtml: formHtml, example: example, summary: `Update an existing quality retention profile for this network.`});
+                                         
+                var example = `[]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="deleteNetworkCameraQualityRetentionProfile_networkId">`;                      
+                        formHtml += `<label for="node-input-deleteNetworkCameraQualityRetentionProfile_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-deleteNetworkCameraQualityRetentionProfile_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteNetworkCameraQualityRetentionProfile_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="deleteNetworkCameraQualityRetentionProfile_qualityRetentionProfileId">`;                      
+                        formHtml += `<label for="node-input-deleteNetworkCameraQualityRetentionProfile_qualityRetentionProfileId" style="width:70%"><i class="fa fa-list"></i> <span><b>qualityRetentionProfileId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-deleteNetworkCameraQualityRetentionProfile_qualityRetentionProfileId" placeholder="msg.qualityRetentionProfileId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteNetworkCameraQualityRetentionProfile_qualityRetentionProfileIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "qualityRetentionProfileId"
+                        })
+
+                methodGroups.push({methodGroup:"Camera quality retention profiles", methodName:"deleteNetworkCameraQualityRetentionProfile", parameters: parameters, formHtml: formHtml, example: example, summary: `Delete an existing quality retention profile for this network.`});
+                                         
+                var example = `[
+  [
+    {
+      "id": "123",
+      "name": "Weekday schedule"
+    },
+    {
+      "id": "124",
+      "name": "Office hours"
+    }
+  ]
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkCameraSchedules_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkCameraSchedules_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkCameraSchedules_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkCameraSchedules_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Cameras", methodName:"getNetworkCameraSchedules", parameters: parameters, formHtml: formHtml, example: example, summary: `Returns a list of all camera recording schedules.`});
+                                         
+                var example = `[
   {
     "url": "https://spn4.meraki.com/stream/jpeg/snapshot/b2d123asdf423qd22d2",
     "expiry": "Access to the image will expire at 2018-12-11T03:12:39Z."
@@ -1468,6 +2320,310 @@ console.log = function(){};
                         })
 
                 methodGroups.push({methodGroup:"MX cellular firewall", methodName:"updateNetworkCellularFirewallRules", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the cellular firewall rules of an MX network`});
+                                         
+                var example = `[
+  {
+    "destinations": [
+      {
+        "ip": "8.8.8.8",
+        "description": "Google"
+      },
+      {
+        "ip": "1.23.45.67",
+        "description": "test description"
+      },
+      {
+        "ip": "9.8.7.6",
+        "description": null
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"MG connectivity monitoring destinations", methodName:"getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the connectivity testing destinations for an MG network`});
+                                         
+                var example = `[
+  {
+    "destinations": [
+      {
+        "ip": "8.8.8.8",
+        "description": "Google"
+      },
+      {
+        "ip": "1.23.45.67",
+        "description": "test description"
+      },
+      {
+        "ip": "9.8.7.6",
+        "description": null
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations" placeholder="msg.updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations_updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinationsType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations"
+                        })
+
+                methodGroups.push({methodGroup:"MG connectivity monitoring destinations", methodName:"updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the connectivity testing destinations for an MG network`});
+                                         
+                var example = `[
+  {
+    "dhcpLeaseTime": "1 hour",
+    "dnsNameservers": "custom",
+    "dnsCustomNameservers": [
+      "172.16.2.111",
+      "172.16.2.30"
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkCellularGatewaySettingsDhcp_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkCellularGatewaySettingsDhcp_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkCellularGatewaySettingsDhcp_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkCellularGatewaySettingsDhcp_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"MG DHCP settings", methodName:"getNetworkCellularGatewaySettingsDhcp", parameters: parameters, formHtml: formHtml, example: example, summary: `List common DHCP settings of MGs`});
+                                         
+                var example = `[
+  {
+    "dhcpLeaseTime": "1 hour",
+    "dnsNameservers": "custom",
+    "dnsCustomNameservers": [
+      "172.16.2.111",
+      "172.16.2.30"
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkCellularGatewaySettingsDhcp_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkCellularGatewaySettingsDhcp_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkCellularGatewaySettingsDhcp_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkCellularGatewaySettingsDhcp_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkCellularGatewaySettingsDhcp_updateNetworkCellularGatewaySettingsDhcp">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkCellularGatewaySettingsDhcp_updateNetworkCellularGatewaySettingsDhcp" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkCellularGatewaySettingsDhcp</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkCellularGatewaySettingsDhcp_updateNetworkCellularGatewaySettingsDhcp" placeholder="msg.updateNetworkCellularGatewaySettingsDhcp" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkCellularGatewaySettingsDhcp_updateNetworkCellularGatewaySettingsDhcpType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkCellularGatewaySettingsDhcp"
+                        })
+
+                methodGroups.push({methodGroup:"MG DHCP settings", methodName:"updateNetworkCellularGatewaySettingsDhcp", parameters: parameters, formHtml: formHtml, example: example, summary: `Update common DHCP settings of MGs`});
+                                         
+                var example = `[
+  {
+    "cidr": "192.168.0.0/16",
+    "mask": "24",
+    "subnets": [
+      {
+        "serial": "AAAA-AAAA-AAAA",
+        "name": "my first MG",
+        "applianceIp": "192.168.0.1",
+        "subnet": "192.168.0.0/24"
+      },
+      {
+        "serial": "BBBB-BBBB-BBBB",
+        "name": "my second MG",
+        "applianceIp": "192.168.0.33",
+        "subnet": "192.168.0.32/24"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkCellularGatewaySettingsSubnetPool_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkCellularGatewaySettingsSubnetPool_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkCellularGatewaySettingsSubnetPool_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkCellularGatewaySettingsSubnetPool_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"MG subnet pool settings", methodName:"getNetworkCellularGatewaySettingsSubnetPool", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the subnet pool and mask configured for MGs in the network.`});
+                                         
+                var example = `[
+  {
+    "cidr": "192.168.0.0/16",
+    "mask": "24",
+    "subnets": [
+      {
+        "serial": "AAAA-AAAA-AAAA",
+        "name": "my first MG",
+        "applianceIp": "192.168.0.1",
+        "subnet": "192.168.0.0/24"
+      },
+      {
+        "serial": "BBBB-BBBB-BBBB",
+        "name": "my second MG",
+        "applianceIp": "192.168.0.33",
+        "subnet": "192.168.0.32/24"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkCellularGatewaySettingsSubnetPool_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkCellularGatewaySettingsSubnetPool_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkCellularGatewaySettingsSubnetPool_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkCellularGatewaySettingsSubnetPool_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkCellularGatewaySettingsSubnetPool_updateNetworkCellularGatewaySettingsSubnetPool">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkCellularGatewaySettingsSubnetPool_updateNetworkCellularGatewaySettingsSubnetPool" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkCellularGatewaySettingsSubnetPool</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkCellularGatewaySettingsSubnetPool_updateNetworkCellularGatewaySettingsSubnetPool" placeholder="msg.updateNetworkCellularGatewaySettingsSubnetPool" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkCellularGatewaySettingsSubnetPool_updateNetworkCellularGatewaySettingsSubnetPoolType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkCellularGatewaySettingsSubnetPool"
+                        })
+
+                methodGroups.push({methodGroup:"MG subnet pool settings", methodName:"updateNetworkCellularGatewaySettingsSubnetPool", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the subnet pool and mask configuration for MGs in the network.`});
+                                         
+                var example = `[
+  {
+    "bandwidthLimits": {
+      "limitUp": 51200,
+      "limitDown": 51200
+    }
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkCellularGatewaySettingsUplink_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkCellularGatewaySettingsUplink_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkCellularGatewaySettingsUplink_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkCellularGatewaySettingsUplink_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"MG uplink settings", methodName:"getNetworkCellularGatewaySettingsUplink", parameters: parameters, formHtml: formHtml, example: example, summary: `Returns the uplink settings for your MG network.`});
+                                         
+                var example = `[
+  {
+    "bandwidthLimits": {
+      "limitUp": 51200,
+      "limitDown": 51200
+    }
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkCellularGatewaySettingsUplink_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkCellularGatewaySettingsUplink_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkCellularGatewaySettingsUplink_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkCellularGatewaySettingsUplink_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkCellularGatewaySettingsUplink_updateNetworkCellularGatewaySettingsUplink">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkCellularGatewaySettingsUplink_updateNetworkCellularGatewaySettingsUplink" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkCellularGatewaySettingsUplink</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkCellularGatewaySettingsUplink_updateNetworkCellularGatewaySettingsUplink" placeholder="msg.updateNetworkCellularGatewaySettingsUplink" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkCellularGatewaySettingsUplink_updateNetworkCellularGatewaySettingsUplinkType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkCellularGatewaySettingsUplink"
+                        })
+
+                methodGroups.push({methodGroup:"MG uplink settings", methodName:"updateNetworkCellularGatewaySettingsUplink", parameters: parameters, formHtml: formHtml, example: example, summary: `Updates the uplink settings for your MG network.`});
                                          
                 var example = `[
   {
@@ -1900,12 +3056,12 @@ console.log = function(){};
                         camelCaseName: "networkId"
                         })
                         formHtml += `<div class="form-row" id="provisionNetworkClients_provisionNetworkClients">`;                      
-                    
-                        formHtml += `<label for="node-input-provisionNetworkClients_provisionNetworkClients" style="width:70%"><i class="fa fa-list"></i> <span><b>provisionNetworkClients</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<label for="node-input-provisionNetworkClients_provisionNetworkClients" style="width:70%"><i class="fa fa-list"></i> <span><b>provisionNetworkClients<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
                         formHtml += `<p></p>`;
                         formHtml += `<input type="text" id="node-input-provisionNetworkClients_provisionNetworkClients" placeholder="msg.provisionNetworkClients" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-provisionNetworkClients_provisionNetworkClientsType" value="" >`;
                         formHtml += `</div>`;
+                    
 
 
                     parameters.push({
@@ -3295,12 +4451,12 @@ console.log = function(){};
                         camelCaseName: "networkId"
                         })
                         formHtml += `<div class="form-row" id="claimNetworkDevices_claimNetworkDevices">`;                      
-                        formHtml += `<label for="node-input-claimNetworkDevices_claimNetworkDevices" style="width:70%"><i class="fa fa-list"></i> <span><b>claimNetworkDevices<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                    
+                        formHtml += `<label for="node-input-claimNetworkDevices_claimNetworkDevices" style="width:70%"><i class="fa fa-list"></i> <span><b>claimNetworkDevices</b> <i>&nbsp</i></span></label>`;                  
                         formHtml += `<p></p>`;
                         formHtml += `<input type="text" id="node-input-claimNetworkDevices_claimNetworkDevices" placeholder="msg.claimNetworkDevices" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-claimNetworkDevices_claimNetworkDevicesType" value="" >`;
                         formHtml += `</div>`;
-                    
 
 
                     parameters.push({
@@ -4652,7 +5808,7 @@ console.log = function(){};
                         formHtml += `<div class="form-row" id="getNetworkEvents_productType">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkEvents_productType" style="width:70%"><i class="fa fa-list"></i> <span><b>productType</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>The product type to fetch events for. This parameter is required for networks with multiple device types. Valid types are wireless, appliance, switch, systemsManager, and camera</p>`;
+                        formHtml += `<p>The product type to fetch events for. This parameter is required for networks with multiple device types. Valid types are wireless, appliance, switch, systemsManager, camera, and cellularGateway</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkEvents_productType" placeholder="msg.productType" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-getNetworkEvents_productTypeType" value="string" >`;
                         formHtml += `</div>`;
@@ -7410,12 +8566,12 @@ console.log = function(){};
                         camelCaseName: "networkId"
                         })
                         formHtml += `<div class="form-row" id="updateNetworkOneToManyNatRules_updateNetworkOneToManyNatRules">`;                      
-                    
-                        formHtml += `<label for="node-input-updateNetworkOneToManyNatRules_updateNetworkOneToManyNatRules" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkOneToManyNatRules</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<label for="node-input-updateNetworkOneToManyNatRules_updateNetworkOneToManyNatRules" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkOneToManyNatRules<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
                         formHtml += `<p></p>`;
                         formHtml += `<input type="text" id="node-input-updateNetworkOneToManyNatRules_updateNetworkOneToManyNatRules" placeholder="msg.updateNetworkOneToManyNatRules" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-updateNetworkOneToManyNatRules_updateNetworkOneToManyNatRulesType" value="" >`;
                         formHtml += `</div>`;
+                    
 
 
                     parameters.push({
@@ -8779,7 +9935,8 @@ console.log = function(){};
         "id": "1284392014819",
         "serial": "F5XKHEBX",
         "wifiMac": "00:11:22:33:44:55",
-        "name": "My name"
+        "name": "Miles's phone",
+        "notes": "Here's some info about my device"
       }
     ]
   }
@@ -9165,448 +10322,6 @@ console.log = function(){};
                                          
                 var example = `[
   {
-    "success": true,
-    "profile_id": "12345"
-  }
-]`;
-                var parameters = []
-                var formHtml = ``;   
-                    formHtml += `<h4>Parameters</h4>`;
-                        formHtml += `<div class="form-row" id="createNetworkSmProfileClarity_networkId">`;                      
-                        formHtml += `<label for="node-input-createNetworkSmProfileClarity_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-createNetworkSmProfileClarity_networkId" placeholder="msg.networkId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-createNetworkSmProfileClarity_networkIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "networkId"
-                        })
-                        formHtml += `<div class="form-row" id="createNetworkSmProfileClarity_createNetworkSmProfileClarity">`;                      
-                        formHtml += `<label for="node-input-createNetworkSmProfileClarity_createNetworkSmProfileClarity" style="width:70%"><i class="fa fa-list"></i> <span><b>createNetworkSmProfileClarity<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-createNetworkSmProfileClarity_createNetworkSmProfileClarity" placeholder="msg.createNetworkSmProfileClarity" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-createNetworkSmProfileClarity_createNetworkSmProfileClarityType" value="" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "createNetworkSmProfileClarity"
-                        })
-
-                methodGroups.push({methodGroup:"SM", methodName:"createNetworkSmProfileClarity", parameters: parameters, formHtml: formHtml, example: example, summary: `Create a new profile containing a Cisco Clarity payload`});
-                                         
-                var example = `[
-  {
-    "success": true,
-    "profile_id": "12345"
-  }
-]`;
-                var parameters = []
-                var formHtml = ``;   
-                    formHtml += `<h4>Parameters</h4>`;
-                        formHtml += `<div class="form-row" id="updateNetworkSmProfileClarity_networkId">`;                      
-                        formHtml += `<label for="node-input-updateNetworkSmProfileClarity_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-updateNetworkSmProfileClarity_networkId" placeholder="msg.networkId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-updateNetworkSmProfileClarity_networkIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "networkId"
-                        })
-                        formHtml += `<div class="form-row" id="updateNetworkSmProfileClarity_profileId">`;                      
-                        formHtml += `<label for="node-input-updateNetworkSmProfileClarity_profileId" style="width:70%"><i class="fa fa-list"></i> <span><b>profileId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-updateNetworkSmProfileClarity_profileId" placeholder="msg.profileId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-updateNetworkSmProfileClarity_profileIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "profileId"
-                        })
-                        formHtml += `<div class="form-row" id="updateNetworkSmProfileClarity_updateNetworkSmProfileClarity">`;                      
-                    
-                        formHtml += `<label for="node-input-updateNetworkSmProfileClarity_updateNetworkSmProfileClarity" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSmProfileClarity</b> <i>&nbsp</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-updateNetworkSmProfileClarity_updateNetworkSmProfileClarity" placeholder="msg.updateNetworkSmProfileClarity" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-updateNetworkSmProfileClarity_updateNetworkSmProfileClarityType" value="" >`;
-                        formHtml += `</div>`;
-
-
-                    parameters.push({
-                        camelCaseName: "updateNetworkSmProfileClarity"
-                        })
-
-                methodGroups.push({methodGroup:"SM", methodName:"updateNetworkSmProfileClarity", parameters: parameters, formHtml: formHtml, example: example, summary: `Update an existing profile containing a Cisco Clarity payload`});
-                                         
-                var example = `[
-  {
-    "success": true,
-    "profile_id": "12345"
-  }
-]`;
-                var parameters = []
-                var formHtml = ``;   
-                    formHtml += `<h4>Parameters</h4>`;
-                        formHtml += `<div class="form-row" id="addNetworkSmProfileClarity_networkId">`;                      
-                        formHtml += `<label for="node-input-addNetworkSmProfileClarity_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-addNetworkSmProfileClarity_networkId" placeholder="msg.networkId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-addNetworkSmProfileClarity_networkIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "networkId"
-                        })
-                        formHtml += `<div class="form-row" id="addNetworkSmProfileClarity_profileId">`;                      
-                        formHtml += `<label for="node-input-addNetworkSmProfileClarity_profileId" style="width:70%"><i class="fa fa-list"></i> <span><b>profileId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-addNetworkSmProfileClarity_profileId" placeholder="msg.profileId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-addNetworkSmProfileClarity_profileIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "profileId"
-                        })
-                        formHtml += `<div class="form-row" id="addNetworkSmProfileClarity_addNetworkSmProfileClarity">`;                      
-                        formHtml += `<label for="node-input-addNetworkSmProfileClarity_addNetworkSmProfileClarity" style="width:70%"><i class="fa fa-list"></i> <span><b>addNetworkSmProfileClarity<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-addNetworkSmProfileClarity_addNetworkSmProfileClarity" placeholder="msg.addNetworkSmProfileClarity" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-addNetworkSmProfileClarity_addNetworkSmProfileClarityType" value="" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "addNetworkSmProfileClarity"
-                        })
-
-                methodGroups.push({methodGroup:"SM", methodName:"addNetworkSmProfileClarity", parameters: parameters, formHtml: formHtml, example: example, summary: `Add a Cisco Clarity payload to an existing profile`});
-                                         
-                var example = `[
-  {
-    "profile_id": "12345",
-    "name": "Cisco Clarity Config",
-    "PluginBundleID": "com.cisco.security.app",
-    "FilterBrowsers": true,
-    "FilterSockets": true,
-    "VendorConfig": [
-      {
-        "key": "cloud_asn1_server_host",
-        "type": "manual_string",
-        "value": "immunet.com"
-      },
-      {
-        "key": "cloud_asn1_server_port",
-        "type": "manual_int",
-        "value": 443
-      }
-    ]
-  }
-]`;
-                var parameters = []
-                var formHtml = ``;   
-                    formHtml += `<h4>Parameters</h4>`;
-                        formHtml += `<div class="form-row" id="getNetworkSmProfileClarity_networkId">`;                      
-                        formHtml += `<label for="node-input-getNetworkSmProfileClarity_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-getNetworkSmProfileClarity_networkId" placeholder="msg.networkId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkSmProfileClarity_networkIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "networkId"
-                        })
-                        formHtml += `<div class="form-row" id="getNetworkSmProfileClarity_profileId">`;                      
-                        formHtml += `<label for="node-input-getNetworkSmProfileClarity_profileId" style="width:70%"><i class="fa fa-list"></i> <span><b>profileId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-getNetworkSmProfileClarity_profileId" placeholder="msg.profileId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkSmProfileClarity_profileIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "profileId"
-                        })
-
-                methodGroups.push({methodGroup:"SM", methodName:"getNetworkSmProfileClarity", parameters: parameters, formHtml: formHtml, example: example, summary: `Get details for a Cisco Clarity payload`});
-                                         
-                var example = `[
-  {
-    "success": true,
-    "payload_deleted": true,
-    "profile_deleted": true
-  }
-]`;
-                var parameters = []
-                var formHtml = ``;   
-                    formHtml += `<h4>Parameters</h4>`;
-                        formHtml += `<div class="form-row" id="deleteNetworkSmProfileClarity_networkId">`;                      
-                        formHtml += `<label for="node-input-deleteNetworkSmProfileClarity_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-deleteNetworkSmProfileClarity_networkId" placeholder="msg.networkId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-deleteNetworkSmProfileClarity_networkIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "networkId"
-                        })
-                        formHtml += `<div class="form-row" id="deleteNetworkSmProfileClarity_profileId">`;                      
-                        formHtml += `<label for="node-input-deleteNetworkSmProfileClarity_profileId" style="width:70%"><i class="fa fa-list"></i> <span><b>profileId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-deleteNetworkSmProfileClarity_profileId" placeholder="msg.profileId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-deleteNetworkSmProfileClarity_profileIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "profileId"
-                        })
-
-                methodGroups.push({methodGroup:"SM", methodName:"deleteNetworkSmProfileClarity", parameters: parameters, formHtml: formHtml, example: example, summary: `Delete a Cisco Clarity payload. Deletes the entire profile if its empty after removing the payload.`});
-                                         
-                var example = `[
-  {
-    "success": true,
-    "profile_id": "12345"
-  }
-]`;
-                var parameters = []
-                var formHtml = ``;   
-                    formHtml += `<h4>Parameters</h4>`;
-                        formHtml += `<div class="form-row" id="createNetworkSmProfileUmbrella_networkId">`;                      
-                        formHtml += `<label for="node-input-createNetworkSmProfileUmbrella_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-createNetworkSmProfileUmbrella_networkId" placeholder="msg.networkId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-createNetworkSmProfileUmbrella_networkIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "networkId"
-                        })
-                        formHtml += `<div class="form-row" id="createNetworkSmProfileUmbrella_createNetworkSmProfileUmbrella">`;                      
-                        formHtml += `<label for="node-input-createNetworkSmProfileUmbrella_createNetworkSmProfileUmbrella" style="width:70%"><i class="fa fa-list"></i> <span><b>createNetworkSmProfileUmbrella<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-createNetworkSmProfileUmbrella_createNetworkSmProfileUmbrella" placeholder="msg.createNetworkSmProfileUmbrella" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-createNetworkSmProfileUmbrella_createNetworkSmProfileUmbrellaType" value="" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "createNetworkSmProfileUmbrella"
-                        })
-
-                methodGroups.push({methodGroup:"SM", methodName:"createNetworkSmProfileUmbrella", parameters: parameters, formHtml: formHtml, example: example, summary: `Create a new profile containing a Cisco Umbrella payload`});
-                                         
-                var example = `[
-  {
-    "success": true,
-    "profile_id": "12345"
-  }
-]`;
-                var parameters = []
-                var formHtml = ``;   
-                    formHtml += `<h4>Parameters</h4>`;
-                        formHtml += `<div class="form-row" id="updateNetworkSmProfileUmbrella_networkId">`;                      
-                        formHtml += `<label for="node-input-updateNetworkSmProfileUmbrella_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-updateNetworkSmProfileUmbrella_networkId" placeholder="msg.networkId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-updateNetworkSmProfileUmbrella_networkIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "networkId"
-                        })
-                        formHtml += `<div class="form-row" id="updateNetworkSmProfileUmbrella_profileId">`;                      
-                        formHtml += `<label for="node-input-updateNetworkSmProfileUmbrella_profileId" style="width:70%"><i class="fa fa-list"></i> <span><b>profileId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-updateNetworkSmProfileUmbrella_profileId" placeholder="msg.profileId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-updateNetworkSmProfileUmbrella_profileIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "profileId"
-                        })
-                        formHtml += `<div class="form-row" id="updateNetworkSmProfileUmbrella_updateNetworkSmProfileUmbrella">`;                      
-                    
-                        formHtml += `<label for="node-input-updateNetworkSmProfileUmbrella_updateNetworkSmProfileUmbrella" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSmProfileUmbrella</b> <i>&nbsp</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-updateNetworkSmProfileUmbrella_updateNetworkSmProfileUmbrella" placeholder="msg.updateNetworkSmProfileUmbrella" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-updateNetworkSmProfileUmbrella_updateNetworkSmProfileUmbrellaType" value="" >`;
-                        formHtml += `</div>`;
-
-
-                    parameters.push({
-                        camelCaseName: "updateNetworkSmProfileUmbrella"
-                        })
-
-                methodGroups.push({methodGroup:"SM", methodName:"updateNetworkSmProfileUmbrella", parameters: parameters, formHtml: formHtml, example: example, summary: `Update an existing profile containing a Cisco Umbrella payload`});
-                                         
-                var example = `[
-  {
-    "success": true,
-    "profile_id": "12345"
-  }
-]`;
-                var parameters = []
-                var formHtml = ``;   
-                    formHtml += `<h4>Parameters</h4>`;
-                        formHtml += `<div class="form-row" id="addNetworkSmProfileUmbrella_networkId">`;                      
-                        formHtml += `<label for="node-input-addNetworkSmProfileUmbrella_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-addNetworkSmProfileUmbrella_networkId" placeholder="msg.networkId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-addNetworkSmProfileUmbrella_networkIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "networkId"
-                        })
-                        formHtml += `<div class="form-row" id="addNetworkSmProfileUmbrella_profileId">`;                      
-                        formHtml += `<label for="node-input-addNetworkSmProfileUmbrella_profileId" style="width:70%"><i class="fa fa-list"></i> <span><b>profileId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-addNetworkSmProfileUmbrella_profileId" placeholder="msg.profileId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-addNetworkSmProfileUmbrella_profileIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "profileId"
-                        })
-                        formHtml += `<div class="form-row" id="addNetworkSmProfileUmbrella_addNetworkSmProfileUmbrella">`;                      
-                        formHtml += `<label for="node-input-addNetworkSmProfileUmbrella_addNetworkSmProfileUmbrella" style="width:70%"><i class="fa fa-list"></i> <span><b>addNetworkSmProfileUmbrella<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-addNetworkSmProfileUmbrella_addNetworkSmProfileUmbrella" placeholder="msg.addNetworkSmProfileUmbrella" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-addNetworkSmProfileUmbrella_addNetworkSmProfileUmbrellaType" value="" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "addNetworkSmProfileUmbrella"
-                        })
-
-                methodGroups.push({methodGroup:"SM", methodName:"addNetworkSmProfileUmbrella", parameters: parameters, formHtml: formHtml, example: example, summary: `Add a Cisco Umbrella payload to an existing profile`});
-                                         
-                var example = `[
-  {
-    "profile_id": "12345",
-    "name": "Cisco Umbrella Config",
-    "AppBundleIdentifier": "com.cisco.security",
-    "ProviderBundleIdentifier": "com.cisco.umbrella",
-    "ProviderConfiguration": [
-      {
-        "key": "internalDomains",
-        "type": "manual_list",
-        "value": [
-          "meraki.com",
-          "cisco.com"
-        ]
-      },
-      {
-        "key": "user_id",
-        "type": "manual_string",
-        "value": "miles"
-      }
-    ]
-  }
-]`;
-                var parameters = []
-                var formHtml = ``;   
-                    formHtml += `<h4>Parameters</h4>`;
-                        formHtml += `<div class="form-row" id="getNetworkSmProfileUmbrella_networkId">`;                      
-                        formHtml += `<label for="node-input-getNetworkSmProfileUmbrella_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-getNetworkSmProfileUmbrella_networkId" placeholder="msg.networkId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkSmProfileUmbrella_networkIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "networkId"
-                        })
-                        formHtml += `<div class="form-row" id="getNetworkSmProfileUmbrella_profileId">`;                      
-                        formHtml += `<label for="node-input-getNetworkSmProfileUmbrella_profileId" style="width:70%"><i class="fa fa-list"></i> <span><b>profileId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-getNetworkSmProfileUmbrella_profileId" placeholder="msg.profileId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkSmProfileUmbrella_profileIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "profileId"
-                        })
-
-                methodGroups.push({methodGroup:"SM", methodName:"getNetworkSmProfileUmbrella", parameters: parameters, formHtml: formHtml, example: example, summary: `Get details for a Cisco Umbrella payload`});
-                                         
-                var example = `[
-  {
-    "success": true,
-    "payload_deleted": true,
-    "profile_deleted": true
-  }
-]`;
-                var parameters = []
-                var formHtml = ``;   
-                    formHtml += `<h4>Parameters</h4>`;
-                        formHtml += `<div class="form-row" id="deleteNetworkSmProfileUmbrella_networkId">`;                      
-                        formHtml += `<label for="node-input-deleteNetworkSmProfileUmbrella_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-deleteNetworkSmProfileUmbrella_networkId" placeholder="msg.networkId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-deleteNetworkSmProfileUmbrella_networkIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "networkId"
-                        })
-                        formHtml += `<div class="form-row" id="deleteNetworkSmProfileUmbrella_profileId">`;                      
-                        formHtml += `<label for="node-input-deleteNetworkSmProfileUmbrella_profileId" style="width:70%"><i class="fa fa-list"></i> <span><b>profileId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-deleteNetworkSmProfileUmbrella_profileId" placeholder="msg.profileId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-deleteNetworkSmProfileUmbrella_profileIdType" value="string" >`;
-                        formHtml += `</div>`;
-                    
-
-
-                    parameters.push({
-                        camelCaseName: "profileId"
-                        })
-
-                methodGroups.push({methodGroup:"SM", methodName:"deleteNetworkSmProfileUmbrella", parameters: parameters, formHtml: formHtml, example: example, summary: `Delete a Cisco Umbrella payload. Deletes the entire profile if its empty after removing the payload`});
-                                         
-                var example = `[
-  {
     "profiles": [
       {
         "id": "1234",
@@ -9855,15 +10570,18 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"Named tag scope", methodName:"deleteNetworkSmTargetGroup", parameters: parameters, formHtml: formHtml, example: example, summary: `Delete a target group from a network`});
                                          
                 var example = `[
-  {
-    "id": "1284392014819",
-    "isEncrypted": true,
-    "isManaged": true,
-    "profileData": {},
-    "profileIdentifier": "com.test.app",
-    "name": "My profile",
-    "version": "0.0.1"
-  }
+  [
+    {
+      "deviceId": "1234",
+      "id": "1284392014819",
+      "isEncrypted": true,
+      "isManaged": true,
+      "profileData": {},
+      "profileIdentifier": "com.test.app",
+      "name": "My profile",
+      "version": "0.0.1"
+    }
+  ]
 ]`;
                 var parameters = []
                 var formHtml = ``;   
@@ -9901,6 +10619,7 @@ console.log = function(){};
       "appId": "1234",
       "bundleSize": null,
       "createdAt": "2018-02-11T00:00:00Z",
+      "deviceId": "1234",
       "dynamicSize": null,
       "id": "1284392014819",
       "identifier": "com.test.app",
@@ -9954,23 +10673,25 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"SM", methodName:"getNetworkSmUserSoftwares", parameters: parameters, formHtml: formHtml, example: example, summary: `Get a list of softwares associated with a user`});
                                          
                 var example = `[
-  {
-    "id": "1234",
-    "email": "miles@meraki.com",
-    "fullName": "Miles Meraki",
-    "username": "",
-    "hasPassword": false,
-    "tags": [
-      "tag1",
-      "tag2"
-    ],
-    "adGroups": [],
-    "asmGroups": [],
-    "isExternal": false,
-    "displayName": "Miles Meraki <miles@meraki.com>",
-    "hasIdentityCertificate": false,
-    "userThumbnail": "https://s3.amazonaws.com/image.extension"
-  }
+  [
+    {
+      "id": "1234",
+      "email": "miles@meraki.com",
+      "fullName": "Miles Meraki",
+      "username": "",
+      "hasPassword": false,
+      "tags": [
+        "tag1",
+        "tag2"
+      ],
+      "adGroups": [],
+      "asmGroups": [],
+      "isExternal": false,
+      "displayName": "Miles Meraki <miles@meraki.com>",
+      "hasIdentityCertificate": false,
+      "userThumbnail": "https://s3.amazonaws.com/image.extension"
+    }
+  ]
 ]`;
                 var parameters = []
                 var formHtml = ``;   
@@ -10082,6 +10803,7 @@ console.log = function(){};
       "notValidAfter": "May 12, 2018",
       "notValidBefore": "Feb 11, 2018",
       "certPem": "-----BEGIN CERTIFICATE-----\n-----END CERTIFICATE-----\n",
+      "deviceId": "1234",
       "issuer": "",
       "subject": "",
       "id": "15"
@@ -10119,15 +10841,18 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"SM", methodName:"getNetworkSmCerts", parameters: parameters, formHtml: formHtml, example: example, summary: `List the certs on a device`});
                                          
                 var example = `[
-  {
-    "id": "1284392014819",
-    "isEncrypted": true,
-    "isManaged": true,
-    "profileData": {},
-    "profileIdentifier": "com.test.app",
-    "name": "My profile",
-    "version": "0.0.1"
-  }
+  [
+    {
+      "deviceId": "1234",
+      "id": "1284392014819",
+      "isEncrypted": true,
+      "isManaged": true,
+      "profileData": {},
+      "profileIdentifier": "com.test.app",
+      "name": "My profile",
+      "version": "0.0.1"
+    }
+  ]
 ]`;
                 var parameters = []
                 var formHtml = ``;   
@@ -10297,6 +11022,7 @@ console.log = function(){};
       "appId": "1234",
       "bundleSize": null,
       "createdAt": "2018-02-11T00:00:00Z",
+      "deviceId": "1234",
       "dynamicSize": null,
       "id": "1284392014819",
       "identifier": "com.test.app",
@@ -11476,6 +12202,246 @@ console.log = function(){};
                 var example = `[
   [
     {
+      "id": "NDU2N18yXzM=",
+      "switchPorts": [
+        {
+          "serial": "Q234-ABCD-0001",
+          "portId": "1"
+        },
+        {
+          "serial": "Q234-ABCD-0002",
+          "portId": "2"
+        },
+        {
+          "serial": "Q234-ABCD-0003",
+          "portId": "3"
+        },
+        {
+          "serial": "Q234-ABCD-0004",
+          "portId": "4"
+        },
+        {
+          "serial": "Q234-ABCD-0005",
+          "portId": "5"
+        },
+        {
+          "serial": "Q234-ABCD-0006",
+          "portId": "6"
+        },
+        {
+          "serial": "Q234-ABCD-0007",
+          "portId": "7"
+        },
+        {
+          "serial": "Q234-ABCD-0008",
+          "portId": "8"
+        }
+      ]
+    }
+  ]
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkSwitchLinkAggregations_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkSwitchLinkAggregations_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkSwitchLinkAggregations_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSwitchLinkAggregations_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Link aggregations", methodName:"getNetworkSwitchLinkAggregations", parameters: parameters, formHtml: formHtml, example: example, summary: `List link aggregation groups`});
+                                         
+                var example = `[
+  {
+    "id": "NDU2N18yXzM=",
+    "switchPorts": [
+      {
+        "serial": "Q234-ABCD-0001",
+        "portId": "1"
+      },
+      {
+        "serial": "Q234-ABCD-0002",
+        "portId": "2"
+      },
+      {
+        "serial": "Q234-ABCD-0003",
+        "portId": "3"
+      },
+      {
+        "serial": "Q234-ABCD-0004",
+        "portId": "4"
+      },
+      {
+        "serial": "Q234-ABCD-0005",
+        "portId": "5"
+      },
+      {
+        "serial": "Q234-ABCD-0006",
+        "portId": "6"
+      },
+      {
+        "serial": "Q234-ABCD-0007",
+        "portId": "7"
+      },
+      {
+        "serial": "Q234-ABCD-0008",
+        "portId": "8"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="createNetworkSwitchLinkAggregation_networkId">`;                      
+                        formHtml += `<label for="node-input-createNetworkSwitchLinkAggregation_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-createNetworkSwitchLinkAggregation_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-createNetworkSwitchLinkAggregation_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="createNetworkSwitchLinkAggregation_createNetworkSwitchLinkAggregation">`;                      
+                    
+                        formHtml += `<label for="node-input-createNetworkSwitchLinkAggregation_createNetworkSwitchLinkAggregation" style="width:70%"><i class="fa fa-list"></i> <span><b>createNetworkSwitchLinkAggregation</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-createNetworkSwitchLinkAggregation_createNetworkSwitchLinkAggregation" placeholder="msg.createNetworkSwitchLinkAggregation" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-createNetworkSwitchLinkAggregation_createNetworkSwitchLinkAggregationType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "createNetworkSwitchLinkAggregation"
+                        })
+
+                methodGroups.push({methodGroup:"Link aggregations", methodName:"createNetworkSwitchLinkAggregation", parameters: parameters, formHtml: formHtml, example: example, summary: `Create a link aggregation group`});
+                                         
+                var example = `[
+  {
+    "id": "NDU2N18yXzM=",
+    "switchPorts": [
+      {
+        "serial": "Q234-ABCD-0001",
+        "portId": "1"
+      },
+      {
+        "serial": "Q234-ABCD-0002",
+        "portId": "2"
+      },
+      {
+        "serial": "Q234-ABCD-0003",
+        "portId": "3"
+      },
+      {
+        "serial": "Q234-ABCD-0004",
+        "portId": "4"
+      },
+      {
+        "serial": "Q234-ABCD-0005",
+        "portId": "5"
+      },
+      {
+        "serial": "Q234-ABCD-0006",
+        "portId": "6"
+      },
+      {
+        "serial": "Q234-ABCD-0007",
+        "portId": "7"
+      },
+      {
+        "serial": "Q234-ABCD-0008",
+        "portId": "8"
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchLinkAggregation_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchLinkAggregation_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchLinkAggregation_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchLinkAggregation_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchLinkAggregation_linkAggregationId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchLinkAggregation_linkAggregationId" style="width:70%"><i class="fa fa-list"></i> <span><b>linkAggregationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchLinkAggregation_linkAggregationId" placeholder="msg.linkAggregationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchLinkAggregation_linkAggregationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "linkAggregationId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchLinkAggregation_updateNetworkSwitchLinkAggregation">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkSwitchLinkAggregation_updateNetworkSwitchLinkAggregation" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSwitchLinkAggregation</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchLinkAggregation_updateNetworkSwitchLinkAggregation" placeholder="msg.updateNetworkSwitchLinkAggregation" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchLinkAggregation_updateNetworkSwitchLinkAggregationType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkSwitchLinkAggregation"
+                        })
+
+                methodGroups.push({methodGroup:"Link aggregations", methodName:"updateNetworkSwitchLinkAggregation", parameters: parameters, formHtml: formHtml, example: example, summary: `Update a link aggregation group`});
+                                         
+                var example = `[]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="deleteNetworkSwitchLinkAggregation_networkId">`;                      
+                        formHtml += `<label for="node-input-deleteNetworkSwitchLinkAggregation_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-deleteNetworkSwitchLinkAggregation_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteNetworkSwitchLinkAggregation_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="deleteNetworkSwitchLinkAggregation_linkAggregationId">`;                      
+                        formHtml += `<label for="node-input-deleteNetworkSwitchLinkAggregation_linkAggregationId" style="width:70%"><i class="fa fa-list"></i> <span><b>linkAggregationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-deleteNetworkSwitchLinkAggregation_linkAggregationId" placeholder="msg.linkAggregationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteNetworkSwitchLinkAggregation_linkAggregationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "linkAggregationId"
+                        })
+
+                methodGroups.push({methodGroup:"Link aggregations", methodName:"deleteNetworkSwitchLinkAggregation", parameters: parameters, formHtml: formHtml, example: example, summary: `Split a link aggregation group into separate ports`});
+                                         
+                var example = `[
+  [
+    {
       "id": "1234",
       "networkId": "N_24329156",
       "name": "Weekdays schedule",
@@ -12053,6 +13019,110 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettingsMtu", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the MTU configuration`});
                                          
                 var example = `[
+  {
+    "defaultSettings": {
+      "igmpSnoopingEnabled": true,
+      "floodUnknownMulticastTrafficEnabled": true
+    },
+    "overrides": [
+      {
+        "switches": [
+          "Q234-ABCD-0001",
+          "Q234-ABCD-0002",
+          "Q234-ABCD-0003"
+        ],
+        "igmpSnoopingEnabled": true,
+        "floodUnknownMulticastTrafficEnabled": true
+      },
+      {
+        "stacks": [
+          "789102",
+          "123456",
+          "129102"
+        ],
+        "igmpSnoopingEnabled": true,
+        "floodUnknownMulticastTrafficEnabled": true
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getNetworkSwitchSettingsMulticast_networkId">`;                      
+                        formHtml += `<label for="node-input-getNetworkSwitchSettingsMulticast_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getNetworkSwitchSettingsMulticast_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSwitchSettingsMulticast_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"getNetworkSwitchSettingsMulticast", parameters: parameters, formHtml: formHtml, example: example, summary: `Return Multicast settings for a network`});
+                                         
+                var example = `[
+  {
+    "defaultSettings": {
+      "igmpSnoopingEnabled": true,
+      "floodUnknownMulticastTrafficEnabled": true
+    },
+    "overrides": [
+      {
+        "switches": [
+          "Q234-ABCD-0001",
+          "Q234-ABCD-0002",
+          "Q234-ABCD-0003"
+        ],
+        "igmpSnoopingEnabled": true,
+        "floodUnknownMulticastTrafficEnabled": true
+      },
+      {
+        "stacks": [
+          "789102",
+          "123456",
+          "129102"
+        ],
+        "igmpSnoopingEnabled": true,
+        "floodUnknownMulticastTrafficEnabled": true
+      }
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsMulticast_networkId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsMulticast_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsMulticast_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsMulticast_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="updateNetworkSwitchSettingsMulticast_updateNetworkSwitchSettingsMulticast">`;                      
+                    
+                        formHtml += `<label for="node-input-updateNetworkSwitchSettingsMulticast_updateNetworkSwitchSettingsMulticast" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSwitchSettingsMulticast</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkSwitchSettingsMulticast_updateNetworkSwitchSettingsMulticast" placeholder="msg.updateNetworkSwitchSettingsMulticast" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkSwitchSettingsMulticast_updateNetworkSwitchSettingsMulticastType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateNetworkSwitchSettingsMulticast"
+                        })
+
+                methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettingsMulticast", parameters: parameters, formHtml: formHtml, example: example, summary: `Update multicast settings for a network`});
+                                         
+                var example = `[
   [
     {
       "id": "1284392014819",
@@ -12340,7 +13410,7 @@ console.log = function(){};
                         camelCaseName: "networkId"
                         })
 
-                methodGroups.push({methodGroup:"Switch settings", methodName:"getNetworkSwitchSettingsStormControl", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the global enhanced storm control configuration`});
+                methodGroups.push({methodGroup:"Switch settings", methodName:"getNetworkSwitchSettingsStormControl", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the storm control configuration for a switch network`});
                                          
                 var example = `[
   {
@@ -12377,7 +13447,7 @@ console.log = function(){};
                         camelCaseName: "updateNetworkSwitchSettingsStormControl"
                         })
 
-                methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettingsStormControl", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the global enhanced storm control configuration`});
+                methodGroups.push({methodGroup:"Switch settings", methodName:"updateNetworkSwitchSettingsStormControl", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the storm control configuration for a switch network`});
                                          
                 var example = `[
   {
@@ -14244,10 +15314,12 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"SM", methodName:"lockNetworkSmDevices", parameters: parameters, formHtml: formHtml, example: example, summary: `Lock a set of devices`});
                                          
                 var example = `[
-  {
-    "firstSeenAt": 1518365681,
-    "lastSeenAt": 1526087474
-  }
+  [
+    {
+      "firstSeenAt": 1518365681,
+      "lastSeenAt": 1526087474
+    }
+  ]
 ]`;
                 var parameters = []
                 var formHtml = ``;   
@@ -14278,10 +15350,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkSmConnectivity_perPage">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkSmConnectivity_perPage" style="width:70%"><i class="fa fa-list"></i> <span><b>perPage</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>The number of entries per page returned</p>`;
+                        formHtml += `<label for="node-input-getNetworkSmConnectivity_perPage" style="width:70%"><i class="fa fa-list"></i> <span><b>perPage</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<p>The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSmConnectivity_perPage" placeholder="msg.perPage" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkSmConnectivity_perPageType" value="string" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSmConnectivity_perPageType" value="integer" >`;
                         formHtml += `</div>`;
 
 
@@ -14291,7 +15363,7 @@ console.log = function(){};
                         formHtml += `<div class="form-row" id="getNetworkSmConnectivity_startingAfter">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkSmConnectivity_startingAfter" style="width:70%"><i class="fa fa-list"></i> <span><b>startingAfter</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, next or prev page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSmConnectivity_startingAfter" placeholder="msg.startingAfter" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-getNetworkSmConnectivity_startingAfterType" value="string" >`;
                         formHtml += `</div>`;
@@ -14303,7 +15375,7 @@ console.log = function(){};
                         formHtml += `<div class="form-row" id="getNetworkSmConnectivity_endingBefore">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkSmConnectivity_endingBefore" style="width:70%"><i class="fa fa-list"></i> <span><b>endingBefore</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, next or prev page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSmConnectivity_endingBefore" placeholder="msg.endingBefore" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-getNetworkSmConnectivity_endingBeforeType" value="string" >`;
                         formHtml += `</div>`;
@@ -14368,10 +15440,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkSmDesktopLogs_perPage">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkSmDesktopLogs_perPage" style="width:70%"><i class="fa fa-list"></i> <span><b>perPage</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>The number of entries per page returned</p>`;
+                        formHtml += `<label for="node-input-getNetworkSmDesktopLogs_perPage" style="width:70%"><i class="fa fa-list"></i> <span><b>perPage</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<p>The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSmDesktopLogs_perPage" placeholder="msg.perPage" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkSmDesktopLogs_perPageType" value="string" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSmDesktopLogs_perPageType" value="integer" >`;
                         formHtml += `</div>`;
 
 
@@ -14381,7 +15453,7 @@ console.log = function(){};
                         formHtml += `<div class="form-row" id="getNetworkSmDesktopLogs_startingAfter">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkSmDesktopLogs_startingAfter" style="width:70%"><i class="fa fa-list"></i> <span><b>startingAfter</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, next or prev page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSmDesktopLogs_startingAfter" placeholder="msg.startingAfter" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-getNetworkSmDesktopLogs_startingAfterType" value="string" >`;
                         formHtml += `</div>`;
@@ -14393,7 +15465,7 @@ console.log = function(){};
                         formHtml += `<div class="form-row" id="getNetworkSmDesktopLogs_endingBefore">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkSmDesktopLogs_endingBefore" style="width:70%"><i class="fa fa-list"></i> <span><b>endingBefore</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, next or prev page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSmDesktopLogs_endingBefore" placeholder="msg.endingBefore" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-getNetworkSmDesktopLogs_endingBeforeType" value="string" >`;
                         formHtml += `</div>`;
@@ -14406,13 +15478,15 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"SM", methodName:"getNetworkSmDesktopLogs", parameters: parameters, formHtml: formHtml, example: example, summary: `Return historical records of various Systems Manager network connection details for desktop devices.`});
                                          
                 var example = `[
-  {
-    "action": "UpdateProfile",
-    "name": "My profile",
-    "details": "{}",
-    "dashboardUser": "Miles Meraki",
-    "ts": 1526087474
-  }
+  [
+    {
+      "action": "UpdateProfile",
+      "name": "My profile",
+      "details": "{}",
+      "dashboardUser": "Miles Meraki",
+      "ts": 1526087474
+    }
+  ]
 ]`;
                 var parameters = []
                 var formHtml = ``;   
@@ -14443,10 +15517,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkSmDeviceCommandLogs_perPage">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkSmDeviceCommandLogs_perPage" style="width:70%"><i class="fa fa-list"></i> <span><b>perPage</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>The number of entries per page returned</p>`;
+                        formHtml += `<label for="node-input-getNetworkSmDeviceCommandLogs_perPage" style="width:70%"><i class="fa fa-list"></i> <span><b>perPage</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<p>The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSmDeviceCommandLogs_perPage" placeholder="msg.perPage" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkSmDeviceCommandLogs_perPageType" value="string" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSmDeviceCommandLogs_perPageType" value="integer" >`;
                         formHtml += `</div>`;
 
 
@@ -14456,7 +15530,7 @@ console.log = function(){};
                         formHtml += `<div class="form-row" id="getNetworkSmDeviceCommandLogs_startingAfter">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkSmDeviceCommandLogs_startingAfter" style="width:70%"><i class="fa fa-list"></i> <span><b>startingAfter</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, next or prev page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSmDeviceCommandLogs_startingAfter" placeholder="msg.startingAfter" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-getNetworkSmDeviceCommandLogs_startingAfterType" value="string" >`;
                         formHtml += `</div>`;
@@ -14468,7 +15542,7 @@ console.log = function(){};
                         formHtml += `<div class="form-row" id="getNetworkSmDeviceCommandLogs_endingBefore">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkSmDeviceCommandLogs_endingBefore" style="width:70%"><i class="fa fa-list"></i> <span><b>endingBefore</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, next or prev page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSmDeviceCommandLogs_endingBefore" placeholder="msg.endingBefore" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-getNetworkSmDeviceCommandLogs_endingBeforeType" value="string" >`;
                         formHtml += `</div>`;
@@ -14534,10 +15608,10 @@ console.log = function(){};
                         })
                         formHtml += `<div class="form-row" id="getNetworkSmPerformanceHistory_perPage">`;                      
                     
-                        formHtml += `<label for="node-input-getNetworkSmPerformanceHistory_perPage" style="width:70%"><i class="fa fa-list"></i> <span><b>perPage</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>The number of entries per page returned</p>`;
+                        formHtml += `<label for="node-input-getNetworkSmPerformanceHistory_perPage" style="width:70%"><i class="fa fa-list"></i> <span><b>perPage</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<p>The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSmPerformanceHistory_perPage" placeholder="msg.perPage" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkSmPerformanceHistory_perPageType" value="string" >`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkSmPerformanceHistory_perPageType" value="integer" >`;
                         formHtml += `</div>`;
 
 
@@ -14547,7 +15621,7 @@ console.log = function(){};
                         formHtml += `<div class="form-row" id="getNetworkSmPerformanceHistory_startingAfter">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkSmPerformanceHistory_startingAfter" style="width:70%"><i class="fa fa-list"></i> <span><b>startingAfter</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, next or prev page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSmPerformanceHistory_startingAfter" placeholder="msg.startingAfter" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-getNetworkSmPerformanceHistory_startingAfterType" value="string" >`;
                         formHtml += `</div>`;
@@ -14559,7 +15633,7 @@ console.log = function(){};
                         formHtml += `<div class="form-row" id="getNetworkSmPerformanceHistory_endingBefore">`;                      
                     
                         formHtml += `<label for="node-input-getNetworkSmPerformanceHistory_endingBefore" style="width:70%"><i class="fa fa-list"></i> <span><b>endingBefore</b> <i>&nbspstring</i></span></label>`;                  
-                        formHtml += `<p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, next or prev page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
                         formHtml += `<input type="text" id="node-input-getNetworkSmPerformanceHistory_endingBefore" placeholder="msg.endingBefore" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-getNetworkSmPerformanceHistory_endingBeforeType" value="string" >`;
                         formHtml += `</div>`;
@@ -15909,8 +16983,201 @@ console.log = function(){};
                     parameters.push({
                         camelCaseName: "endingBefore"
                         })
+                        formHtml += `<div class="form-row" id="getOrganizationDevices_configurationUpdatedAfter">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationDevices_configurationUpdatedAfter" style="width:70%"><i class="fa fa-list"></i> <span><b>configurationUpdatedAfter</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>Filter results by whether or not the device's configuration has been updated after the given timestamp</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationDevices_configurationUpdatedAfter" placeholder="msg.configurationUpdatedAfter" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationDevices_configurationUpdatedAfterType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "configurationUpdatedAfter"
+                        })
 
                 methodGroups.push({methodGroup:"Devices", methodName:"getOrganizationDevices", parameters: parameters, formHtml: formHtml, example: example, summary: `List the devices in an organization`});
+                                         
+                var example = `[
+  [
+    {
+      "id": "1284392014819",
+      "name": "Sample VoIP Provider",
+      "address": "123.123.123.1"
+    }
+  ]
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getOrganizationInsightMonitoredMediaServers_organizationId">`;                      
+                        formHtml += `<label for="node-input-getOrganizationInsightMonitoredMediaServers_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationInsightMonitoredMediaServers_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationInsightMonitoredMediaServers_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+
+                methodGroups.push({methodGroup:"Monitored media servers", methodName:"getOrganizationInsightMonitoredMediaServers", parameters: parameters, formHtml: formHtml, example: example, summary: `List the monitored media servers for this organization. Only valid for organizations with Meraki Insight.`});
+                                         
+                var example = `[
+  {
+    "id": "1284392014819",
+    "name": "Sample VoIP Provider",
+    "address": "123.123.123.1"
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="createOrganizationInsightMonitoredMediaServer_organizationId">`;                      
+                        formHtml += `<label for="node-input-createOrganizationInsightMonitoredMediaServer_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-createOrganizationInsightMonitoredMediaServer_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-createOrganizationInsightMonitoredMediaServer_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="createOrganizationInsightMonitoredMediaServer_createOrganizationInsightMonitoredMediaServer">`;                      
+                        formHtml += `<label for="node-input-createOrganizationInsightMonitoredMediaServer_createOrganizationInsightMonitoredMediaServer" style="width:70%"><i class="fa fa-list"></i> <span><b>createOrganizationInsightMonitoredMediaServer<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-createOrganizationInsightMonitoredMediaServer_createOrganizationInsightMonitoredMediaServer" placeholder="msg.createOrganizationInsightMonitoredMediaServer" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-createOrganizationInsightMonitoredMediaServer_createOrganizationInsightMonitoredMediaServerType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "createOrganizationInsightMonitoredMediaServer"
+                        })
+
+                methodGroups.push({methodGroup:"Monitored media servers", methodName:"createOrganizationInsightMonitoredMediaServer", parameters: parameters, formHtml: formHtml, example: example, summary: `Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.`});
+                                         
+                var example = `[
+  {
+    "id": "1284392014819",
+    "name": "Sample VoIP Provider",
+    "address": "123.123.123.1"
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getOrganizationInsightMonitoredMediaServer_organizationId">`;                      
+                        formHtml += `<label for="node-input-getOrganizationInsightMonitoredMediaServer_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationInsightMonitoredMediaServer_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationInsightMonitoredMediaServer_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationInsightMonitoredMediaServer_monitoredMediaServerId">`;                      
+                        formHtml += `<label for="node-input-getOrganizationInsightMonitoredMediaServer_monitoredMediaServerId" style="width:70%"><i class="fa fa-list"></i> <span><b>monitoredMediaServerId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationInsightMonitoredMediaServer_monitoredMediaServerId" placeholder="msg.monitoredMediaServerId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationInsightMonitoredMediaServer_monitoredMediaServerIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "monitoredMediaServerId"
+                        })
+
+                methodGroups.push({methodGroup:"Monitored media servers", methodName:"getOrganizationInsightMonitoredMediaServer", parameters: parameters, formHtml: formHtml, example: example, summary: `Return a monitored media server for this organization. Only valid for organizations with Meraki Insight.`});
+                                         
+                var example = `[
+  {
+    "id": "1284392014819",
+    "name": "Sample VoIP Provider",
+    "address": "123.123.123.1"
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateOrganizationInsightMonitoredMediaServer_organizationId">`;                      
+                        formHtml += `<label for="node-input-updateOrganizationInsightMonitoredMediaServer_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateOrganizationInsightMonitoredMediaServer_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateOrganizationInsightMonitoredMediaServer_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="updateOrganizationInsightMonitoredMediaServer_monitoredMediaServerId">`;                      
+                        formHtml += `<label for="node-input-updateOrganizationInsightMonitoredMediaServer_monitoredMediaServerId" style="width:70%"><i class="fa fa-list"></i> <span><b>monitoredMediaServerId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateOrganizationInsightMonitoredMediaServer_monitoredMediaServerId" placeholder="msg.monitoredMediaServerId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateOrganizationInsightMonitoredMediaServer_monitoredMediaServerIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "monitoredMediaServerId"
+                        })
+                        formHtml += `<div class="form-row" id="updateOrganizationInsightMonitoredMediaServer_updateOrganizationInsightMonitoredMediaServer">`;                      
+                    
+                        formHtml += `<label for="node-input-updateOrganizationInsightMonitoredMediaServer_updateOrganizationInsightMonitoredMediaServer" style="width:70%"><i class="fa fa-list"></i> <span><b>updateOrganizationInsightMonitoredMediaServer</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateOrganizationInsightMonitoredMediaServer_updateOrganizationInsightMonitoredMediaServer" placeholder="msg.updateOrganizationInsightMonitoredMediaServer" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateOrganizationInsightMonitoredMediaServer_updateOrganizationInsightMonitoredMediaServerType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateOrganizationInsightMonitoredMediaServer"
+                        })
+
+                methodGroups.push({methodGroup:"Monitored media servers", methodName:"updateOrganizationInsightMonitoredMediaServer", parameters: parameters, formHtml: formHtml, example: example, summary: `Update a monitored media server for this organization. Only valid for organizations with Meraki Insight.`});
+                                         
+                var example = `[]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="deleteOrganizationInsightMonitoredMediaServer_organizationId">`;                      
+                        formHtml += `<label for="node-input-deleteOrganizationInsightMonitoredMediaServer_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-deleteOrganizationInsightMonitoredMediaServer_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteOrganizationInsightMonitoredMediaServer_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="deleteOrganizationInsightMonitoredMediaServer_monitoredMediaServerId">`;                      
+                        formHtml += `<label for="node-input-deleteOrganizationInsightMonitoredMediaServer_monitoredMediaServerId" style="width:70%"><i class="fa fa-list"></i> <span><b>monitoredMediaServerId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-deleteOrganizationInsightMonitoredMediaServer_monitoredMediaServerId" placeholder="msg.monitoredMediaServerId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteOrganizationInsightMonitoredMediaServer_monitoredMediaServerIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "monitoredMediaServerId"
+                        })
+
+                methodGroups.push({methodGroup:"Monitored media servers", methodName:"deleteOrganizationInsightMonitoredMediaServer", parameters: parameters, formHtml: formHtml, example: example, summary: `Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.`});
                                          
                 var example = `[
   [
@@ -17714,6 +18981,7 @@ console.log = function(){};
             <option value="Admins" >Admins</option>
             <option value="Alert settings" >Alert settings</option>
             <option value="Bluetooth clients" >Bluetooth clients</option>
+            <option value="Camera quality retention profiles" >Camera quality retention profiles</option>
             <option value="Cameras" >Cameras</option>
             <option value="Clients" >Clients</option>
             <option value="Config templates" >Config templates</option>
@@ -17729,6 +18997,13 @@ console.log = function(){};
             <option value="HTTP servers" >HTTP servers</option>
             <option value="Intrusion settings" >Intrusion settings</option>
             <option value="Licenses" >Licenses</option>
+            <option value="Link aggregations" >Link aggregations</option>
+            <option value="MG DHCP settings" >MG DHCP settings</option>
+            <option value="MG LAN settings" >MG LAN settings</option>
+            <option value="MG connectivity monitoring destinations" >MG connectivity monitoring destinations</option>
+            <option value="MG port forwarding rules" >MG port forwarding rules</option>
+            <option value="MG subnet pool settings" >MG subnet pool settings</option>
+            <option value="MG uplink settings" >MG uplink settings</option>
             <option value="MR L3 firewall" >MR L3 firewall</option>
             <option value="MV Sense" >MV Sense</option>
             <option value="MX 1:1 NAT rules" >MX 1:1 NAT rules</option>
@@ -17739,12 +19014,14 @@ console.log = function(){};
             <option value="MX VLAN ports" >MX VLAN ports</option>
             <option value="MX VPN firewall" >MX VPN firewall</option>
             <option value="MX cellular firewall" >MX cellular firewall</option>
+            <option value="MX inbound firewall" >MX inbound firewall</option>
             <option value="MX port forwarding rules" >MX port forwarding rules</option>
             <option value="MX static routes" >MX static routes</option>
             <option value="MX warm spare settings" >MX warm spare settings</option>
             <option value="Malware settings" >Malware settings</option>
             <option value="Management interface settings" >Management interface settings</option>
             <option value="Meraki auth users" >Meraki auth users</option>
+            <option value="Monitored media servers" >Monitored media servers</option>
             <option value="Named tag scope" >Named tag scope</option>
             <option value="NetFlow settings" >NetFlow settings</option>
             <option value="Networks" >Networks</option>
@@ -17847,7 +19124,7 @@ return msg;
 
 
     <p>Cisco Meraki Dashboard Node</p>
-    &nbsp &nbsp &nbsp<i>OAS version: 0.6.0</i>
+    &nbsp &nbsp &nbsp<i>OAS version: 0.8.0</i>
     <hr/>
     <br>
     <p>The Cisco Meraki Dashboard API is a modern REST API based on the <a href="https://swagger.io/docs/specification/about/" target="_blank">OpenAPI</a> specification. 
