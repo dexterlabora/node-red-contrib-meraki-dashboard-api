@@ -622,21 +622,23 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"MG port forwarding rules", methodName:"updateDeviceCellularGatewaySettingsPortForwardingRules", parameters: parameters, formHtml: formHtml, example: example, summary: `Updates the port forwarding rules for a single MG.`});
                                          
                 var example = `[
-  {
-    "usage": {
-      "sent": 138,
-      "recv": 61
-    },
-    "id": "k74272e",
-    "description": "Miles's phone",
-    "mac": "00:11:22:33:44:55",
-    "ip": "1.2.3.4",
-    "user": "milesmeraki",
-    "vlan": 255,
-    "switchport": null,
-    "mdnsName": "Miles's phone",
-    "dhcpHostname": "MilesPhone"
-  }
+  [
+    {
+      "usage": {
+        "sent": 138,
+        "recv": 61
+      },
+      "id": "k74272e",
+      "description": "Miles's phone",
+      "mac": "22:33:44:55:66:77",
+      "ip": "1.2.3.4",
+      "user": "milesmeraki",
+      "vlan": 255,
+      "switchport": null,
+      "mdnsName": "Miles's phone",
+      "dhcpHostname": "MilesPhone"
+    }
+  ]
 ]`;
                 var parameters = []
                 var formHtml = ``;   
@@ -679,6 +681,46 @@ console.log = function(){};
                         })
 
                 methodGroups.push({methodGroup:"Clients", methodName:"getDeviceClients", parameters: parameters, formHtml: formHtml, example: example, summary: `List the clients of a device up to a maximum of a month ago. The usage of each client is returned in kilobytes. If the device is a switch the switchport is returned; otherwise the switchport field is null.`});
+                                         
+                var example = `[
+  {
+    "ports": [
+      "1",
+      "2-5",
+      "1_MA-MOD-8X10G_1",
+      "1_MA-MOD-8X10G_2-1_MA-MOD-8X10G_8"
+    ]
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="cycleDeviceSwitchPorts_serial">`;                      
+                        formHtml += `<label for="node-input-cycleDeviceSwitchPorts_serial" style="width:70%"><i class="fa fa-list"></i> <span><b>serial<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-cycleDeviceSwitchPorts_serial" placeholder="msg.serial" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-cycleDeviceSwitchPorts_serialType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "serial"
+                        })
+                        formHtml += `<div class="form-row" id="cycleDeviceSwitchPorts_cycleDeviceSwitchPorts">`;                      
+                        formHtml += `<label for="node-input-cycleDeviceSwitchPorts_cycleDeviceSwitchPorts" style="width:70%"><i class="fa fa-list"></i> <span><b>cycleDeviceSwitchPorts<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-cycleDeviceSwitchPorts_cycleDeviceSwitchPorts" placeholder="msg.cycleDeviceSwitchPorts" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-cycleDeviceSwitchPorts_cycleDeviceSwitchPortsType" value="" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "cycleDeviceSwitchPorts"
+                        })
+
+                methodGroups.push({methodGroup:"Devices", methodName:"cycleDeviceSwitchPorts", parameters: parameters, formHtml: formHtml, example: example, summary: `Cycle a set of switch ports`});
                                          
                 var example = `[
   [
@@ -724,7 +766,8 @@ console.log = function(){};
         "managementAddress": "10.0.0.100",
         "systemCapabilities": "switch"
       },
-      "clientCount": 10
+      "clientCount": 10,
+      "powerUsageInWh": 55.9
     }
   ]
 ]`;
@@ -1043,6 +1086,68 @@ console.log = function(){};
                         })
 
                 methodGroups.push({methodGroup:"Switch ports", methodName:"updateDeviceSwitchPort", parameters: parameters, formHtml: formHtml, example: example, summary: `Update a switch port`});
+                                         
+                var example = `[
+  {
+    "uuid": "00000000-0000-0000-000-000000000000",
+    "major": 13,
+    "minor": 125
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getDeviceWirelessBluetoothSettings_serial">`;                      
+                        formHtml += `<label for="node-input-getDeviceWirelessBluetoothSettings_serial" style="width:70%"><i class="fa fa-list"></i> <span><b>serial<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getDeviceWirelessBluetoothSettings_serial" placeholder="msg.serial" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getDeviceWirelessBluetoothSettings_serialType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "serial"
+                        })
+
+                methodGroups.push({methodGroup:"Bluetooth settings", methodName:"getDeviceWirelessBluetoothSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the bluetooth settings for a wireless device`});
+                                         
+                var example = `[
+  {
+    "uuid": "00000000-0000-0000-000-000000000000",
+    "major": 13,
+    "minor": 125
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="updateDeviceWirelessBluetoothSettings_serial">`;                      
+                        formHtml += `<label for="node-input-updateDeviceWirelessBluetoothSettings_serial" style="width:70%"><i class="fa fa-list"></i> <span><b>serial<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateDeviceWirelessBluetoothSettings_serial" placeholder="msg.serial" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateDeviceWirelessBluetoothSettings_serialType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "serial"
+                        })
+                        formHtml += `<div class="form-row" id="updateDeviceWirelessBluetoothSettings_updateDeviceWirelessBluetoothSettings">`;                      
+                    
+                        formHtml += `<label for="node-input-updateDeviceWirelessBluetoothSettings_updateDeviceWirelessBluetoothSettings" style="width:70%"><i class="fa fa-list"></i> <span><b>updateDeviceWirelessBluetoothSettings</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-updateDeviceWirelessBluetoothSettings_updateDeviceWirelessBluetoothSettings" placeholder="msg.updateDeviceWirelessBluetoothSettings" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateDeviceWirelessBluetoothSettings_updateDeviceWirelessBluetoothSettingsType" value="" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "updateDeviceWirelessBluetoothSettings"
+                        })
+
+                methodGroups.push({methodGroup:"Bluetooth settings", methodName:"updateDeviceWirelessBluetoothSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the bluetooth settings for a wireless device`});
                                          
                 var example = `[
   {
@@ -1802,7 +1907,7 @@ console.log = function(){};
                         camelCaseName: "networkId"
                         })
 
-                methodGroups.push({methodGroup:"Networks", methodName:"getNetworkBluetoothSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the Bluetooth settings for a network. <a href=https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)>Bluetooth settings</a> must be enabled on the network.`});
+                methodGroups.push({methodGroup:"Bluetooth settings", methodName:"getNetworkBluetoothSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the Bluetooth settings for a network. <a href=https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)>Bluetooth settings</a> must be enabled on the network.`});
                                          
                 var example = `[
   {
@@ -1841,7 +1946,7 @@ console.log = function(){};
                         camelCaseName: "updateNetworkBluetoothSettings"
                         })
 
-                methodGroups.push({methodGroup:"Networks", methodName:"updateNetworkBluetoothSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the Bluetooth settings for a network. See the docs page for <a href=https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)>Bluetooth settings</a>.`});
+                methodGroups.push({methodGroup:"Bluetooth settings", methodName:"updateNetworkBluetoothSettings", parameters: parameters, formHtml: formHtml, example: example, summary: `Update the Bluetooth settings for a network. See the docs page for <a href=https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)>Bluetooth settings</a>.`});
                                          
                 var example = `[
   [
@@ -1855,6 +1960,7 @@ console.log = function(){};
       "cloudArchiveEnabled": false,
       "maxRetentionDays": 7,
       "scheduleId": null,
+      "motionDetectorVersion": 2,
       "videoSettings": {
         "MV32": {
           "quality": "Enhanced",
@@ -1905,6 +2011,7 @@ console.log = function(){};
     "cloudArchiveEnabled": false,
     "maxRetentionDays": 7,
     "scheduleId": null,
+    "motionDetectorVersion": 2,
     "videoSettings": {
       "MV32": {
         "quality": "Enhanced",
@@ -1966,6 +2073,7 @@ console.log = function(){};
     "cloudArchiveEnabled": false,
     "maxRetentionDays": 7,
     "scheduleId": null,
+    "motionDetectorVersion": 2,
     "videoSettings": {
       "MV32": {
         "quality": "Enhanced",
@@ -2027,6 +2135,7 @@ console.log = function(){};
     "cloudArchiveEnabled": false,
     "maxRetentionDays": 7,
     "scheduleId": null,
+    "motionDetectorVersion": 2,
     "videoSettings": {
       "MV32": {
         "quality": "Enhanced",
@@ -2626,24 +2735,31 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"MG uplink settings", methodName:"updateNetworkCellularGatewaySettingsUplink", parameters: parameters, formHtml: formHtml, example: example, summary: `Updates the uplink settings for your MG network.`});
                                          
                 var example = `[
-  {
-    "usage": {
-      "sent": 138,
-      "recv": 61
-    },
-    "id": "k74272e",
-    "description": "Miles's phone",
-    "mac": "00:11:22:33:44:55",
-    "ip": "1.2.3.4",
-    "user": "milesmeraki",
-    "vlan": 255,
-    "switchport": null,
-    "ip6": "",
-    "firstSeen": 1518365681,
-    "lastSeen": 1526087474,
-    "manufacturer": "Apple",
-    "os": "iOS"
-  }
+  [
+    {
+      "usage": {
+        "sent": 138,
+        "recv": 61
+      },
+      "id": "k74272e",
+      "description": "Miles's phone",
+      "mac": "22:33:44:55:66:77",
+      "ip": "1.2.3.4",
+      "user": "milesmeraki",
+      "vlan": 255,
+      "switchport": null,
+      "ip6": "",
+      "firstSeen": 1518365681,
+      "lastSeen": 1526087474,
+      "manufacturer": "Apple",
+      "os": "iOS",
+      "recentDeviceSerial": "Q234-ABCD-5678",
+      "recentDeviceName": "My AP",
+      "recentDeviceMac": "00:11:22:33:44:55",
+      "ssid": "My SSID",
+      "status": "Online"
+    }
+  ]
 ]`;
                 var parameters = []
                 var formHtml = ``;   
@@ -3074,7 +3190,7 @@ console.log = function(){};
   {
     "id": "k74272e",
     "description": "Miles's phone",
-    "mac": "00:11:22:33:44:55",
+    "mac": "22:33:44:55:66:77",
     "ip": "1.2.3.4",
     "user": "null",
     "vlan": "255",
@@ -3710,12 +3826,12 @@ console.log = function(){};
                         camelCaseName: "clientId"
                         })
                         formHtml += `<div class="form-row" id="updateNetworkClientPolicy_updateNetworkClientPolicy">`;                      
-                    
-                        formHtml += `<label for="node-input-updateNetworkClientPolicy_updateNetworkClientPolicy" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkClientPolicy</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<label for="node-input-updateNetworkClientPolicy_updateNetworkClientPolicy" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkClientPolicy<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
                         formHtml += `<p></p>`;
                         formHtml += `<input type="text" id="node-input-updateNetworkClientPolicy_updateNetworkClientPolicy" placeholder="msg.updateNetworkClientPolicy" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-updateNetworkClientPolicy_updateNetworkClientPolicyType" value="" >`;
                         formHtml += `</div>`;
+                    
 
 
                     parameters.push({
@@ -3944,12 +4060,12 @@ console.log = function(){};
                         camelCaseName: "clientId"
                         })
                         formHtml += `<div class="form-row" id="updateNetworkClientSplashAuthorizationStatus_updateNetworkClientSplashAuthorizationStatus">`;                      
-                    
-                        formHtml += `<label for="node-input-updateNetworkClientSplashAuthorizationStatus_updateNetworkClientSplashAuthorizationStatus" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkClientSplashAuthorizationStatus</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<label for="node-input-updateNetworkClientSplashAuthorizationStatus_updateNetworkClientSplashAuthorizationStatus" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkClientSplashAuthorizationStatus<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
                         formHtml += `<p></p>`;
                         formHtml += `<input type="text" id="node-input-updateNetworkClientSplashAuthorizationStatus_updateNetworkClientSplashAuthorizationStatus" placeholder="msg.updateNetworkClientSplashAuthorizationStatus" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-updateNetworkClientSplashAuthorizationStatus_updateNetworkClientSplashAuthorizationStatusType" value="" >`;
                         formHtml += `</div>`;
+                    
 
 
                     parameters.push({
@@ -4463,7 +4579,7 @@ console.log = function(){};
                         camelCaseName: "claimNetworkDevices"
                         })
 
-                methodGroups.push({methodGroup:"Devices", methodName:"claimNetworkDevices", parameters: parameters, formHtml: formHtml, example: example, summary: `Claim a device into a network`});
+                methodGroups.push({methodGroup:"Devices", methodName:"claimNetworkDevices", parameters: parameters, formHtml: formHtml, example: example, summary: `Claim devices into a network`});
                                          
                 var example = `[
   [
@@ -8682,12 +8798,12 @@ console.log = function(){};
                         camelCaseName: "networkId"
                         })
                         formHtml += `<div class="form-row" id="updateNetworkOneToOneNatRules_updateNetworkOneToOneNatRules">`;                      
-                    
-                        formHtml += `<label for="node-input-updateNetworkOneToOneNatRules_updateNetworkOneToOneNatRules" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkOneToOneNatRules</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<label for="node-input-updateNetworkOneToOneNatRules_updateNetworkOneToOneNatRules" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkOneToOneNatRules<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
                         formHtml += `<p></p>`;
                         formHtml += `<input type="text" id="node-input-updateNetworkOneToOneNatRules_updateNetworkOneToOneNatRules" placeholder="msg.updateNetworkOneToOneNatRules" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-updateNetworkOneToOneNatRules_updateNetworkOneToOneNatRulesType" value="" >`;
                         formHtml += `</div>`;
+                    
 
 
                     parameters.push({
@@ -9265,12 +9381,12 @@ console.log = function(){};
                         camelCaseName: "networkId"
                         })
                         formHtml += `<div class="form-row" id="updateNetworkPortForwardingRules_updateNetworkPortForwardingRules">`;                      
-                    
-                        formHtml += `<label for="node-input-updateNetworkPortForwardingRules_updateNetworkPortForwardingRules" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkPortForwardingRules</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<label for="node-input-updateNetworkPortForwardingRules_updateNetworkPortForwardingRules" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkPortForwardingRules<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
                         formHtml += `<p></p>`;
                         formHtml += `<input type="text" id="node-input-updateNetworkPortForwardingRules_updateNetworkPortForwardingRules" placeholder="msg.updateNetworkPortForwardingRules" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-updateNetworkPortForwardingRules_updateNetworkPortForwardingRulesType" value="" >`;
                         formHtml += `</div>`;
+                    
 
 
                     parameters.push({
@@ -9441,12 +9557,12 @@ console.log = function(){};
                         camelCaseName: "networkId"
                         })
                         formHtml += `<div class="form-row" id="updateNetworkSecurityMalwareSettings_updateNetworkSecurityMalwareSettings">`;                      
-                    
-                        formHtml += `<label for="node-input-updateNetworkSecurityMalwareSettings_updateNetworkSecurityMalwareSettings" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSecurityMalwareSettings</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<label for="node-input-updateNetworkSecurityMalwareSettings_updateNetworkSecurityMalwareSettings" style="width:70%"><i class="fa fa-list"></i> <span><b>updateNetworkSecurityMalwareSettings<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
                         formHtml += `<p></p>`;
                         formHtml += `<input type="text" id="node-input-updateNetworkSecurityMalwareSettings_updateNetworkSecurityMalwareSettings" placeholder="msg.updateNetworkSecurityMalwareSettings" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-updateNetworkSecurityMalwareSettings_updateNetworkSecurityMalwareSettingsType" value="" >`;
                         formHtml += `</div>`;
+                    
 
 
                     parameters.push({
@@ -11881,12 +11997,23 @@ console.log = function(){};
     {
       "id": "d7fa4948-7921-4dfa-af6b-ae8b16c20c39",
       "networkId": "N_24329156",
+      "enabled": true,
       "name": "My route",
-      "gatewayIp": "1.2.3.5",
       "subnet": "192.168.1.0/24",
-      "fixedIpAssignments": "{}",
-      "reservedIpRanges": "[]",
-      "enabled": true
+      "gatewayIp": "1.2.3.5",
+      "fixedIpAssignments": {
+        "22:33:44:55:66:77": {
+          "ip": "1.2.3.4",
+          "name": "Some client name"
+        }
+      },
+      "reservedIpRanges": [
+        {
+          "start": "192.168.1.0",
+          "end": "192.168.1.1",
+          "comment": "A reserved IP range"
+        }
+      ]
     }
   ]
 ]`;
@@ -11910,9 +12037,14 @@ console.log = function(){};
                                          
                 var example = `[
   {
+    "id": "d7fa4948-7921-4dfa-af6b-ae8b16c20c39",
+    "networkId": "N_24329156",
+    "enabled": true,
     "name": "My route",
     "subnet": "192.168.1.0/24",
-    "gatewayIp": "1.2.3.5"
+    "gatewayIp": "1.2.3.5",
+    "fixedIpAssignments": {},
+    "reservedIpRanges": []
   }
 ]`;
                 var parameters = []
@@ -11931,12 +12063,12 @@ console.log = function(){};
                         camelCaseName: "networkId"
                         })
                         formHtml += `<div class="form-row" id="createNetworkStaticRoute_createNetworkStaticRoute">`;                      
-                    
-                        formHtml += `<label for="node-input-createNetworkStaticRoute_createNetworkStaticRoute" style="width:70%"><i class="fa fa-list"></i> <span><b>createNetworkStaticRoute</b> <i>&nbsp</i></span></label>`;                  
+                        formHtml += `<label for="node-input-createNetworkStaticRoute_createNetworkStaticRoute" style="width:70%"><i class="fa fa-list"></i> <span><b>createNetworkStaticRoute<span style="color:red;"> *</span></b> <i>&nbsp</i></span></label>`;                  
                         formHtml += `<p></p>`;
                         formHtml += `<input type="text" id="node-input-createNetworkStaticRoute_createNetworkStaticRoute" placeholder="msg.createNetworkStaticRoute" style="width:70%">`;
                         formHtml += `<input type="hidden" id="node-input-createNetworkStaticRoute_createNetworkStaticRouteType" value="" >`;
                         formHtml += `</div>`;
+                    
 
 
                     parameters.push({
@@ -11949,12 +12081,23 @@ console.log = function(){};
   {
     "id": "d7fa4948-7921-4dfa-af6b-ae8b16c20c39",
     "networkId": "N_24329156",
+    "enabled": true,
     "name": "My route",
-    "gatewayIp": "1.2.3.5",
     "subnet": "192.168.1.0/24",
-    "fixedIpAssignments": "{}",
-    "reservedIpRanges": "[]",
-    "enabled": true
+    "gatewayIp": "1.2.3.5",
+    "fixedIpAssignments": {
+      "22:33:44:55:66:77": {
+        "ip": "1.2.3.4",
+        "name": "Some client name"
+      }
+    },
+    "reservedIpRanges": [
+      {
+        "start": "192.168.1.0",
+        "end": "192.168.1.1",
+        "comment": "A reserved IP range"
+      }
+    ]
   }
 ]`;
                 var parameters = []
@@ -11972,17 +12115,17 @@ console.log = function(){};
                     parameters.push({
                         camelCaseName: "networkId"
                         })
-                        formHtml += `<div class="form-row" id="getNetworkStaticRoute_srId">`;                      
-                        formHtml += `<label for="node-input-getNetworkStaticRoute_srId" style="width:70%"><i class="fa fa-list"></i> <span><b>srId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<div class="form-row" id="getNetworkStaticRoute_staticRouteId">`;                      
+                        formHtml += `<label for="node-input-getNetworkStaticRoute_staticRouteId" style="width:70%"><i class="fa fa-list"></i> <span><b>staticRouteId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
                         formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-getNetworkStaticRoute_srId" placeholder="msg.srId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-getNetworkStaticRoute_srIdType" value="string" >`;
+                        formHtml += `<input type="text" id="node-input-getNetworkStaticRoute_staticRouteId" placeholder="msg.staticRouteId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getNetworkStaticRoute_staticRouteIdType" value="string" >`;
                         formHtml += `</div>`;
                     
 
 
                     parameters.push({
-                        camelCaseName: "srId"
+                        camelCaseName: "staticRouteId"
                         })
 
                 methodGroups.push({methodGroup:"MX static routes", methodName:"getNetworkStaticRoute", parameters: parameters, formHtml: formHtml, example: example, summary: `Return a static route for an MX or teleworker network`});
@@ -11991,12 +12134,23 @@ console.log = function(){};
   {
     "id": "d7fa4948-7921-4dfa-af6b-ae8b16c20c39",
     "networkId": "N_24329156",
+    "enabled": true,
     "name": "My route",
-    "gatewayIp": "1.2.3.5",
     "subnet": "192.168.1.0/24",
-    "fixedIpAssignments": "{}",
-    "reservedIpRanges": "[]",
-    "enabled": true
+    "gatewayIp": "1.2.3.5",
+    "fixedIpAssignments": {
+      "22:33:44:55:66:77": {
+        "ip": "1.2.3.4",
+        "name": "Some client name"
+      }
+    },
+    "reservedIpRanges": [
+      {
+        "start": "192.168.1.0",
+        "end": "192.168.1.1",
+        "comment": "A reserved IP range"
+      }
+    ]
   }
 ]`;
                 var parameters = []
@@ -12014,17 +12168,17 @@ console.log = function(){};
                     parameters.push({
                         camelCaseName: "networkId"
                         })
-                        formHtml += `<div class="form-row" id="updateNetworkStaticRoute_srId">`;                      
-                        formHtml += `<label for="node-input-updateNetworkStaticRoute_srId" style="width:70%"><i class="fa fa-list"></i> <span><b>srId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<div class="form-row" id="updateNetworkStaticRoute_staticRouteId">`;                      
+                        formHtml += `<label for="node-input-updateNetworkStaticRoute_staticRouteId" style="width:70%"><i class="fa fa-list"></i> <span><b>staticRouteId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
                         formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-updateNetworkStaticRoute_srId" placeholder="msg.srId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-updateNetworkStaticRoute_srIdType" value="string" >`;
+                        formHtml += `<input type="text" id="node-input-updateNetworkStaticRoute_staticRouteId" placeholder="msg.staticRouteId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-updateNetworkStaticRoute_staticRouteIdType" value="string" >`;
                         formHtml += `</div>`;
                     
 
 
                     parameters.push({
-                        camelCaseName: "srId"
+                        camelCaseName: "staticRouteId"
                         })
                         formHtml += `<div class="form-row" id="updateNetworkStaticRoute_updateNetworkStaticRoute">`;                      
                     
@@ -12057,17 +12211,17 @@ console.log = function(){};
                     parameters.push({
                         camelCaseName: "networkId"
                         })
-                        formHtml += `<div class="form-row" id="deleteNetworkStaticRoute_srId">`;                      
-                        formHtml += `<label for="node-input-deleteNetworkStaticRoute_srId" style="width:70%"><i class="fa fa-list"></i> <span><b>srId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<div class="form-row" id="deleteNetworkStaticRoute_staticRouteId">`;                      
+                        formHtml += `<label for="node-input-deleteNetworkStaticRoute_staticRouteId" style="width:70%"><i class="fa fa-list"></i> <span><b>staticRouteId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
                         formHtml += `<p></p>`;
-                        formHtml += `<input type="text" id="node-input-deleteNetworkStaticRoute_srId" placeholder="msg.srId" style="width:70%">`;
-                        formHtml += `<input type="hidden" id="node-input-deleteNetworkStaticRoute_srIdType" value="string" >`;
+                        formHtml += `<input type="text" id="node-input-deleteNetworkStaticRoute_staticRouteId" placeholder="msg.staticRouteId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-deleteNetworkStaticRoute_staticRouteIdType" value="string" >`;
                         formHtml += `</div>`;
                     
 
 
                     parameters.push({
-                        camelCaseName: "srId"
+                        camelCaseName: "staticRouteId"
                         })
 
                 methodGroups.push({methodGroup:"MX static routes", methodName:"deleteNetworkStaticRoute", parameters: parameters, formHtml: formHtml, example: example, summary: `Delete a static route from an MX or teleworker network`});
@@ -13062,7 +13216,7 @@ console.log = function(){};
                         camelCaseName: "networkId"
                         })
 
-                methodGroups.push({methodGroup:"Switch settings", methodName:"getNetworkSwitchSettingsMulticast", parameters: parameters, formHtml: formHtml, example: example, summary: `Return Multicast settings for a network`});
+                methodGroups.push({methodGroup:"Switch settings", methodName:"getNetworkSwitchSettingsMulticast", parameters: parameters, formHtml: formHtml, example: example, summary: `Return multicast settings for a network`});
                                          
                 var example = `[
   {
@@ -16368,6 +16522,72 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"API usage", methodName:"getOrganizationApiRequests", parameters: parameters, formHtml: formHtml, example: example, summary: `List the API requests made by an organization`});
                                          
                 var example = `[
+  {
+    "responseCodeCounts": {
+      "200": 50000,
+      "201": 4000,
+      "204": 1000,
+      "400": 3500,
+      "404": 1500,
+      "429": 10000
+    }
+  }
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getOrganizationApiRequestsOverview_organizationId">`;                      
+                        formHtml += `<label for="node-input-getOrganizationApiRequestsOverview_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationApiRequestsOverview_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationApiRequestsOverview_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationApiRequestsOverview_t0">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationApiRequestsOverview_t0" style="width:70%"><i class="fa fa-list"></i> <span><b>t0</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The beginning of the timespan for the data. The maximum lookback period is 31 days from today.</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationApiRequestsOverview_t0" placeholder="msg.t0" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationApiRequestsOverview_t0Type" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "t0"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationApiRequestsOverview_t1">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationApiRequestsOverview_t1" style="width:70%"><i class="fa fa-list"></i> <span><b>t1</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The end of the timespan for the data. t1 can be a maximum of 31 days after t0.</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationApiRequestsOverview_t1" placeholder="msg.t1" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationApiRequestsOverview_t1Type" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "t1"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationApiRequestsOverview_timespan">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationApiRequestsOverview_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
+                        formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationApiRequestsOverview_timespan" placeholder="msg.timespan" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationApiRequestsOverview_timespanType" value="number" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "timespan"
+                        })
+
+                methodGroups.push({methodGroup:"API usage", methodName:"getOrganizationApiRequestsOverview", parameters: parameters, formHtml: formHtml, example: example, summary: `Return an aggregated overview of API requests data`});
+                                         
+                var example = `[
   [
     {
       "brandingPolicyId": "456",
@@ -16793,7 +17013,12 @@ console.log = function(){};
   [
     {
       "id": "N_24329156",
-      "name": "My config template"
+      "name": "My config template",
+      "productTypes": [
+        "appliance",
+        "switch",
+        "wireless"
+      ]
     }
   ]
 ]`;
@@ -16888,6 +17113,134 @@ console.log = function(){};
                 var example = `[
   [
     {
+      "ts": "2018-02-11T00:00:00.090210Z",
+      "adminName": "Miles Meraki",
+      "adminEmail": "miles@meraki.com",
+      "adminId": "212406",
+      "page": "via API",
+      "label": "PUT /api/v1/organizations/2930418",
+      "oldValue": "{\"id\":\"2930418\",\"name\":\"My organization\",\"url\":\"https://dashboard.meraki.com/o/VjjsAd/manage/organization/overview\"}",
+      "newValue": "{\"id\":\"2930418\",\"name\":\"My organization changed\",\"url\":\"https://dashboard.meraki.com/o/VjjsAd/manage/organization/overview\"}"
+    }
+  ]
+]`;
+                var parameters = []
+                var formHtml = ``;   
+                    formHtml += `<h4>Parameters</h4>`;
+                        formHtml += `<div class="form-row" id="getOrganizationConfigurationChanges_organizationId">`;                      
+                        formHtml += `<label for="node-input-getOrganizationConfigurationChanges_organizationId" style="width:70%"><i class="fa fa-list"></i> <span><b>organizationId<span style="color:red;"> *</span></b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p></p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationConfigurationChanges_organizationId" placeholder="msg.organizationId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationConfigurationChanges_organizationIdType" value="string" >`;
+                        formHtml += `</div>`;
+                    
+
+
+                    parameters.push({
+                        camelCaseName: "organizationId"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationConfigurationChanges_t0">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationConfigurationChanges_t0" style="width:70%"><i class="fa fa-list"></i> <span><b>t0</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The beginning of the timespan for the data. The maximum lookback period is 365 days from today.</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationConfigurationChanges_t0" placeholder="msg.t0" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationConfigurationChanges_t0Type" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "t0"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationConfigurationChanges_t1">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationConfigurationChanges_t1" style="width:70%"><i class="fa fa-list"></i> <span><b>t1</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>The end of the timespan for the data. t1 can be a maximum of 365 days after t0.</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationConfigurationChanges_t1" placeholder="msg.t1" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationConfigurationChanges_t1Type" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "t1"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationConfigurationChanges_timespan">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationConfigurationChanges_timespan" style="width:70%"><i class="fa fa-list"></i> <span><b>timespan</b> <i>&nbspnumber</i></span></label>`;                  
+                        formHtml += `<p>The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 365 days.</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationConfigurationChanges_timespan" placeholder="msg.timespan" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationConfigurationChanges_timespanType" value="number" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "timespan"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationConfigurationChanges_perPage">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationConfigurationChanges_perPage" style="width:70%"><i class="fa fa-list"></i> <span><b>perPage</b> <i>&nbspinteger</i></span></label>`;                  
+                        formHtml += `<p>The number of entries per page returned. Acceptable range is 3 - 5000. Default is 5000.</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationConfigurationChanges_perPage" placeholder="msg.perPage" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationConfigurationChanges_perPageType" value="integer" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "perPage"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationConfigurationChanges_startingAfter">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationConfigurationChanges_startingAfter" style="width:70%"><i class="fa fa-list"></i> <span><b>startingAfter</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationConfigurationChanges_startingAfter" placeholder="msg.startingAfter" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationConfigurationChanges_startingAfterType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "startingAfter"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationConfigurationChanges_endingBefore">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationConfigurationChanges_endingBefore" style="width:70%"><i class="fa fa-list"></i> <span><b>endingBefore</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationConfigurationChanges_endingBefore" placeholder="msg.endingBefore" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationConfigurationChanges_endingBeforeType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "endingBefore"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationConfigurationChanges_networkId">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationConfigurationChanges_networkId" style="width:70%"><i class="fa fa-list"></i> <span><b>networkId</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>Filters on the given network</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationConfigurationChanges_networkId" placeholder="msg.networkId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationConfigurationChanges_networkIdType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "networkId"
+                        })
+                        formHtml += `<div class="form-row" id="getOrganizationConfigurationChanges_adminId">`;                      
+                    
+                        formHtml += `<label for="node-input-getOrganizationConfigurationChanges_adminId" style="width:70%"><i class="fa fa-list"></i> <span><b>adminId</b> <i>&nbspstring</i></span></label>`;                  
+                        formHtml += `<p>Filters on the given Admin</p>`;
+                        formHtml += `<input type="text" id="node-input-getOrganizationConfigurationChanges_adminId" placeholder="msg.adminId" style="width:70%">`;
+                        formHtml += `<input type="hidden" id="node-input-getOrganizationConfigurationChanges_adminIdType" value="string" >`;
+                        formHtml += `</div>`;
+
+
+                    parameters.push({
+                        camelCaseName: "adminId"
+                        })
+
+                methodGroups.push({methodGroup:"Change log", methodName:"getOrganizationConfigurationChanges", parameters: parameters, formHtml: formHtml, example: example, summary: `View the Change Log for your organization`});
+                                         
+                var example = `[
+  [
+    {
       "name": "My AP",
       "serial": "Q234-ABCD-5678",
       "mac": "00:11:22:33:44:55",
@@ -16917,20 +17270,22 @@ console.log = function(){};
                 methodGroups.push({methodGroup:"Organizations", methodName:"getOrganizationDeviceStatuses", parameters: parameters, formHtml: formHtml, example: example, summary: `List the status of every Meraki device in the organization`});
                                          
                 var example = `[
-  {
-    "name": "My AP",
-    "lat": 37.4180951010362,
-    "lng": -122.098531723022,
-    "address": "1600 Pennsylvania Ave",
-    "notes": "My AP's note",
-    "tags": " recently-added ",
-    "networkId": "N_24329156",
-    "serial": "Q234-ABCD-5678",
-    "model": "MR34",
-    "mac": "00:11:22:33:44:55",
-    "lanIp": "1.2.3.4",
-    "firmware": "wireless-25-14"
-  }
+  [
+    {
+      "name": "My AP",
+      "lat": 37.4180951010362,
+      "lng": -122.098531723022,
+      "address": "1600 Pennsylvania Ave",
+      "notes": "My AP's note",
+      "tags": " recently-added ",
+      "networkId": "N_24329156",
+      "serial": "Q234-ABCD-5678",
+      "model": "MR34",
+      "mac": "00:11:22:33:44:55",
+      "lanIp": "1.2.3.4",
+      "firmware": "wireless-25-14"
+    }
+  ]
 ]`;
                 var parameters = []
                 var formHtml = ``;   
@@ -17247,7 +17602,7 @@ console.log = function(){};
                         camelCaseName: "organizationId"
                         })
 
-                methodGroups.push({methodGroup:"Organizations", methodName:"getOrganizationLicenseState", parameters: parameters, formHtml: formHtml, example: example, summary: `Return the license state for an organization`});
+                methodGroups.push({methodGroup:"Organizations", methodName:"getOrganizationLicenseState", parameters: parameters, formHtml: formHtml, example: example, summary: `Return an overview of the license state for an organization`});
                                          
                 var example = `[
   [
@@ -18981,8 +19336,10 @@ console.log = function(){};
             <option value="Admins" >Admins</option>
             <option value="Alert settings" >Alert settings</option>
             <option value="Bluetooth clients" >Bluetooth clients</option>
+            <option value="Bluetooth settings" >Bluetooth settings</option>
             <option value="Camera quality retention profiles" >Camera quality retention profiles</option>
             <option value="Cameras" >Cameras</option>
+            <option value="Change log" >Change log</option>
             <option value="Clients" >Clients</option>
             <option value="Config templates" >Config templates</option>
             <option value="Connectivity monitoring destinations" >Connectivity monitoring destinations</option>
@@ -19124,7 +19481,7 @@ return msg;
 
 
     <p>Cisco Meraki Dashboard Node</p>
-    &nbsp &nbsp &nbsp<i>OAS version: 0.8.0</i>
+    &nbsp &nbsp &nbsp<i>OAS version: 0.9.0</i>
     <hr/>
     <br>
     <p>The Cisco Meraki Dashboard API is a modern REST API based on the <a href="https://swagger.io/docs/specification/about/" target="_blank">OpenAPI</a> specification. 

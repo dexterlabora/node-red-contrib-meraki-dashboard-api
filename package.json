@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-meraki-dashboard-api",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Node-RED node for meraki-dashboard-api",
   "main": "node.js",
   "scripts": {
